@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.1 2005/03/10 22:36:37 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.2 2005/03/28 19:07:14 vnagarjuna Exp $ -->
 
 /* ***** BEGIN LICENSE BLOCK ***** 
  * Version: MPL 1.1/GPL 2.0/LGPL 2.1
@@ -110,9 +110,21 @@ var Unicode_vowelsn_OO  = "\u0C4B";
 var Unicode_vowelsn_AU  = "\u0C4C";
 
 //Miscellaneous Signs
-var Unicode_misc_VIRAMA = "\u0C4D";   //halant
-var Unicode_misc_LENGTH = "\u0C55";
-var Unicode_misc_AILEN  = "\u0C56";
+var Unicode_misc_VIRAMA   = "\u0C4D";   //halant
+var Unicode_misc_LENGTH   = "\u0C55";
+var Unicode_misc_AILEN    = "\u0C56";
+var Unicode_misc_AVAGRAHA = "\u093D";
+var Unicode_misc_NUKTA    = "\u093C";
+
+//Ligatures
+var Unicode_ligature_KSH = "\u0C15\u0C37";
+//nukt
+var Unicode_nukt_TCH = "\u0C1A\u093C\u0C4D";
+var Unicode_nukt_TJ  = "\u0C1C\u093C\u0C4d";
+//Miscellaneous
+var Unicode_conjuct_JNY = "\u0C1C\u0C1E";
+var Unicode_conjuct_DDDD = "\u0C21\u0C21";
+var Unicode_conjuct_TTTT = "\u0C1F\u0C1F";
 
 //Digits
 var Unicode_digit_ZERO  = "\u0C66";
@@ -180,9 +192,7 @@ function Unicode_getDependentVowel(str)
 }	
 
 //RTS
-//There are only two encodings in RTS that are of length 3 ksh and r''
-//ksh is handled automatically, not supporting r'' speeds up things
-var RTS_maxLookupLen = 2;
+var RTS_maxLookupLen = 3;
 
 var RTS_candrabindu_1  = "@M"; //arasunna
 var RTS_candrabindu_2  = "@m";
@@ -250,13 +260,13 @@ var RTS_vowel_A        = "a";
 var RTS_vowel_AA_1     = "aa";
 var RTS_vowel_AA_2     = "A";
 var RTS_vowel_AA_3     = "a'";
+var RTS_vowel_AA_4     = "aaa";
 var RTS_vowel_I        = "i";
-var RTS_vowel_II_1     = "ea";
-var RTS_vowel_II_2     = "ee";
-var RTS_vowel_II_3     = "ii";
-var RTS_vowel_II_4     = "I";
-var RTS_vowel_II_5     = "i'";
-var RTS_vowel_II_6     = "ia";
+var RTS_vowel_II_1     = "ee";
+var RTS_vowel_II_2     = "ii";
+var RTS_vowel_II_3     = "I";
+var RTS_vowel_II_4     = "i'";
+var RTS_vowel_II_5     = "ia";
 var RTS_vowel_U        = "u";
 var RTS_vowel_UU_1     = "uu";
 var RTS_vowel_UU_2     = "oo";
@@ -273,7 +283,7 @@ var RTS_vowel_E        = "e";
 var RTS_vowel_EE_1     = "ae";
 var RTS_vowel_EE_2     = "E";
 var RTS_vowel_EE_3     = "e'";
-var RTS_vowel_EE_4     = "e'";
+var RTS_vowel_EE_4     = "ea";
 var RTS_vowel_AI_1     = "ai";
 var RTS_vowel_AI_2     = "ei";
 var RTS_vowel_O        = "o";
@@ -321,6 +331,7 @@ var RTS_consnt_TTHA_2  = "t'H";
 var RTS_consnt_TTHA_3  = "Th";
 var RTS_consnt_TTHA_4  = "TH";
 var RTS_consnt_TTHA_5  = "th'";
+var RTS_consnt_TTHA_6  = "tH'";
 var RTS_consnt_DDA_1   = "d'";
 var RTS_consnt_DDA_2   = "D";
 var RTS_consnt_DDHA_1  = "dh'";
@@ -331,6 +342,8 @@ var RTS_consnt_NNA_1   = "N";
 var RTS_consnt_NNA_2   = "Nh";
 var RTS_consnt_NNA_3   = "NH";
 var RTS_consnt_NNA_4   = "n'";
+var RTS_consnt_NNA_5   = "nh";
+var RTS_consnt_NNA_6   = "nH";
 var RTS_consnt_TA      = "t";
 var RTS_consnt_THA_1   = "th";
 var RTS_consnt_THA_2   = "tH";
@@ -372,14 +385,40 @@ var RTS_consnt_HA_1    = "h";
 var RTS_consnt_HA_2    = "H";
 var RTS_consnt_LLA_1   = "L";
 var RTS_consnt_LLA_2   = "l'";
+var RTS_consnt_LLA_3   = "Lh";
+var RTS_consnt_LLA_4   = "lh";
+var RTS_consnt_LLA_5   = "lH";
+var RTS_consnt_LLA_6   = "LH";
 var RTS_consnt_RRA_1   = "~r";
-var RTS_consnt_RRA_2   = "r''"; //Not supporting this speeds up things about 33%
+var RTS_consnt_RRA_2   = "r''"; 
 var RTS_consnt_KSH     = "x";   //ksh is automatically handled
+
+//extinct consonants
+var RTS_consnt_TCH     = "~c";
+var RTS_consnt_TJ      = "~j";
+
+//equivalents
+var RTS_misc_JN        = "jn";
+var RTS_misc_DDD       = "dd'";
+var RTS_misc_TTT       = "tt'";
+
+//digits
+var RTS_digit_ZERO     = "~0";
+var RTS_digit_ONE      = "~1";
+var RTS_digit_TWO      = "~2";
+var RTS_digit_THREE    = "~3";
+var RTS_digit_FOUR     = "~4";
+var RTS_digit_FIVE     = "~5";
+var RTS_digit_SIX      = "~6";
+var RTS_digit_SEVEN    = "~7";
+var RTS_digit_EIGHT    = "~8";
+var RTS_digit_NINE     = "~9";
 
 var RTS_toUnicode = new Array();
 var RTS_vowels = new Array();
 var RTS_specials = new Array();
-var RTS_anusvaras = new Array();	
+var RTS_anusvaras = new Array();
+var RTS_digits = new Array();	
 	
 RTS_toUnicode[RTS_candrabindu_1] = Unicode_candrabindu;
 RTS_toUnicode[RTS_candrabindu_2] = Unicode_candrabindu;
@@ -388,7 +427,7 @@ RTS_toUnicode[RTS_visarga_2] = Unicode_visarga;
 RTS_toUnicode[RTS_virama_1] = Unicode_misc_VIRAMA;
 RTS_toUnicode[RTS_virama_2] = Unicode_misc_VIRAMA;
 RTS_toUnicode[RTS_virama_3] = Unicode_misc_VIRAMA;
-//RTS_toUnicode[RTS_avagraha] = Unicode_avagraha;
+RTS_toUnicode[RTS_avagraha] = Unicode_misc_AVAGRAHA;
 
 RTS_toUnicode[RTS_anusvara_1] = Unicode_anusvara;
 RTS_toUnicode[RTS_anusvara_2] = Unicode_anusvara;
@@ -505,13 +544,13 @@ RTS_toUnicode[RTS_vowel_A] = Unicode_letter_A;
 RTS_toUnicode[RTS_vowel_AA_1] = Unicode_letter_AA;
 RTS_toUnicode[RTS_vowel_AA_2] = Unicode_letter_AA;
 RTS_toUnicode[RTS_vowel_AA_3] = Unicode_letter_AA;
+RTS_toUnicode[RTS_vowel_AA_4] = Unicode_letter_AA;
 RTS_toUnicode[RTS_vowel_I] = Unicode_letter_I;
 RTS_toUnicode[RTS_vowel_II_1] = Unicode_letter_II;
 RTS_toUnicode[RTS_vowel_II_2] = Unicode_letter_II;
 RTS_toUnicode[RTS_vowel_II_3] = Unicode_letter_II;
 RTS_toUnicode[RTS_vowel_II_4] = Unicode_letter_II;
 RTS_toUnicode[RTS_vowel_II_5] = Unicode_letter_II;
-RTS_toUnicode[RTS_vowel_II_6] = Unicode_letter_II;
 RTS_toUnicode[RTS_vowel_U] = Unicode_letter_U;
 RTS_toUnicode[RTS_vowel_UU_1] = Unicode_letter_UU;
 RTS_toUnicode[RTS_vowel_UU_2] = Unicode_letter_UU;
@@ -544,13 +583,13 @@ RTS_vowels[RTS_vowel_A] = 1;
 RTS_vowels[RTS_vowel_AA_1] = 1;
 RTS_vowels[RTS_vowel_AA_2] = 1;
 RTS_vowels[RTS_vowel_AA_3] = 1;
+RTS_vowels[RTS_vowel_AA_4] = 1;
 RTS_vowels[RTS_vowel_I] = 1;
 RTS_vowels[RTS_vowel_II_1] = 1;
 RTS_vowels[RTS_vowel_II_2] = 1;
 RTS_vowels[RTS_vowel_II_3] = 1;
 RTS_vowels[RTS_vowel_II_4] = 1;
 RTS_vowels[RTS_vowel_II_5] = 1;
-RTS_vowels[RTS_vowel_II_6] = 1;
 RTS_vowels[RTS_vowel_U] = 1;
 RTS_vowels[RTS_vowel_UU_1] = 1;
 RTS_vowels[RTS_vowel_UU_2] = 1;
@@ -616,6 +655,7 @@ RTS_toUnicode[RTS_consnt_TTHA_2] = Unicode_letter_TTHA;
 RTS_toUnicode[RTS_consnt_TTHA_3] = Unicode_letter_TTHA;
 RTS_toUnicode[RTS_consnt_TTHA_4] = Unicode_letter_TTHA;
 RTS_toUnicode[RTS_consnt_TTHA_5] = Unicode_letter_TTHA;
+RTS_toUnicode[RTS_consnt_TTHA_6] = Unicode_letter_TTHA;
 RTS_toUnicode[RTS_consnt_DDA_1] = Unicode_letter_DDA;
 RTS_toUnicode[RTS_consnt_DDA_2] = Unicode_letter_DDA;
 RTS_toUnicode[RTS_consnt_DDHA_1] = Unicode_letter_DDHA;
@@ -626,6 +666,8 @@ RTS_toUnicode[RTS_consnt_NNA_1] = Unicode_letter_NNA;
 RTS_toUnicode[RTS_consnt_NNA_2] = Unicode_letter_NNA;
 RTS_toUnicode[RTS_consnt_NNA_3] = Unicode_letter_NNA;
 RTS_toUnicode[RTS_consnt_NNA_4] = Unicode_letter_NNA;
+RTS_toUnicode[RTS_consnt_NNA_5] = Unicode_letter_NNA;
+RTS_toUnicode[RTS_consnt_NNA_6] = Unicode_letter_NNA;
 
 RTS_toUnicode[RTS_consnt_TA] = Unicode_letter_TA;
 RTS_toUnicode[RTS_consnt_THA_1] = Unicode_letter_THA;
@@ -671,9 +713,42 @@ RTS_toUnicode[RTS_consnt_HA_1] = Unicode_letter_HA;
 RTS_toUnicode[RTS_consnt_HA_2] = Unicode_letter_HA;
 RTS_toUnicode[RTS_consnt_LLA_1] = Unicode_letter_LLA;
 RTS_toUnicode[RTS_consnt_LLA_2] = Unicode_letter_LLA;
+RTS_toUnicode[RTS_consnt_LLA_3] = Unicode_letter_LLA;
+RTS_toUnicode[RTS_consnt_LLA_4] = Unicode_letter_LLA;
+RTS_toUnicode[RTS_consnt_LLA_5] = Unicode_letter_LLA;
+RTS_toUnicode[RTS_consnt_LLA_6] = Unicode_letter_LLA;
 RTS_toUnicode[RTS_consnt_RRA_1] = Unicode_letter_RRA;
 RTS_toUnicode[RTS_consnt_RRA_2] = Unicode_letter_RRA;
-RTS_toUnicode[RTS_consnt_KSH] = "\u0C15\u0C37";
+RTS_toUnicode[RTS_consnt_KSH] = Unicode_ligature_KSH;
+
+RTS_toUnicode[RTS_consnt_TCH] = Unicode_nukt_TCH;
+RTS_toUnicode[RTS_consnt_TJ]  = Unicode_nukt_TJ;
+
+RTS_toUnicode[RTS_misc_JN] = Unicode_conjuct_JNY;
+RTS_toUnicode[RTS_misc_DDD] = Unicode_conjuct_DDDD;
+RTS_toUnicode[RTS_misc_TTT] = Unicode_conjuct_TTTT;
+
+RTS_toUnicode[RTS_digit_ZERO] = Unicode_digit_ZERO;
+RTS_toUnicode[RTS_digit_ONE] = Unicode_digit_ONE;
+RTS_toUnicode[RTS_digit_TWO] = Unicode_digit_TWO;
+RTS_toUnicode[RTS_digit_THREE] = Unicode_digit_THREE;
+RTS_toUnicode[RTS_digit_FOUR] = Unicode_digit_FOUR;
+RTS_toUnicode[RTS_digit_FIVE] = Unicode_digit_FIVE;
+RTS_toUnicode[RTS_digit_SIX] = Unicode_digit_SIX;
+RTS_toUnicode[RTS_digit_SEVEN] = Unicode_digit_SEVEN;
+RTS_toUnicode[RTS_digit_EIGHT] = Unicode_digit_EIGHT;
+RTS_toUnicode[RTS_digit_NINE] = Unicode_digit_NINE;
+
+RTS_digits[RTS_digit_ZERO] = 1;
+RTS_digits[RTS_digit_ONE] = 1;
+RTS_digits[RTS_digit_TWO] = 1;
+RTS_digits[RTS_digit_THREE] = 1;
+RTS_digits[RTS_digit_FOUR] = 1;
+RTS_digits[RTS_digit_FIVE] = 1;
+RTS_digits[RTS_digit_SIX] = 1;
+RTS_digits[RTS_digit_SEVEN] = 1;
+RTS_digits[RTS_digit_EIGHT] = 1;
+RTS_digits[RTS_digit_NINE] = 1;
 
 function RTS_lookup(str) 
 {
@@ -711,6 +786,11 @@ function RTS_isAnusvara(str)
 function RTS_isSpecialHandlingForSunna(str) 
 {
     return str == Unicode_letter_MA;
+}
+
+function RTS_isDigit(str)
+{
+    return RTS_digits[str] != null;
 }
 
 //Parser
@@ -765,9 +845,16 @@ function parser_next()
         if (value == null) {
             break;
         }
+
+        var digit = RTS_isDigit(key);
+        if (digit) {
+            //we will parse the digit again the next time
+            if (curLen != 0)
+                break;
+        }
 			
         parser_index += bufLen;			
-        if (RTS_isVowel(key) || RTS_isSpecial(key))
+        if (RTS_isVowel(key) || RTS_isSpecial(key) || digit)
             return response + value;
 				
         response += value;
@@ -807,7 +894,8 @@ function transformSyllable(syllable)
     var response = "";
     for(var i = 0; i < length - 2; i++) {
         response += syllable[i];
-        response += Unicode_misc_VIRAMA;
+        if (syllable[i + 1] != Unicode_misc_NUKTA && syllable[i + 1] != Unicode_misc_VIRAMA)
+            response += Unicode_misc_VIRAMA;
     }
     response += syllable[length - 2];
 		
