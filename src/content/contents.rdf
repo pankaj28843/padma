@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: contents.rdf,v 1.1 2005/03/10 22:36:37 vnagarjuna Exp $-->
+<!--$Id: contents.rdf,v 1.2 2005/03/13 18:31:47 vnagarjuna Exp $-->
 
 <RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:chrome="http://www.mozilla.org/rdf/chrome#">
@@ -11,24 +11,37 @@
 
   <!-- package information -->
   <RDF:Description about="urn:mozilla:package:padma"
-        chrome:displayName="Padma 0.2.3"
+        chrome:displayName="Padma 0.2.4"
         chrome:author="Nagarjuna Venna"
         chrome:authorURL="http://geocities.com/vnagarjuna"
         chrome:name="padma"
-        chrome:description="Adds support to transform text written in RTS to Unicode Telugu through the browser context menu."
+        chrome:description="A Transformer for Telugu Text from RTS To Unicode"
         chrome:extension="true"
         chrome:localVersion="0.2.3"
-        />
+  />
 
   <!-- overlay information -->
   <RDF:Seq about="urn:mozilla:overlays">
     <!-- Firefox -->
     <RDF:li resource="chrome://browser/content/browser.xul"/>
+
+    <!-- Thunderbird / Mozilla Mail -->
+    <RDF:li resource="chrome://messenger/content/mailWindowOverlay.xul"/>
+    <RDF:li resource="chrome://messenger/content/messengercompose/messengercompose.xul"/>
   </RDF:Seq>
 
   <!-- Firefox -->
   <RDF:Seq about="chrome://browser/content/browser.xul">
     <RDF:li>chrome://padma/content/padma.xul</RDF:li>
+  </RDF:Seq>
+
+  <!-- Thunderbird / Mozilla Mail -->
+  <RDF:Seq about="chrome://messenger/content/mailWindowOverlay.xul">
+    <RDF:li>chrome://padma/content/padmaMailOverlay.xul</RDF:li>
+  </RDF:Seq>
+  <!-- Thunderbird composer window -->
+   <RDF:Seq about="chrome://messenger/content/messengercompose/messengercompose.xul">
+    <RDF:li>chrome://padma/content/padmaMailOverlay.xul</RDF:li>
   </RDF:Seq>
 
 </RDF:RDF>

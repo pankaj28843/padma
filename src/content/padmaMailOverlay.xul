@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: padma.xul,v 1.2 2005/03/13 18:31:47 vnagarjuna Exp $-->
+<!--$Id: padmaMailOverlay.xul,v 1.1 2005/03/13 18:31:47 vnagarjuna Exp $-->
 
 <!-- ***** BEGIN LICENSE BLOCK ***** 
  * Version: MPL 1.1/GPL 2.0/LGPL 2.1
@@ -34,16 +34,24 @@
  *
  * ***** END LICENSE BLOCK ***** -->
 
-<overlay id="padmaOverlay"
+<overlay id="padmaMailOverlay"
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
 <script src="padma.js"/>
 
-<popup id="contentAreaContextMenu">
-    <menuitem id="pamdaMenuItemEng" label="Transform RTS To Telugu (E)" accesskey="E" 
+<!-- TB Context Menu -->
+<popup id="messagePaneContext">
+    <menuitem id="pamdaMenuItemEng" label="Transform RTS To Telugu (E)" accesskey="E"
         oncommand="onTransform(0)" insertafter="context-searchselect"/>
-    <menuitem id="pamdaMenuItemTel" label="Transform RTS To Telugu (T)" accesskey="T" 
+    <menuitem id="pamdaMenuItemTel" label="Transform RTS To Telugu (T)" accesskey="T"
         oncommand="onTransform(1)" insertafter="context-searchselect"/>
 </popup>
+
+<popup id="msgComposeContext">
+    <menuitem id="pamdaMenuItemEng" label="Transform RTS To Telugu (E)" accesskey="E"
+        oncommand="onTransform(0)" insertafter="context-searchselect"/>
+    <menuitem id="pamdaMenuItemTel" label="Transform RTS To Telugu (T)" accesskey="T"
+        oncommand="onTransform(1)" insertafter="context-searchselect"/>
+  </popup>
 
 </overlay>
