@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--$Id: build.xml,v 1.1 2005/03/10 22:36:37 vnagarjuna Exp $-->
+
+<project name="padma" default="createxpi">
+
+  <target name="createjar">
+     <zip destfile="padma.jar" basedir="." includes="content/**"/>
+  </target>
+
+  <target name="createxpi" depends="createjar">
+    <zip destfile="padma.xpi">
+        <zipfileset dir="." includes="padma.jar" prefix="chrome"/>
+        <zipfileset dir="." includes="install.rdf"/>
+    </zip>
+  </target>
+
+</project>
