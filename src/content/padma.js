@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.2 2005/03/28 19:07:14 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.3 2005/04/18 19:19:55 vnagarjuna Exp $ -->
 
 /* ***** BEGIN LICENSE BLOCK ***** 
  * Version: MPL 1.1/GPL 2.0/LGPL 2.1
@@ -1072,7 +1072,7 @@ function onTransform(start)
     else {
         //Selection in a regular window
         var focusedWindow = document.commandDispatcher.focusedWindow;
-        var selection = focusedWindow.__proto__.getSelection.call(focusedWindow);
+        var selection = focusedWindow.getSelection();
         traverseDOM(selection);
         selection.collapseToEnd();
         return;
