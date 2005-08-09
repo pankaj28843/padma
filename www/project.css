@@ -1,1 +1,4 @@
 @import url("http://www.mozdev.org/project.css");
+<style type="text/css">
+  li.padma  {list-style-position: inside, list-style-image: none, list-style-type: circle }
+</style>
