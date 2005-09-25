@@ -1,4 +1,4 @@
-// $Id: Transformer.js,v 1.2 2005/09/25 14:52:28 vnagarjuna Exp $ -->
+// $Id: Transformer.js,v 1.3 2005/09/25 15:04:19 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -85,7 +85,7 @@ Transformer.initialize = function () {
         Transformer.dynFont_NameToIndex[Transformer.dynFont_Name[i].toUpperCase()] = i;
 
     //Display Names
-    for(var i = 0; i < Transformer.dynFont_Unknown; i++)
+    for(i = 0; i < Transformer.dynFont_Unknown; i++)
         Transformer.dynFont_DisplayName[i] = Transformer.dynFont_Class[i].displayName;
 
     //Language codes

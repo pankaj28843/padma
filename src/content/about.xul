@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: about.xul,v 1.2 2005/09/25 14:52:25 vnagarjuna Exp $-->
+<!--$Id: about.xul,v 1.3 2005/09/25 15:04:19 vnagarjuna Exp $-->
 
 <!--Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
 
@@ -57,7 +57,7 @@
     <hbox>
       <vbox>
       <description style="font-weight:bold;font-size:x-large;">
-        Padma v0.3.7
+        Padma v0.4.0
       </description>
       <separator class="thin"/>
 
