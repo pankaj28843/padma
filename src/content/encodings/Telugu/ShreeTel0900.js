@@ -1,4 +1,4 @@
-// $Id: ShreeTel0900.js,v 1.2 2005/09/25 14:52:27 vnagarjuna Exp $ -->
+// $Id: ShreeTel0900.js,v 1.3 2005/09/25 17:04:36 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -52,6 +52,8 @@ Shree_Tel_0900.handleTwoPartVowelSigns = function (sign1, sign2)
 {
     if (sign2 == Padma.vowelsn_E && sign1 == Padma.vowelsn_AILEN)
         return Padma.vowelsn_AI;
+    if (sign2 == Padma.vowelsn_E && sign1 == Padma.vowelsn_AA)
+        return Padma.vowelsn_OO;
     return sign1 + sign2;    
 }
 
