@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<!--$Id: about.xul,v 1.2 2005/09/25 14:52:25 vnagarjuna Exp $-->
+
+<!--Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
+
+<!-- ***** BEGIN LICENSE BLOCK ***** 
+ *  This file is part of Padma.
+ *
+ *  Padma is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+
+ *  Padma is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with Padma; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * ***** END LICENSE BLOCK ***** -->
+
+<!-- About Dialog -->
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<dialog id="padma_about_dialog"
+        title="About Padma"
+        orient="vertical"
+        buttons="accept"
+        width="500"
+        onload="sizeToContent();"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        xmlns:html="http://www.w3.org/1999/xhtml">
+
+  <script>
+    var thunderbird = navigator.userAgent.search(/Thunderbird/gi) != -1 ? true: false;
+    function openURL(url) {
+        if (!thunderbird) {
+            var topwin = window;
+            for(var opener = topwin.opener; opener != null; topwin = opener, opener = opener.opener)
+                ;
+            topwin.document.getElementById("content").addTab(url);
+        }
+        else {
+            var messenger = Components.classes["@mozilla.org/messenger;1"].createInstance();         
+            messenger = messenger.QueryInterface(Components.interfaces.nsIMessenger);
+            messenger.launchExternalURL(url);         
+        }
+    }
+  </script>
+
+  <groupbox align="center" flex="100">
+    <vbox>
+    <hbox>
+      <vbox>
+      <description style="font-weight:bold;font-size:x-large;">
+        Padma v0.3.7
+      </description>
+      <separator class="thin"/>
+
+      <description style="font-weight:large">
+        © 2005 Nagarjuna Venna
+      </description>
+      <separator class="thin"/>
+
+      <description class="url" style="font-weight:bold" onclick="openURL('http://padma.mozdev.org');">
+        http://padma.mozdev.org
+      </description>
+      <separator class="thin"/>
+      </vbox>
+
+      <spring flex="1"/>
+      <image src="chrome://padma/content/padmav.png" width="100" height="80"/>
+    </hbox>
+
+    <!-- Fine print, literally... :-)-->
+    <description style="font-size:x-small;">
+        Padma is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as 
+        published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+    </description>
+    <description style="font-size:x-small;">
+        Padma is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+    </description>
+    <description style="font-size:x-small;">
+        For a copy of the GNU General Public license, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  
+        02110-1301 USA or visit http://www.gnu.org.
+    </description>
+    <separator class="thin"/>
+
+  </vbox>
+  </groupbox>
+
+</dialog>

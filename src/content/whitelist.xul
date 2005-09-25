@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!--$Id: whitelist.xul,v 1.2 2005/09/25 14:52:25 vnagarjuna Exp $-->
+
+<!--Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
+
+<!-- ***** BEGIN LICENSE BLOCK ***** 
+ *  This file is part of Padma.
+ *
+ *  Padma is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+
+ *  Padma is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with Padma; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * ***** END LICENSE BLOCK ***** -->
+
+<!-- This is the dialog that is launched to select the websites to transform. -->
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<dialog id="padma_whitelist_dialog"
+        title="Transform List"
+        orient="vertical"
+        buttons="accept, cancel"
+        width="400"
+        onload="PadmaWhitelist.onLoad();sizeToContent();"
+        ondialogaccept="return PadmaWhitelist.onSave();"
+        persist="screenX screenY"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        xmlns:html="http://www.w3.org/1999/xhtml">
+
+  <script type="application/x-javascript" src="encodings/Common/Padma.js"/>
+  <script type="application/x-javascript" src="encodings/Common/Unicode.js"/>
+  <script type="application/x-javascript" src="encodings/Common/ISCII.js"/>
+  <script type="application/x-javascript" src="encodings/Common/ITRANS.js"/>
+
+  <script type="application/x-javascript" src="encodings/Telugu/RTS.js"/>
+  <script type="application/x-javascript" src="encodings/Telugu/Eenadu.js"/>
+  <script type="application/x-javascript" src="encodings/Telugu/ShreeTel0900.js"/>
+  <script type="application/x-javascript" src="encodings/Telugu/Hemalatha.js"/>
+  <script type="application/x-javascript" src="encodings/Telugu/ShreeTel0902.js"/>
+  <script type="application/x-javascript" src="encodings/Telugu/Tikkana.js"/>
+  <script type="application/x-javascript" src="encodings/Malayalam/Karthika.js"/>
+  <script type="application/x-javascript" src="encodings/Telugu/Vaartha.js"/>
+  <script type="application/x-javascript" src="encodings/Tamil/Vikatan.js"/>
+
+  <script type="application/x-javascript" src="transformers/Transformer.js"/>
+  <script type="application/x-javascript" src="whitelist.js"/>
+
+  <groupbox id="whitelist" flex="100">
+    <caption label="Whitelist" accesskey="w"/>
+
+    <description id="autoDescription" hidden="true">
+       You can specify a whitelist of websites that can be transformed automatically. Enter the name of a website and click Add to add it to the whitelist.
+    </description>
+    <description id="heurDescription" hidden="true">
+       Some websites require the application of heuristics for transformation. Enter the name of a website, select the font that it uses and click Add to add it to the whitelist.
+    </description>
+    <separator class="thin"/>
+
+    <hbox id="autoAddSite" hidden="true">
+      <textbox id="autoSiteTextbox" flex="1" oninput="PadmaWhitelist.onNewSiteInput();"/>
+      <button id="autoBtnAdd" label="Add" disabled="true" accesskey="a" oncommand="PadmaWhitelist.onAddSite();"/>
+    </hbox>
+    <vbox id="heurAddSite" hidden="true">
+      <hbox>
+        <textbox id="heurSiteTextbox" flex="1" oninput="PadmaWhitelist.onNewSiteInput();"/>
+        <!-- Menulist is populated dynamically. -->
+        <menulist id="heurFontList" disabled="true"/>
+      </hbox>
+      <hbox> 
+        <spacer flex="1"/>
+        <button id="heurBtnAdd" label="Add" disabled="true" accesskey="a" oncommand="PadmaWhitelist.onAddSite();"/>
+      </hbox>
+    </vbox>
+    <separator class="thin"/>
+
+    <listbox id="autoSitelist" seltype="single" style="height: 18em;" accesskey="l" hidden="true"
+             onkeypress="PadmaWhitelist.onKeyPress(event);"
+             onselect="PadmaWhitelist.onSelected();">
+      <listhead>
+        <listheader label="URI" onclick="PadmaWhitelist.onClick();"/>
+      </listhead>
+    </listbox>
+
+    <listbox id="heurSitelist" seltype="single" style="height: 18em;" accesskey="l" hidden="true"
+             onkeypress="PadmaWhitelist.onKeyPress(event);"
+             onselect="PadmaWhitelist.onSelected();">
+      <listhead>
+        <listheader label="URI"/>
+        <listheader label="Font"/>
+      </listhead>
+
+      <listcols>
+        <listcol flex="1"/>
+        <listcol flex="1"/>
+      </listcols>
+    </listbox>
+    <separator class="thin"/>
+
+    <hbox>
+      <button id="btnRemove" label="Remove Site" disabled="true" accesskey="r"
+              oncommand="PadmaWhitelist.onRemoveSite();"/>
+      <button id="btnRemoveAll" label="Remove All Sites" accesskey="s"
+              oncommand="PadmaWhitelist.onRemoveAll();"/>
+    </hbox>
+
+  </groupbox>
+
+</dialog>

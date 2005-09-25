@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: install.rdf,v 1.4 2005/04/18 19:19:54 vnagarjuna Exp $-->
+<!--$Id: install.rdf,v 1.5 2005/09/25 14:52:25 vnagarjuna Exp $-->
 
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:em="http://www.mozilla.org/2004/em-rdf#">
@@ -9,9 +9,14 @@
     <!-- Front End MetaData -->
     <em:name>Padma</em:name>
     <em:id>{3e450467-892a-45b8-9ed8-90e8d3bf2ad7}</em:id>
-    <em:version>0.2.6</em:version>
-    <em:description>A Transformer for Telugu Text from RTS To Unicode</em:description>
+    <em:version>0.3.7</em:version>
+    <em:description>A Telugu Text Transformer</em:description>
     <em:creator>Nagarjuna Venna</em:creator>
+    <em:homepageURL>http://padma.mozdev.org</em:homepageURL>
+    <em:optionsURL>chrome://padma/content/prefs.xul</em:optionsURL>
+    <em:aboutURL>chrome://padma/content/about.xul</em:aboutURL>
+    <em:iconURL>chrome://padma/content/padmav.png</em:iconURL>
+    <em.type>2</em.type>
 
     <!-- Target Application this extension can install into, 
         with minimum and maximum supported versions. --> 
@@ -30,6 +35,15 @@
         <em:id>{3550f703-e582-4d05-9a08-453d09bdfdc6}</em:id>
         <em:minVersion>0.7</em:minVersion>
         <em:maxVersion>1.0</em:maxVersion>
+     </Description>
+    </em:targetApplication>
+
+    <!-- Netscape -->
+    <em:targetApplication>
+     <Description>
+        <em:id>{3db10fab-e461-4c80-8b97-957ad5f8ea47}</em:id>
+        <em:minVersion>8.0</em:minVersion>
+        <em:maxVersion>8.0.2</em:maxVersion>
      </Description>
     </em:targetApplication>
 

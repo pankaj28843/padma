@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!--$Id: prefs.xul,v 1.2 2005/09/25 14:52:25 vnagarjuna Exp $-->
+
+<!--Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
+
+<!-- ***** BEGIN LICENSE BLOCK ***** 
+ *  This file is part of Padma.
+ *
+ *  Padma is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+
+ *  Padma is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with Padma; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * ***** END LICENSE BLOCK ***** -->
+
+<!-- This is the preferences/options dialog that is used by Mozilla Firefox. -->
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<dialog id="padma_settings_dialog"
+        title="Padma"
+        orient="vertical"
+        buttons="accept, cancel, extra1, extra2"
+        buttonlabelextra1="Apply"
+        buttonlabelextra2="About"
+        buttonaccesskeyextra1="A"
+        buttonaccesskeyextra2="b"
+        ondialogextra1="PadmaSettings.onSave();"
+        ondialogextra2="PadmaSettings.onAbout();"
+        onload="PadmaSettings.onLoad();sizeToContent();"
+        ondialogaccept="return PadmaSettings.onSave();"
+        persist="screenX screenY width height"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        xmlns:html="http://www.w3.org/1999/xhtml">
+
+  <script type="application/x-javascript" src="prefs.js"/>
+
+  <groupbox id="general">
+    <caption label="General Settings" accesskey="G"/>
+    <grid flex="1">
+      <columns>
+        <column flex="1"/>
+        <column/>
+      </columns>
+
+      <rows>
+        <row>
+          <checkbox id="enableAutoTransform" label="Enable Auto Transform" checked="true" command="cmd_PadmaCheckBox" accesskey="e"/>
+          <button id="updateAutoTransformList" label="Update" accesskey="u" oncommand="PadmaSettings.updateAutoTransformList();"/>
+        </row>
+        <row>
+          <checkbox id="enableHeuristics" label="Enable Heuristics based Transform" checked="false" command="cmd_PadmaCheckBox" accesskey="h"/>
+          <button id="updateHeuristicsList" label="Update" accesskey="p" oncommand="PadmaSettings.updateHeuristicTransformList();"/>
+        </row>
+        <row>
+          <checkbox id="fixCharEncoding" label="Fix Character Encoding" checked="true" accesskey="f"/>
+        </row>
+      </rows>
+    </grid>
+  </groupbox>
+  <separator class="thin"/>
+
+  <groupbox orient="Vertical">
+    <caption label="RTS Output Settings" accesskey="R"/>
+    <hbox>
+      <vbox>  
+        <description><html:b>Writing Style</html:b></description>
+    
+        <radiogroup id="RTSWritingStyle" flex="1">
+            <radio id="kanneganti" label="Kanneganti" selected="true" accesskey="k"/>
+            <radio id="pillalamarri" label="Pillalamarri" accesskey="p"/>
+            <radio id="paalana" label="Paalana" accesskey="l"/>
+        </radiogroup>
+      </vbox>
+      <spacer flex="1"/>
+      <vbox>  
+        <description><html:b>Sunnaa Style</html:b></description>
+    
+        <radiogroup id="RTSSunnaStyle" flex="1">
+            <radio id="raMgavallika" label="raMgavallika" selected="true" accesskey="m"/>
+            <radio id="classic" label="Classic" accesskey="c"/>
+        </radiogroup>
+      </vbox>
+    </hbox>
+  </groupbox>
+
+  <command id="cmd_PadmaCheckBox" oncommand="PadmaSettings.onCheckBoxUpdate();"/>
+
+</dialog>
