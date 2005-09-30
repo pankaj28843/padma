@@ -1,4 +1,4 @@
-// $Id: Hemalatha.js,v 1.2 2005/09/25 14:52:27 vnagarjuna Exp $ -->
+// $Id: Hemalatha.js,v 1.3 2005/09/30 14:32:31 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -221,6 +221,7 @@ Hemalatha.combo_CHI      = "\u00C0\u00B3";
 Hemalatha.combo_CHII     = "\u00C0\u00B3\u0064";
 Hemalatha.combo_JI       = "\u00D1";
 Hemalatha.combo_JII      = "\u00D2";
+Hemalatha.combo_JHAA     = "\u004C\u0052\u0026\u0057";
 
 Hemalatha.combo_TI       = "\u00BC";
 Hemalatha.combo_TII      = "\u00BC\u0064";
@@ -512,6 +513,7 @@ Hemalatha.toPadma[Hemalatha.combo_CHI]     = Padma.consnt_CHA + Padma.vowelsn_I;
 Hemalatha.toPadma[Hemalatha.combo_CHII]    = Padma.consnt_CHA + Padma.vowelsn_II;
 Hemalatha.toPadma[Hemalatha.combo_JI]      = Padma.consnt_JA + Padma.vowelsn_I;
 Hemalatha.toPadma[Hemalatha.combo_JII]     = Padma.consnt_JA + Padma.vowelsn_II;
+Hemalatha.toPadma[Hemalatha.combo_JHAA]    = Padma.consnt_JHA + Padma.vowelsn_AA;
 
 Hemalatha.toPadma[Hemalatha.combo_TI]      = Padma.consnt_TA + Padma.vowelsn_I;
 Hemalatha.toPadma[Hemalatha.combo_TII]     = Padma.consnt_TA + Padma.vowelsn_II;

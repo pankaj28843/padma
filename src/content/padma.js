@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.4 2005/09/25 14:52:25 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.5 2005/09/30 14:32:30 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -84,6 +84,14 @@ var Padma_Browser_Transformer = {
         return new RegExp(list.replace(/www\./gi, '').replace(/,/gi, '|').replace(/\./gi, "\\."));
     },
 
+    //text-align:justify does not work for Unicode, set it to left if the alignmet is not supported
+    unModifiableTextAligns: { left: true, right: true, center: true, start: true },
+
+    setNodeTextAlign: function (node, align) {
+        if (this.unModifiableTextAligns[align] != true)
+            node.style.textAlign = "left";
+    },
+
     //Auto Transform
     attrNodeVisited: "padma_was_here",
 
@@ -107,7 +115,7 @@ var Padma_Browser_Transformer = {
     },
 
     //No heuristics - auto transform all text nodes that are children of this font node
-    processFontNode: function(node, font) {
+    processFontNode: function(page, node, font, align) {
         node.setAttribute(this.attrNodeVisited, "1");
         for(var j = 0; j < node.childNodes.length; ++j) {
             var child = node.childNodes.item(j);
@@ -116,10 +124,11 @@ var Padma_Browser_Transformer = {
                     continue;
                 this.transformer.setDynamicFontByName(font);
                 child.replaceData(0, child.length, this.transformer.convert(child.nodeValue));
+                this.setNodeTextAlign(node, align);
             }
             //Ignore comment nodes
             else if (child.nodeType != 8 && child.getAttribute(this.attrNodeVisited) != "1")
-                this.processFontNode(child, font);
+                this.processFontNode(page, child, font, page.defaultView.getComputedStyle(child, null).getPropertyValue("text-align"));
         }
     },
 
@@ -135,7 +144,10 @@ var Padma_Browser_Transformer = {
                 var font = style.getPropertyValue("font-family");
                 if (this.transformer.setDynamicFontByName(font) == true || 
                     (font == "serif" && this.transformer.setDynamicFontByName(newfont) == true))
+                {
                     node.replaceData(0, node.length, this.transformer.convert(node.nodeValue));
+                    this.setNodeTextAlign(parent, style.getPropertyValue("text-align"));
+                }
             }
         }
         //Ignore comment nodes
@@ -201,14 +213,14 @@ var Padma_Browser_Transformer = {
             var style = page.defaultView.getComputedStyle(elems[i], null);
             var font = style.getPropertyValue("font-family");
             if (this.transformer.setDynamicFontByName(font) == true)
-                this.processFontNode(elems[i], font);
+                this.processFontNode(page, elems[i], font, style.getPropertyValue("text-align"));
         }
         elems = page.getElementsByTagName("SPAN");
         for(i = 0; i < elems.length; ++i) {
             style = page.defaultView.getComputedStyle(elems[i], null);
             font = style.getPropertyValue("font-family");
             if (this.transformer.setDynamicFontByName(font) == true)
-                this.processFontNode(elems[i], font);
+                this.processFontNode(page, elems[i], font, style.getPropertyValue("text-align"));
         }
     },
 
@@ -243,15 +255,13 @@ var Padma_Browser_Transformer = {
             //Check computed style for parent node
             var style = document.defaultView.getComputedStyle(parent, null);
             var font = style.getPropertyValue("font-family");
-            if (this.transformer.setDynamicFontByName(font) == true) {
+            if (this.transformer.setDynamicFontByName(font) == true || 
+                (font == "serif" && dynFont != null && this.transformer.setDynamicFontByName(dynFont) == true))
+            {
                 if (this.outputMethod == Transformer.method_RTS)
                     this.setNodeFontFamily(parent);
-                return true;
-            }
-
-            if (font == "serif" && dynFont != null && this.transformer.setDynamicFontByName(dynFont) == true) {
-                if (this.outputMethod == Transformer.method_RTS)
-                    this.setNodeFontFamily(parent);
+                if (this.outputMethod == Transformer.method_Unicode)
+                    this.setNodeTextAlign(parent, style.getPropertyValue("text-align"));
                 return true;
             }
         }

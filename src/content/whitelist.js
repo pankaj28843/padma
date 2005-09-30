@@ -1,4 +1,4 @@
-// $Id: whitelist.js,v 1.2 2005/09/25 14:52:25 vnagarjuna Exp $ -->
+// $Id: whitelist.js,v 1.3 2005/09/30 14:32:30 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -79,7 +79,7 @@ var PadmaWhitelist = {
         }
         else this.removeAllButton.disabled = true;
 
-        window.title = this.params.title;
+        document.title = this.params.title;
     },
 
     onSave: function() {
