@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.5 2005/09/30 14:32:30 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.6 2005/10/03 18:16:31 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -114,13 +114,18 @@ var Padma_Browser_Transformer = {
         Padma_Browser_Transformer.onPageLoad(evt);
     },
 
-    //No heuristics - auto transform all text nodes that are children of this font node
-    processFontNode: function(page, node, font, align) {
+    //No heuristics - auto transform all text nodes that are children of this node
+    transformNode: function(page, node) {
+        var style = page.defaultView.getComputedStyle(node, null);
+        var font = style.getPropertyValue("font-family");
+        var align = style.getPropertyValue("text-align");
+        var font_is_valid = this.transformer.setDynamicFontByName(font);  //can transform?
+
         node.setAttribute(this.attrNodeVisited, "1");
         for(var j = 0; j < node.childNodes.length; ++j) {
             var child = node.childNodes.item(j);
             if(child.nodeType == 3) {
-                if (this.is_all_ws(child.nodeValue))
+                if (!font_is_valid || this.is_all_ws(child.nodeValue))
                     continue;
                 this.transformer.setDynamicFontByName(font);
                 child.replaceData(0, child.length, this.transformer.convert(child.nodeValue));
@@ -128,7 +133,7 @@ var Padma_Browser_Transformer = {
             }
             //Ignore comment nodes
             else if (child.nodeType != 8 && child.getAttribute(this.attrNodeVisited) != "1")
-                this.processFontNode(page, child, font, page.defaultView.getComputedStyle(child, null).getPropertyValue("text-align"));
+                this.transformNode(page, child);
         }
     },
 
@@ -210,17 +215,13 @@ var Padma_Browser_Transformer = {
         for(i = 0; i < elems.length; ++i) {
             if (elems[i].getAttribute(this.attrNodeVisited) == "1")
                 continue;
-            var style = page.defaultView.getComputedStyle(elems[i], null);
-            var font = style.getPropertyValue("font-family");
-            if (this.transformer.setDynamicFontByName(font) == true)
-                this.processFontNode(page, elems[i], font, style.getPropertyValue("text-align"));
+            this.transformNode(page, elems[i]);
         }
         elems = page.getElementsByTagName("SPAN");
         for(i = 0; i < elems.length; ++i) {
-            style = page.defaultView.getComputedStyle(elems[i], null);
-            font = style.getPropertyValue("font-family");
-            if (this.transformer.setDynamicFontByName(font) == true)
-                this.processFontNode(page, elems[i], font, style.getPropertyValue("text-align"));
+            if (elems[i].getAttribute(this.attrNodeVisited) == "1")
+                continue;
+            this.transformNode(page, elems[i]);
         }
     },
 

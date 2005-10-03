@@ -1,4 +1,4 @@
-// $Id: Kairali.js,v 1.1 2005/09/30 14:32:30 vnagarjuna Exp $ -->
+// $Id: Kairali.js,v 1.2 2005/10/03 18:16:31 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -425,7 +425,7 @@ Kairali.overloadList[Kairali.vowel_I]        = true;
 Kairali.overloadList[Kairali.vowel_U]        = true;
 Kairali.overloadList[Kairali.vowel_R]        = true;
 Kairali.overloadList[Kairali.vowel_O]        = true;
+Kairali.overloadList[Kairali.consnt_LA]      = true;
 Kairali.overloadList[Kairali.chillu_IN]      = true;
 Kairali.overloadList[Kairali.vowelsn_R]      = true;
 Kairali.overloadList[Kairali.vowelsn_E]      = true;
-Kairali.overloadList["\u00F2"]               = true;

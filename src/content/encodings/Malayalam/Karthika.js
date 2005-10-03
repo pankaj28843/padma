@@ -1,4 +1,4 @@
-// $Id: Karthika.js,v 1.3 2005/09/30 14:32:30 vnagarjuna Exp $ -->
+// $Id: Karthika.js,v 1.4 2005/10/03 18:16:32 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -197,7 +197,8 @@ Karthika.conj_ND        = "\u00B5";
 Karthika.conj_NDH       = "\u00D4";
 Karthika.conj_N_N       = "\u00B6";
 Karthika.conj_NM        = "\u00B7";
-Karthika.conj_NRR       = "\u00E2"; 
+Karthika.conj_NRR_1     = "\u00E2"; 
+Karthika.conj_NRR_2     = "\u00B3\u0064"; 
 Karthika.conj_NAU       = "\u00EE"; //npollu for me, nau for paul
 
 Karthika.conj_PP        = "\u00B8";
@@ -411,7 +412,8 @@ Karthika.toPadma[Karthika.conj_ND]   = Padma.consnt_NA +  Padma.vattu_DA;
 Karthika.toPadma[Karthika.conj_NDH]  = Padma.consnt_NA +  Padma.vattu_DHA;
 Karthika.toPadma[Karthika.conj_N_N]  = Padma.consnt_NA +  Padma.vattu_NA;
 Karthika.toPadma[Karthika.conj_NM]   = Padma.consnt_NA +  Padma.vattu_MA;
-Karthika.toPadma[Karthika.conj_NRR]  = Padma.consnt_NA +  Padma.vattu_RRA;
+Karthika.toPadma[Karthika.conj_NRR_1]  = Padma.consnt_NA +  Padma.vattu_RRA;
+Karthika.toPadma[Karthika.conj_NRR_2]  = Padma.consnt_NA +  Padma.vattu_RRA;
 Karthika.toPadma[Karthika.conj_NAU]  = Padma.consnt_NA +  Padma.chandrakkala;
 
 Karthika.toPadma[Karthika.conj_PP]  = Padma.consnt_PA +  Padma.vattu_PA;
@@ -478,4 +480,5 @@ Karthika.overloadList[Karthika.vowel_R]        = true;
 Karthika.overloadList[Karthika.vowel_O]        = true;
 Karthika.overloadList[Karthika.vowelsn_R]      = true;
 Karthika.overloadList[Karthika.vowelsn_E]      = true;
+Karthika.overloadList[Karthika.chillu_IN]      = true;
 Karthika.overloadList[Karthika.extra_QTSINGLE] = true;

@@ -1,4 +1,4 @@
-// $Id: Revathi.js,v 1.1 2005/09/30 14:32:30 vnagarjuna Exp $ -->
+// $Id: Revathi.js,v 1.2 2005/10/03 18:16:32 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -462,4 +462,5 @@ Revathi.overloadList[Revathi.vowel_R]        = true;
 Revathi.overloadList[Revathi.vowel_O]        = true;
 Revathi.overloadList[Revathi.vowelsn_R]      = true;
 Revathi.overloadList[Revathi.vowelsn_E]      = true;
+Revathi.overloadList[Revathi.chillu_IN]      = true;
 Revathi.overloadList[Revathi.extra_QTSINGLE] = true;

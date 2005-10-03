@@ -1,4 +1,4 @@
-// $Id: Manorama.js,v 1.1 2005/09/30 14:32:30 vnagarjuna Exp $ -->
+// $Id: Manorama.js,v 1.2 2005/10/03 18:16:32 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -209,7 +209,7 @@ Manorama.conj_NTH       = "\u0073";
 Manorama.conj_ND        = "\u0077";
 Manorama.conj_NDH       = "\u0074";
 Manorama.conj_N_N       = "\u004B";
-Manorama.conj_NM        = "\u0071";
+Manorama.conj_NM        = "\u007A";
 Manorama.conj_NRR       = "\u0061"; 
 Manorama.conj_NAU       = "\u0065"; //npollu for me, nau for paul
 
