@@ -1,4 +1,4 @@
-// $Id: Transformer.js,v 1.4 2005/09/30 14:32:31 vnagarjuna Exp $ -->
+// $Id: Transformer.js,v 1.5 2005/10/06 16:31:00 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -205,11 +205,14 @@ Transformer.prototype.setDynamicFontByIndex = function (index)
     return true;
 }
 
-//Currently supported only for ISCII->Unicode transform
+//Currently supported only for ISCII->Unicode & ITRANS->Unicode transform
 Transformer.prototype.setOutputLanguage = function (langCode)
 {
-    if (langCode >= Padma.max_LANGS || this.output != Transformer.method_Unicode || this.input != Transformer.method_ISCII)
+    if (langCode >= Padma.max_LANGS || this.output != Transformer.method_Unicode || 
+        (this.input != Transformer.method_ISCII && this.input != Transformer.method_ITRANS))
+    {
         return false;
+    }
     this.outputWriter.setLanguage(langCode);
     return true;
 }
