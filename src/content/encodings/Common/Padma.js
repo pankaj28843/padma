@@ -1,4 +1,4 @@
-// $Id: Padma.js,v 1.4 2005/10/06 21:37:48 vnagarjuna Exp $ -->
+// $Id: Padma.js,v 1.5 2005/10/06 22:12:16 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -241,7 +241,7 @@ Padma.vattu_SSA   = "\uECDD";
 Padma.vattu_SA    = "\uECDE";
 Padma.vattu_HA    = "\uECDF";
 Padma.vattu_KSH   = "\uECE0";
-Padma.vattu_GNA   = "\uECE1";
+Padma.vattu_GN    = "\uECE1";
 Padma.vattu_TCH   = "\uECE2";
 Padma.vattu_TJ    = "\uECE3";
 

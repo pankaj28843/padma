@@ -1,4 +1,4 @@
-// $Id: ISCII.js,v 1.3 2005/10/06 16:26:32 vnagarjuna Exp $ -->
+// $Id: ISCII.js,v 1.4 2005/10/06 22:12:16 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -125,7 +125,7 @@ ISCII.vowelsn_AYE = "\u00E3";
 ISCII.vowelsn_O   = "\u00E4";
 ISCII.vowelsn_OO  = "\u00E5";
 ISCII.vowelsn_AU  = "\u00E6";
-ISCII.vowelsn_AYE = "\u00E7";
+ISCII.vowelsn_AWE = "\u00E7";
 
 //Miscellaneous Signs
 ISCII.misc_DANDA    = "\u00EA";
