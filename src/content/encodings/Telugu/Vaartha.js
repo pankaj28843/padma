@@ -1,4 +1,4 @@
-// $Id: Vaartha.js,v 1.2 2005/09/25 14:52:27 vnagarjuna Exp $ -->
+// $Id: Vaartha.js,v 1.3 2005/10/06 16:28:47 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -75,7 +75,7 @@ Vaartha.preprocessMessage = function (input)
 //0xB5, 0xB9, 0xBC-0XBE, 0xD0, 0xD7, 0xDD, 0xDE, 0xF0, 0xFD, 0xFE
 
 //Specials
-Vaartha.visarga        = "\u0038";  //Y
+Vaartha.visarga        = "\u0038";
 Vaartha.virama_1       = "\u0032";
 Vaartha.virama_2       = "\u0052";
 Vaartha.virama_3       = "\u0060";
@@ -83,99 +83,99 @@ Vaartha.virama_4       = "\u00F7";
 Vaartha.anusvara       = "\u00A7";
 
 //Vowels
-Vaartha.vowel_A        = "\u0036";  //Y
-Vaartha.vowel_AA       = "\u00BB";  //Y
-Vaartha.vowel_I        = "\u201A";  //Y
-Vaartha.vowel_II       = "\u0192";  //Y
-Vaartha.vowel_U        = "\u201E";  //Y
-Vaartha.vowel_UU       = "\u2026";  //Y
-Vaartha.vowel_R        = "\u2020";  //Y
-Vaartha.vowel_E        = "\u2021";  //Y
-Vaartha.vowel_EE       = "\u02C6";  //Y
-Vaartha.vowel_AI       = "\u0022";  //Y
-Vaartha.vowel_O        = "\u0027";  //Y
-Vaartha.vowel_OO       = "\u2039";  //Y
-Vaartha.vowel_AU       = "\u0152";  //Y
+Vaartha.vowel_A        = "\u0036";
+Vaartha.vowel_AA       = "\u00BB";
+Vaartha.vowel_I        = "\u201A";
+Vaartha.vowel_II       = "\u0192";
+Vaartha.vowel_U        = "\u201E";
+Vaartha.vowel_UU       = "\u2026";
+Vaartha.vowel_R        = "\u2020";
+Vaartha.vowel_E        = "\u2021";
+Vaartha.vowel_EE       = "\u02C6";
+Vaartha.vowel_AI       = "\u0022";
+Vaartha.vowel_O        = "\u0027";
+Vaartha.vowel_OO       = "\u2039";
+Vaartha.vowel_AU       = "\u0152";
 
 //Consonants
-Vaartha.consnt_KA      = "\u00B6";  //Y
-Vaartha.consnt_KHA     = "\u0178";  //Y
-Vaartha.consnt_GA      = "\u00B8";  //Y
-Vaartha.consnt_GHA     = "\u00A1\u006C\u00C5";  //Y
-Vaartha.consnt_NGA     = "\u201C";  //Y
+Vaartha.consnt_KA      = "\u00B6";
+Vaartha.consnt_KHA     = "\u0178";
+Vaartha.consnt_GA      = "\u00B8";
+Vaartha.consnt_GHA     = "\u00A1\u006C\u00C5";
+Vaartha.consnt_NGA     = "\u201C";
 
-Vaartha.consnt_CA      = "\u00FA";  //Y
+Vaartha.consnt_CA      = "\u00FA";
 Vaartha.consnt_CHA     = "\u00FA\u006C";
-Vaartha.consnt_JA      = "\u005E";  //Y
+Vaartha.consnt_JA      = "\u005E";
 //Vaartha.consnt_JHA     = "\u2014";
-Vaartha.consnt_NYA     = "\u00F9";  //Y
+Vaartha.consnt_NYA     = "\u00F9";
 
-Vaartha.consnt_TTA     = "\u0064";  //Y
+Vaartha.consnt_TTA     = "\u0064";
 Vaartha.consnt_TTHA    = "\u00A7\u0073";
-Vaartha.consnt_DDA     = "\u201D";  //Y
+Vaartha.consnt_DDA     = "\u201D";
 Vaartha.consnt_DDHA    = "\u201D\u006C";
-Vaartha.consnt_NNA     = "\u203A";  //Y
+Vaartha.consnt_NNA     = "\u203A";
 
-Vaartha.consnt_TA      = "\u0153";  //Y
+Vaartha.consnt_TA      = "\u0153";
 Vaartha.consnt_THA     = "\u0034\u00BA";
-Vaartha.consnt_DA      = "\u0034";  //Y
-Vaartha.consnt_DHA_1   = "\u0034\u006C";  //Y
-Vaartha.consnt_DHA_2   = "\u0034\u00BA";  //Y
-Vaartha.consnt_NA      = "\u005B";  //Y ?
+Vaartha.consnt_DA      = "\u0034";
+Vaartha.consnt_DHA_1   = "\u0034\u006C";
+Vaartha.consnt_DHA_2   = "\u0034\u00BA";
+Vaartha.consnt_NA      = "\u005B";
 
-Vaartha.consnt_PA_1    = "\u00A1";  //Y
-Vaartha.consnt_PA_2    = "\u00B1";  //Y
-Vaartha.consnt_PHA_1   = "\u00A1\u006C"; //Y
+Vaartha.consnt_PA_1    = "\u00A1";
+Vaartha.consnt_PA_2    = "\u00B1";
+Vaartha.consnt_PHA_1   = "\u00A1\u006C";
 Vaartha.consnt_PHA_2   = "\u00B1\u006C";
-Vaartha.consnt_BA      = "\u00A3";  //Y
+Vaartha.consnt_BA      = "\u00A3";
 Vaartha.consnt_BHA     = "\u00A3\u006C";
-Vaartha.consnt_MA      = "\u00A5\u00C5";  //Y
+Vaartha.consnt_MA      = "\u00A5\u00C5";
 
-Vaartha.consnt_YA      = "\u0031\u00C5";  //Y
-Vaartha.consnt_RA      = "\u00A7\u0075";  //Y
-Vaartha.consnt_LA      = "\u0051";  //Y
-Vaartha.consnt_VA      = "\u00A5";  //Y
-Vaartha.consnt_SHA     = "\u00AA";  //Y
-Vaartha.consnt_SSA_1   = "\u00AB";  //Y
-Vaartha.consnt_SSA_2   = "\u00B4";  //Y
-Vaartha.consnt_SA_1    = "\u0033";  //Y
-Vaartha.consnt_SA_2    = "\u00AC";  //Y
-Vaartha.consnt_HA      = "\u0061";  //Y
-Vaartha.consnt_LLA     = "\u00AE";  //Y
-Vaartha.consnt_RRA     = "\u00B0";  //Y
+Vaartha.consnt_YA      = "\u0031\u00C5";
+Vaartha.consnt_RA      = "\u00A7\u0075";
+Vaartha.consnt_LA      = "\u0051";
+Vaartha.consnt_VA      = "\u00A5";
+Vaartha.consnt_SHA     = "\u00AA";
+Vaartha.consnt_SSA_1   = "\u00AB";
+Vaartha.consnt_SSA_2   = "\u00B4";
+Vaartha.consnt_SA_1    = "\u0033";
+Vaartha.consnt_SA_2    = "\u00AC";
+Vaartha.consnt_HA      = "\u0061";
+Vaartha.consnt_LLA     = "\u00AE";
+Vaartha.consnt_RRA     = "\u00B0";
 
 //Gunintamulu
-Vaartha.vowelsn_AA_1   = "\u0053";  //Y
-Vaartha.vowelsn_AA_2   = "\u0056";  //Y
-Vaartha.vowelsn_AA_3   = "\u00C2";  //Y
-Vaartha.vowelsn_I_1    = "\u0057";  //Y
-Vaartha.vowelsn_I_2    = "\u0065";  //Y
-Vaartha.vowelsn_I_3    = "\u00C3";  //Y
-Vaartha.vowelsn_II_1   = "\u0058";  //Y
+Vaartha.vowelsn_AA_1   = "\u0053";
+Vaartha.vowelsn_AA_2   = "\u0056";
+Vaartha.vowelsn_AA_3   = "\u00C2";
+Vaartha.vowelsn_I_1    = "\u0057";
+Vaartha.vowelsn_I_2    = "\u0065";
+Vaartha.vowelsn_I_3    = "\u00C3";
+Vaartha.vowelsn_II_1   = "\u0058";
 Vaartha.vowelsn_II_2   = "\u0066";
-Vaartha.vowelsn_II_3   = "\u00C4";  //Y
-Vaartha.vowelsn_U_1    = "\u0037";  //Y
-Vaartha.vowelsn_U_2    = "\u00C5";  //Y
-Vaartha.vowelsn_U_3    = "\u0076";  //Y
-Vaartha.vowelsn_U_4    = "\u00F4";  //Y
-Vaartha.vowelsn_UU_1   = "\u0077";  //Y
-Vaartha.vowelsn_UU_2   = "\u00C6";  //Y
-Vaartha.vowelsn_UU_3   = "\u00CB";  //Y
-Vaartha.vowelsn_UU_4   = "\u00F5";  //Y
-Vaartha.vowelsn_R      = "\u00C7";  //Y
-Vaartha.vowelsn_RR     = "\u00C8";  //Y
-Vaartha.vowelsn_E_1    = "\u0059";  //Y
-Vaartha.vowelsn_E_2    = "\u0067";  //Y
-Vaartha.vowelsn_E_3    = "\u0078";  //Y
-Vaartha.vowelsn_E_4    = "\u00C9";  //Y
-Vaartha.vowelsn_EE_1   = "\u005A";  //Y
-Vaartha.vowelsn_EE_2   = "\u0068";  //Y
-Vaartha.vowelsn_EE_3   = "\u0079";  //Y
-Vaartha.vowelsn_EE_4   = "\u00CA";  //Y
+Vaartha.vowelsn_II_3   = "\u00C4";
+Vaartha.vowelsn_U_1    = "\u0037";
+Vaartha.vowelsn_U_2    = "\u00C5";
+Vaartha.vowelsn_U_3    = "\u0076";
+Vaartha.vowelsn_U_4    = "\u00F4";
+Vaartha.vowelsn_UU_1   = "\u0077";
+Vaartha.vowelsn_UU_2   = "\u00C6";
+Vaartha.vowelsn_UU_3   = "\u00CB";
+Vaartha.vowelsn_UU_4   = "\u00F5";
+Vaartha.vowelsn_R      = "\u00C7";
+Vaartha.vowelsn_RR     = "\u00C8";
+Vaartha.vowelsn_E_1    = "\u0059";
+Vaartha.vowelsn_E_2    = "\u0067";
+Vaartha.vowelsn_E_3    = "\u0078";
+Vaartha.vowelsn_E_4    = "\u00C9";
+Vaartha.vowelsn_EE_1   = "\u005A";
+Vaartha.vowelsn_EE_2   = "\u0068";
+Vaartha.vowelsn_EE_3   = "\u0079";
+Vaartha.vowelsn_EE_4   = "\u00CA";
 Vaartha.vowelsn_O_1    = "\u0054";
-Vaartha.vowelsn_O_2    = "\u00CC";  //Y
-Vaartha.vowelsn_OO_1   = "\u0055";  //Y
-Vaartha.vowelsn_OO_2   = "\u00CD";  //Y
+Vaartha.vowelsn_O_2    = "\u00CC";
+Vaartha.vowelsn_OO_1   = "\u0055";
+Vaartha.vowelsn_OO_2   = "\u00CD";
 Vaartha.vowelsn_AU_1   = "\u0063";
 Vaartha.vowelsn_AU_2   = "\u0074";
 Vaartha.vowelsn_AU_3   = "\u00CE";
@@ -183,41 +183,42 @@ Vaartha.vowelsn_AILEN_1 = "\u0069";
 Vaartha.vowelsn_AILEN_2 = "\u0072";
 
 //Special Combinations
-Vaartha.combo_KHI      = "\u0023";  //Y
-Vaartha.combo_KHII     = "\u0042";  //Y
-Vaartha.combo_GI       = "\u00FF";  //Y
-Vaartha.combo_GII      = "\u0035";  //Y
+Vaartha.combo_KHI      = "\u0023";
+Vaartha.combo_KHII     = "\u0042";
+Vaartha.combo_GI       = "\u00FF";
+Vaartha.combo_GII      = "\u0035";
 Vaartha.combo_GHAA     = "\u00A1\u006C\u00C6";
 Vaartha.combo_GHI      = "\u00A1\u006C\u0057\u00C5";
 Vaartha.combo_GHU      = "\u00A1\u006C\u004D";
 
-Vaartha.combo_CI       = "\u0024";  //Y
-Vaartha.combo_CII      = "\u0043";  //Y
+Vaartha.combo_CI       = "\u0024";
+Vaartha.combo_CII      = "\u0043";
 Vaartha.combo_CHI      = "\u0024\u006C";
 Vaartha.combo_CHII     = "\u0043\u006C";
-Vaartha.combo_JI       = "\u0025";  //Y
-Vaartha.combo_JII      = "\u0044";  //Y
-Vaartha.combo_JU       = "\u004F";  //Y
-Vaartha.combo_JUU      = "\u0050";  //Y
+Vaartha.combo_JI       = "\u0025";
+Vaartha.combo_JII      = "\u0044";
+Vaartha.combo_JU       = "\u004F";
+Vaartha.combo_JUU      = "\u0050";
 
 Vaartha.combo_TTHI     = "\u0062\u0073";
 
-Vaartha.combo_TI       = "\u0026";  //Y
-Vaartha.combo_TII      = "\u0045";  //Y
-Vaartha.combo_DI       = "\u2122";  //Y
-Vaartha.combo_DII      = "\u0030";  //Y
-Vaartha.combo_DHI      = "\u2122\u006C"; //Y
+Vaartha.combo_TI       = "\u0026";
+Vaartha.combo_TII      = "\u0045";
+Vaartha.combo_DI       = "\u2122";
+Vaartha.combo_DII      = "\u0030";
+Vaartha.combo_DHI_1    = "\u2122\u006C";
+Vaartha.combo_DHI_2    = "\u2122\u00BA";
 Vaartha.combo_DHII_1   = "\u0030\u006C";
 Vaartha.combo_DHII_2   = "\u0030\u00BA";
-Vaartha.combo_NI       = "\u006D";  //Y
-Vaartha.combo_NII      = "\u0046";  //Y
+Vaartha.combo_NI       = "\u006D";
+Vaartha.combo_NII      = "\u0046";
 
 Vaartha.combo_PHE      = "\u00A1\u0059\u006C";
 Vaartha.combo_PHEE     = "\u00A1\u005A\u006C";
-Vaartha.combo_BI       = "\u002A";  //Y
-Vaartha.combo_BII      = "\u0047";  //Y
-Vaartha.combo_BHI      = "\u002A\u006C";  //Y ?
-Vaartha.combo_BHII     = "\u0047\u006C";  //Y
+Vaartha.combo_BI       = "\u002A";
+Vaartha.combo_BII      = "\u0047";
+Vaartha.combo_BHI      = "\u002A\u006C";
+Vaartha.combo_BHII     = "\u0047\u006C";
 Vaartha.combo_MAA      = "\u00A5\u00C6";
 Vaartha.combo_MI       = "\u002B\u00C5";
 Vaartha.combo_MII      = "\u0048\u00C5";
@@ -239,30 +240,30 @@ Vaartha.combo_YEE      = "\u0031\u00CA\u00C5";
 Vaartha.combo_YAI      = "\u0031\u00C9\u0072\u00C5";
 Vaartha.combo_YOO      = "\u0031\u00C9\u00C6";
 Vaartha.combo_YPOLLU   = "\u0031\u0052\u00C5";
-Vaartha.combo_RAA      = "\u00A7\u0056";  //Y
-Vaartha.combo_RI       = "\u0062";  //Y
-Vaartha.combo_RII      = "\u00A4";  //Y
-Vaartha.combo_RU       = "\u00A7\u00C5";  //Y
-Vaartha.combo_RE       = "\u00A7\u00C9";  //Y
-Vaartha.combo_REE      = "\u00A7\u00CA";  //Y
-Vaartha.combo_RO       = "\u00A7\u00CC";  //Y
-Vaartha.combo_ROO      = "\u00A7\u00CD";  //Y
-Vaartha.combo_RAU      = "\u00A7\u0074";  //Y
-Vaartha.combo_RPOLLU   = "\u00A7\u0052";  //Y
-Vaartha.combo_LI       = "\u003C";  //Y
-Vaartha.combo_LII      = "\u0049";  //Y
-Vaartha.combo_VI       = "\u002B";  //Y
-Vaartha.combo_VII      = "\u0048";  //Y
-Vaartha.combo_SHI      = "\u003E";  //Y
-Vaartha.combo_SHII     = "\u004A";  //Y
-Vaartha.combo_LLI      = "\u0040";  //Y
-Vaartha.combo_LLII     = "\u004B";  //Y
-Vaartha.combo_HAA      = "\u00F6";  //Y
+Vaartha.combo_RAA      = "\u00A7\u0056";
+Vaartha.combo_RI       = "\u0062";
+Vaartha.combo_RII      = "\u00A4";
+Vaartha.combo_RU       = "\u00A7\u00C5";
+Vaartha.combo_RE       = "\u00A7\u00C9";
+Vaartha.combo_REE      = "\u00A7\u00CA";
+Vaartha.combo_RO       = "\u00A7\u00CC";
+Vaartha.combo_ROO      = "\u00A7\u00CD";
+Vaartha.combo_RAU      = "\u00A7\u0074";
+Vaartha.combo_RPOLLU   = "\u00A7\u0052";
+Vaartha.combo_LI       = "\u003C";
+Vaartha.combo_LII      = "\u0049";
+Vaartha.combo_VI       = "\u002B";
+Vaartha.combo_VII      = "\u0048";
+Vaartha.combo_SHI      = "\u003E";
+Vaartha.combo_SHII     = "\u004A";
+Vaartha.combo_LLI      = "\u0040";
+Vaartha.combo_LLII     = "\u004B";
+Vaartha.combo_HAA      = "\u00F6";
 
 //Vattulu
-Vaartha.vattu_KA       = "\u00D1";  //Y
+Vaartha.vattu_KA       = "\u00D1";
 Vaartha.vattu_KHA      = "\u00D2";
-Vaartha.vattu_GA       = "\u00D3";  //Y
+Vaartha.vattu_GA       = "\u00D3";
 Vaartha.vattu_GHA      = "\u00D4";
 Vaartha.vattu_NGA      = "\u00D5";
 
@@ -272,67 +273,67 @@ Vaartha.vattu_JA       = "\u00D8";
 Vaartha.vattu_JHA      = "\u00D9";
 Vaartha.vattu_NYA      = "\u00DA";
 
-Vaartha.vattu_TTA      = "\u00DB";  //Y
+Vaartha.vattu_TTA      = "\u00DB";
 Vaartha.vattu_TTHA     = "\u00DC";
 Vaartha.vattu_DDA      = "\u003A";
 Vaartha.vattu_NNA      = "\u00DF";
 
-Vaartha.vattu_TA       = "\u00E0";  //Y
-Vaartha.vattu_THA      = "\u00E1";  //Y
-Vaartha.vattu_DA       = "\u00E2";  //Y
-Vaartha.vattu_DHA      = "\u00E3";  //Y
-Vaartha.vattu_NA       = "\u00E4";  //Y
+Vaartha.vattu_TA       = "\u00E0";
+Vaartha.vattu_THA      = "\u00E1";
+Vaartha.vattu_DA       = "\u00E2";
+Vaartha.vattu_DHA      = "\u00E3";
+Vaartha.vattu_NA       = "\u00E4";
 
-Vaartha.vattu_PA       = "\u00E5";  //Y
-Vaartha.vattu_PHA      = "\u00E6";  //Y
-Vaartha.vattu_BA       = "\u00E7";  //Y
-Vaartha.vattu_BHA      = "\u00E8";  //Y
-Vaartha.vattu_MA       = "\u00E9";  //Y
+Vaartha.vattu_PA       = "\u00E5";
+Vaartha.vattu_PHA      = "\u00E6";
+Vaartha.vattu_BA       = "\u00E7";
+Vaartha.vattu_BHA      = "\u00E8";
+Vaartha.vattu_MA       = "\u00E9";
 
-Vaartha.vattu_YA       = "\u00EA";  //Y
-Vaartha.vattu_RA       = "\u00EB";  //Y
-Vaartha.vattu_LA       = "\u00EC";  //Y
-Vaartha.vattu_VA       = "\u00ED";  //Y
-Vaartha.vattu_SHA      = "\u00EE";  //Y
-Vaartha.vattu_SSA_1    = "\u00AF";  //Y
-Vaartha.vattu_SSA_2    = "\u00EF";  //Y
-Vaartha.vattu_SA       = "\u005C";  //Y
+Vaartha.vattu_YA       = "\u00EA";
+Vaartha.vattu_RA       = "\u00EB";
+Vaartha.vattu_LA       = "\u00EC";
+Vaartha.vattu_VA       = "\u00ED";
+Vaartha.vattu_SHA      = "\u00EE";
+Vaartha.vattu_SSA_1    = "\u00AF";
+Vaartha.vattu_SSA_2    = "\u00EF";
+Vaartha.vattu_SA       = "\u005C";
 Vaartha.vattu_HA       = "\u00F1";
-Vaartha.vattu_LLA      = "\u00F2";  //Y
+Vaartha.vattu_LLA      = "\u00F2";
 Vaartha.vattu_RRA      = "\u00F3";
 
 //Conjuncts
-Vaartha.vattu_PU       = "\u005F";  //Y
-Vaartha.vattu_TTRA     = "\u006F";  //Y
-Vaartha.vattu_TRA      = "\u0070";  //Y
+Vaartha.vattu_PU       = "\u005F";
+Vaartha.vattu_TTRA     = "\u006F";
+Vaartha.vattu_TRA      = "\u0070";
 
 //Matches ASCII
-Vaartha.EXCLAM         = "\u0021";  //Y
-Vaartha.PARENLEFT      = "\u0028";  //Y
-Vaartha.PARENRIGT      = "\u0029";  //Y
-Vaartha.COMMA          = "\u002C";  //Y
+Vaartha.EXCLAM         = "\u0021";
+Vaartha.PARENLEFT      = "\u0028";
+Vaartha.PARENRIGT      = "\u0029";
+Vaartha.COMMA          = "\u002C";
 Vaartha.HYPHEN         = "\u002D";
-Vaartha.PERIOD         = "\u002E";  //Y
-Vaartha.SLASH          = "\u002F";  //Y
-Vaartha.SEMICOLON      = "\u003B";  //Y
-Vaartha.EQUALS         = "\u003D";  //Y
-Vaartha.QUESTION       = "\u003F";  //Y
+Vaartha.PERIOD         = "\u002E";
+Vaartha.SLASH          = "\u002F";
+Vaartha.SEMICOLON      = "\u003B";
+Vaartha.EQUALS         = "\u003D";
+Vaartha.QUESTION       = "\u003F";
 
-Vaartha.digit_ZERO     = "\u00A8";  //Y
-Vaartha.digit_ONE      = "\u007A";  //Y
-Vaartha.digit_TWO      = "\u2014";  //Y
-Vaartha.digit_THREE    = "\u00A2";  //Y
-Vaartha.digit_FOUR     = "\u00A9";  //Y
-Vaartha.digit_FIVE     = "\u00B7";  //Y
-Vaartha.digit_SIX      = "\u00BF";  //Y
-Vaartha.digit_SEVEN    = "\u00F8";  //Y
-Vaartha.digit_EIGHT    = "\u00FB";  //Y
-Vaartha.digit_NINE     = "\u00FC";  //Y
+Vaartha.digit_ZERO     = "\u00A8";
+Vaartha.digit_ONE      = "\u007A";
+Vaartha.digit_TWO      = "\u2014";
+Vaartha.digit_THREE    = "\u00A2";
+Vaartha.digit_FOUR     = "\u00A9";
+Vaartha.digit_FIVE     = "\u00B7";
+Vaartha.digit_SIX      = "\u00BF";
+Vaartha.digit_SEVEN    = "\u00F8";
+Vaartha.digit_EIGHT    = "\u00FB";
+Vaartha.digit_NINE     = "\u00FC";
 
 //Does not match ASCII
-Vaartha.COLON          = "\u00C0";  //Y
-Vaartha.QTSINGLE       = "\u2018";  //Y
-Vaartha.extra_QTSINGLE = "\u2019";  //Y
+Vaartha.COLON          = "\u00C0";
+Vaartha.QTSINGLE       = "\u2018";
+Vaartha.extra_QTSINGLE = "\u2019";
 Vaartha.extra_HYPHEN   = "\u00AD";
 
 //Kommu
@@ -479,7 +480,8 @@ Vaartha.toPadma[Vaartha.combo_TI]      = Padma.consnt_TA + Padma.vowelsn_I;
 Vaartha.toPadma[Vaartha.combo_TII]     = Padma.consnt_TA + Padma.vowelsn_II;
 Vaartha.toPadma[Vaartha.combo_DI]      = Padma.consnt_DA + Padma.vowelsn_I;
 Vaartha.toPadma[Vaartha.combo_DII]     = Padma.consnt_DA + Padma.vowelsn_II;
-Vaartha.toPadma[Vaartha.combo_DHI]     = Padma.consnt_DHA + Padma.vowelsn_I;
+Vaartha.toPadma[Vaartha.combo_DHI_1]   = Padma.consnt_DHA + Padma.vowelsn_I;
+Vaartha.toPadma[Vaartha.combo_DHI_2]   = Padma.consnt_DHA + Padma.vowelsn_I;
 Vaartha.toPadma[Vaartha.combo_DHII_1]  = Padma.consnt_DHA + Padma.vowelsn_II;
 Vaartha.toPadma[Vaartha.combo_DHII_2]  = Padma.consnt_DHA + Padma.vowelsn_II;
 Vaartha.toPadma[Vaartha.combo_NI]      = Padma.consnt_NA + Padma.vowelsn_I;
@@ -599,7 +601,7 @@ Vaartha.redundantList[Vaartha.misc_TICK_5]    = true;
 Vaartha.redundantList[Vaartha.misc_UNKNOWN_1] = true;
 
 Vaartha.prefixList = new Array();
-Vaartha.prefixList[Vaartha.virama_1]     = true;  //??
+Vaartha.prefixList[Vaartha.virama_1]     = true;
 Vaartha.prefixList[Vaartha.vattu_RA]     = true;
 Vaartha.prefixList[Vaartha.vattu_TTRA]   = true;
 Vaartha.prefixList[Vaartha.vattu_TRA]    = true;

@@ -1,4 +1,4 @@
-// $Id: ShreeTel0900.js,v 1.3 2005/09/25 17:04:36 vnagarjuna Exp $ -->
+// $Id: ShreeTel0900.js,v 1.4 2005/10/06 16:28:47 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -141,8 +141,8 @@ Shree_Tel_0900.consnt_SA_2    = "\u00DD";
 
 Shree_Tel_0900.consnt_HA      = "\u00DF";                
 Shree_Tel_0900.consnt_LLA     = "\u00E2";               
-Shree_Tel_0900.consnt_KSHA_1  = "\u003C";
-Shree_Tel_0900.consnt_KSHA_2  = "\u201E";
+Shree_Tel_0900.conjct_KSHA_1  = "\u003C";
+Shree_Tel_0900.conjct_KSHA_2  = "\u201E";
 Shree_Tel_0900.consnt_RRA     = "\u201A";
 
 //Gunintamulu
@@ -430,8 +430,8 @@ Shree_Tel_0900.toPadma[Shree_Tel_0900.consnt_SA_2] = Padma.consnt_SA;
 Shree_Tel_0900.toPadma[Shree_Tel_0900.consnt_HA] = Padma.consnt_HA;
 Shree_Tel_0900.toPadma[Shree_Tel_0900.consnt_LLA] = Padma.consnt_LLA;
 Shree_Tel_0900.toPadma[Shree_Tel_0900.consnt_RRA] = Padma.consnt_RRA;
-Shree_Tel_0900.toPadma[Shree_Tel_0900.consnt_KSHA_1] = Padma.consnt_KSH;
-Shree_Tel_0900.toPadma[Shree_Tel_0900.consnt_KSHA_2] = Padma.consnt_KSH;
+Shree_Tel_0900.toPadma[Shree_Tel_0900.conjct_KSHA_1] = Padma.conjct_KSH;
+Shree_Tel_0900.toPadma[Shree_Tel_0900.conjct_KSHA_2] = Padma.conjct_KSH;
 
 
 //Gunintamulu

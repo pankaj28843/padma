@@ -1,4 +1,4 @@
-// $Id: RTS.js,v 1.2 2005/09/25 14:52:27 vnagarjuna Exp $ -->
+// $Id: RTS.js,v 1.3 2005/10/06 16:28:47 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -190,8 +190,8 @@ RTS.consnt_LLA_5   = "lH";
 RTS.consnt_LLA_6   = "LH";
 RTS.consnt_RRA_1   = "~r";
 RTS.consnt_RRA_2   = "r''"; 
-RTS.consnt_KSH_1   = "x";   //ksh is automatically handled
-RTS.consnt_KSH_2   = "ksh"; //here for completeness
+RTS.conjct_KSH_1   = "x";   //ksh is automatically handled
+RTS.conjct_KSH_2   = "ksh"; //here for completeness
 
 //extinct consonants
 RTS.consnt_TCH     = "~c";
@@ -220,7 +220,7 @@ RTS.toPadma[RTS.candrabindu_1] = Padma.candrabindu;
 RTS.toPadma[RTS.candrabindu_2] = Padma.candrabindu;
 RTS.toPadma[RTS.visarga_1] = Padma.visarga;
 RTS.toPadma[RTS.visarga_2] = Padma.visarga;
-RTS.toPadma[RTS.virama_1] = Padma.pollu;
+RTS.toPadma[RTS.virama_1] = Padma.syllbreak;
 RTS.toPadma[RTS.virama_2] = Padma.pollu;
 RTS.toPadma[RTS.virama_3] = Padma.pollu;
 RTS.toPadma[RTS.avagraha] = Padma.avagraha;
@@ -361,7 +361,7 @@ RTS.toPadma[RTS.consnt_LLA_5] = Padma.consnt_LLA;
 RTS.toPadma[RTS.consnt_LLA_6] = Padma.consnt_LLA;
 RTS.toPadma[RTS.consnt_RRA_1] = Padma.consnt_RRA;
 RTS.toPadma[RTS.consnt_RRA_2] = Padma.consnt_RRA;
-RTS.toPadma[RTS.consnt_KSH_1] = Padma.consnt_KSH;
+RTS.toPadma[RTS.conjct_KSH_1] = Padma.conjct_KSH;
 RTS.toPadma[RTS.consnt_TCH] = Padma.consnt_TCH;
 RTS.toPadma[RTS.consnt_TJ]  = Padma.consnt_TJ;
 RTS.toPadma[RTS.misc_JN] = Padma.consnt_JA + Padma.vattu_NYA;
@@ -382,6 +382,7 @@ RTS.toPadma[RTS.digit_NINE] = Padma.digit_NINE;
 RTS.fromPadma = new Array();
 RTS.fromPadma[Padma.candrabindu] = RTS.candrabindu_1;
 RTS.fromPadma[Padma.visarga]     = RTS.visarga_1;
+RTS.fromPadma[Padma.syllbreak]   = RTS.virama_1;
 RTS.fromPadma[Padma.pollu]       = RTS.virama_1;
 RTS.fromPadma[Padma.anusvara]    = RTS.anusvara_1;
 RTS.fromPadma[Padma.avagraha]    = RTS.avagraha;
@@ -453,7 +454,7 @@ RTS.fromPadma[Padma.consnt_SSA]  = RTS.consnt_SSA_1;
 RTS.fromPadma[Padma.consnt_SA]   = RTS.consnt_SA;
 RTS.fromPadma[Padma.consnt_HA]   = RTS.consnt_HA_1;
 RTS.fromPadma[Padma.consnt_LLA]  = RTS.consnt_LLA_1;
-RTS.fromPadma[Padma.consnt_KSH]  = RTS.consnt_KSH_2;
+RTS.fromPadma[Padma.conjct_KSH]  = RTS.conjct_KSH_2;
 RTS.fromPadma[Padma.consnt_RRA]  = RTS.consnt_RRA_1;
 RTS.fromPadma[Padma.consnt_TCH]  = RTS.consnt_TCH;
 RTS.fromPadma[Padma.consnt_TJ]   = RTS.consnt_TJ;
@@ -506,7 +507,7 @@ RTS.fromPadma[Padma.vattu_SSA]   = RTS.consnt_SSA_1;
 RTS.fromPadma[Padma.vattu_SA]    = RTS.consnt_SA;
 RTS.fromPadma[Padma.vattu_HA]    = RTS.consnt_HA_1;
 RTS.fromPadma[Padma.vattu_LLA]   = RTS.consnt_LLA_1;
-RTS.fromPadma[Padma.vattu_KSH]   = RTS.consnt_KSH_2;
+RTS.fromPadma[Padma.vattu_KSH]   = RTS.conjct_KSH_2;
 RTS.fromPadma[Padma.vattu_RRA]   = RTS.consnt_RRA_1;
 RTS.fromPadma[Padma.vattu_TCH]   = RTS.consnt_TCH;
 RTS.fromPadma[Padma.vattu_TJ]    = RTS.consnt_TJ;
@@ -631,16 +632,16 @@ RTS.getRTSWriter = function (wstyle, sstyle)
 
 RTS.prototype.transformFromPadma = function (str)
 {
-    var last = null, output = "";
-    for(var i = 0; i < str.length; ++i) {
-        last = str.charAt(i);
-        output += this.transformSyllableConstituent(last);
-    }
-    if (last != null) {
-        var type = Padma.getType(last);
-        if (type == Padma.type_hallu || type == Padma.type_vattu)
-            output += this.transformSyllableConstituent(Padma.vowel_A);
-    }
+    if (str.length == 0)
+        return "";
+    var last = str.charAt(str.length - 1), output = "";
+    var last_type = Padma.getType(last);
+    if (last_type == Padma.type_hallu || last_type == Padma.type_vattu)
+        str += Padma.vowel_A;
+    else if (last_type == Padma.type_accu_mod)
+        str = str.substring(0, str.length - 1) + Padma.vowel_A + last;
+    for(var i = 0; i < str.length; ++i)
+        output += this.transformSyllableConstituent(str.charAt(i));
     return output;
 }
  

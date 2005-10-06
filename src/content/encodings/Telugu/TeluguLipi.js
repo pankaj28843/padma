@@ -1,4 +1,4 @@
-// $Id: TeluguLipi.js,v 1.1 2005/09/30 14:32:31 vnagarjuna Exp $ -->
+// $Id: TeluguLipi.js,v 1.2 2005/10/06 16:28:47 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -138,7 +138,7 @@ TeluguLipi.consnt_SA_2    = "\u00B3";
 TeluguLipi.consnt_HA      = "\u00FF";
 TeluguLipi.consnt_LLA     = "\u00AE";
 TeluguLipi.consnt_RRA     = "\u00B0";
-TeluguLipi.consnt_KSHA    = "\u00AF";
+TeluguLipi.conjct_KSHA    = "\u00AF";
 
 //Gunintamulu
 TeluguLipi.vowelsn_AA     = "\u00C2";
@@ -296,7 +296,7 @@ TeluguLipi.toPadma[TeluguLipi.consnt_SA_2] = Padma.consnt_SA;
 TeluguLipi.toPadma[TeluguLipi.consnt_HA] = Padma.consnt_HA;
 TeluguLipi.toPadma[TeluguLipi.consnt_LLA] = Padma.consnt_LLA;
 TeluguLipi.toPadma[TeluguLipi.consnt_RRA] = Padma.consnt_RRA;
-TeluguLipi.toPadma[TeluguLipi.consnt_KSHA] = Padma.consnt_KSH;
+TeluguLipi.toPadma[TeluguLipi.conjct_KSHA] = Padma.conjct_KSH;
 
 //Gunintamulu
 TeluguLipi.toPadma[TeluguLipi.vowelsn_AA]  = Padma.vowelsn_AA;
