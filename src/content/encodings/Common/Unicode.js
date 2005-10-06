@@ -1,4 +1,4 @@
-// $Id: Unicode.js,v 1.2 2005/09/25 14:52:26 vnagarjuna Exp $ -->
+// $Id: Unicode.js,v 1.3 2005/10/06 16:26:32 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -32,6 +32,7 @@ Unicode.maxLookupLen = 2;
 //Common to all languages
 Unicode.common_NUKTA    = "\u093C";
 Unicode.common_AVAGRAHA = "\u093D";
+Unicode.common_OM       = "\u0950";
 Unicode.common_UDATTA   = "\u0951";
 Unicode.common_ANUDATTA = "\u0952";
 Unicode.common_SVARITA  = "\u0951";
@@ -41,9 +42,10 @@ Unicode.common_DDANDA   = "\u0965";
 //Code Points
 Unicode.codePoints = new Array();
 
-Unicode.codePoints[Padma.lang_TELUGU]    = new Object();
-Unicode.codePoints[Padma.lang_MALAYALAM] = new Object();
-Unicode.codePoints[Padma.lang_TAMIL]     = new Object();
+Unicode.codePoints[Padma.lang_TELUGU]     = new Object();
+Unicode.codePoints[Padma.lang_MALAYALAM]  = new Object();
+Unicode.codePoints[Padma.lang_TAMIL]      = new Object();
+Unicode.codePoints[Padma.lang_DEVANAGARI] = new Object();
 
 //TELUGU
 Unicode.codePoints[Padma.lang_TELUGU].candrabindu = "\u0C01";
@@ -105,7 +107,7 @@ Unicode.codePoints[Padma.lang_TELUGU].letter_SHA  = "\u0C36";
 Unicode.codePoints[Padma.lang_TELUGU].letter_SSA  = "\u0C37";
 Unicode.codePoints[Padma.lang_TELUGU].letter_SA   = "\u0C38";
 Unicode.codePoints[Padma.lang_TELUGU].letter_HA   = "\u0C39";
-Unicode.codePoints[Padma.lang_TELUGU].conjunct_KSH = "\u0C15\u0C4D\u0C37";
+Unicode.codePoints[Padma.lang_TELUGU].conjct_KSH  = "\u0C15\u0C4D\u0C37";
 Unicode.codePoints[Padma.lang_TELUGU].letter_TCH  = "\u0C1A\u093C";    //not known to be correct
 Unicode.codePoints[Padma.lang_TELUGU].letter_TJ   = "\u0C1C\u093C";    //not known to be correct
 //Telugu does not have the Tamil 'zh' - use ll for transliteration purposes
@@ -320,6 +322,114 @@ Unicode.codePoints[Padma.lang_TAMIL].sign_ASABOVE   = "\u0BF8";
 Unicode.codePoints[Padma.lang_TAMIL].sign_RUPEE     = "\u0BF9";
 Unicode.codePoints[Padma.lang_TAMIL].sign_NUMBER    = "\u0BFA";
 
+//DEVANAGARI
+Unicode.codePoints[Padma.lang_DEVANAGARI].candrabindu  = "\u0901";
+//Vowel Modifiers
+Unicode.codePoints[Padma.lang_DEVANAGARI].anusvara     = "\u0902";  //sunna
+Unicode.codePoints[Padma.lang_DEVANAGARI].visarga      = "\u0903";
+
+//Independent Vowels
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_SHT_A = "\u0904";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_A     = "\u0905";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_AA    = "\u0906";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_I     = "\u0907";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_II    = "\u0908";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_U     = "\u0909";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_UU    = "\u090A";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_R     = "\u090B";   //vocalic R
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_RR    = "\u0960";   //vocalic R
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_L     = "\u090C";   //vocalic L
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_LL    = "\u0961";   //vocalic L
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_CDR_E = "\u090D";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_E     = "\u090E";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_EE    = "\u090F";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_AI    = "\u0910";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_CDR_E = "\u0911";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_O     = "\u0912";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_OO    = "\u0913";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_AU    = "\u0914";
+
+//Consonants
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_KA   = "\u0915";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_KHA  = "\u0916";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_GA   = "\u0917";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_GHA  = "\u0918";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_NGA  = "\u0919";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_CA   = "\u091A";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_CHA  = "\u091B";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_JA   = "\u091C";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_JHA  = "\u091D";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_NYA  = "\u091E";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_TTA  = "\u091F";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_TTHA = "\u0920";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_DDA  = "\u0921";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_DDHA = "\u0922";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_NNA  = "\u0923";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_TA   = "\u0924";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_THA  = "\u0925";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_DA   = "\u0926";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_DHA  = "\u0927";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_NA   = "\u0928";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_NNNA = "\u0929";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_PA   = "\u092A";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_PHA  = "\u092B";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_BA   = "\u092C";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_BHA  = "\u092D";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_MA   = "\u092E";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_YA   = "\u092F";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_RA   = "\u0930";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_RRA  = "\u0931";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_LA   = "\u0932";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_LLA  = "\u0933";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_ZHA  = "\u0934";  //LLLA
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_VA   = "\u0935";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_SHA  = "\u0936";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_SSA  = "\u0937";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_SA   = "\u0938";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_HA   = "\u0939";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_QA   = "\u0958";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_KHHA = "\u0959";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_GHHA = "\u095A";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_ZA   = "\u095B";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_DDDHA= "\u095C";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_RHA  = "\u095D";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_FA   = "\u095E";
+Unicode.codePoints[Padma.lang_DEVANAGARI].letter_YYA  = "\u095F";
+
+//Dependent Vowel Signs
+Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_AA    = "\u093E";
+Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_I     = "\u093F";
+Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_II    = "\u0940";
+Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_U     = "\u0941";
+Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_UU    = "\u0942";
+Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_R     = "\u0943";
+Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_RR    = "\u0944";
+Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_L     = "\u0962";
+Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_LL    = "\u0963";
+Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_CDR_E = "\u0945";
+Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_E     = "\u0946";
+Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_EE    = "\u0947";
+Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_AI    = "\u0948";
+Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_O     = "\u094A";
+Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_OO    = "\u094B";
+Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_AU    = "\u094C";
+
+//Miscellaneous Signs
+Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA   = "\u094D";   //halant
+Unicode.codePoints[Padma.lang_DEVANAGARI].misc_abbrev   = "\u0970";   //halant
+
+//Digits
+Unicode.codePoints[Padma.lang_DEVANAGARI].digit_ZERO  = "\u0966";
+Unicode.codePoints[Padma.lang_DEVANAGARI].digit_ONE   = "\u0967";
+Unicode.codePoints[Padma.lang_DEVANAGARI].digit_TWO   = "\u0968";
+Unicode.codePoints[Padma.lang_DEVANAGARI].digit_THREE = "\u0969";
+Unicode.codePoints[Padma.lang_DEVANAGARI].digit_FOUR  = "\u096A";
+Unicode.codePoints[Padma.lang_DEVANAGARI].digit_FIVE  = "\u096B";
+Unicode.codePoints[Padma.lang_DEVANAGARI].digit_SIX   = "\u096C";
+Unicode.codePoints[Padma.lang_DEVANAGARI].digit_SEVEN = "\u096D";
+Unicode.codePoints[Padma.lang_DEVANAGARI].digit_EIGHT = "\u096E";
+Unicode.codePoints[Padma.lang_DEVANAGARI].digit_NINE  = "\u096F";
+
 //Zero-Width Joiner/Non Joiner for Virama
 Unicode.misc_ZWNJ   = "\u200C";
 Unicode.misc_ZWJ    = "\u200D";
@@ -327,14 +437,16 @@ Unicode.misc_ZWJ    = "\u200D";
 //To Unicode
 Unicode.fromPadma = new Array();
 
-Unicode.fromPadma[Padma.lang_TELUGU]    = new Array();
-Unicode.fromPadma[Padma.lang_MALAYALAM] = new Array();
-Unicode.fromPadma[Padma.lang_TAMIL]     = new Array();
+Unicode.fromPadma[Padma.lang_TELUGU]     = new Array();
+Unicode.fromPadma[Padma.lang_MALAYALAM]  = new Array();
+Unicode.fromPadma[Padma.lang_TAMIL]      = new Array();
+Unicode.fromPadma[Padma.lang_DEVANAGARI] = new Array();
 
 //TELUGU
 Unicode.fromPadma[Padma.lang_TELUGU][Padma.candrabindu] = Unicode.codePoints[Padma.lang_TELUGU].candrabindu;
 Unicode.fromPadma[Padma.lang_TELUGU][Padma.visarga]     = Unicode.codePoints[Padma.lang_TELUGU].visarga;
-Unicode.fromPadma[Padma.lang_TELUGU][Padma.pollu]       = Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.misc_ZWNJ;
+Unicode.fromPadma[Padma.lang_TELUGU][Padma.pollu]       = Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA;
+Unicode.fromPadma[Padma.lang_TELUGU][Padma.syllbreak]   = Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.misc_ZWNJ;
 Unicode.fromPadma[Padma.lang_TELUGU][Padma.chillu]      = Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.misc_ZWJ;
 Unicode.fromPadma[Padma.lang_TELUGU][Padma.anusvara]    = Unicode.codePoints[Padma.lang_TELUGU].anusvara;
 Unicode.fromPadma[Padma.lang_TELUGU][Padma.avagraha]    = Unicode.common_AVAGRAHA;
@@ -409,7 +521,7 @@ Unicode.fromPadma[Padma.lang_TELUGU][Padma.consnt_SSA]  = Unicode.codePoints[Pad
 Unicode.fromPadma[Padma.lang_TELUGU][Padma.consnt_SA]   = Unicode.codePoints[Padma.lang_TELUGU].letter_SA;
 Unicode.fromPadma[Padma.lang_TELUGU][Padma.consnt_HA]   = Unicode.codePoints[Padma.lang_TELUGU].letter_HA;
 Unicode.fromPadma[Padma.lang_TELUGU][Padma.consnt_LLA]  = Unicode.codePoints[Padma.lang_TELUGU].letter_LLA;
-Unicode.fromPadma[Padma.lang_TELUGU][Padma.consnt_KSH]  = Unicode.codePoints[Padma.lang_TELUGU].conjunct_KSH;
+Unicode.fromPadma[Padma.lang_TELUGU][Padma.conjct_KSH]  = Unicode.codePoints[Padma.lang_TELUGU].conjct_KSH;
 Unicode.fromPadma[Padma.lang_TELUGU][Padma.consnt_RRA]  = Unicode.codePoints[Padma.lang_TELUGU].letter_RRA;
 Unicode.fromPadma[Padma.lang_TELUGU][Padma.consnt_TCH]  = Unicode.codePoints[Padma.lang_TELUGU].letter_TCH;
 Unicode.fromPadma[Padma.lang_TELUGU][Padma.consnt_TJ]   = Unicode.codePoints[Padma.lang_TELUGU].letter_TJ;
@@ -466,7 +578,7 @@ Unicode.fromPadma[Padma.lang_TELUGU][Padma.vattu_SSA]   = Unicode.codePoints[Pad
 Unicode.fromPadma[Padma.lang_TELUGU][Padma.vattu_SA]    = Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.codePoints[Padma.lang_TELUGU].letter_SA;
 Unicode.fromPadma[Padma.lang_TELUGU][Padma.vattu_HA]    = Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.codePoints[Padma.lang_TELUGU].letter_HA;
 Unicode.fromPadma[Padma.lang_TELUGU][Padma.vattu_LLA]   = Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.codePoints[Padma.lang_TELUGU].letter_LLA;
-Unicode.fromPadma[Padma.lang_TELUGU][Padma.vattu_KSH]   = Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.codePoints[Padma.lang_TELUGU].conjunct_KSH;
+Unicode.fromPadma[Padma.lang_TELUGU][Padma.vattu_KSH]   = Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.codePoints[Padma.lang_TELUGU].conjct_KSH;
 Unicode.fromPadma[Padma.lang_TELUGU][Padma.vattu_RRA]   = Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.codePoints[Padma.lang_TELUGU].letter_RRA;
 Unicode.fromPadma[Padma.lang_TELUGU][Padma.vattu_TCH]   = Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.codePoints[Padma.lang_TELUGU].letter_TCH;
 Unicode.fromPadma[Padma.lang_TELUGU][Padma.vattu_TJ]    = Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.codePoints[Padma.lang_TELUGU].letter_TJ;
@@ -474,7 +586,8 @@ Unicode.fromPadma[Padma.lang_TELUGU][Padma.vattu_ZHA]   = Unicode.codePoints[Pad
 
 //MALAYALAM
 Unicode.fromPadma[Padma.lang_MALAYALAM][Padma.visarga]     = Unicode.codePoints[Padma.lang_MALAYALAM].visarga;
-Unicode.fromPadma[Padma.lang_MALAYALAM][Padma.chandrakkala] = Unicode.codePoints[Padma.lang_MALAYALAM].misc_VIRAMA + Unicode.misc_ZWNJ;
+Unicode.fromPadma[Padma.lang_MALAYALAM][Padma.chandrakkala] = Unicode.codePoints[Padma.lang_MALAYALAM].misc_VIRAMA;
+Unicode.fromPadma[Padma.lang_MALAYALAM][Padma.syllbreak]   = Unicode.codePoints[Padma.lang_MALAYALAM].misc_VIRAMA + Unicode.misc_ZWNJ;
 Unicode.fromPadma[Padma.lang_MALAYALAM][Padma.chillu]      = Unicode.codePoints[Padma.lang_MALAYALAM].misc_VIRAMA + Unicode.misc_ZWJ;
 Unicode.fromPadma[Padma.lang_MALAYALAM][Padma.anusvara]    = Unicode.codePoints[Padma.lang_MALAYALAM].anusvara;
 
@@ -602,7 +715,8 @@ Unicode.fromPadma[Padma.lang_MALAYALAM][Padma.vattu_RRA] = Unicode.codePoints[Pa
 
 //TAMIL
 Unicode.fromPadma[Padma.lang_TAMIL][Padma.visarga]     = Unicode.codePoints[Padma.lang_TAMIL].visarga;
-Unicode.fromPadma[Padma.lang_TAMIL][Padma.pulli]       = Unicode.codePoints[Padma.lang_TAMIL].misc_VIRAMA + Unicode.misc_ZWNJ;
+Unicode.fromPadma[Padma.lang_TAMIL][Padma.pulli]       = Unicode.codePoints[Padma.lang_TAMIL].misc_VIRAMA;
+Unicode.fromPadma[Padma.lang_TAMIL][Padma.syllbreak]   = Unicode.codePoints[Padma.lang_TAMIL].misc_VIRAMA + Unicode.misc_ZWNJ;
 Unicode.fromPadma[Padma.lang_TAMIL][Padma.anusvara]    = Unicode.codePoints[Padma.lang_TAMIL].anusvara;
 
 //digits
@@ -695,11 +809,171 @@ Unicode.fromPadma[Padma.lang_TAMIL][Padma.vattu_LLA] = Unicode.codePoints[Padma.
 Unicode.fromPadma[Padma.lang_TAMIL][Padma.vattu_ZHA] = Unicode.codePoints[Padma.lang_TAMIL].misc_VIRAMA + Unicode.codePoints[Padma.lang_TAMIL].letter_ZHA;
 Unicode.fromPadma[Padma.lang_TAMIL][Padma.vattu_RRA] = Unicode.codePoints[Padma.lang_TAMIL].misc_VIRAMA + Unicode.codePoints[Padma.lang_TAMIL].letter_RRA;
 
+//DEVANAGARI
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.candrabindu] = Unicode.codePoints[Padma.lang_DEVANAGARI].candrabindu;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.visarga]     = Unicode.codePoints[Padma.lang_DEVANAGARI].visarga;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.halant]      = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.syllbreak]   = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.misc_ZWNJ;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.chillu]      = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.misc_ZWJ;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.anusvara]    = Unicode.codePoints[Padma.lang_DEVANAGARI].anusvara;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.avagraha]    = Unicode.common_AVAGRAHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.udAtta]      = Unicode.common_UDATTA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.anudAtta]    = Unicode.common_ANUDATTA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.svarita]     = Unicode.common_SVARITA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.danda]       = Unicode.common_DANDA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.ddanda]      = Unicode.common_DDANDA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.om]          = Unicode.common_OM;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.abbrev]      = Unicode.codePoints[Padma.lang_DEVANAGARI].abbrev;
+
+//digits
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.digit_ZERO]  = Unicode.codePoints[Padma.lang_DEVANAGARI].digit_ZERO;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.digit_ONE]   = Unicode.codePoints[Padma.lang_DEVANAGARI].digit_ONE;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.digit_TWO]   = Unicode.codePoints[Padma.lang_DEVANAGARI].digit_TWO;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.digit_THREE] = Unicode.codePoints[Padma.lang_DEVANAGARI].digit_THREE;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.digit_FOUR]  = Unicode.codePoints[Padma.lang_DEVANAGARI].digit_FOUR;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.digit_FIVE]  = Unicode.codePoints[Padma.lang_DEVANAGARI].digit_FIVE;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.digit_SIX]   = Unicode.codePoints[Padma.lang_DEVANAGARI].digit_SIX;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.digit_SEVEN] = Unicode.codePoints[Padma.lang_DEVANAGARI].digit_SEVEN;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.digit_EIGHT] = Unicode.codePoints[Padma.lang_DEVANAGARI].digit_EIGHT;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.digit_NINE]  = Unicode.codePoints[Padma.lang_DEVANAGARI].digit_NINE;
+
+//Vowels
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_SHT_A] = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_SHT_A;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_A]     = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_A;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_AA]    = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_AA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_I]     = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_I;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_II]    = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_II;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_U]     = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_U;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_UU]    = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_UU;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_R]     = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_R;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_RR]    = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_RR;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_L]     = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_L;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_LL]    = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_LL;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_CDR_E] = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_CDR_E;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_E]     = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_E;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_EE]    = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_EE;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_AI]    = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_AI;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_CDR_O] = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_CDR_0;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_O]     = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_O;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_OO]    = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_OO;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_AU]    = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_AU;
+
+//Consonants
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_KA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_KA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_KHA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_KHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_GA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_GA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_GHA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_GHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_NGA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_NGA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_CA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_CA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_CHA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_CHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_JA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_JA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_JHA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_JHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_NYA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_NYA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_TTA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_TTA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_TTHA] = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_TTHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_DDA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_DDA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_DDHA] = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_DDHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_NNA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_NNA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_NNNA] = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_NNNA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_TA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_TA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_THA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_THA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_DA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_DA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_DHA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_DHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_NA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_NA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_PA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_PA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_PHA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_PHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_BA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_BA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_BHA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_BHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_MA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_MA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_YA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_YA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_RA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_RA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_LA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_LA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_VA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_VA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_SHA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_SHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_SSA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_SSA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_SA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_SA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_HA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_HA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_LLA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_LLA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_ZHA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_ZHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_RRA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_RRA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_QA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_QA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_KHHA] = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_KHHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_GHHA] = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_GHHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_ZA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_ZA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_DDDHA]= Unicode.codePoints[Padma.lang_DEVANAGARI].letter_DDDHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_RHA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_RHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_FA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_FA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_YYA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_YYA;
+
+//Gunimtaalu
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowelsn_AA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_AA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowelsn_I]   = Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_I;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowelsn_II]  = Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_II;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowelsn_U]   = Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_U;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowelsn_UU]  = Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_UU;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowelsn_R]   = Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_R;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowelsn_RR]  = Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_RR;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowelsn_E]   = Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_E;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowelsn_EE]  = Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_EE;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowelsn_AI]  = Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_AI;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowelsn_O]   = Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_O;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowelsn_OO]  = Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_OO;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowelsn_AU]  = Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_AU;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowelsn_AILEN]  = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_AILEN;
+
+//vattulu
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_KA]    = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_KA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_KHA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_KHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_GA]    = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_GA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_GHA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_GHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_NGA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_NGA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_CA]    = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_CA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_CHA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_CHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_JA]    = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_JA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_JHA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_JHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_NYA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_NYA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_TTA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_TTA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_TTHA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_TTHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_DDA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_DDA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_DDHA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_DDHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_NNA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_NNA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_TA]    = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_TA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_THA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_THA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_DA]    = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_DA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_DHA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_DHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_NA]    = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_NA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_PA]    = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_PA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_PHA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_PHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_BA]    = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_BA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_BHA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_BHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_MA]    = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_MA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_YA]    = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_YA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_RA]    = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_RA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_LA]    = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_LA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_VA]    = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_VA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_SHA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_SHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_SSA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_SSA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_SA]    = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_SA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_HA]    = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_HA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_LLA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_LLA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_RRA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_RRA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_ZHA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_ZHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_NNNA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_NNNA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_QA]    = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_QA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_KHHA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_KHHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_GHHA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_GHHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_ZA]    = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_ZA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_DDDHA] = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_DDDHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_RHA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_RHA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_FA]    = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_FA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_YYA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_YYA;
+
 Unicode.toPadma = new Array();
 
 Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].candrabindu]   = Padma.candrabindu;
 Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].visarga]       = Padma.visarga;
-Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.misc_ZWNJ] = Padma.pollu;
+Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA] = Padma.pollu;
+Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.misc_ZWNJ] = Padma.syllbreak;
 Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.misc_ZWJ]  = Padma.chillu;
 Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].anusvara]      = Padma.anusvara;
 Unicode.toPadma[Unicode.common_AVAGRAHA] = Padma.avagraha;
@@ -774,7 +1048,7 @@ Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].letter_SSA]   = Padma.cons
 Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].letter_SA]    = Padma.consnt_SA;
 Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].letter_HA]    = Padma.consnt_HA;
 Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].letter_LLA]   = Padma.consnt_LLA;
-Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].conjunct_KSH] = Padma.consnt_KSH;
+Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].conjct_KSH]   = Padma.conjct_KSH;
 Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].letter_RRA]   = Padma.consnt_RRA;
 Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].letter_TCH]   = Padma.consnt_TCH;
 Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].letter_TJ]    = Padma.consnt_TJ;
@@ -831,7 +1105,7 @@ Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.code
 Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.codePoints[Padma.lang_TELUGU].letter_SA]    = Padma.vattu_SA;
 Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.codePoints[Padma.lang_TELUGU].letter_HA]    = Padma.vattu_HA;
 Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.codePoints[Padma.lang_TELUGU].letter_LLA]   = Padma.vattu_LLA;
-Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.codePoints[Padma.lang_TELUGU].conjunct_KSH] = Padma.vattu_KSH;
+Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.codePoints[Padma.lang_TELUGU].conjct_KSH]   = Padma.vattu_KSH;
 Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.codePoints[Padma.lang_TELUGU].letter_RRA]   = Padma.vattu_RRA;
 Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.codePoints[Padma.lang_TELUGU].letter_TCH]   = Padma.vattu_TCH;
 Unicode.toPadma[Unicode.codePoints[Padma.lang_TELUGU].misc_VIRAMA + Unicode.codePoints[Padma.lang_TELUGU].letter_TJ]    = Padma.vattu_TJ;

@@ -1,4 +1,4 @@
-// $Id: ITRANS.js,v 1.2 2005/09/25 14:52:26 vnagarjuna Exp $ -->
+// $Id: ITRANS.js,v 1.3 2005/10/06 16:26:32 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -34,10 +34,12 @@ ITRANS.candrabindu_2  = "@m";
 ITRANS.visarga        = "H";
 ITRANS.virama         = ".h";
 ITRANS.avagraha       = ".a"; 
-ITRANS.anusvara_1     = "M";  //sunna, non standard but supported by raMgavallika
+ITRANS.anusvara_1     = "M";
 ITRANS.anusvara_2     = ".m";
 ITRANS.anusvara_3     = ".n";
 ITRANS.mapollu        = "m{}";
+ITRANS.om_1           = "OM";
+ITRANS.om_2           = "AUM";
 
 //Vowels
 ITRANS.vowel_A        = "a";
@@ -96,7 +98,8 @@ ITRANS.consnt_MA      = "m";
 ITRANS.consnt_YA      = "y";
 ITRANS.consnt_RA      = "r";
 ITRANS.consnt_LA      = "l";
-ITRANS.consnt_LLA     = "L";
+ITRANS.consnt_LLA_1   = "L";
+ITRANS.consnt_LLA_2   = "ld";
 ITRANS.consnt_VA_1    = "v";
 ITRANS.consnt_VA_2    = "w";
 ITRANS.consnt_SHA     = "sh";
@@ -105,8 +108,21 @@ ITRANS.consnt_SSA_2   = "shh";
 ITRANS.consnt_SA      = "s";
 ITRANS.consnt_HA      = "h";
 ITRANS.consnt_RRA     = "R";
-ITRANS.consnt_KSH_1   = "x";   //ksh is automatically handled
-ITRANS.consnt_KSH_2   = "ksh"; //here for completeness
+ITRANS.conjct_KSH_1   = "x";   //ksh is automatically handled
+ITRANS.conjct_KSH_2   = "ksh";
+ITRANS.conjct_GN_1    = "GY";  //j~n is automatically handled
+ITRANS.conjct_GN_2    = "dny";
+ITRANS.conjct_GN_3    = "j~n";
+ITRANS.consnt_QA      = "q";
+ITRANS.consnt_KHHA    = "K";
+ITRANS.consnt_GHHA    = "G";
+//itrans uses z and J for Tamil's zh and Urdu's za, use z for Tamil and J for Urdu
+ITRANS.consnt_ZHA    = "z";
+ITRANS.consnt_ZA     = "J";
+ITRANS.consnt_FA      = "f";
+ITRANS.consnt_DDDHA   = ".D";
+ITRANS.consnt_RHA     = ".Dh";
+ITRANS.consnt_YYA     = "Y";
 
 //digits
 ITRANS.digit_ZERO     = "0";
@@ -123,18 +139,19 @@ ITRANS.digit_NINE     = "9";
 //Not supported yet, listed here for completenesss
 ITRANS.candrae        = ".c";
 
-
 ITRANS.toPadma = new Array();
 	
 ITRANS.toPadma[ITRANS.candrabindu_1] = Padma.candrabindu;
 ITRANS.toPadma[ITRANS.candrabindu_2] = Padma.candrabindu;
 ITRANS.toPadma[ITRANS.visarga]       = Padma.visarga;
-ITRANS.toPadma[ITRANS.virama]        = Padma.pollu;
+ITRANS.toPadma[ITRANS.virama]        = Padma.syllbreak;
 ITRANS.toPadma[ITRANS.avagraha]      = Padma.avagraha;
 ITRANS.toPadma[ITRANS.anusvara_1]    = Padma.anusvara;
 ITRANS.toPadma[ITRANS.anusvara_2]    = Padma.anusvara;
 ITRANS.toPadma[ITRANS.anusvara_3]    = Padma.anusvara;
 ITRANS.toPadma[ITRANS.mapollu]       = Padma.consnt_MA + Padma.pollu;
+ITRANS.toPadma[ITRANS.om_1]          = Padma.om;
+ITRANS.toPadma[ITRANS.om_2]          = Padma.om;
 
 ITRANS.toPadma[ITRANS.vowel_A]    = Padma.vowel_A;
 ITRANS.toPadma[ITRANS.vowel_AA_1] = Padma.vowel_AA;
@@ -191,7 +208,8 @@ ITRANS.toPadma[ITRANS.consnt_MA]    = Padma.consnt_MA;
 ITRANS.toPadma[ITRANS.consnt_YA]    = Padma.consnt_YA;
 ITRANS.toPadma[ITRANS.consnt_RA]    = Padma.consnt_RA;
 ITRANS.toPadma[ITRANS.consnt_LA]    = Padma.consnt_LA;
-ITRANS.toPadma[ITRANS.consnt_LLA]   = Padma.consnt_LLA;
+ITRANS.toPadma[ITRANS.consnt_LLA_1] = Padma.consnt_LLA;
+ITRANS.toPadma[ITRANS.consnt_LLA_2] = Padma.consnt_LLA;
 ITRANS.toPadma[ITRANS.consnt_VA_1]  = Padma.consnt_VA;
 ITRANS.toPadma[ITRANS.consnt_VA_2]  = Padma.consnt_VA;
 ITRANS.toPadma[ITRANS.consnt_SHA]   = Padma.consnt_SHA;
@@ -200,7 +218,18 @@ ITRANS.toPadma[ITRANS.consnt_SSA_2] = Padma.consnt_SSA;
 ITRANS.toPadma[ITRANS.consnt_SA]    = Padma.consnt_SA;
 ITRANS.toPadma[ITRANS.consnt_HA]    = Padma.consnt_HA;
 ITRANS.toPadma[ITRANS.consnt_RRA]   = Padma.consnt_RRA;
-ITRANS.toPadma[ITRANS.consnt_KSH_1] = Padma.consnt_KSH;
+ITRANS.toPadma[ITRANS.conjct_KSH_1] = Padma.conjct_KSH;
+ITRANS.toPadma[ITRANS.conjct_GN_1]  = Padma.conjct_GN;
+ITRANS.toPadma[ITRANS.conjct_GN_2]  = Padma.conjct_GN;
+ITRANS.toPadma[ITRANS.consnt_QA]    = Padma.consnt_QA;
+ITRANS.toPadma[ITRANS.consnt_KHHA]  = Padma.consnt_KHHA;
+ITRANS.toPadma[ITRANS.consnt_GHHA]  = Padma.consnt_GHHA;
+ITRANS.toPadma[ITRANS.consnt_ZA]    = Padma.consnt_ZA;
+ITRANS.toPadma[ITRANS.consnt_FA]    = Padma.consnt_FA;
+ITRANS.toPadma[ITRANS.consnt_DDDHA] = Padma.consnt_DDDHA;
+ITRANS.toPadma[ITRANS.consnt_RHA]   = Padma.consnt_RHA;
+ITRANS.toPadma[ITRANS.consnt_ZHA]   = Padma.consnt_ZHA;
+ITRANS.toPadma[ITRANS.consnt_YYA]   = Padma.consnt_YYA;
 
 ITRANS.toPadma[ITRANS.digit_ZERO]  = Padma.digit_ZERO;
 ITRANS.toPadma[ITRANS.digit_ONE]   = Padma.digit_ONE;

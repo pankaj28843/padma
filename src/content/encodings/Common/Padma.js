@@ -1,4 +1,4 @@
-// $Id: Padma.js,v 1.2 2005/09/25 14:52:26 vnagarjuna Exp $ -->
+// $Id: Padma.js,v 1.3 2005/10/06 16:26:32 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -39,7 +39,7 @@ Padma.lang_ORIYA      = 7;
 Padma.lang_KANNADA    = 8;
 
 //Only 3 languages supported now
-Padma.lang_MAXLANGS   = 3;
+Padma.lang_MAXLANGS   = 4;
 
 //Types
 Padma.type_accu      = 0;
@@ -52,22 +52,25 @@ Padma.type_hallu_mod = 6;
 Padma.type_unknown   = 7;
 
 //Use Unicode Private Use Area for Padma's internal symbols starting with U+EC00.
-//Code pints used: +UEC00-+UEC0D, +UEC10-+UEC1C, +UEC20-+UEC57, +UEC70-+UEC7A, +UECA1-+UECD7.
+//Code pints used: +UEC00-+UEC0F, +UEC10-+UEC1C, +UEC20-+UEC63, +UEC70-+UEC7B, +UECA1-+UECE3.
 
-//Code points 32-64, 91-96, 123-127 (which are in the ASCII range) are not explicitly listed here
+//Code points 32-64, 91-96, 123-127 (from the ASCII range) are not explicitly listed here
 //but are part of Padma's internal format and are of type Padma.type_unknown.
 
-//Dependent forms of vowels and consonats (vattulu and gunintamulu respectively) are off 0x80 from their base forms
+//Dependent forms of vowels and consonats (gunintamulu and vowels respectively) are off 0x80 from their base forms
 
 //Vowel modifiers (including pollu with visarga and anusvara
 Padma.anusvara    = "\uEC00";
 Padma.visarga     = "\uEC01";
-Padma.pollu       = "\uEC02";   //dead consonant - in honor of the Telugu word (anything generated with a ZWNJ in Unicode)
+Padma.pollu       = "\uEC02";   //dead consonant
 Padma.chillu      = "\uEC0D";   //half consonant - in honor of the Malayalam word chillksharamu (anything generated with a ZWJ in Unicode)
+Padma.syllbreak   = "\uEC7B";   //syllable break - (anything generated with a ZWNJ in Unicode)
 
 //Other names for the equivalent of pollu
+Padma.virama       = Padma.pollu;   //Telugu
 Padma.chandrakkala = Padma.pollu;   //Malayalam
 Padma.pulli        = Padma.pollu;   //Tamil
+Padma.halant       = Padma.pollu;   //Devanagari
 
 //Specials
 Padma.candrabindu = "\uEC03";
@@ -78,8 +81,10 @@ Padma.anudAtta    = "\uEC07";
 Padma.svarita     = "\uEC08";   //equivalent of udAtta
 Padma.guru        = "\uEC09";
 Padma.laghu       = "\uEC0A";
-Padma.danda       = "\uEC0B";   //comma
-Padma.ddanda      = "\uEC0C";   //full stop (double danda)
+Padma.danda       = "\uEC0B";   //purna virama
+Padma.ddanda      = "\uEC0C";   //deergha virama (double danda)
+Padma.abbrev      = "\uEC0E";   //Devanagari
+Padma.om          = "\uEC0F";
 
 //digits
 Padma.digit_ZERO  = "\uEC10";
@@ -95,86 +100,94 @@ Padma.digit_NINE  = "\uEC19";
 
 //Vowels
 Padma.vowel_A     = "\uEC20";
-Padma.vowel_AA    = "\uEC21";
-Padma.vowel_I     = "\uEC22";
-Padma.vowel_II    = "\uEC23";
-Padma.vowel_U     = "\uEC24";
-Padma.vowel_UU    = "\uEC25";
-Padma.vowel_R     = "\uEC26";
-Padma.vowel_RR    = "\uEC27";
-Padma.vowel_L     = "\uEC28";
-Padma.vowel_LL    = "\uEC29";
-Padma.vowel_E     = "\uEC2A";
-Padma.vowel_EE    = "\uEC2B";
-Padma.vowel_AI    = "\uEC2C";
-Padma.vowel_O     = "\uEC2D";
-Padma.vowel_OO    = "\uEC2E";
-Padma.vowel_AU    = "\uEC2F";
+Padma.vowel_SHT_A = "\uEC21";  //SHORT A - DEVANAGARI
+Padma.vowel_AA    = "\uEC22";
+Padma.vowel_I     = "\uEC23";
+Padma.vowel_II    = "\uEC24";
+Padma.vowel_U     = "\uEC25";
+Padma.vowel_UU    = "\uEC26";
+Padma.vowel_R     = "\uEC27";
+Padma.vowel_RR    = "\uEC28";
+Padma.vowel_L     = "\uEC29";
+Padma.vowel_LL    = "\uEC2A";
+Padma.vowel_CDR_E = "\uEC2B";  //CANDRA E - DEVANAGARI
+Padma.vowel_E     = "\uEC2C";
+Padma.vowel_EE    = "\uEC2D";
+Padma.vowel_AI    = "\uEC2E";
+Padma.vowel_CDR_O = "\uEC2F";  //CANDRA O - DEVANAGARI
+Padma.vowel_O     = "\uEC30";
+Padma.vowel_OO    = "\uEC31";
+Padma.vowel_AU    = "\uEC32";
 
 //Consonants
-Padma.consnt_KA   = "\uEC30";
-Padma.consnt_KHA  = "\uEC31";
-Padma.consnt_GA   = "\uEC32";
-Padma.consnt_GHA  = "\uEC33";
-Padma.consnt_NGA  = "\uEC34";
-Padma.consnt_CA   = "\uEC35";
-Padma.consnt_CHA  = "\uEC36";
-Padma.consnt_JA   = "\uEC37";
-Padma.consnt_JHA  = "\uEC38";
-Padma.consnt_NYA  = "\uEC39";
-Padma.consnt_TTA  = "\uEC3A";
-Padma.consnt_TTHA = "\uEC3B";
-Padma.consnt_DDA  = "\uEC3C";
-Padma.consnt_DDHA = "\uEC3D";
-Padma.consnt_NNA  = "\uEC3E";
-Padma.consnt_TA   = "\uEC3F";
-Padma.consnt_THA  = "\uEC40";
-Padma.consnt_DA   = "\uEC41";
-Padma.consnt_DHA  = "\uEC42";
-Padma.consnt_NA   = "\uEC43";
-Padma.consnt_PA   = "\uEC44";
-Padma.consnt_PHA  = "\uEC45";
-Padma.consnt_BA   = "\uEC46";
-Padma.consnt_BHA  = "\uEC47";
-Padma.consnt_MA   = "\uEC48";
-Padma.consnt_YA   = "\uEC49";
-Padma.consnt_RA   = "\uEC4A";
-Padma.consnt_LA   = "\uEC4B";
-Padma.consnt_VA   = "\uEC4C";
-Padma.consnt_SHA  = "\uEC4D";
-Padma.consnt_SSA  = "\uEC4E";
-Padma.consnt_SA   = "\uEC4F";
-Padma.consnt_HA   = "\uEC50";
-Padma.consnt_LLA  = "\uEC51";
-Padma.consnt_KSH  = "\uEC52";   
-Padma.consnt_RRA  = "\uEC53";
-
-//extinct consonants (Telugu)
-Padma.consnt_TCH  = "\uEC54";
-Padma.consnt_TJ   = "\uEC55";
-
-//Tamil and Malayalam
-Padma.consnt_ZHA  = "\uEC56";
-
-//Tamil
-Padma.consnt_NNNA = "\uEC57";
+Padma.consnt_KA   = "\uEC33";
+Padma.consnt_QA   = "\uEC34";  //Urdu
+Padma.consnt_KHA  = "\uEC35";
+Padma.consnt_KHHA = "\uEC36";  //Urdu
+Padma.consnt_GA   = "\uEC37";
+Padma.consnt_GHA  = "\uEC38";
+Padma.consnt_GHHA = "\uEC39";  //Urdu
+Padma.consnt_NGA  = "\uEC3A";
+Padma.consnt_CA   = "\uEC3B";
+Padma.consnt_CHA  = "\uEC3C";
+Padma.consnt_JA   = "\uEC3D";
+Padma.consnt_ZA   = "\uEC3E";  //Urdu
+Padma.consnt_JHA  = "\uEC3F";
+Padma.consnt_NYA  = "\uEC40";
+Padma.consnt_TTA  = "\uEC41";
+Padma.consnt_TTHA = "\uEC42";
+Padma.consnt_DDA  = "\uEC43";
+Padma.consnt_DDDHA= "\uEC44";  //Devanagari (Flapped DDA)
+Padma.consnt_DDHA = "\uEC45";
+Padma.consnt_RHA  = "\uEC46";  //Devanagari (Flapped DDHA)
+Padma.consnt_NNA  = "\uEC47";
+Padma.consnt_TA   = "\uEC48";
+Padma.consnt_THA  = "\uEC49";
+Padma.consnt_DA   = "\uEC4A";
+Padma.consnt_DHA  = "\uEC4B";
+Padma.consnt_NA   = "\uEC4C";
+Padma.consnt_NNNA = "\uEC4D";  //Tamil
+Padma.consnt_PA   = "\uEC4E";
+Padma.consnt_FA   = "\uEC4F";  //Urdu
+Padma.consnt_PHA  = "\uEC50";
+Padma.consnt_BA   = "\uEC51";
+Padma.consnt_BHA  = "\uEC52";
+Padma.consnt_MA   = "\uEC53";
+Padma.consnt_YA   = "\uEC54";
+Padma.consnt_YYA  = "\uEC55";  //Bengali
+Padma.consnt_RA   = "\uEC56";
+Padma.consnt_RRA  = "\uEC57";
+Padma.consnt_LA   = "\uEC58";
+Padma.consnt_LLA  = "\uEC59";
+Padma.consnt_ZHA  = "\uEC5A";  //Malayalam and Tamil
+Padma.consnt_VA   = "\uEC5B";
+Padma.consnt_SHA  = "\uEC5C";
+Padma.consnt_SSA  = "\uEC5D";
+Padma.consnt_SA   = "\uEC5E";
+Padma.consnt_HA   = "\uEC5F";
+Padma.conjct_KSH  = "\uEC60";   
+Padma.conjct_GN   = "\uEC61";  //Devanagari
+Padma.consnt_TCH  = "\uEC62";  //Telugu (Extinct)
+Padma.consnt_TJ   = "\uEC63";  //Telugu (Extinct)
 
 //Gunimtaalu
-Padma.vowelsn_AA  = "\uECA1";
-Padma.vowelsn_I   = "\uECA2";
-Padma.vowelsn_II  = "\uECA3";
-Padma.vowelsn_U   = "\uECA4";
-Padma.vowelsn_UU  = "\uECA5";
-Padma.vowelsn_R   = "\uECA6";
-Padma.vowelsn_RR  = "\uECA7";
-Padma.vowelsn_L   = "\uECA8";
-Padma.vowelsn_LL  = "\uECA9";
-Padma.vowelsn_E   = "\uECAA";
-Padma.vowelsn_EE  = "\uECAB";
-Padma.vowelsn_AI  = "\uECAC";
-Padma.vowelsn_O   = "\uECAD";
-Padma.vowelsn_OO  = "\uECAE";
-Padma.vowelsn_AU  = "\uECAF";
+Padma.vowelsn_AA    = "\uECA2";
+Padma.vowelsn_I     = "\uECA3";
+Padma.vowelsn_II    = "\uECA4";
+Padma.vowelsn_U     = "\uECA5";
+Padma.vowelsn_UU    = "\uECA6";
+Padma.vowelsn_R     = "\uECA7";
+Padma.vowelsn_RR    = "\uECA8";
+Padma.vowelsn_L     = "\uECA9";
+Padma.vowelsn_LL    = "\uECAA";
+Padma.vowelsn_CDR_E = "\uECAB";
+Padma.vowelsn_E     = "\uECAC";
+Padma.vowelsn_EE    = "\uECAD";
+Padma.vowelsn_AI    = "\uECAE";
+Padma.vowelsn_CDR_O = "\uECAF";
+Padma.vowelsn_O     = "\uECB0";
+Padma.vowelsn_OO    = "\uECB1";
+Padma.vowelsn_AU    = "\uECB2";
 
 //Useful when a vowelsn is broken into component parts
 Padma.vowelsn_EELEN = "\uEC1A";
@@ -182,48 +195,57 @@ Padma.vowelsn_AILEN = "\uEC1B";
 Padma.vowelsn_AULEN = "\uEC1C";
 
 //vattulu
-Padma.vattu_KA    = "\uECB0";
-Padma.vattu_KHA   = "\uECB1";
-Padma.vattu_GA    = "\uECB2";
-Padma.vattu_GHA   = "\uECB3";
-Padma.vattu_NGA   = "\uECB4";
-Padma.vattu_CA    = "\uECB5";
-Padma.vattu_CHA   = "\uECB6";
-Padma.vattu_JA    = "\uECB7";
-Padma.vattu_JHA   = "\uECB8";
-Padma.vattu_NYA   = "\uECB9";
-Padma.vattu_TTA   = "\uECBA";
-Padma.vattu_TTHA  = "\uECBB";
-Padma.vattu_DDA   = "\uECBC";
-Padma.vattu_DDHA  = "\uECBD";
-Padma.vattu_NNA   = "\uECBE";
-Padma.vattu_TA    = "\uECBF";
-Padma.vattu_THA   = "\uECC0";
-Padma.vattu_DA    = "\uECC1";
-Padma.vattu_DHA   = "\uECC2";
-Padma.vattu_NA    = "\uECC3";
-Padma.vattu_PA    = "\uECC4";
-Padma.vattu_PHA   = "\uECC5";
-Padma.vattu_BA    = "\uECC6";
-Padma.vattu_BHA   = "\uECC7";
-Padma.vattu_MA    = "\uECC8";
-Padma.vattu_YA    = "\uECC9";
-Padma.vattu_RA    = "\uECCA";
-Padma.vattu_LA    = "\uECCB";
-Padma.vattu_VA    = "\uECCC";
-Padma.vattu_SHA   = "\uECCD";
-Padma.vattu_SSA   = "\uECCE";
-Padma.vattu_SA    = "\uECCF";
-Padma.vattu_HA    = "\uECD0";
-Padma.vattu_LLA   = "\uECD1";
-Padma.vattu_KSH   = "\uECD2";   
-Padma.vattu_RRA   = "\uECD3";
-Padma.vattu_TCH   = "\uECD4";
-Padma.vattu_TJ    = "\uECD5";
-Padma.vattu_ZHA   = "\uECD6";
-Padma.vattu_NNNA  = "\uECD7";
+Padma.vattu_KA    = "\uECB3";
+Padma.vattu_QA    = "\uECB4";
+Padma.vattu_KHA   = "\uECB5";
+Padma.vattu_KHHA  = "\uECB6";
+Padma.vattu_GA    = "\uECB7";
+Padma.vattu_GHA   = "\uECB8";
+Padma.vattu_GHHA  = "\uECB9";
+Padma.vattu_NGA   = "\uECBA";
+Padma.vattu_CA    = "\uECBB";
+Padma.vattu_CHA   = "\uECBC";
+Padma.vattu_JA    = "\uECBD";
+Padma.vattu_ZA    = "\uECBE";
+Padma.vattu_JHA   = "\uECBF";
+Padma.vattu_NYA   = "\uECC0";
+Padma.vattu_TTA   = "\uECC1";
+Padma.vattu_TTHA  = "\uECC2";
+Padma.vattu_DDA   = "\uECC3";
+Padma.vattu_DDDHA = "\uECC4";
+Padma.vattu_DDHA  = "\uECC5";
+Padma.vattu_RHA   = "\uECC6";
+Padma.vattu_NNA   = "\uECC7";
+Padma.vattu_TA    = "\uECC8";
+Padma.vattu_THA   = "\uECC9";
+Padma.vattu_DA    = "\uECCA";
+Padma.vattu_DHA   = "\uECCB";
+Padma.vattu_NA    = "\uECCC";
+Padma.vattu_NNNA  = "\uECCD";
+Padma.vattu_PA    = "\uECCE";
+Padma.vattu_FA    = "\uECCF";
+Padma.vattu_PHA   = "\uECD0";
+Padma.vattu_BA    = "\uECD1";
+Padma.vattu_BHA   = "\uECD2";
+Padma.vattu_MA    = "\uECD3";
+Padma.vattu_YA    = "\uECD4";
+Padma.vattu_YYA   = "\uECD5";
+Padma.vattu_RA    = "\uECD6";
+Padma.vattu_RRA   = "\uECD7";
+Padma.vattu_LA    = "\uECD8";
+Padma.vattu_LLA   = "\uECD9";
+Padma.vattu_ZHA   = "\uECDA";
+Padma.vattu_VA    = "\uECDB";
+Padma.vattu_SHA   = "\uECDC";
+Padma.vattu_SSA   = "\uECDD";
+Padma.vattu_SA    = "\uECDE";
+Padma.vattu_HA    = "\uECDF";
+Padma.vattu_KSH   = "\uECE0";
+Padma.vattu_GNA   = "\uECE1";
+Padma.vattu_TCH   = "\uECE2";
+Padma.vattu_TJ    = "\uECE3";
 
-//Special signs (inherited from Tamil)
+//Special signs
 Padma.digit_TEN      = "\uEC70";
 Padma.digit_HUNDRED  = "\uEC71";
 Padma.digit_THOUSAND = "\uEC72";
@@ -237,15 +259,16 @@ Padma.sign_RUPEE     = "\uEC79";
 Padma.sign_NUMBER    = "\uEC7A";
 
 //Vowel and consonant range (exculudes #a#)
-Padma.base_START = 0xEC21;
-Padma.base_END   = 0xEC55;
+Padma.base_START = 0xEC22;
+Padma.base_END   = 0xEC63;
 //Dependent form range (exculudes #a#)
-Padma.dep_START = 0xECA1;
-Padma.dep_END   = 0xECD5;
+Padma.dep_START = 0xECA2;
+Padma.dep_END   = 0xECE3;
 
 //Symbol table
 Padma.symbols = new Array();
 Padma.symbols[Padma.vowel_A]     = Padma.type_accu;
+Padma.symbols[Padma.vowel_SHT_A] = Padma.type_accu;
 Padma.symbols[Padma.vowel_AA]    = Padma.type_accu;
 Padma.symbols[Padma.vowel_I]     = Padma.type_accu;
 Padma.symbols[Padma.vowel_II]    = Padma.type_accu;
@@ -255,9 +278,11 @@ Padma.symbols[Padma.vowel_R]     = Padma.type_accu;
 Padma.symbols[Padma.vowel_RR]    = Padma.type_accu;
 Padma.symbols[Padma.vowel_L]     = Padma.type_accu;
 Padma.symbols[Padma.vowel_LL]    = Padma.type_accu;
+Padma.symbols[Padma.vowel_CDR_E] = Padma.type_accu;
 Padma.symbols[Padma.vowel_E]     = Padma.type_accu;
 Padma.symbols[Padma.vowel_EE]    = Padma.type_accu;
 Padma.symbols[Padma.vowel_AI]    = Padma.type_accu;
+Padma.symbols[Padma.vowel_CDR_O] = Padma.type_accu;
 Padma.symbols[Padma.vowel_O]     = Padma.type_accu;
 Padma.symbols[Padma.vowel_OO]    = Padma.type_accu;
 Padma.symbols[Padma.vowel_AU]    = Padma.type_accu;
@@ -266,6 +291,7 @@ Padma.symbols[Padma.candrabindu] = Padma.type_unknown;
 Padma.symbols[Padma.visarga]     = Padma.type_accu_mod;
 Padma.symbols[Padma.pollu]       = Padma.type_hallu_mod;
 Padma.symbols[Padma.chillu]      = Padma.type_hallu_mod;
+Padma.symbols[Padma.syllbreak]   = Padma.type_hallu_mod;
 Padma.symbols[Padma.anusvara]    = Padma.type_accu_mod;
 Padma.symbols[Padma.avagraha]    = Padma.type_unknown;
 Padma.symbols[Padma.yati]        = Padma.type_unknown;
@@ -276,6 +302,8 @@ Padma.symbols[Padma.guru]        = Padma.type_unknown;
 Padma.symbols[Padma.laghu]       = Padma.type_unknown;
 Padma.symbols[Padma.danda]       = Padma.type_unknown;
 Padma.symbols[Padma.ddanda]      = Padma.type_unknown;
+Padma.symbols[Padma.abbrev]      = Padma.type_unknown;
+Padma.symbols[Padma.om]          = Padma.type_unknown;
 
 Padma.symbols[Padma.digit_ZERO]  = Padma.type_digit;
 Padma.symbols[Padma.digit_ONE]   = Padma.type_digit;
@@ -289,45 +317,54 @@ Padma.symbols[Padma.digit_EIGHT] = Padma.type_digit;
 Padma.symbols[Padma.digit_NINE]  = Padma.type_digit;
 
 Padma.symbols[Padma.consnt_KA]   = Padma.type_hallu;
+Padma.symbols[Padma.consnt_QA]   = Padma.type_hallu;
 Padma.symbols[Padma.consnt_KHA]  = Padma.type_hallu;
+Padma.symbols[Padma.consnt_KHHA] = Padma.type_hallu;
 Padma.symbols[Padma.consnt_GA]   = Padma.type_hallu;
 Padma.symbols[Padma.consnt_GHA]  = Padma.type_hallu;
+Padma.symbols[Padma.consnt_GHHA] = Padma.type_hallu;
 Padma.symbols[Padma.consnt_NGA]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_CA]   = Padma.type_hallu;
 Padma.symbols[Padma.consnt_CHA]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_JA]   = Padma.type_hallu;
+Padma.symbols[Padma.consnt_ZA]   = Padma.type_hallu;
 Padma.symbols[Padma.consnt_JHA]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_NYA]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_TTA]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_TTHA] = Padma.type_hallu;
 Padma.symbols[Padma.consnt_DDA]  = Padma.type_hallu;
+Padma.symbols[Padma.consnt_DDDHA] = Padma.type_hallu;
 Padma.symbols[Padma.consnt_DDHA] = Padma.type_hallu;
+Padma.symbols[Padma.consnt_RHA]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_NNA]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_TA]   = Padma.type_hallu;
 Padma.symbols[Padma.consnt_THA]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_DA]   = Padma.type_hallu;
 Padma.symbols[Padma.consnt_DHA]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_NA]   = Padma.type_hallu;
+Padma.symbols[Padma.consnt_NNNA] = Padma.type_hallu;
 Padma.symbols[Padma.consnt_PA]   = Padma.type_hallu;
+Padma.symbols[Padma.consnt_FA]   = Padma.type_hallu;
 Padma.symbols[Padma.consnt_PHA]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_BA]   = Padma.type_hallu;
 Padma.symbols[Padma.consnt_BHA]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_MA]   = Padma.type_hallu;
 Padma.symbols[Padma.consnt_YA]   = Padma.type_hallu;
+Padma.symbols[Padma.consnt_YYA]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_RA]   = Padma.type_hallu;
+Padma.symbols[Padma.consnt_RRA]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_LA]   = Padma.type_hallu;
+Padma.symbols[Padma.consnt_LLA]  = Padma.type_hallu;
+Padma.symbols[Padma.consnt_ZHA]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_VA]   = Padma.type_hallu;
 Padma.symbols[Padma.consnt_SHA]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_SSA]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_SA]   = Padma.type_hallu;
 Padma.symbols[Padma.consnt_HA]   = Padma.type_hallu;
-Padma.symbols[Padma.consnt_LLA]  = Padma.type_hallu;
-Padma.symbols[Padma.consnt_KSH]  = Padma.type_hallu;   
-Padma.symbols[Padma.consnt_RRA]  = Padma.type_hallu;
+Padma.symbols[Padma.conjct_KSH]  = Padma.type_hallu;   
+Padma.symbols[Padma.conjct_GN]   = Padma.type_hallu;   
 Padma.symbols[Padma.consnt_TCH]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_TJ]   = Padma.type_hallu;
-Padma.symbols[Padma.consnt_ZHA]  = Padma.type_hallu;
-Padma.symbols[Padma.consnt_NNNA] = Padma.type_hallu;
 
 Padma.symbols[Padma.vowelsn_AA]  = Padma.type_gunintam;
 Padma.symbols[Padma.vowelsn_I]   = Padma.type_gunintam;
@@ -338,56 +375,67 @@ Padma.symbols[Padma.vowelsn_R]   = Padma.type_gunintam;
 Padma.symbols[Padma.vowelsn_RR]  = Padma.type_gunintam;
 Padma.symbols[Padma.vowelsn_L]   = Padma.type_gunintam;
 Padma.symbols[Padma.vowelsn_LL]  = Padma.type_gunintam;
+Padma.symbols[Padma.vowelsn_CDR_E] = Padma.type_gunintam;
 Padma.symbols[Padma.vowelsn_E]   = Padma.type_gunintam;
 Padma.symbols[Padma.vowelsn_EE]  = Padma.type_gunintam;
 Padma.symbols[Padma.vowelsn_AI]  = Padma.type_gunintam;
+Padma.symbols[Padma.vowelsn_CDR_O] = Padma.type_gunintam;
 Padma.symbols[Padma.vowelsn_O]   = Padma.type_gunintam;
 Padma.symbols[Padma.vowelsn_OO]  = Padma.type_gunintam;
 Padma.symbols[Padma.vowelsn_AU]  = Padma.type_gunintam;
-Padma.symbols[Padma.vowelsn_EELEN]  = Padma.type_gunintam;
-Padma.symbols[Padma.vowelsn_AILEN]  = Padma.type_gunintam;
-Padma.symbols[Padma.vowelsn_AULEN]  = Padma.type_gunintam;
+Padma.symbols[Padma.vowelsn_EELEN] = Padma.type_gunintam;
+Padma.symbols[Padma.vowelsn_AILEN] = Padma.type_gunintam;
+Padma.symbols[Padma.vowelsn_AULEN] = Padma.type_gunintam;
 
 Padma.symbols[Padma.vattu_KA]    = Padma.type_vattu;
+Padma.symbols[Padma.vattu_QA]    = Padma.type_hallu;
 Padma.symbols[Padma.vattu_KHA]   = Padma.type_vattu;
+Padma.symbols[Padma.vattu_KHHA]  = Padma.type_hallu;
 Padma.symbols[Padma.vattu_GA]    = Padma.type_vattu;
 Padma.symbols[Padma.vattu_GHA]   = Padma.type_vattu;
+Padma.symbols[Padma.vattu_GHHA]  = Padma.type_hallu;
 Padma.symbols[Padma.vattu_NGA]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_CA]    = Padma.type_vattu;
 Padma.symbols[Padma.vattu_CHA]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_JA]    = Padma.type_vattu;
+Padma.symbols[Padma.vattu_ZA]    = Padma.type_hallu;
 Padma.symbols[Padma.vattu_JHA]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_NYA]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_TTA]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_TTHA]  = Padma.type_vattu;
 Padma.symbols[Padma.vattu_DDA]   = Padma.type_vattu;
+Padma.symbols[Padma.vattu_DDDHA] = Padma.type_hallu;
 Padma.symbols[Padma.vattu_DDHA]  = Padma.type_vattu;
+Padma.symbols[Padma.vattu_RHA]   = Padma.type_hallu;
 Padma.symbols[Padma.vattu_NNA]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_TA]    = Padma.type_vattu;
 Padma.symbols[Padma.vattu_THA]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_DA]    = Padma.type_vattu;
 Padma.symbols[Padma.vattu_DHA]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_NA]    = Padma.type_vattu;
+Padma.symbols[Padma.vattu_NNNA]  = Padma.type_vattu;
 Padma.symbols[Padma.vattu_PA]    = Padma.type_vattu;
+Padma.symbols[Padma.vattu_FA]    = Padma.type_hallu;
 Padma.symbols[Padma.vattu_PHA]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_BA]    = Padma.type_vattu;
 Padma.symbols[Padma.vattu_BHA]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_MA]    = Padma.type_vattu;
 Padma.symbols[Padma.vattu_YA]    = Padma.type_vattu;
+Padma.symbols[Padma.vattu_YYA]   = Padma.type_hallu;
 Padma.symbols[Padma.vattu_RA]    = Padma.type_vattu;
+Padma.symbols[Padma.vattu_RRA]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_LA]    = Padma.type_vattu;
+Padma.symbols[Padma.vattu_LLA]   = Padma.type_vattu;
+Padma.symbols[Padma.vattu_ZHA]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_VA]    = Padma.type_vattu;
 Padma.symbols[Padma.vattu_SHA]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_SSA]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_SA]    = Padma.type_vattu;
 Padma.symbols[Padma.vattu_HA]    = Padma.type_vattu;
-Padma.symbols[Padma.vattu_LLA]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_KSH]   = Padma.type_vattu;   
-Padma.symbols[Padma.vattu_RRA]   = Padma.type_vattu;
+Padma.symbols[Padma.vattu_GN]    = Padma.type_vattu;   
 Padma.symbols[Padma.vattu_TCH]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_TJ]    = Padma.type_vattu;
-Padma.symbols[Padma.vattu_ZHA]   = Padma.type_vattu;
-Padma.symbols[Padma.vattu_NNNA]  = Padma.type_vattu;
 
 Padma.symbols[Padma.digit_TEN]      = Padma.type_digit;
 Padma.symbols[Padma.digit_HUNDRED]  = Padma.type_digit;
