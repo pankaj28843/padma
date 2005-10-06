@@ -1,4 +1,4 @@
-// $Id: RTSParser.js,v 1.2 2005/09/25 14:52:27 vnagarjuna Exp $ -->
+// $Id: RTSParser.js,v 1.3 2005/10/06 16:30:08 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -56,19 +56,29 @@ function RTSParser_getNextMatch(length, index)
         if (value == null)
             continue;
         //found a match
-        if (!RTS.isPossibleAnusvara(key))
-            break;
-        //if there is more text, see if it is one of the consonants that makes the n/m an anusvara
-        if (length - index - i > 0) {
-            var next = this.getNextMatch(length, index + i);
-            if (next.value == null)
-                break;
-            if (RTS.isAnusvara(value, next.value)) {
-                result.key = key;
-                result.value = Padma.anusvara;
-                return result;
+        if (RTS.isPossibleAnusvara(key)) {
+            //if there is more text, see if it is one of the consonants that makes the n/m an anusvara
+            if (length - index - i > 0) {
+                var next = this.getNextMatch(length, index + i);
+                if (next.value == null)
+                    break;
+                if (RTS.isAnusvara(value, next.value)) {
+                    result.key = key;
+                    result.value = Padma.anusvara;
+                    return result;
+                }
             }
         }
+        else if (value == Padma.syllbreak) {
+            //if there is more text, see if it is a real syllable break or just occuring at the end of the word
+            if (length - index - i > 0) {
+                var next = this.getNextMatch(length, index + i);
+                if (next.value == null || Padma.getType(next.value) != Padma.type_hallu)
+                    value = Padma.pollu;
+            }
+            else value = Padma.pollu;
+        }
+        break;
     }
     result.key = key;
     result.value = value;
