@@ -1,4 +1,4 @@
-// $Id: RTS.js,v 1.3 2005/10/06 16:28:47 vnagarjuna Exp $ -->
+// $Id: RTS.js,v 1.4 2005/10/06 18:13:36 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -220,7 +220,7 @@ RTS.toPadma[RTS.candrabindu_1] = Padma.candrabindu;
 RTS.toPadma[RTS.candrabindu_2] = Padma.candrabindu;
 RTS.toPadma[RTS.visarga_1] = Padma.visarga;
 RTS.toPadma[RTS.visarga_2] = Padma.visarga;
-RTS.toPadma[RTS.virama_1] = Padma.syllbreak;
+RTS.toPadma[RTS.virama_1] = Padma.pollu;
 RTS.toPadma[RTS.virama_2] = Padma.pollu;
 RTS.toPadma[RTS.virama_3] = Padma.pollu;
 RTS.toPadma[RTS.avagraha] = Padma.avagraha;

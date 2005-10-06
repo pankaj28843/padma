@@ -1,4 +1,4 @@
-// $Id: Unicode.js,v 1.3 2005/10/06 16:26:32 vnagarjuna Exp $ -->
+// $Id: Unicode.js,v 1.4 2005/10/06 18:13:35 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -25,6 +25,7 @@
 function Unicode() 
 {
     this.lang = Padma.lang_TELUGU;
+    this.last_pollu = false;  //was the last one a syllable break or a pollu?
 }
 
 Unicode.maxLookupLen = 2;
@@ -1129,10 +1130,24 @@ Unicode.prototype.transformFromPadma = function (str)
     var output = "";
     for(var i = 0; i < str.length; ++i) {
         var cur = str.charAt(i);
+        //Add a ZWNJ only if the following syllable starts with a consonant
+        if (i == 0 && this.last_pollu == true && Padma.getType(cur) == Padma.type_hallu)
+            output += Unicode.misc_ZWNJ;
         var out = Unicode.fromPadma[this.lang][cur];
         output += (out == null ? cur : out);
+        if (i == str.length - 1) {
+            if (cur == Padma.pollu)
+                this.last_pollu = true;
+            else this.last_pollu = false;
+        }
     }
     return output;
+}
+
+Unicode.prototype.cleanup = function (str)
+{
+    this.last_pollu = false;
+    return "";
 }
 
 Unicode.getUnicodeWriter = function ()

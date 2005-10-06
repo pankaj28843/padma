@@ -1,4 +1,4 @@
-// $Id: TeluguLipi.js,v 1.3 2005/10/06 17:04:01 vnagarjuna Exp $ -->
+// $Id: TeluguLipi.js,v 1.4 2005/10/06 18:13:36 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -234,7 +234,7 @@ TeluguLipi.toPadma = new Array();
 
 TeluguLipi.toPadma[TeluguLipi.candrabindu] = Padma.candrabindu;
 TeluguLipi.toPadma[TeluguLipi.visarga]  = Padma.visarga;
-TeluguLipi.toPadma[TeluguLipi.virama]   = Padma.syllbreak;
+TeluguLipi.toPadma[TeluguLipi.virama]   = Padma.pollu;
 TeluguLipi.toPadma[TeluguLipi.anusvara] = Padma.anusvara;
 
 TeluguLipi.toPadma[TeluguLipi.vowel_A]  = Padma.vowel_A;
@@ -321,7 +321,7 @@ TeluguLipi.toPadma[TeluguLipi.combo_YE]  = Padma.consnt_YA + Padma.vowelsn_E;
 TeluguLipi.toPadma[TeluguLipi.combo_YEE] = Padma.consnt_YA + Padma.vowelsn_EE;
 TeluguLipi.toPadma[TeluguLipi.combo_YAI] = Padma.consnt_YA + Padma.vowelsn_AI;
 TeluguLipi.toPadma[TeluguLipi.combo_YAU] = Padma.consnt_YA + Padma.vowelsn_AU;
-TeluguLipi.toPadma[TeluguLipi.combo_YPOLLU] = Padma.consnt_YA + Padma.syllbreak;
+TeluguLipi.toPadma[TeluguLipi.combo_YPOLLU] = Padma.consnt_YA + Padma.pollu;
 TeluguLipi.toPadma[TeluguLipi.combo_HAA] = Padma.consnt_HA + Padma.vowelsn_AA;
 
 //Vattulu

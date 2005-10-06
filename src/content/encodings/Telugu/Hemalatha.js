@@ -1,4 +1,4 @@
-// $Id: Hemalatha.js,v 1.6 2005/10/06 17:04:01 vnagarjuna Exp $ -->
+// $Id: Hemalatha.js,v 1.7 2005/10/06 18:13:35 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -379,11 +379,11 @@ Hemalatha.toPadma = new Array();
 Hemalatha.toPadma[Hemalatha.candrabindu] = Padma.candrabindu;
 Hemalatha.toPadma[Hemalatha.avagraha] = Padma.avagraha;
 Hemalatha.toPadma[Hemalatha.visarga]  = Padma.visarga;
-Hemalatha.toPadma[Hemalatha.virama_1] = Padma.syllbreak;
-Hemalatha.toPadma[Hemalatha.virama_2] = Padma.syllbreak;
-Hemalatha.toPadma[Hemalatha.virama_3] = Padma.syllbreak;
-Hemalatha.toPadma[Hemalatha.virama_4] = Padma.syllbreak;
-Hemalatha.toPadma[Hemalatha.virama_5] = Padma.syllbreak;
+Hemalatha.toPadma[Hemalatha.virama_1] = Padma.pollu;
+Hemalatha.toPadma[Hemalatha.virama_2] = Padma.pollu;
+Hemalatha.toPadma[Hemalatha.virama_3] = Padma.pollu;
+Hemalatha.toPadma[Hemalatha.virama_4] = Padma.pollu;
+Hemalatha.toPadma[Hemalatha.virama_5] = Padma.pollu;
 Hemalatha.toPadma[Hemalatha.anusvara] = Padma.anusvara;
 
 Hemalatha.toPadma[Hemalatha.vowel_A]  = Padma.vowel_A;
@@ -541,13 +541,13 @@ Hemalatha.toPadma[Hemalatha.combo_MI]      = Padma.consnt_MA + Padma.vowelsn_I;
 Hemalatha.toPadma[Hemalatha.combo_MII]     = Padma.consnt_MA + Padma.vowelsn_II;
 Hemalatha.toPadma[Hemalatha.combo_MAU]     = Padma.consnt_MA + Padma.vowelsn_AU;
 Hemalatha.toPadma[Hemalatha.combo_MEELEN]  = Padma.consnt_MA + Padma.vowelsn_EELEN;
-Hemalatha.toPadma[Hemalatha.combo_MPOLLU]  = Padma.consnt_MA + Padma.syllbreak;
+Hemalatha.toPadma[Hemalatha.combo_MPOLLU]  = Padma.consnt_MA + Padma.pollu;
 
 Hemalatha.toPadma[Hemalatha.combo_YAA]     = Padma.consnt_YA + Padma.vowelsn_AA;
 Hemalatha.toPadma[Hemalatha.combo_YI]      = Padma.consnt_YA + Padma.vowelsn_I;
 Hemalatha.toPadma[Hemalatha.combo_YII]     = Padma.consnt_YA + Padma.vowelsn_II;
 Hemalatha.toPadma[Hemalatha.combo_YEELEN]  = Padma.consnt_YA + Padma.vowelsn_EELEN;
-Hemalatha.toPadma[Hemalatha.combo_YPOLLU]  = Padma.consnt_YA + Padma.syllbreak;
+Hemalatha.toPadma[Hemalatha.combo_YPOLLU]  = Padma.consnt_YA + Padma.pollu;
 Hemalatha.toPadma[Hemalatha.combo_RAA]     = Padma.consnt_RA + Padma.vowelsn_AA;
 Hemalatha.toPadma[Hemalatha.combo_RI]      = Padma.consnt_RA + Padma.vowelsn_I;
 Hemalatha.toPadma[Hemalatha.combo_RII]     = Padma.consnt_RA + Padma.vowelsn_II;
@@ -556,7 +556,7 @@ Hemalatha.toPadma[Hemalatha.combo_RAU]     = Padma.consnt_RA + Padma.vowelsn_AU;
 Hemalatha.toPadma[Hemalatha.combo_RO]      = Padma.consnt_RA + Padma.vowelsn_O;
 Hemalatha.toPadma[Hemalatha.combo_ROO]     = Padma.consnt_RA + Padma.vowelsn_OO;
 Hemalatha.toPadma[Hemalatha.combo_REELEN]  = Padma.consnt_RA + Padma.vowelsn_EELEN;
-Hemalatha.toPadma[Hemalatha.combo_RPOLLU]  = Padma.consnt_RA + Padma.syllbreak;
+Hemalatha.toPadma[Hemalatha.combo_RPOLLU]  = Padma.consnt_RA + Padma.pollu;
 Hemalatha.toPadma[Hemalatha.combo_LI]      = Padma.consnt_LA + Padma.vowelsn_I;
 Hemalatha.toPadma[Hemalatha.combo_LII]     = Padma.consnt_LA + Padma.vowelsn_II;
 Hemalatha.toPadma[Hemalatha.combo_VI]      = Padma.consnt_VA + Padma.vowelsn_I;

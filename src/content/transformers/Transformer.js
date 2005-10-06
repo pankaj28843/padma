@@ -1,4 +1,4 @@
-// $Id: Transformer.js,v 1.5 2005/10/06 16:31:00 vnagarjuna Exp $ -->
+// $Id: Transformer.js,v 1.6 2005/10/06 18:13:38 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -156,10 +156,7 @@ Transformer.prototype.convert = function (text)
     while (parser.more())
         output += this.toOutputFormat(parser.next());
 
-    if (this.output == Transformer.method_RTS)
-        output += this.outputWriter.cleanup();
-
-    return output;
+    return output + this.outputWriter.cleanup();
 }
 
 Transformer.prototype.toOutputFormat = function (syllable)

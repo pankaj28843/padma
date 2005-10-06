@@ -1,4 +1,4 @@
-// $Id: Eenadu.js,v 1.4 2005/10/06 17:04:01 vnagarjuna Exp $ -->
+// $Id: Eenadu.js,v 1.5 2005/10/06 18:13:35 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -405,12 +405,12 @@ Eenadu.toPadma = new Array();
 
 Eenadu.toPadma[Eenadu.candrabindu] = Padma.candrabindu;
 Eenadu.toPadma[Eenadu.visarga]  = Padma.visarga;
-Eenadu.toPadma[Eenadu.virama_1] = Padma.syllbreak;
-Eenadu.toPadma[Eenadu.virama_2] = Padma.syllbreak;
-Eenadu.toPadma[Eenadu.virama_3] = Padma.syllbreak;
-Eenadu.toPadma[Eenadu.virama_4] = Padma.syllbreak;
-Eenadu.toPadma[Eenadu.virama_5] = Padma.syllbreak;
-Eenadu.toPadma[Eenadu.virama_6] = Padma.syllbreak;
+Eenadu.toPadma[Eenadu.virama_1] = Padma.pollu;
+Eenadu.toPadma[Eenadu.virama_2] = Padma.pollu;
+Eenadu.toPadma[Eenadu.virama_3] = Padma.pollu;
+Eenadu.toPadma[Eenadu.virama_4] = Padma.pollu;
+Eenadu.toPadma[Eenadu.virama_5] = Padma.pollu;
+Eenadu.toPadma[Eenadu.virama_6] = Padma.pollu;
 Eenadu.toPadma[Eenadu.anusvara] = Padma.anusvara;
 
 Eenadu.toPadma[Eenadu.vowel_A_1] = Padma.vowel_A;
@@ -551,7 +551,7 @@ Eenadu.toPadma[Eenadu.combo_GHI]     = Padma.consnt_GHA + Padma.vowelsn_I;
 Eenadu.toPadma[Eenadu.combo_GHII]    = Padma.consnt_GHA + Padma.vowelsn_II;
 Eenadu.toPadma[Eenadu.combo_GHU]     = Padma.consnt_GHA + Padma.vowelsn_U;
 Eenadu.toPadma[Eenadu.combo_GHUU]    = Padma.consnt_GHA + Padma.vowelsn_UU;
-Eenadu.toPadma[Eenadu.combo_GHPOLLU] = Padma.consnt_GHA + Padma.syllbreak;
+Eenadu.toPadma[Eenadu.combo_GHPOLLU] = Padma.consnt_GHA + Padma.pollu;
 
 Eenadu.toPadma[Eenadu.combo_CI]      = Padma.consnt_CA + Padma.vowelsn_I;
 Eenadu.toPadma[Eenadu.combo_CII]     = Padma.consnt_CA + Padma.vowelsn_II;
@@ -563,7 +563,7 @@ Eenadu.toPadma[Eenadu.combo_JU]      = Padma.consnt_JA + Padma.vowelsn_U;
 Eenadu.toPadma[Eenadu.combo_JUU]     = Padma.consnt_JA + Padma.vowelsn_UU;
 Eenadu.toPadma[Eenadu.combo_JHI]     = Padma.consnt_JHA + Padma.vowelsn_I;
 Eenadu.toPadma[Eenadu.combo_JHII]    = Padma.consnt_JHA + Padma.vowelsn_II;
-Eenadu.toPadma[Eenadu.combo_JHPOLLU] = Padma.consnt_JHA + Padma.syllbreak;
+Eenadu.toPadma[Eenadu.combo_JHPOLLU] = Padma.consnt_JHA + Padma.pollu;
 
 Eenadu.toPadma[Eenadu.combo_TTHI]    = Padma.consnt_TTHA + Padma.vowelsn_I;
 Eenadu.toPadma[Eenadu.combo_TTHII]   = Padma.consnt_TTHA + Padma.vowelsn_II;
@@ -594,7 +594,7 @@ Eenadu.toPadma[Eenadu.combo_MEE]     = Padma.consnt_MA + Padma.vowelsn_EE;
 Eenadu.toPadma[Eenadu.combo_MAI]     = Padma.consnt_MA + Padma.vowelsn_AI;
 Eenadu.toPadma[Eenadu.combo_MO]      = Padma.consnt_MA + Padma.vowelsn_O;
 Eenadu.toPadma[Eenadu.combo_MOO]     = Padma.consnt_MA + Padma.vowelsn_OO;
-Eenadu.toPadma[Eenadu.combo_MPOLLU]  = Padma.consnt_MA + Padma.syllbreak;
+Eenadu.toPadma[Eenadu.combo_MPOLLU]  = Padma.consnt_MA + Padma.pollu;
 
 Eenadu.toPadma[Eenadu.combo_YAA]     = Padma.consnt_YA + Padma.vowelsn_AA;
 Eenadu.toPadma[Eenadu.combo_YI]      = Padma.consnt_YA + Padma.vowelsn_I;
@@ -604,8 +604,8 @@ Eenadu.toPadma[Eenadu.combo_YEE]     = Padma.consnt_YA + Padma.vowelsn_EE;
 Eenadu.toPadma[Eenadu.combo_YAI]     = Padma.consnt_YA + Padma.vowelsn_AI;
 Eenadu.toPadma[Eenadu.combo_YO]      = Padma.consnt_YA + Padma.vowelsn_O;
 Eenadu.toPadma[Eenadu.combo_YOO]     = Padma.consnt_YA + Padma.vowelsn_OO;
-Eenadu.toPadma[Eenadu.combo_YPOLLU_1]= Padma.consnt_YA + Padma.syllbreak;
-Eenadu.toPadma[Eenadu.combo_YPOLLU_2]= Padma.consnt_YA + Padma.syllbreak;
+Eenadu.toPadma[Eenadu.combo_YPOLLU_1]= Padma.consnt_YA + Padma.pollu;
+Eenadu.toPadma[Eenadu.combo_YPOLLU_2]= Padma.consnt_YA + Padma.pollu;
 Eenadu.toPadma[Eenadu.combo_RI]      = Padma.consnt_RA + Padma.vowelsn_I;
 Eenadu.toPadma[Eenadu.combo_RII]     = Padma.consnt_RA + Padma.vowelsn_II;
 Eenadu.toPadma[Eenadu.combo_LI]      = Padma.consnt_LA + Padma.vowelsn_I;

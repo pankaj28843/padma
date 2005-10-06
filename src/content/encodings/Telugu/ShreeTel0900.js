@@ -1,4 +1,4 @@
-// $Id: ShreeTel0900.js,v 1.5 2005/10/06 17:04:01 vnagarjuna Exp $ -->
+// $Id: ShreeTel0900.js,v 1.6 2005/10/06 18:13:36 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -357,11 +357,11 @@ Shree_Tel_0900.toPadma = new Array();
 
 Shree_Tel_0900.toPadma[Shree_Tel_0900.candrabindu] = Padma.candrabindu;
 Shree_Tel_0900.toPadma[Shree_Tel_0900.visarga]  = Padma.visarga;
-Shree_Tel_0900.toPadma[Shree_Tel_0900.virama_1] = Padma.syllbreak;
-Shree_Tel_0900.toPadma[Shree_Tel_0900.virama_2] = Padma.syllbreak;
-Shree_Tel_0900.toPadma[Shree_Tel_0900.virama_3] = Padma.syllbreak;
-Shree_Tel_0900.toPadma[Shree_Tel_0900.virama_4] = Padma.syllbreak;
-Shree_Tel_0900.toPadma[Shree_Tel_0900.virama_5] = Padma.syllbreak;
+Shree_Tel_0900.toPadma[Shree_Tel_0900.virama_1] = Padma.pollu;
+Shree_Tel_0900.toPadma[Shree_Tel_0900.virama_2] = Padma.pollu;
+Shree_Tel_0900.toPadma[Shree_Tel_0900.virama_3] = Padma.pollu;
+Shree_Tel_0900.toPadma[Shree_Tel_0900.virama_4] = Padma.pollu;
+Shree_Tel_0900.toPadma[Shree_Tel_0900.virama_5] = Padma.pollu;
 Shree_Tel_0900.toPadma[Shree_Tel_0900.anusvara_1] = Padma.anusvara;
 Shree_Tel_0900.toPadma[Shree_Tel_0900.anusvara_2] = Padma.anusvara;
 
@@ -515,7 +515,7 @@ Shree_Tel_0900.toPadma[Shree_Tel_0900.combo_MEE]     = Padma.consnt_MA + Padma.v
 Shree_Tel_0900.toPadma[Shree_Tel_0900.combo_MO]      = Padma.consnt_MA + Padma.vowelsn_O;
 Shree_Tel_0900.toPadma[Shree_Tel_0900.combo_MOO]     = Padma.consnt_MA + Padma.vowelsn_OO;
 Shree_Tel_0900.toPadma[Shree_Tel_0900.combo_MAU]     = Padma.consnt_MA + Padma.vowelsn_AU;
-Shree_Tel_0900.toPadma[Shree_Tel_0900.combo_MPOLLU]  = Padma.consnt_MA + Padma.syllbreak;
+Shree_Tel_0900.toPadma[Shree_Tel_0900.combo_MPOLLU]  = Padma.consnt_MA + Padma.pollu;
 
 Shree_Tel_0900.toPadma[Shree_Tel_0900.combo_YAA]     = Padma.consnt_YA + Padma.vowelsn_AA;
 Shree_Tel_0900.toPadma[Shree_Tel_0900.combo_YI]      = Padma.consnt_YA + Padma.vowelsn_I;
@@ -524,7 +524,7 @@ Shree_Tel_0900.toPadma[Shree_Tel_0900.combo_YE]      = Padma.consnt_YA + Padma.v
 Shree_Tel_0900.toPadma[Shree_Tel_0900.combo_YEE]     = Padma.consnt_YA + Padma.vowelsn_EE;
 Shree_Tel_0900.toPadma[Shree_Tel_0900.combo_YO]      = Padma.consnt_YA + Padma.vowelsn_O;
 Shree_Tel_0900.toPadma[Shree_Tel_0900.combo_YOO]     = Padma.consnt_YA + Padma.vowelsn_OO;
-Shree_Tel_0900.toPadma[Shree_Tel_0900.combo_YPOLLU]  = Padma.consnt_YA + Padma.syllbreak;
+Shree_Tel_0900.toPadma[Shree_Tel_0900.combo_YPOLLU]  = Padma.consnt_YA + Padma.pollu;
 Shree_Tel_0900.toPadma[Shree_Tel_0900.combo_RI]      = Padma.consnt_RA + Padma.vowelsn_I;
 Shree_Tel_0900.toPadma[Shree_Tel_0900.combo_RII]     = Padma.consnt_RA + Padma.vowelsn_II;
 Shree_Tel_0900.toPadma[Shree_Tel_0900.combo_LI]      = Padma.consnt_LA + Padma.vowelsn_I;
