@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.6 2005/10/03 18:16:31 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.7 2005/10/06 15:12:19 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -343,7 +343,7 @@ var Padma_Browser_Transformer = {
         if (arguments.length > 2) {
             if (this.inputMethod == Transformer.method_RTS)
                 this.transformer.setRTSMode(arguments[2]);
-            else if (this.inputMethod == Transformer.method_ISCII)
+            else if (this.inputMethod == Transformer.method_ISCII || this.inputMethod == Transformer.method_ITRANS)
                 this.transformer.setOutputLanguage(arguments[2]);
         }
         
