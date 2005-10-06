@@ -1,4 +1,4 @@
-// $Id: Vikatan.js,v 1.2 2005/09/25 14:52:27 vnagarjuna Exp $ -->
+// $Id: Vikatan.js,v 1.3 2005/10/06 16:27:35 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -104,7 +104,7 @@ Vikatan.consnt_HA      = "\u00FD";
 Vikatan.consnt_LLA     = "\u00F7";
 Vikatan.consnt_ZHA     = "\u00F6";
 Vikatan.consnt_RRA     = "\u00F8";
-Vikatan.consnt_KSH     = "\u00FE";
+Vikatan.conjct_KSH     = "\u00FE";
 
 //Gunintamulu
 Vikatan.vowelsn_AA     = "\u00A3";
@@ -267,7 +267,7 @@ Vikatan.toPadma[Vikatan.consnt_HA]  = Padma.consnt_HA;
 Vikatan.toPadma[Vikatan.consnt_LLA] = Padma.consnt_LLA;
 Vikatan.toPadma[Vikatan.consnt_ZHA] = Padma.consnt_ZHA;
 Vikatan.toPadma[Vikatan.consnt_RRA] = Padma.consnt_RRA;
-Vikatan.toPadma[Vikatan.consnt_KSH] = Padma.consnt_KSH;
+Vikatan.toPadma[Vikatan.conjct_KSH] = Padma.conjct_KSH;
 
 //Gunintamulu
 Vikatan.toPadma[Vikatan.vowelsn_AA]  = Padma.vowelsn_AA;
@@ -321,8 +321,8 @@ Vikatan.toPadma[Vikatan.combo_ZHI]   = Padma.consnt_ZHA + Padma.vowelsn_I;
 Vikatan.toPadma[Vikatan.combo_ZHII]  = Padma.consnt_ZHA + Padma.vowelsn_II;
 Vikatan.toPadma[Vikatan.combo_RRI]   = Padma.consnt_RRA + Padma.vowelsn_I;
 Vikatan.toPadma[Vikatan.combo_RRII]  = Padma.consnt_RRA + Padma.vowelsn_II;
-Vikatan.toPadma[Vikatan.combo_KSHI]  = Padma.consnt_KSH + Padma.vowelsn_I;
-Vikatan.toPadma[Vikatan.combo_KSHII] = Padma.consnt_KSH + Padma.vowelsn_II;
+Vikatan.toPadma[Vikatan.combo_KSHI]  = Padma.conjct_KSH + Padma.vowelsn_I;
+Vikatan.toPadma[Vikatan.combo_KSHII] = Padma.conjct_KSH + Padma.vowelsn_II;
 
 Vikatan.toPadma[Vikatan.combo_KPULLI]   = Padma.consnt_KA + Padma.pulli;
 Vikatan.toPadma[Vikatan.combo_NGPULLI]  = Padma.consnt_NGA + Padma.pulli;
@@ -346,7 +346,7 @@ Vikatan.toPadma[Vikatan.combo_HPULLI]   = Padma.consnt_HA + Padma.pulli;
 Vikatan.toPadma[Vikatan.combo_LLPULLI]  = Padma.consnt_LLA + Padma.pulli;
 Vikatan.toPadma[Vikatan.combo_ZHPULLI]  = Padma.consnt_ZHA + Padma.pulli;
 Vikatan.toPadma[Vikatan.combo_RRPULLI]  = Padma.consnt_RRA + Padma.pulli;
-Vikatan.toPadma[Vikatan.combo_KSHPULLI] = Padma.consnt_KSH + Padma.pulli;
+Vikatan.toPadma[Vikatan.combo_KSHPULLI] = Padma.conjct_KSH + Padma.pulli;
 
 //Miscellaneous(where it doesn't match ASCII representation)
 Vikatan.toPadma[Vikatan.extra_HYPHEN]   = Vikatan.HYPHEN;
