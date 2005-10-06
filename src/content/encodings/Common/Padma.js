@@ -1,4 +1,4 @@
-// $Id: Padma.js,v 1.3 2005/10/06 16:26:32 vnagarjuna Exp $ -->
+// $Id: Padma.js,v 1.4 2005/10/06 21:37:48 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -60,7 +60,7 @@ Padma.type_unknown   = 7;
 //Dependent forms of vowels and consonats (gunintamulu and vowels respectively) are off 0x80 from their base forms
 
 //Vowel modifiers (including pollu with visarga and anusvara
-Padma.anusvara    = "\uEC00";
+Padma.anusvara    = "\uEC00";   //60416
 Padma.visarga     = "\uEC01";
 Padma.pollu       = "\uEC02";   //dead consonant
 Padma.chillu      = "\uEC0D";   //half consonant - in honor of the Malayalam word chillksharamu (anything generated with a ZWJ in Unicode)

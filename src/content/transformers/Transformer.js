@@ -1,4 +1,4 @@
-// $Id: Transformer.js,v 1.6 2005/10/06 18:13:38 vnagarjuna Exp $ -->
+// $Id: Transformer.js,v 1.7 2005/10/06 21:37:48 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -196,9 +196,9 @@ Transformer.prototype.setDynamicFontByIndex = function (index)
         return false;
     if (Transformer.dynFont_Name[index] == null)
         return false;
+    this.dynFontIndex = index;
     if (this.output == Transformer.method_Unicode)
         this.outputWriter.setLanguage(Transformer.dynFont_LangCode[this.dynFontIndex]);
-    this.dynFontIndex = index;
     return true;
 }
 

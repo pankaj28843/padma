@@ -1,4 +1,4 @@
-// $Id: RTS.js,v 1.4 2005/10/06 18:13:36 vnagarjuna Exp $ -->
+// $Id: RTS.js,v 1.5 2005/10/06 21:37:48 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -638,8 +638,11 @@ RTS.prototype.transformFromPadma = function (str)
     var last_type = Padma.getType(last);
     if (last_type == Padma.type_hallu || last_type == Padma.type_vattu)
         str += Padma.vowel_A;
-    else if (last_type == Padma.type_accu_mod)
-        str = str.substring(0, str.length - 1) + Padma.vowel_A + last;
+    else if (last_type == Padma.type_accu_mod && str.length > 1) {
+        var type = Padma.getType(str.charAt(str.length - 2));
+        if (type == Padma.type_hallu || type == Padma.type_vattu)
+            str = str.substring(0, str.length - 1) + Padma.vowel_A + last;
+    }
     for(var i = 0; i < str.length; ++i)
         output += this.transformSyllableConstituent(str.charAt(i));
     return output;
