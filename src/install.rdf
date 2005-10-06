@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: install.rdf,v 1.8 2005/10/06 20:02:35 vnagarjuna Exp $-->
+<!--$Id: install.rdf,v 1.9 2005/10/06 21:39:30 vnagarjuna Exp $-->
 
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:em="http://www.mozilla.org/2004/em-rdf#">
@@ -10,7 +10,7 @@
     <em:name>Padma</em:name>
     <em:id>{3e450467-892a-45b8-9ed8-90e8d3bf2ad7}</em:id>
     <em:version>0.4.1</em:version>
-    <em:description>A Telugu Text Transformer</em:description>
+    <em:description>Transformer for Indic Text</em:description>
     <em:creator>Nagarjuna Venna</em:creator>
     <em:homepageURL>http://padma.mozdev.org</em:homepageURL>
     <em:optionsURL>chrome://padma/content/prefs.xul</em:optionsURL>
