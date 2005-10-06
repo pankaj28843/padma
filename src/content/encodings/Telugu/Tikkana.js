@@ -1,4 +1,4 @@
-// $Id: Tikkana.js,v 1.3 2005/10/06 16:28:47 vnagarjuna Exp $ -->
+// $Id: Tikkana.js,v 1.4 2005/10/06 17:04:01 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 //Copyright 2005 Suresh Kolichala <suresh_kolichala@yahoo.com>
@@ -311,9 +311,9 @@ Tikkana.toPadma = new Array();
 
 Tikkana.toPadma[Tikkana.candrabindu] = Padma.candrabindu;
 Tikkana.toPadma[Tikkana.visarga]  = Padma.visarga;
-Tikkana.toPadma[Tikkana.virama_1] = Padma.pollu;
-Tikkana.toPadma[Tikkana.virama_2] = Padma.pollu;
-Tikkana.toPadma[Tikkana.virama_3] = Padma.pollu;
+Tikkana.toPadma[Tikkana.virama_1] = Padma.syllbreak;
+Tikkana.toPadma[Tikkana.virama_2] = Padma.syllbreak;
+Tikkana.toPadma[Tikkana.virama_3] = Padma.syllbreak;
 Tikkana.toPadma[Tikkana.anusvara] = Padma.anusvara;
 Tikkana.toPadma[Tikkana.avagraha] = Padma.avagraha;
 
@@ -450,13 +450,13 @@ Tikkana.toPadma[Tikkana.combo_MAI]     = Padma.consnt_MA + Padma.vowelsn_AI;
 Tikkana.toPadma[Tikkana.combo_MO]      = Padma.consnt_MA + Padma.vowelsn_O;
 Tikkana.toPadma[Tikkana.combo_MOO]     = Padma.consnt_MA + Padma.vowelsn_OO;
 Tikkana.toPadma[Tikkana.combo_MAU]     = Padma.consnt_MA + Padma.vowelsn_AU;
-Tikkana.toPadma[Tikkana.combo_MPOLLU]  = Padma.consnt_MA + Padma.pollu;
+Tikkana.toPadma[Tikkana.combo_MPOLLU]  = Padma.consnt_MA + Padma.syllbreak;
 
 Tikkana.toPadma[Tikkana.combo_YI]      = Padma.consnt_YA + Padma.vowelsn_I;
 Tikkana.toPadma[Tikkana.combo_YE]     = Padma.consnt_YA + Padma.vowelsn_E;
 Tikkana.toPadma[Tikkana.combo_YEE]     = Padma.consnt_YA + Padma.vowelsn_EE;
 Tikkana.toPadma[Tikkana.combo_YOO]     = Padma.consnt_YA + Padma.vowelsn_OO;
-Tikkana.toPadma[Tikkana.combo_YPOLLU]  = Padma.consnt_YA + Padma.pollu;
+Tikkana.toPadma[Tikkana.combo_YPOLLU]  = Padma.consnt_YA + Padma.syllbreak;
 Tikkana.toPadma[Tikkana.combo_LI]      = Padma.consnt_LA + Padma.vowelsn_I;
 Tikkana.toPadma[Tikkana.combo_LII]     = Padma.consnt_LA + Padma.vowelsn_II;
 Tikkana.toPadma[Tikkana.combo_VI]      = Padma.consnt_VA + Padma.vowelsn_I;
