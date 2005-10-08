@@ -1,4 +1,4 @@
-// $Id: ISCII.js,v 1.4 2005/10/06 22:12:16 vnagarjuna Exp $ -->
+// $Id: ISCII.js,v 1.5 2005/10/08 20:37:04 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -299,7 +299,7 @@ ISCII.toPadma[ISCII.misc_VIRAMA + ISCII.letter_SSA]   = Padma.vattu_SSA;
 ISCII.toPadma[ISCII.misc_VIRAMA + ISCII.letter_SA]    = Padma.vattu_SA;
 ISCII.toPadma[ISCII.misc_VIRAMA + ISCII.letter_HA]    = Padma.vattu_HA;
 ISCII.toPadma[ISCII.misc_VIRAMA + ISCII.letter_QA]    = Padma.vattu_QA;
-ISCII.toPadma[ISCII.misc_VIRAMA + ISCII.letter_KHHA]  = Padma.vattu_KHHHA;
+ISCII.toPadma[ISCII.misc_VIRAMA + ISCII.letter_KHHA]  = Padma.vattu_KHHA;
 ISCII.toPadma[ISCII.misc_VIRAMA + ISCII.letter_GHHA]  = Padma.vattu_GHHA;
 ISCII.toPadma[ISCII.misc_VIRAMA + ISCII.letter_ZA]    = Padma.vattu_ZA;
 ISCII.toPadma[ISCII.misc_VIRAMA + ISCII.letter_FA]    = Padma.vattu_FA;

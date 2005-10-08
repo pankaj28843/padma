@@ -1,4 +1,4 @@
-// $Id: Unicode.js,v 1.4 2005/10/06 18:13:35 vnagarjuna Exp $ -->
+// $Id: Unicode.js,v 1.5 2005/10/08 20:37:04 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -824,7 +824,7 @@ Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.svarita]     = Unicode.common_SVA
 Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.danda]       = Unicode.common_DANDA;
 Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.ddanda]      = Unicode.common_DDANDA;
 Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.om]          = Unicode.common_OM;
-Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.abbrev]      = Unicode.codePoints[Padma.lang_DEVANAGARI].abbrev;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.abbrev]      = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_abbrev;
 
 //digits
 Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.digit_ZERO]  = Unicode.codePoints[Padma.lang_DEVANAGARI].digit_ZERO;
@@ -854,7 +854,7 @@ Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_CDR_E] = Unicode.codePoints
 Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_E]     = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_E;
 Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_EE]    = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_EE;
 Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_AI]    = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_AI;
-Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_CDR_O] = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_CDR_0;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_CDR_O] = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_CDR_O;
 Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_O]     = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_O;
 Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_OO]    = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_OO;
 Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowel_AU]    = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_AU;
@@ -920,7 +920,6 @@ Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowelsn_AI]  = Unicode.codePoints
 Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowelsn_O]   = Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_O;
 Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowelsn_OO]  = Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_OO;
 Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowelsn_AU]  = Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_AU;
-Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowelsn_AILEN]  = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_AILEN;
 
 //vattulu
 Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vattu_KA]    = Unicode.codePoints[Padma.lang_DEVANAGARI].misc_VIRAMA + Unicode.codePoints[Padma.lang_DEVANAGARI].letter_KA;
