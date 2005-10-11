@@ -1,4 +1,4 @@
-// $Id: Vikatan.js,v 1.4 2005/10/08 20:37:04 vnagarjuna Exp $ -->
+// $Id: Vikatan.js,v 1.5 2005/10/11 16:28:18 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -55,9 +55,9 @@ Vikatan.handleTwoPartVowelSigns = function (sign1, sign2)
     return sign1 + sign2;    
 }
 
-Vikatan.isRedundant = function (str)
+Vikatan.preprocessMessage = function (input)
 {
-    return false;
+    return input;
 }
 
 //Implementation details start here
@@ -118,6 +118,31 @@ Vikatan.vowelsn_UU     = "\u00A8";
 Vikatan.vowelsn_E      = "\u00AA";
 Vikatan.vowelsn_EE     = "\u00AB";
 Vikatan.vowelsn_AI     = "\u00AC";
+
+//Vikatan uses the same symbol for generating vowelsn_AU and consnt_LLA. This is a work around
+Vikatan.combo_KAU      = "\u00AA\u00E8\u00F7";
+Vikatan.combo_NGAU     = "\u00AA\u00E9\u00F7";
+Vikatan.combo_CAU      = "\u00AA\u00EA\u00F7";
+Vikatan.combo_JAU      = "\u00AA\u00FC\u00F7";
+Vikatan.combo_NYAU     = "\u00AA\u00EB\u00F7";
+Vikatan.combo_TTAU     = "\u00AA\u00EC\u00F7";
+Vikatan.combo_NNAU     = "\u00AA\u00ED\u00F7";
+Vikatan.combo_TAU      = "\u00AA\u00EE\u00F7";
+Vikatan.combo_NAU      = "\u00AA\u00EF\u00F7";
+Vikatan.combo_NNNAU    = "\u00AA\u00F9\u00F7";
+Vikatan.combo_PAU      = "\u00AA\u00F0\u00F7";
+Vikatan.combo_MAU      = "\u00AA\u00F1\u00F7";
+Vikatan.combo_YAU      = "\u00AA\u00F2\u00F7";
+Vikatan.combo_RAU      = "\u00AA\u00F3\u00F7";
+Vikatan.combo_LAU      = "\u00AA\u00F4\u00F7";
+Vikatan.combo_VAU      = "\u00AA\u00F5\u00F7";
+Vikatan.combo_SSAU     = "\u00AA\u00FB\u00F7";
+Vikatan.combo_SAU      = "\u00AA\u00FA\u00F7";
+Vikatan.combo_HAU      = "\u00AA\u00FD\u00F7";
+Vikatan.combo_LLAU     = "\u00AA\u00F7\u00F7";
+Vikatan.combo_ZHAU     = "\u00AA\u00F6\u00F7";
+Vikatan.combo_RRAU     = "\u00AA\u00F8\u00F7";
+Vikatan.combo_KSHAU    = "\u00AA\u00FE\u00F7";
 
 //Special Combinations
 Vikatan.combo_KI      = "\u0041";
@@ -319,6 +344,30 @@ Vikatan.toPadma[Vikatan.vowelsn_E]   = Padma.vowelsn_E;
 Vikatan.toPadma[Vikatan.vowelsn_EE]  = Padma.vowelsn_EE;
 Vikatan.toPadma[Vikatan.vowelsn_AI]  = Padma.vowelsn_AI;
 
+Vikatan.combo_KAU      = Padma.consnt_KA + Padma.vowelsn_AU;
+Vikatan.combo_NGAU     = Padma.consnt_NGA + Padma.vowelsn_AU;
+Vikatan.combo_CAU      = Padma.consnt_CA + Padma.vowelsn_AU;
+Vikatan.combo_JAU      = Padma.consnt_JA + Padma.vowelsn_AU;
+Vikatan.combo_NYAU     = Padma.consnt_NYA + Padma.vowelsn_AU;
+Vikatan.combo_TTAU     = Padma.consnt_TTA + Padma.vowelsn_AU;
+Vikatan.combo_NNAU     = Padma.consnt_NNA + Padma.vowelsn_AU;
+Vikatan.combo_TAU      = Padma.consnt_TA + Padma.vowelsn_AU;
+Vikatan.combo_NAU      = Padma.consnt_NA + Padma.vowelsn_AU;
+Vikatan.combo_NNNAU    = Padma.consnt_NNNA + Padma.vowelsn_AU;
+Vikatan.combo_PAU      = Padma.consnt_PA + Padma.vowelsn_AU;
+Vikatan.combo_MAU      = Padma.consnt_MA + Padma.vowelsn_AU;
+Vikatan.combo_YAU      = Padma.consnt_YA + Padma.vowelsn_AU;
+Vikatan.combo_RAU      = Padma.consnt_RA + Padma.vowelsn_AU;
+Vikatan.combo_LAU      = Padma.consnt_LA + Padma.vowelsn_AU;
+Vikatan.combo_VAU      = Padma.consnt_VA + Padma.vowelsn_AU;
+Vikatan.combo_SSAU     = Padma.consnt_SSA + Padma.vowelsn_AU;
+Vikatan.combo_SAU      = Padma.consnt_SA + Padma.vowelsn_AU;
+Vikatan.combo_HAU      = Padma.consnt_HA + Padma.vowelsn_AU;
+Vikatan.combo_LLAU     = Padma.consnt_LLA + Padma.vowelsn_AU;
+Vikatan.combo_ZHAU     = Padma.consnt_ZHA + Padma.vowelsn_AU;
+Vikatan.combo_RRAU     = Padma.consnt_RRA + Padma.vowelsn_AU;
+Vikatan.combo_KSHAU    = Padma.conjct_KSH + Padma.vowelsn_AU;
+
 //Special Combinations
 Vikatan.toPadma[Vikatan.combo_KI]      = Padma.consnt_KA + Padma.vowelsn_I;
 Vikatan.toPadma[Vikatan.combo_KII]     = Padma.consnt_KA + Padma.vowelsn_II;
@@ -428,7 +477,7 @@ Vikatan.toPadma[Vikatan.combo_KSHPULLI]= Padma.conjct_KSH + Padma.pulli;
 
 
 //Miscellaneous(where it doesn't match ASCII representation)
-Vikatan.toPadma[Vikatan.extra_HYPHEN]   = Vikatan.HYPHEN;
+Vikatan.toPadma[Vikatan.HYPHEN]   = "-";
 
 Vikatan.redundantList = new Array();
 
@@ -439,3 +488,27 @@ Vikatan.prefixList[Vikatan.vowelsn_AI]  = true;
 
 Vikatan.overloadList = new Array();
 Vikatan.overloadList[Vikatan.vowel_O]   = true;
+Vikatan.overloadList[Vikatan.vowelsn_E] = true;
+Vikatan.overloadList["\u00AA\u00E8"]    = true;
+Vikatan.overloadList["\u00AA\u00E9"]    = true;
+Vikatan.overloadList["\u00AA\u00EA"]    = true;
+Vikatan.overloadList["\u00AA\u00FC"]    = true;
+Vikatan.overloadList["\u00AA\u00EB"]    = true;
+Vikatan.overloadList["\u00AA\u00EC"]    = true;
+Vikatan.overloadList["\u00AA\u00ED"]    = true;
+Vikatan.overloadList["\u00AA\u00EE"]    = true;
+Vikatan.overloadList["\u00AA\u00EF"]    = true;
+Vikatan.overloadList["\u00AA\u00F9"]    = true;
+Vikatan.overloadList["\u00AA\u00F0"]    = true;
+Vikatan.overloadList["\u00AA\u00F1"]    = true;
+Vikatan.overloadList["\u00AA\u00F2"]    = true;
+Vikatan.overloadList["\u00AA\u00F3"]    = true;
+Vikatan.overloadList["\u00AA\u00F4"]    = true;
+Vikatan.overloadList["\u00AA\u00F5"]    = true;
+Vikatan.overloadList["\u00AA\u00FB"]    = true;
+Vikatan.overloadList["\u00AA\u00FA"]    = true;
+Vikatan.overloadList["\u00AA\u00FD"]    = true;
+Vikatan.overloadList["\u00AA\u00F7"]    = true;
+Vikatan.overloadList["\u00AA\u00F6"]    = true;
+Vikatan.overloadList["\u00AA\u00F8"]    = true;
+Vikatan.overloadList["\u00AA\u00FE"]    = true;
