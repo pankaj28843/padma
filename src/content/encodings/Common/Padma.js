@@ -1,4 +1,4 @@
-// $Id: Padma.js,v 1.5 2005/10/06 22:12:16 vnagarjuna Exp $ -->
+// $Id: Padma.js,v 1.6 2005/10/14 22:16:15 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -166,7 +166,7 @@ Padma.consnt_SSA  = "\uEC5D";
 Padma.consnt_SA   = "\uEC5E";
 Padma.consnt_HA   = "\uEC5F";
 Padma.conjct_KSH  = "\uEC60";   
-Padma.conjct_GN   = "\uEC61";  //Devanagari
+Padma.conjct_JNY  = "\uEC61";  //Devanagari
 Padma.consnt_TCH  = "\uEC62";  //Telugu (Extinct)
 Padma.consnt_TJ   = "\uEC63";  //Telugu (Extinct)
 
@@ -241,7 +241,7 @@ Padma.vattu_SSA   = "\uECDD";
 Padma.vattu_SA    = "\uECDE";
 Padma.vattu_HA    = "\uECDF";
 Padma.vattu_KSH   = "\uECE0";
-Padma.vattu_GN    = "\uECE1";
+Padma.vattu_JNY   = "\uECE1";
 Padma.vattu_TCH   = "\uECE2";
 Padma.vattu_TJ    = "\uECE3";
 
@@ -362,7 +362,7 @@ Padma.symbols[Padma.consnt_SSA]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_SA]   = Padma.type_hallu;
 Padma.symbols[Padma.consnt_HA]   = Padma.type_hallu;
 Padma.symbols[Padma.conjct_KSH]  = Padma.type_hallu;   
-Padma.symbols[Padma.conjct_GN]   = Padma.type_hallu;   
+Padma.symbols[Padma.conjct_JNY]  = Padma.type_hallu;   
 Padma.symbols[Padma.consnt_TCH]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_TJ]   = Padma.type_hallu;
 
@@ -433,7 +433,7 @@ Padma.symbols[Padma.vattu_SSA]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_SA]    = Padma.type_vattu;
 Padma.symbols[Padma.vattu_HA]    = Padma.type_vattu;
 Padma.symbols[Padma.vattu_KSH]   = Padma.type_vattu;   
-Padma.symbols[Padma.vattu_GN]    = Padma.type_vattu;   
+Padma.symbols[Padma.vattu_JNY]   = Padma.type_vattu;   
 Padma.symbols[Padma.vattu_TCH]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_TJ]    = Padma.type_vattu;
 

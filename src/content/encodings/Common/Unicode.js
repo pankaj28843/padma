@@ -1,4 +1,4 @@
-// $Id: Unicode.js,v 1.5 2005/10/08 20:37:04 vnagarjuna Exp $ -->
+// $Id: Unicode.js,v 1.6 2005/10/14 22:16:15 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -25,7 +25,6 @@
 function Unicode() 
 {
     this.lang = Padma.lang_TELUGU;
-    this.last_pollu = false;  //was the last one a syllable break or a pollu?
 }
 
 Unicode.maxLookupLen = 2;
@@ -396,6 +395,8 @@ Unicode.codePoints[Padma.lang_DEVANAGARI].letter_DDDHA= "\u095C";
 Unicode.codePoints[Padma.lang_DEVANAGARI].letter_RHA  = "\u095D";
 Unicode.codePoints[Padma.lang_DEVANAGARI].letter_FA   = "\u095E";
 Unicode.codePoints[Padma.lang_DEVANAGARI].letter_YYA  = "\u095F";
+Unicode.codePoints[Padma.lang_DEVANAGARI].conjct_KSH  = "\u0915\u094D\u0937";
+Unicode.codePoints[Padma.lang_DEVANAGARI].conjct_JNY  = "\u091C\u094D\u091E";
 
 //Dependent Vowel Signs
 Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_AA    = "\u093E";
@@ -905,6 +906,8 @@ Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_DDDHA]= Unicode.codePoints
 Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_RHA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_RHA;
 Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_FA]   = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_FA;
 Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.consnt_YYA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].letter_YYA;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.conjct_KSH]  = Unicode.codePoints[Padma.lang_DEVANAGARI].conjct_KSH;
+Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.conjct_JNY]  = Unicode.codePoints[Padma.lang_DEVANAGARI].conjct_JNY;
 
 //Gunimtaalu
 Unicode.fromPadma[Padma.lang_DEVANAGARI][Padma.vowelsn_AA]  = Unicode.codePoints[Padma.lang_DEVANAGARI].vowelsn_AA;
@@ -1129,23 +1132,14 @@ Unicode.prototype.transformFromPadma = function (str)
     var output = "";
     for(var i = 0; i < str.length; ++i) {
         var cur = str.charAt(i);
-        //Add a ZWNJ only if the following syllable starts with a consonant
-        if (i == 0 && this.last_pollu == true && Padma.getType(cur) == Padma.type_hallu)
-            output += Unicode.misc_ZWNJ;
         var out = Unicode.fromPadma[this.lang][cur];
         output += (out == null ? cur : out);
-        if (i == str.length - 1) {
-            if (cur == Padma.pollu)
-                this.last_pollu = true;
-            else this.last_pollu = false;
-        }
     }
     return output;
 }
 
 Unicode.prototype.cleanup = function (str)
 {
-    this.last_pollu = false;
     return "";
 }
 

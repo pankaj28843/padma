@@ -1,4 +1,4 @@
-// $Id: Vaartha.js,v 1.5 2005/10/06 18:13:36 vnagarjuna Exp $ -->
+// $Id: Vaartha.js,v 1.6 2005/10/14 22:16:16 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -353,10 +353,10 @@ Vaartha.arasunna       = "\u2022";
 Vaartha.toPadma = new Array();
 
 Vaartha.toPadma[Vaartha.visarga]  = Padma.visarga;
-Vaartha.toPadma[Vaartha.virama_1] = Padma.pollu;
-Vaartha.toPadma[Vaartha.virama_2] = Padma.pollu;
-Vaartha.toPadma[Vaartha.virama_3] = Padma.pollu;
-Vaartha.toPadma[Vaartha.virama_4] = Padma.pollu;
+Vaartha.toPadma[Vaartha.virama_1] = Padma.syllbreak;
+Vaartha.toPadma[Vaartha.virama_2] = Padma.syllbreak;
+Vaartha.toPadma[Vaartha.virama_3] = Padma.syllbreak;
+Vaartha.toPadma[Vaartha.virama_4] = Padma.syllbreak;
 Vaartha.toPadma[Vaartha.anusvara] = Padma.anusvara;
 
 Vaartha.toPadma[Vaartha.vowel_A]  = Padma.vowel_A;
@@ -502,7 +502,7 @@ Vaartha.toPadma[Vaartha.combo_ME]      = Padma.consnt_MA + Padma.vowelsn_E;
 Vaartha.toPadma[Vaartha.combo_MEE]     = Padma.consnt_MA + Padma.vowelsn_EE;
 Vaartha.toPadma[Vaartha.combo_MO]      = Padma.consnt_MA + Padma.vowelsn_O;
 Vaartha.toPadma[Vaartha.combo_MOO]     = Padma.consnt_MA + Padma.vowelsn_OO;
-Vaartha.toPadma[Vaartha.combo_MPOLLU]  = Padma.consnt_MA + Padma.pollu;
+Vaartha.toPadma[Vaartha.combo_MPOLLU]  = Padma.consnt_MA + Padma.syllbreak;
 
 Vaartha.toPadma[Vaartha.combo_YAA]     = Padma.consnt_YA + Padma.vowelsn_AA;
 Vaartha.toPadma[Vaartha.combo_YI]      = Padma.consnt_YA + Padma.vowelsn_I;
@@ -513,7 +513,7 @@ Vaartha.toPadma[Vaartha.combo_YE]      = Padma.consnt_YA + Padma.vowelsn_E;
 Vaartha.toPadma[Vaartha.combo_YEE]     = Padma.consnt_YA + Padma.vowelsn_EE;
 Vaartha.toPadma[Vaartha.combo_YAI]     = Padma.consnt_YA + Padma.vowelsn_AI;
 Vaartha.toPadma[Vaartha.combo_YOO]     = Padma.consnt_YA + Padma.vowelsn_OO;
-Vaartha.toPadma[Vaartha.combo_YPOLLU]  = Padma.consnt_YA + Padma.pollu;
+Vaartha.toPadma[Vaartha.combo_YPOLLU]  = Padma.consnt_YA + Padma.syllbreak;
 Vaartha.toPadma[Vaartha.combo_RAA]     = Padma.consnt_RA + Padma.vowelsn_AA;
 Vaartha.toPadma[Vaartha.combo_RI]      = Padma.consnt_RA + Padma.vowelsn_I;
 Vaartha.toPadma[Vaartha.combo_RII]     = Padma.consnt_RA + Padma.vowelsn_II;
@@ -523,7 +523,7 @@ Vaartha.toPadma[Vaartha.combo_REE]     = Padma.consnt_RA + Padma.vowelsn_EE;
 Vaartha.toPadma[Vaartha.combo_RO]      = Padma.consnt_RA + Padma.vowelsn_O;
 Vaartha.toPadma[Vaartha.combo_ROO]     = Padma.consnt_RA + Padma.vowelsn_OO;
 Vaartha.toPadma[Vaartha.combo_RAU]     = Padma.consnt_RA + Padma.vowelsn_AU;
-Vaartha.toPadma[Vaartha.combo_RPOLLU]  = Padma.consnt_RA + Padma.pollu;
+Vaartha.toPadma[Vaartha.combo_RPOLLU]  = Padma.consnt_RA + Padma.syllbreak;
 Vaartha.toPadma[Vaartha.combo_LI]      = Padma.consnt_LA + Padma.vowelsn_I;
 Vaartha.toPadma[Vaartha.combo_LII]     = Padma.consnt_LA + Padma.vowelsn_II;
 Vaartha.toPadma[Vaartha.combo_VI]      = Padma.consnt_VA + Padma.vowelsn_I;

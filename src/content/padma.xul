@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: padma.xul,v 1.5 2005/10/06 15:12:50 vnagarjuna Exp $-->
+<!--$Id: padma.xul,v 1.6 2005/10/14 22:16:15 vnagarjuna Exp $-->
 
 <!--Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
 
@@ -44,6 +44,7 @@
 <script type="application/x-javascript" src="encodings/Malayalam/Revathi.js"/>
 <script type="application/x-javascript" src="encodings/Malayalam/Manorama.js"/>
 <script type="application/x-javascript" src="encodings/Tamil/Vikatan.js"/>
+<script type="application/x-javascript" src="encodings/Devanagari/Subak.js"/>
 
 <script type="application/x-javascript" src="parsers/parser.js"/>
 <script type="application/x-javascript" src="parsers/RTSParser.js"/>
