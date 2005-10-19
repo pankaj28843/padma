@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.7 2005/10/06 15:12:19 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.8 2005/10/19 23:16:53 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -92,10 +92,7 @@ var Padma_Browser_Transformer = {
             node.style.textAlign = "left";
     },
 
-    //Auto Transform
-    attrNodeVisited: "padma_was_here",
-
-    onAutoTransformInit: function() {
+    onExtensionInit: function() {
         //Handle background loads in the browser
         var appcontent = document.getElementById("appcontent"); //browser
         if (appcontent)
@@ -104,10 +101,26 @@ var Padma_Browser_Transformer = {
         if (messagepane)
             messagepane.addEventListener("DOMContentLoaded", this.onPageLoadPre, true);
 
+
+        //Before the manual transform popup window is shown
+        var contextMenu = document.getElementById("contentAreaContextMenu"); //browser
+        if (contextMenu)
+            contextMenu.addEventListener("popupshowing", this.onPopupShowingPre, true);
+        //mail
+        contextMenu = document.getElementById("messagePaneContext");
+        if (contextMenu)
+            contextMenu.addEventListener("popupshowing", this.onPopupShowingPre, true);
+        contextMenu = document.getElementById("msgComposeContext");
+        if (contextMenu)
+            contextMenu.addEventListener("popupshowing", this.onPopupShowingPre, true);
+
         //Initialize other one time stuff
         initializeRelationships();
         Transformer.initialize();
     },
+
+    //Auto Transform
+    attrNodeVisited: "padma_was_here",
 
     //The event target is the browser window, this is a hack to make Pamda_Browser_Transformer 'this'
     onPageLoadPre: function(evt) {
@@ -176,6 +189,7 @@ var Padma_Browser_Transformer = {
     },
 
     onPageLoad: function(evt) {
+        var start = new Date().getTime();
         var page = evt.originalTarget;
         if (!page || !page.location || page.location == "about:blank" || !page.location.host || !this.isAutoTransformEnabled())
             return;
@@ -205,6 +219,8 @@ var Padma_Browser_Transformer = {
                     var body = page.getElementsByTagName("BODY");
                     for(var j = 0; j < body.length; ++j)
                         this.processTreeWithHeuristics(page, body[j], transformList.fonts[i]);
+                    var end = new Date().getTime();
+                    alert(end - start);
                     return;
                 }
             }
@@ -223,6 +239,8 @@ var Padma_Browser_Transformer = {
                 continue;
             this.transformNode(page, elems[i]);
         }
+        var end = new Date().getTime();
+        alert(end - start);
     },
 
     //Manual transform starts here
@@ -334,6 +352,21 @@ var Padma_Browser_Transformer = {
         }
     },
 
+    getSelection : function(node) {
+        var result = { selection: null, control: true };
+        if ((node instanceof HTMLTextAreaElement) || (node instanceof HTMLInputElement && 
+                                                      node.type == "text"|| node.type == "password")) 
+        {
+            result.selection = node.value.substring(node.selectionStart, node.selectionEnd);
+        }
+        else {
+            var focusedWindow = document.commandDispatcher.focusedWindow;
+            result.selection = focusedWindow.getSelection();
+            result.control = false;
+        }
+        return result;
+    },
+
     //Callback
     onManualTransform: function(inputMode, outputMode) {
         
@@ -346,53 +379,42 @@ var Padma_Browser_Transformer = {
             else if (this.inputMethod == Transformer.method_ISCII || this.inputMethod == Transformer.method_ITRANS)
                 this.transformer.setOutputLanguage(arguments[2]);
         }
-        
-        var node = document.popupNode;
-        var nodeLocalName = node.localName.toUpperCase();
 
-        this.popupNodeBaseURI = node.baseURI;
-
-        var selection;
-        //Check for Selection in various controls
-        //This code is thanks to Jaap Haitsma of the dictionarySearch extension and roachfiend of a million extensions
-        //http://roachfiend.com/
-        //http://mozdev.org/pipermail/project_owners/2004-March/001833.html
-        if ((nodeLocalName == "TEXTAREA") || (nodeLocalName == "INPUT" && (node.type == "text" || node.type == "password"))) {
-            selection = node.value.substring(node.selectionStart, node.selectionEnd);
-        } 
-        else if (nodeLocalName == "OPTION") {
-            var parentSelect = node.parentNode;
-            if (parentSelect.localName.toUpperCase() == "SELECT") {
-                if (parentSelect.multiple) {
-                    var anOption;
-                    for (var i = 0; i < parentSelect.options.length; i++) {
-                        anOption = parentSelect.options[i];
-                        if (anOption.selected) {
-                            selection += " " + anOption.value;
-                        }
-                    }
-                } 
-                else {
-                    selection = node.value;
-                }
-            }
-        } 
-        else if (nodeLocalName == "SELECT") {
-            selection = node.options[node.selected].value;
+        var result = this.getSelection(document.popupNode);
+        if (result.control) {
+            //For the specials
+            this.setTransformedText(this.transformer.convert(result.selection));
         }
         else {
-            //Selection in a regular window
-            var focusedWindow = document.commandDispatcher.focusedWindow;
-            selection = focusedWindow.getSelection();
-            this.traverseDOM(selection);
-            if (selection.rangeCount != 0)
-                selection.collapseToEnd();
-            return;
+            //for regular selection
+            this.traverseDOM(result.selection);
+            if (result.selection.rangeCount != 0)
+                result.selection.collapseToEnd();
         }
-        
-        //For the specials
-        this.setTransformedText(this.transformer.convert(selection));
+    },
+
+ 
+    //The event target is the browser window, this is a hack to make Pamda_Browser_Transformer 'this'
+    onPopupShowingPre: function(evt) {
+        Padma_Browser_Transformer.onPopupShowing(evt);
+    },
+
+    onPopupShowing: function(evt) {
+        var result = this.getSelection(document.popupNode), hidden = true;;
+        var val = result.selection;
+        if (!result.control)
+            val = val.toString();
+        if (val.length != 0)
+            //something selected - show menu items
+            hidden = false;
+
+        //Hard coded for now
+        //This will change based on language options soon
+        for(var i = 0; i <= 12; ++i) {
+            var item = document.getElementById("padmaMenuItem" + i);
+            item.hidden = hidden;
+        }
     }
 };
 
-window.addEventListener("load", function() { Padma_Browser_Transformer.onAutoTransformInit(); }, false);
+window.addEventListener("load", function() { Padma_Browser_Transformer.onExtensionInit(); }, false);
