@@ -1,4 +1,4 @@
-// $Id: parser.js,v 1.2 2005/09/25 14:52:27 vnagarjuna Exp $ -->
+// $Id: parser.js,v 1.3 2005/10/19 23:12:29 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -29,6 +29,7 @@
 Parser.state_START  = 0;    //Syllable hunt starts from this state
 Parser.state_CONSNT = 1;    //Found a consonant to start the syllable
 Parser.state_PREFIX = 2;    //Found a prefix symbol
+Parser.state_HALFORM = 3;   //Saw a half form
 
 function Parser(input, encoding) {
     this.index = 0;
@@ -108,10 +109,11 @@ Parser.prototype.handleInput = function (value, key, current)
         old_type = Padma.getType(symbol.charAt(0));
     else symbol = key;
 
-    var prefix = false;
-    if (arguments.length == 4) {
+    var prefix = false, suffix = false;
+    if (arguments.length >= 4)
         prefix = arguments[3];
-    }
+    if (arguments.length >= 5)
+        suffix = arguments[4];
 
     //alert("state = " + this.state + ", type = " + old_type + ", prefix = " + prefix);
         
@@ -125,7 +127,7 @@ Parser.prototype.handleInput = function (value, key, current)
         case Parser.state_START:
         case Parser.state_PREFIX: {
             this.index += key.length;
-            current.update(symbol, type, prefix);
+            current.update(symbol, type, prefix, suffix);
             if (prefix == true)
                 this.state = Parser.state_PREFIX;
             else {
@@ -139,6 +141,10 @@ Parser.prototype.handleInput = function (value, key, current)
                     //alert("3: consonant start");
                     this.state = Parser.state_CONSNT;
                 }
+                else if (type == Padma.type_half_form) {
+                    //alert("6: Half form");
+                    this.state = Parser.state_HALFORM;
+                }
                 else {
                     //gunintalu, vattulu and vowel/consonant modifiers should not appear in isolation, accept it silently
                     //alert("2: bad input");
@@ -148,8 +154,13 @@ Parser.prototype.handleInput = function (value, key, current)
             return;
         }
         
-        case Parser.state_CONSNT: {
-            if (type == Padma.type_accu || type == Padma.type_digit || type == Padma.type_unknown || type == Padma.type_hallu || prefix) {
+        case Parser.state_CONSNT: 
+        case Parser.state_HALFORM: {
+            var nextTypes = Padma.type_accu | Padma.type_digit | Padma.type_unknown;
+            if (this.state == Parser.state_CONSNT)
+                nextTypes |= Padma.type_hallu | Padma.type_half_form;
+
+            if (((type & nextTypes) || prefix) && !suffix) {
                 //next syllable has started, process it again next time around.
                 this.cache.key = key;
                 this.cache.value = value;
@@ -158,13 +169,16 @@ Parser.prototype.handleInput = function (value, key, current)
                 this.handleConsonantTermination(current);
                 return;
             }
+
+            if (this.state == Parser.state_HALFORM && type == Padma.type_hallu)
+                this.state = Parser.state_CONSNT;
             this.index += key.length;
             if (this.isCurrentSyllableComplete(type)) {
                 //Syllable is complete
                 this.state = Parser.state_START;
                 //alert("5: syllable complete");
             }
-            current.update(symbol, type, prefix);
+            current.update(symbol, type, prefix, suffix);
             return;
         }
     }

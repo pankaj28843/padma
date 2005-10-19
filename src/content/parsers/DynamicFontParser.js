@@ -1,4 +1,4 @@
-// $Id: DynamicFontParser.js,v 1.2 2005/09/25 14:52:27 vnagarjuna Exp $ -->
+// $Id: DynamicFontParser.js,v 1.3 2005/10/19 23:12:29 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -47,6 +47,9 @@ function DynamicFontParser(input, encoding) {
     else this.text = removeRedundantSymbols(input, encoding);
     this.length = this.text.length;
     this.encoding = encoding;
+    if (this.encoding.hasSuffixes == undefined || this.encoding.hasSuffixes == false)
+        this.hasSuffixes = false;
+    else this.hasSuffixes = true;
 }
 
 function DynamicFontParser_next()
@@ -84,7 +87,10 @@ function DynamicFontParser_next()
             this.cache.key = this.cache.value = null;
         }
 
-        this.handleInput(value, key, response, this.encoding.isPrefixSymbol(key));
+        var suffix = false;
+        if (this.hasSuffixes)
+            suffix = this.encoding.isSuffixSymbol(key);
+        this.handleInput(value, key, response, this.encoding.isPrefixSymbol(key), suffix);
         //alert("new state = " + this.state);
         if (this.state == Parser.state_START)
             return response.getSyllable();
