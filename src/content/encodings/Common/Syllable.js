@@ -1,4 +1,4 @@
-// $Id: Syllable.js,v 1.2 2005/09/25 14:52:26 vnagarjuna Exp $ -->
+// $Id: Syllable.js,v 1.3 2005/10/19 23:15:20 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -30,13 +30,18 @@ function Syllable() {
     this.cons_modifier = "";
 }
 
-Syllable.prototype.update = function (str, type, prefix)
+Syllable.prototype.update = function (str, type, prefix, suffix)
 {
     for(var i = 0; i < str.length; ++i) {
         if (i != 0)
             type = Padma.getType(str.charAt(i));
-        if (type == Padma.type_accu || type == Padma.type_hallu || type == Padma.type_digit || type == Padma.type_unknown)
+        if (type == Padma.type_accu || type == Padma.type_digit || type == Padma.type_hallu || type == Padma.type_unknown)
             this.body += str.charAt(i);
+        else if (type == Padma.type_half_form) {
+            if (suffix)
+                this.body = str.charAt(i) + this.body;
+            else this.body += str.charAt(i);
+        }
         else if (type == Padma.type_gunintam) {
             if (prefix)
                 this.prefix_gunintam += str.charAt(i);

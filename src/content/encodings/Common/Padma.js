@@ -1,4 +1,4 @@
-// $Id: Padma.js,v 1.6 2005/10/14 22:16:15 vnagarjuna Exp $ -->
+// $Id: Padma.js,v 1.7 2005/10/19 23:15:20 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -41,15 +41,16 @@ Padma.lang_KANNADA    = 8;
 //Only 3 languages supported now
 Padma.lang_MAXLANGS   = 4;
 
-//Types
-Padma.type_accu      = 0;
-Padma.type_gunintam  = 1;
-Padma.type_accu_mod  = 2;    //vowel modififers
-Padma.type_digit     = 3;
-Padma.type_vattu     = 4;
-Padma.type_hallu     = 5;
-Padma.type_hallu_mod = 6;
-Padma.type_unknown   = 7;
+//Types (values to allow bit wise operations)
+Padma.type_accu      = 1;
+Padma.type_gunintam  = 2;
+Padma.type_accu_mod  = 4;    //vowel modififers
+Padma.type_digit     = 8;
+Padma.type_vattu     = 16;
+Padma.type_hallu     = 32;
+Padma.type_hallu_mod = 64;
+Padma.type_half_form = 128;
+Padma.type_unknown   = 256;
 
 //Use Unicode Private Use Area for Padma's internal symbols starting with U+EC00.
 //Code pints used: +UEC00-+UEC0F, +UEC10-+UEC1C, +UEC20-+UEC63, +UEC70-+UEC7B, +UECA1-+UECE3.
@@ -245,6 +246,57 @@ Padma.vattu_JNY   = "\uECE1";
 Padma.vattu_TCH   = "\uECE2";
 Padma.vattu_TJ    = "\uECE3";
 
+//Half Forms
+Padma.halffm_KA   = "\uED33";
+Padma.halffm_QA   = "\uED34";  //Urdu
+Padma.halffm_KHA  = "\uED35";
+Padma.halffm_KHHA = "\uED36";  //Urdu
+Padma.halffm_GA   = "\uED37";
+Padma.halffm_GHA  = "\uED38";
+Padma.halffm_GHHA = "\uED39";  //Urdu
+Padma.halffm_NGA  = "\uED3A";
+Padma.halffm_CA   = "\uED3B";
+Padma.halffm_CHA  = "\uED3C";
+Padma.halffm_JA   = "\uED3D";
+Padma.halffm_ZA   = "\uED3E";  //Urdu
+Padma.halffm_JHA  = "\uED3F";
+Padma.halffm_NYA  = "\uED40";
+Padma.halffm_TTA  = "\uED41";
+Padma.halffm_TTHA = "\uED42";
+Padma.halffm_DDA  = "\uED43";
+Padma.halffm_DDDHA= "\uED44";  //Devanagari (Flapped DDA)
+Padma.halffm_DDHA = "\uED45";
+Padma.halffm_RHA  = "\uED46";  //Devanagari (Flapped DDHA)
+Padma.halffm_NNA  = "\uED47";
+Padma.halffm_TA   = "\uED48";
+Padma.halffm_THA  = "\uED49";
+Padma.halffm_DA   = "\uED4A";
+Padma.halffm_DHA  = "\uED4B";
+Padma.halffm_NA   = "\uED4C";
+Padma.halffm_NNNA = "\uED4D";  //Tamil
+Padma.halffm_PA   = "\uED4E";
+Padma.halffm_FA   = "\uED4F";  //Urdu
+Padma.halffm_PHA  = "\uED50";
+Padma.halffm_BA   = "\uED51";
+Padma.halffm_BHA  = "\uED52";
+Padma.halffm_MA   = "\uED53";
+Padma.halffm_YA   = "\uED54";
+Padma.halffm_YYA  = "\uED55";  //Bengali
+Padma.halffm_RA   = "\uED56";
+Padma.halffm_RRA  = "\uED57";
+Padma.halffm_LA   = "\uED58";
+Padma.halffm_LLA  = "\uED59";
+Padma.halffm_ZHA  = "\uED5A";  //Malayalam and Tamil
+Padma.halffm_VA   = "\uED5B";
+Padma.halffm_SHA  = "\uED5C";
+Padma.halffm_SSA  = "\uED5D";
+Padma.halffm_SA   = "\uED5E";
+Padma.halffm_HA   = "\uED5F";
+Padma.halffm_KSH  = "\uED60";   
+Padma.halffm_JNY  = "\uED61";  //Devanagari
+Padma.halffm_TCH  = "\uED62";  //Telugu (Extinct)
+Padma.halffm_TJ   = "\uED63";  //Telugu (Extinct)
+
 //Special signs
 Padma.digit_TEN      = "\uEC70";
 Padma.digit_HUNDRED  = "\uEC71";
@@ -264,6 +316,9 @@ Padma.base_END   = 0xEC63;
 //Dependent form range (exculudes #a#)
 Padma.dep_START = 0xECA2;
 Padma.dep_END   = 0xECE3;
+//Half form range
+Padma.half_START = 0xED33;
+Padma.half_END   = 0xED63;
 
 //Symbol table
 Padma.symbols = new Array();
@@ -437,6 +492,56 @@ Padma.symbols[Padma.vattu_JNY]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_TCH]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_TJ]    = Padma.type_vattu;
 
+Padma.symbols[Padma.halffm_KA]   = Padma.type_half_form;
+Padma.symbols[Padma.halffm_QA]   = Padma.type_half_form;
+Padma.symbols[Padma.halffm_KHA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_KHHA] = Padma.type_half_form;
+Padma.symbols[Padma.halffm_GA]   = Padma.type_half_form;
+Padma.symbols[Padma.halffm_GHA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_GHHA] = Padma.type_half_form;
+Padma.symbols[Padma.halffm_NGA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_CA]   = Padma.type_half_form;
+Padma.symbols[Padma.halffm_CHA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_JA]   = Padma.type_half_form;
+Padma.symbols[Padma.halffm_ZA]   = Padma.type_half_form;
+Padma.symbols[Padma.halffm_JHA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_NYA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_TTA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_TTHA] = Padma.type_half_form;
+Padma.symbols[Padma.halffm_DDA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_DDDHA] = Padma.type_half_form;
+Padma.symbols[Padma.halffm_DDHA] = Padma.type_half_form;
+Padma.symbols[Padma.halffm_RHA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_NNA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_TA]   = Padma.type_half_form;
+Padma.symbols[Padma.halffm_THA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_DA]   = Padma.type_half_form;
+Padma.symbols[Padma.halffm_DHA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_NA]   = Padma.type_half_form;
+Padma.symbols[Padma.halffm_NNNA] = Padma.type_half_form;
+Padma.symbols[Padma.halffm_PA]   = Padma.type_half_form;
+Padma.symbols[Padma.halffm_FA]   = Padma.type_half_form;
+Padma.symbols[Padma.halffm_PHA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_BA]   = Padma.type_half_form;
+Padma.symbols[Padma.halffm_BHA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_MA]   = Padma.type_half_form;
+Padma.symbols[Padma.halffm_YA]   = Padma.type_half_form;
+Padma.symbols[Padma.halffm_YYA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_RA]   = Padma.type_half_form;
+Padma.symbols[Padma.halffm_RRA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_LA]   = Padma.type_half_form;
+Padma.symbols[Padma.halffm_LLA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_ZHA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_VA]   = Padma.type_half_form;
+Padma.symbols[Padma.halffm_SHA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_SSA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_SA]   = Padma.type_half_form;
+Padma.symbols[Padma.halffm_HA]   = Padma.type_half_form;
+Padma.symbols[Padma.halffm_KSH]  = Padma.type_half_form;   
+Padma.symbols[Padma.halffm_JNY]  = Padma.type_half_form;   
+Padma.symbols[Padma.halffm_TCH]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_TJ]   = Padma.type_half_form;
+
 Padma.symbols[Padma.digit_TEN]      = Padma.type_digit;
 Padma.symbols[Padma.digit_HUNDRED]  = Padma.type_digit;
 Padma.symbols[Padma.digit_THOUSAND] = Padma.type_digit;
@@ -480,6 +585,11 @@ Padma.isVattu = function (str)
     return Padma.symbols[str] == Padma.type_vattu;
 }
 
+Padma.isHalfForm = function (str)
+{
+    return Padma.symbols[str] == Padma.type_half_form;
+}
+
 Padma.getType = function (str)
 {
     if (str == null)
@@ -499,6 +609,17 @@ Padma.dependentForm = function (str)
     return response;
 }
 
+Padma.halfForm = function (str)
+{
+    var response = "";
+    for(var i = 0; i < str.length; ++i) {
+        var code = str.charCodeAt(i);
+        if (code >= Padma.base_START && code <= Padma.base_END)
+            response += String.fromCharCode(code + 0x100);
+    }
+    return response;
+}
+
 Padma.baseForm = function (str)
 {
     var response = "";
@@ -506,6 +627,8 @@ Padma.baseForm = function (str)
         var code = str.charCodeAt(i);
         if (code >= Padma.dep_START && code <= Padma.dep_END)
             response += String.fromCharCode(code - 0x80);
+        else if (code >= Padma.half_START && code <= Padma.half_END)
+            response += String.fromCharCode(code - 0x100);
     }
     return response;
 }
