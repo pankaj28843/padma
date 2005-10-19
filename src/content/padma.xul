@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: padma.xul,v 1.6 2005/10/14 22:16:15 vnagarjuna Exp $-->
+<!--$Id: padma.xul,v 1.7 2005/10/19 23:16:11 vnagarjuna Exp $-->
 
 <!--Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
 
@@ -59,30 +59,30 @@
 <script type="application/x-javascript" src="padma.js"/>
 
 <popup id="contentAreaContextMenu">
-    <menuseparator id="padmaMenuSeparatorStart"/>
-    <menuitem id="pamdaMenuItemToUnicode" label="Transform To Unicode" accesskey="U" 
+    <menuseparator id="padmaMenuItem0"/>
+    <menuitem id="padmaMenuItem1" label="Transform To Unicode" accesskey="U" 
         oncommand="Padma_Browser_Transformer.onManualTransform(5, 1)"/>
-    <menuitem id="pamdaMenuItemToRTS" label="Transform To RTS" accesskey="R" 
+    <menuitem id="padmaMenuItem2" label="Transform To RTS" accesskey="R" 
         oncommand="Padma_Browser_Transformer.onManualTransform(5, 0)"/>
-    <menuitem id="pamdaMenuItemFromRTSEng" label="Transform RTS To Telugu (E)" accesskey="E" 
+    <menuitem id="padmaMenuItem3" label="Transform RTS To Telugu (E)" accesskey="E" 
         oncommand="Padma_Browser_Transformer.onManualTransform(0, 1, 0)"/>
-    <menuitem id="pamdaMenuItemFromRTSTel" label="Transform RTS To Telugu (T)" accesskey="G" 
+    <menuitem id="padmaMenuItem4" label="Transform RTS To Telugu (T)" accesskey="G" 
         oncommand="Padma_Browser_Transformer.onManualTransform(0, 1, 1)"/>
-    <menuitem id="pamdaMenuItemFromISCIIToTel" label="Transform ISCII To Telugu" accesskey="I" 
+    <menuitem id="padmaMenuItem5" label="Transform ISCII To Telugu" accesskey="I" 
         oncommand="Padma_Browser_Transformer.onManualTransform(2, 1, 0)"/>
-    <menuitem id="pamdaMenuItemFromISCIIToMal" label="Transform ISCII To Malayalam" accesskey="M" 
+    <menuitem id="padmaMenuItem6" label="Transform ISCII To Malayalam" accesskey="M" 
         oncommand="Padma_Browser_Transformer.onManualTransform(2, 1, 1)"/>
-    <menuitem id="pamdaMenuItemFromISCIIToTel" label="Transform ISCII To Tamil" accesskey="L" 
+    <menuitem id="padmaMenuItem7" label="Transform ISCII To Tamil" accesskey="L" 
         oncommand="Padma_Browser_Transformer.onManualTransform(2, 1, 2)"/>
-    <menuitem id="pamdaMenuItemFromISCIIToMal" label="Transform ISCII To Devanagari" accesskey="D" 
+    <menuitem id="padmaMenuItem8" label="Transform ISCII To Devanagari" accesskey="D" 
         oncommand="Padma_Browser_Transformer.onManualTransform(2, 1, 3)"/>
-    <menuitem id="pamdaMenuItemFromITRANSToTel" label="Transform ITRANS To Telugu" accesskey="A" 
+    <menuitem id="padmaMenuItem9" label="Transform ITRANS To Telugu" accesskey="A" 
         oncommand="Padma_Browser_Transformer.onManualTransform(3, 1, 0)"/>
-    <menuitem id="pamdaMenuItemFromITRANSToTel" label="Transform ITRANS To Malayalam" accesskey="M" 
+    <menuitem id="padmaMenuItem10" label="Transform ITRANS To Malayalam" accesskey="M" 
         oncommand="Padma_Browser_Transformer.onManualTransform(3, 1, 1)"/>
-    <menuitem id="pamdaMenuItemFromITRANSToTel" label="Transform ITRANS To Tamil" accesskey="L" 
+    <menuitem id="padmaMenuItem11" label="Transform ITRANS To Tamil" accesskey="L" 
         oncommand="Padma_Browser_Transformer.onManualTransform(3, 1, 2)"/>
-    <menuitem id="pamdaMenuItemFromITRANSToTel" label="Transform ITRANS To Devanagari" accesskey="D" 
+    <menuitem id="padmaMenuItem12" label="Transform ITRANS To Devanagari" accesskey="D" 
         oncommand="Padma_Browser_Transformer.onManualTransform(3, 1, 3)"/>
 </popup>
 
