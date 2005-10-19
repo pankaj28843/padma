@@ -1,4 +1,4 @@
-// $Id: Subak.js,v 1.1 2005/10/14 22:14:14 vnagarjuna Exp $ -->
+// $Id: Subak.js,v 1.2 2005/10/19 23:14:07 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -26,10 +26,11 @@ function Subak()
 }
 
 //The interface every dynamic font encoding should implement
-Subak.maxLookupLen = 2;
+Subak.maxLookupLen = 3;
 Subak.fontFace     = "Subak-1";
 Subak.displayName  = "Subak";
 Subak.language     = Padma.lang_DEVANAGARI;
+Subak.hasSuffixes  = true;
 
 Subak.lookup = function (str) 
 {
@@ -39,6 +40,11 @@ Subak.lookup = function (str)
 Subak.isPrefixSymbol = function (str)
 {
     return Subak.prefixList[str] != null;
+}
+
+Subak.isSuffixSymbol = function (str)
+{
+    return Subak.suffixList[str] != null;
 }
 
 Subak.isOverloaded = function (str)
@@ -51,6 +57,9 @@ Subak.handleTwoPartVowelSigns = function (sign1, sign2)
     if ((sign1 == Padma.vowelsn_EE && sign2 == Padma.vowelsn_AA) ||
         (sign1 == Padma.vowelsn_AA && sign2 == Padma.vowelsn_EE))
         return Padma.vowelsn_OO;
+    if ((sign1 == Padma.vowelsn_AI && sign2 == Padma.vowelsn_AA) ||
+        (sign1 == Padma.vowelsn_AA && sign2 == Padma.vowelsn_AI))
+        return Padma.vowelsn_AU;
     return sign1 + sign2;    
 }
 
@@ -61,9 +70,9 @@ Subak.isRedundant = function (str, prev)
 
 //Implementation details start here
 
-//TODO: 0x23, 0x26, 0x5D, 0x75, 0x76, 0x7D, 0x89 (2030), 0x8B (2039), 0x8D, 0x97 (2014), 0x98 (02DC), 
-//0x99 (2122), 0x9A (0161), 0x9F (0178), 0xa3, 0xa4, 0xaa, 0xad, 0xae, 0xaf, 0xb2, 0xb4, 0xb5, 0xb7,
-//0xe7, 0xe8, 0xf2, 0xf5, 0xf6, 0xf8, 0xf9, 0xfb, 0xfc, 0xfd
+//TODO: 0x23, 0x26,  0x89 (2030), 0x8B (2039), 0x8D, 0x98 (02DC), 
+//0x99 (2122), 0x9A (0161), 0x9F (0178), 0xad, 0xb5, 0xb7,
+//0xf2, 0xf5, 
 //??: 0x7F, 0x80, 0x8E, 0x90, 0x9D, 0x9E, 0xa4
 
 //Specials
@@ -72,10 +81,11 @@ Subak.anusvara_1     = "\u00A7";
 Subak.anusvara_2     = "\u00A8";
 Subak.candrabindu_1  = "\u00B0"; //what is this?
 Subak.candrabindu_2  = "\u00B1"; 
-Subak.virama_1       = "\u003C"; //?
-Subak.virama_2       = "\u0152"; //?
-Subak.virama_3       = "\u00AB"; //?
-Subak.virama_4       = "\u00B3"; //?
+Subak.virama_1       = "\u003C";
+Subak.virama_2       = "\u0152";
+Subak.virama_3       = "\u00AB";
+Subak.virama_4       = "\u00B2";
+Subak.virama_5       = "\u00B3";
 
 //Vowels
 Subak.vowel_A        = "\u0041";
@@ -87,10 +97,10 @@ Subak.vowel_UU       = "\u0044";
 Subak.vowel_R        = "\u0046";
 Subak.vowel_RR       = "\u0047";
 Subak.vowel_EE       = "\u0045";
-//Subak.vowel_AI       = "\u2030";
-//Subak.vowel_O        = "\u0160";
-//Subak.vowel_OO       = "\u2039";
-//Subak.vowel_AU       = "\u0152";
+Subak.vowel_AI       = "\u0045\u006F";
+Subak.vowel_O        = "\u0041\u006D\u006F";
+Subak.vowel_OO       = "\u0041\u006D\u00A1";
+Subak.vowel_AU       = "\u0041\u006D\u00A1";
 
 //Consonants
 Subak.consnt_KA      = "\u0048";
@@ -155,43 +165,46 @@ Subak.vowelsn_R      = "\u00A5";
 Subak.vowelsn_RR     = "\u00A6";
 Subak.vowelsn_EE     = "\u006F";
 Subak.vowelsn_AI     = "\u00A1";
-Subak.vowelsn_AU     = "\u006D\u00A1";
 
-//Matra + anuswara
+//Matra + anusvara
 Subak.vowelsn_IM     = "\u0071";
 Subak.vowelsn_IIM    = "\u0074";
 Subak.vowelsn_EEM    = "\u007C";
 Subak.vowelsn_AIM    = "\u00A2";
 
 //Half Forms
-Subak.halant_KA      = "\u0160";
-Subak.halant_KHA     = "\u00BB";
-Subak.halant_GA      = "\u00BD";
-Subak.halant_GHA     = "\u00BF";
-Subak.halant_CA      = "\u00C0";
-Subak.halant_JA      = "\u00C1";
-Subak.halant_JHA     = "\u00C2";
-Subak.halant_NYA     = "\u00C4";
-Subak.halant_NNA     = "\u00CA";
-Subak.halant_TA      = "\u00CB";
-Subak.halant_TT      = "\u00CE";
-Subak.halant_TR      = "\u00CD";
-Subak.halant_THA     = "\u00CF";
-Subak.halant_DHA     = "\u00DC";
-Subak.halant_NA      = "\u00DD";
-Subak.halant_PA      = "\u00DF";
-Subak.halant_PHA     = "\u00E2";
-Subak.halant_BA      = "\u00E3";
-Subak.halant_BHA     = "\u00E4";
-Subak.halant_MA      = "\u00E5";
-Subak.halant_YA      = "\u00E6";
-Subak.halant_LA      = "\u00EB";
-Subak.halant_VA      = "\u00EC";
-Subak.halant_SHA     = "\u00ED";
-Subak.halant_SSA     = "\u00EE";
-Subak.halant_SA      = "\u00F1";
-Subak.halant_HA      = "\u00F4";
-Subak.halant_KSH     = "\u00FA";
+Subak.halffm_KA      = "\u0160";
+Subak.halffm_KHA     = "\u00BB";
+Subak.halffm_GA      = "\u00BD";
+Subak.halffm_GHA     = "\u00BF";
+Subak.halffm_CA      = "\u00C0";
+Subak.halffm_JA      = "\u00C1";
+Subak.halffm_JHA     = "\u00C2";
+Subak.halffm_NYA     = "\u00C4";
+Subak.halffm_NNA     = "\u00CA";
+Subak.halffm_TA      = "\u00CB";
+Subak.halffm_TT      = "\u00CE";
+Subak.halffm_TR      = "\u00CD";
+Subak.halffm_THA     = "\u00CF";
+Subak.halffm_DHA     = "\u00DC";
+Subak.halffm_NA      = "\u00DD";
+Subak.halffm_PA      = "\u00DF";
+Subak.halffm_PHA     = "\u00E2";
+Subak.halffm_BA      = "\u00E3";
+Subak.halffm_BHA     = "\u00E4";
+Subak.halffm_MA      = "\u00E5";
+Subak.halffm_YA      = "\u00E6";
+Subak.halffm_RA      = "\u00A9";
+Subak.halffm_LA      = "\u00EB";
+Subak.halffm_VA      = "\u00EC";
+Subak.halffm_SHA_1   = "\u00ED";
+Subak.halffm_SHA_2   = "\u00FB";
+Subak.halffm_SSA     = "\u00EE";
+Subak.halffm_SA      = "\u00F1";
+Subak.halffm_HA      = "\u00F4";
+Subak.halffm_LLA     = "\u00F9";
+Subak.halffm_RRA     = "\u00E8";
+Subak.halffm_KSH     = "\u00FA";
 
 //Conjuncts
 Subak.conjct_KK      = "\u00B8";
@@ -227,6 +240,8 @@ Subak.conjct_NN      = "\u00DE";
 Subak.conjct_PR      = "\u00E0";
 Subak.conjct_PT      = "\u00E1";
 Subak.conjct_LL      = "\u201E";
+Subak.conjct_SHC     = "\u00FC";
+Subak.conjct_SHN     = "\u00FD";
 Subak.conjct_SHR     = "\u006C";
 Subak.conjct_SHV     = "\u0153";
 Subak.conjct_SSTT    = "\u00EF";
@@ -235,6 +250,7 @@ Subak.conjct_STR     = "\u00F3";
 Subak.conjct_HNN     = "\u2020";
 Subak.conjct_HN      = "\u2022";
 Subak.conjct_HM      = "\u00F7";
+Subak.conjct_HY      = "\u00F8";
 Subak.conjct_HL      = "\u2021";
 Subak.conjct_HV      = "\u02C6";
 
@@ -242,9 +258,23 @@ Subak.conjct_HV      = "\u02C6";
 Subak.combo_DR       = "\u00D1";
 Subak.combo_RU       = "\u00E9";
 Subak.combo_RUU      = "\u00EA";
+Subak.combo_HR       = "\u00F6";
 
-Subak.vattu_RA_1     = "\u00AB";
-Subak.vattu_RA_2     = "\u00B4";
+//Half forms of RA
+Subak.halffm_RII     = "\u0075";
+Subak.halffm_RIIM    = "\u0076";
+Subak.halffm_REE     = "\u007D";
+Subak.halffm_REEM    = "\u005D";
+Subak.halffm_RAI     = "\u00A3";
+Subak.halffm_RAIM    = "\u00A4";
+Subak.halffm_RA_ANU  = "\u00AA";
+
+Subak.vattu_YA       = "\u00E7";
+Subak.vattu_RA_1     = "\u2014";
+Subak.vattu_RA_2     = "\u00AB";
+Subak.vattu_RA_3     = "\u00B4";
+Subak.vattu_RA_U     = "\u00AE";
+Subak.vattu_RA_UU    = "\u00AF";
 
 //syllable breaks
 Subak.syllbr_KHA     = "\u00BC";
@@ -301,6 +331,7 @@ Subak.toPadma[Subak.virama_1]      = Padma.syllbreak;
 Subak.toPadma[Subak.virama_2]      = Padma.syllbreak;
 Subak.toPadma[Subak.virama_3]      = Padma.syllbreak;
 Subak.toPadma[Subak.virama_4]      = Padma.syllbreak;
+Subak.toPadma[Subak.virama_5]      = Padma.syllbreak;
 //Subak.toPadma[Subak.visarga]       = Subak.visarga;
 
 Subak.toPadma[Subak.vowel_A]  = Padma.vowel_A;
@@ -312,10 +343,10 @@ Subak.toPadma[Subak.vowel_UU] = Padma.vowel_UU;
 Subak.toPadma[Subak.vowel_R]  = Padma.vowel_R;
 Subak.toPadma[Subak.vowel_RR] = Padma.vowel_RR;
 Subak.toPadma[Subak.vowel_EE] = Padma.vowel_EE;
-//Subak.toPadma[Subak.vowel_AI] = Padma.vowel_AI;
-//Subak.toPadma[Subak.vowel_O]  = Padma.vowel_O;
-//Subak.toPadma[Subak.vowel_OO] = Padma.vowel_OO;
-//Subak.toPadma[Subak.vowel_AU] = Padma.vowel_AU;
+Subak.toPadma[Subak.vowel_AI] = Padma.vowel_AI;
+Subak.toPadma[Subak.vowel_O]  = Padma.vowel_O;
+Subak.toPadma[Subak.vowel_OO] = Padma.vowel_OO;
+Subak.toPadma[Subak.vowel_AU] = Padma.vowel_AU;
 
 Subak.toPadma[Subak.consnt_KA]  = Padma.consnt_KA;
 Subak.toPadma[Subak.consnt_KHA] = Padma.consnt_KHA;
@@ -379,7 +410,6 @@ Subak.toPadma[Subak.vowelsn_R]   = Padma.vowelsn_R;
 Subak.toPadma[Subak.vowelsn_RR]  = Padma.vowelsn_RR;
 Subak.toPadma[Subak.vowelsn_EE]   = Padma.vowelsn_EE;
 Subak.toPadma[Subak.vowelsn_AI]  = Padma.vowelsn_AI;
-Subak.toPadma[Subak.vowelsn_AU]   = Padma.vowelsn_AU;
 
 //Matra + anusvara
 Subak.toPadma[Subak.vowelsn_IM]   = Padma.vowelsn_I + Padma.anusvara;
@@ -387,34 +417,39 @@ Subak.toPadma[Subak.vowelsn_IIM]  = Padma.vowelsn_II + Padma.anusvara;
 Subak.toPadma[Subak.vowelsn_EEM]  = Padma.vowelsn_EE + Padma.anusvara;
 Subak.toPadma[Subak.vowelsn_AIM]  = Padma.vowelsn_AI + Padma.anusvara;
 
-//Halant
-Subak.toPadma[Subak.halant_KA]     = Padma.consnt_KA + Padma.halant;
-Subak.toPadma[Subak.halant_KHA]    = Padma.consnt_KHA + Padma.halant;
-Subak.toPadma[Subak.halant_GA]     = Padma.consnt_GA + Padma.halant;
-Subak.toPadma[Subak.halant_GHA]    = Padma.consnt_GHA + Padma.halant;
-Subak.toPadma[Subak.halant_CA]     = Padma.consnt_CA + Padma.halant;
-Subak.toPadma[Subak.halant_JA]     = Padma.consnt_JA + Padma.halant;
-Subak.toPadma[Subak.halant_JHA]    = Padma.consnt_JHA + Padma.halant;
-Subak.toPadma[Subak.halant_NYA]    = Padma.consnt_NYA + Padma.halant;
-Subak.toPadma[Subak.halant_NNA]    = Padma.consnt_NNA + Padma.halant;
-Subak.toPadma[Subak.halant_TA]     = Padma.consnt_TA + Padma.halant;
-Subak.toPadma[Subak.halant_TR]     = Padma.consnt_TA + Padma.vattu_RA + Padma.halant;
-Subak.toPadma[Subak.halant_THA]    = Padma.consnt_THA + Padma.halant;
-Subak.toPadma[Subak.halant_DHA]    = Padma.consnt_DHA + Padma.halant;
-Subak.toPadma[Subak.halant_NA]     = Padma.consnt_NA + Padma.halant;
-Subak.toPadma[Subak.halant_PA]     = Padma.consnt_PA + Padma.halant;
-Subak.toPadma[Subak.halant_PHA]    = Padma.consnt_PHA + Padma.halant;
-Subak.toPadma[Subak.halant_BA]     = Padma.consnt_BA + Padma.halant;
-Subak.toPadma[Subak.halant_BHA]    = Padma.consnt_BHA + Padma.halant;
-Subak.toPadma[Subak.halant_MA]     = Padma.consnt_MA + Padma.halant;
-Subak.toPadma[Subak.halant_YA]     = Padma.consnt_YA + Padma.halant;
-Subak.toPadma[Subak.halant_LA]     = Padma.consnt_LA + Padma.halant;
-Subak.toPadma[Subak.halant_VA]     = Padma.consnt_VA + Padma.halant;
-Subak.toPadma[Subak.halant_SHA]    = Padma.consnt_SHA + Padma.halant;
-Subak.toPadma[Subak.halant_SSA]    = Padma.consnt_SSA + Padma.halant;
-Subak.toPadma[Subak.halant_SA]     = Padma.consnt_SA + Padma.halant;
-Subak.toPadma[Subak.halant_HA]     = Padma.consnt_HA + Padma.halant;
-Subak.toPadma[Subak.halant_KSH]    = Padma.consnt_KA + Padma.vattu_SSA + Padma.halant;
+//Halffm
+Subak.toPadma[Subak.halffm_KA]     = Padma.halffm_KA;
+Subak.toPadma[Subak.halffm_KHA]    = Padma.halffm_KHA;
+Subak.toPadma[Subak.halffm_GA]     = Padma.halffm_GA;
+Subak.toPadma[Subak.halffm_GHA]    = Padma.halffm_GHA;
+Subak.toPadma[Subak.halffm_CA]     = Padma.halffm_CA;
+Subak.toPadma[Subak.halffm_JA]     = Padma.halffm_JA;
+Subak.toPadma[Subak.halffm_JHA]    = Padma.halffm_JHA;
+Subak.toPadma[Subak.halffm_NYA]    = Padma.halffm_NYA;
+Subak.toPadma[Subak.halffm_NNA]    = Padma.halffm_NNA;
+Subak.toPadma[Subak.halffm_TA]     = Padma.halffm_TA;
+Subak.toPadma[Subak.halffm_TT]     = Padma.halffm_TA + Padma.halffm_TA;
+Subak.toPadma[Subak.halffm_TR]     = Padma.halffm_TA + Padma.halffm_RA;
+Subak.toPadma[Subak.halffm_THA]    = Padma.halffm_THA;
+Subak.toPadma[Subak.halffm_DHA]    = Padma.halffm_DHA;
+Subak.toPadma[Subak.halffm_NA]     = Padma.halffm_NA;
+Subak.toPadma[Subak.halffm_PA]     = Padma.halffm_PA;
+Subak.toPadma[Subak.halffm_PHA]    = Padma.halffm_PHA;
+Subak.toPadma[Subak.halffm_BA]     = Padma.halffm_BA;
+Subak.toPadma[Subak.halffm_BHA]    = Padma.halffm_BHA;
+Subak.toPadma[Subak.halffm_MA]     = Padma.halffm_MA;
+Subak.toPadma[Subak.halffm_YA]     = Padma.halffm_YA;
+Subak.toPadma[Subak.halffm_RA]     = Padma.halffm_RA;
+Subak.toPadma[Subak.halffm_LA]     = Padma.halffm_LA;
+Subak.toPadma[Subak.halffm_VA]     = Padma.halffm_VA;
+Subak.toPadma[Subak.halffm_SHA_1]  = Padma.halffm_SHA;
+Subak.toPadma[Subak.halffm_SHA_2]  = Padma.halffm_SHA;
+Subak.toPadma[Subak.halffm_SSA]    = Padma.halffm_SSA;
+Subak.toPadma[Subak.halffm_SA]     = Padma.halffm_SA;
+Subak.toPadma[Subak.halffm_HA]     = Padma.halffm_HA;
+Subak.toPadma[Subak.halffm_LLA]    = Padma.halffm_LLA;
+Subak.toPadma[Subak.halffm_RRA]    = Padma.halffm_RRA;
+Subak.toPadma[Subak.halffm_KSH]    = Padma.halffm_KA + Padma.halffm_SSA;
 
 //Conjuncts
 Subak.toPadma[Subak.conjct_KK]     = Padma.consnt_KA + Padma.vattu_KA;
@@ -450,6 +485,8 @@ Subak.toPadma[Subak.conjct_NN]     = Padma.consnt_NA + Padma.vattu_NA;
 Subak.toPadma[Subak.conjct_PR]     = Padma.consnt_PA + Padma.vattu_RA;
 Subak.toPadma[Subak.conjct_PT]     = Padma.consnt_PA + Padma.vattu_TA;
 Subak.toPadma[Subak.conjct_LL]     = Padma.consnt_LA + Padma.vattu_LA;
+Subak.toPadma[Subak.conjct_SHC]    = Padma.consnt_SHA + Padma.vattu_CA;
+Subak.toPadma[Subak.conjct_SHN]    = Padma.consnt_SHA + Padma.vattu_NA;
 Subak.toPadma[Subak.conjct_SHR]    = Padma.consnt_SHA + Padma.vattu_RA;
 Subak.toPadma[Subak.conjct_SHV]    = Padma.consnt_SHA + Padma.vattu_VA;
 Subak.toPadma[Subak.conjct_SSTT]   = Padma.consnt_SSA + Padma.vattu_TTA;
@@ -458,16 +495,29 @@ Subak.toPadma[Subak.conjct_STR]    = Padma.consnt_SA + Padma.vattu_TA + Padma.va
 Subak.toPadma[Subak.conjct_HNN]    = Padma.consnt_HA + Padma.vattu_NNA;
 Subak.toPadma[Subak.conjct_HN]     = Padma.consnt_HA + Padma.vattu_NA;
 Subak.toPadma[Subak.conjct_HM]     = Padma.consnt_HA + Padma.vattu_MA;
+Subak.toPadma[Subak.conjct_HY]     = Padma.consnt_HA + Padma.vattu_YA;
 Subak.toPadma[Subak.conjct_HL]     = Padma.consnt_HA + Padma.vattu_LA;
 Subak.toPadma[Subak.conjct_HV]     = Padma.consnt_HA + Padma.vattu_VA;
-
 
 Subak.toPadma[Subak.combo_DR]      = Padma.consnt_DA + Padma.vowelsn_R;
 Subak.toPadma[Subak.combo_RU]      = Padma.consnt_RA + Padma.vowelsn_U;
 Subak.toPadma[Subak.combo_RUU]     = Padma.consnt_RA + Padma.vowelsn_UU;
+Subak.toPadma[Subak.combo_HR]      = Padma.consnt_HA + Padma.vowelsn_R;
 
+Subak.toPadma[Subak.halffm_RII]     = Padma.halffm_RA + Padma.vowelsn_II;
+Subak.toPadma[Subak.halffm_RIIM]    = Padma.halffm_RA + Padma.vowelsn_II + Padma.anusvara;
+Subak.toPadma[Subak.halffm_REE]     = Padma.halffm_RA + Padma.vowelsn_EE;
+Subak.toPadma[Subak.halffm_REEM]    = Padma.halffm_RA + Padma.vowelsn_EE + Padma.anusvara;
+Subak.toPadma[Subak.halffm_RAI]     = Padma.halffm_RA + Padma.vowelsn_AI;
+Subak.toPadma[Subak.halffm_RAIM]    = Padma.halffm_RA + Padma.vowelsn_AI + Padma.anusvara;
+Subak.toPadma[Subak.halffm_RA_ANU]  = Padma.halffm_RA + Padma.anusvara;
+
+Subak.toPadma[Subak.vattu_YA]      = Padma.vattu_YA;
 Subak.toPadma[Subak.vattu_RA_1]    = Padma.vattu_RA;
 Subak.toPadma[Subak.vattu_RA_2]    = Padma.vattu_RA;
+Subak.toPadma[Subak.vattu_RA_3]    = Padma.vattu_RA;
+Subak.toPadma[Subak.vattu_RA_U]    = Padma.vattu_RA + Padma.vowelsn_U;
+Subak.toPadma[Subak.vattu_RA_UU]   = Padma.vattu_RA + Padma.vowelsn_UU;
 
 Subak.toPadma[Subak.syllbr_KHA]    = Padma.consnt_KHA + Padma.syllbreak;
 Subak.toPadma[Subak.syllbr_JHA]    = Padma.consnt_JHA + Padma.syllbreak;
@@ -498,12 +548,24 @@ Subak.prefixList[Subak.vowelsn_I_2]  = true;
 Subak.prefixList[Subak.vowelsn_I_3]  = true;
 Subak.prefixList[Subak.vowelsn_IM]   = true;
 
+Subak.suffixList = new Array();
+Subak.suffixList[Subak.halffm_RA]     = true;
+Subak.suffixList[Subak.halffm_RII]    = true;
+Subak.suffixList[Subak.halffm_RIIM]   = true;
+Subak.suffixList[Subak.halffm_REE]    = true;
+Subak.suffixList[Subak.halffm_REEM]   = true;
+Subak.suffixList[Subak.halffm_RAI]    = true;
+Subak.suffixList[Subak.halffm_RAIM]   = true;
+Subak.suffixList[Subak.halffm_RA_ANU] = true;
+
 Subak.redundantList = new Array();
 Subak.redundantList[Subak.misc_UNKNOWN_1] = true;
 Subak.redundantList[Subak.misc_UNKNOWN_2] = true;
 
 Subak.overloadList = new Array();
 Subak.overloadList[Subak.vowel_A]    = true;
+Subak.overloadList[Subak.vowel_AA]   = true;
+Subak.overloadList[Subak.vowel_EE]   = true;
 Subak.overloadList[Subak.vowel_I]    = true;
 Subak.overloadList[Subak.vowelsn_AA] = true;
-Subak.overloadList[Subak.halant_TT]  = true;
+Subak.overloadList[Subak.halffm_TT]  = true;
