@@ -1,4 +1,4 @@
-// $Id: Vikatan.js,v 1.5 2005/10/11 16:28:18 vnagarjuna Exp $ -->
+// $Id: Vikatan.js,v 1.6 2005/10/21 14:06:20 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -43,7 +43,7 @@ Vikatan.isPrefixSymbol = function (str)
 
 Vikatan.isOverloaded = function (str)
 {
-    return false;
+    return Vikatan.overloadList[str] != null;
 }
 
 Vikatan.handleTwoPartVowelSigns = function (sign1, sign2)
@@ -475,11 +475,7 @@ Vikatan.toPadma[Vikatan.combo_KSHI]    = Padma.conjct_KSH + Padma.vowelsn_I;
 Vikatan.toPadma[Vikatan.combo_KSHII]   = Padma.conjct_KSH + Padma.vowelsn_II;
 Vikatan.toPadma[Vikatan.combo_KSHPULLI]= Padma.conjct_KSH + Padma.pulli;
 
-
-//Miscellaneous(where it doesn't match ASCII representation)
 Vikatan.toPadma[Vikatan.HYPHEN]   = "-";
-
-Vikatan.redundantList = new Array();
 
 Vikatan.prefixList = new Array();
 Vikatan.prefixList[Vikatan.vowelsn_E]   = true;
