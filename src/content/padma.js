@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.8 2005/10/19 23:16:53 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.9 2005/10/21 14:08:11 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -119,6 +119,17 @@ var Padma_Browser_Transformer = {
         Transformer.initialize();
     },
 
+    //returns font if set, otherwise null
+    setDynamicFont: function(fonts) {
+        var font_list = fonts.split(","), font_is_valid = false;
+
+        for(var i = 0; i < font_list.length; ++i) {
+            if (this.transformer.setDynamicFontByName(font_list[i]))  //can transform?
+                return font_list[i];
+        }
+        return null;
+    },
+
     //Auto Transform
     attrNodeVisited: "padma_was_here",
 
@@ -130,9 +141,9 @@ var Padma_Browser_Transformer = {
     //No heuristics - auto transform all text nodes that are children of this node
     transformNode: function(page, node) {
         var style = page.defaultView.getComputedStyle(node, null);
-        var font = style.getPropertyValue("font-family");
         var align = style.getPropertyValue("text-align");
-        var font_is_valid = this.transformer.setDynamicFontByName(font);  //can transform?
+        var font = this.setDynamicFont(style.getPropertyValue("font-family"));
+        var font_is_valid = (font != null ? true : false);
 
         node.setAttribute(this.attrNodeVisited, "1");
         for(var j = 0; j < node.childNodes.length; ++j) {
@@ -160,7 +171,7 @@ var Padma_Browser_Transformer = {
             if (parent.nodeType == 1) {
                 var style = page.defaultView.getComputedStyle(parent, null);
                 var font = style.getPropertyValue("font-family");
-                if (this.transformer.setDynamicFontByName(font) == true || 
+                if (this.setDynamicFont(font) != null || 
                     (font == "serif" && this.transformer.setDynamicFontByName(newfont) == true))
                 {
                     node.replaceData(0, node.length, this.transformer.convert(node.nodeValue));
@@ -274,7 +285,7 @@ var Padma_Browser_Transformer = {
             //Check computed style for parent node
             var style = document.defaultView.getComputedStyle(parent, null);
             var font = style.getPropertyValue("font-family");
-            if (this.transformer.setDynamicFontByName(font) == true || 
+            if (this.setDynamicFont(font) != null || 
                 (font == "serif" && dynFont != null && this.transformer.setDynamicFontByName(dynFont) == true))
             {
                 if (this.outputMethod == Transformer.method_RTS)
@@ -380,6 +391,7 @@ var Padma_Browser_Transformer = {
                 this.transformer.setOutputLanguage(arguments[2]);
         }
 
+        this.popupNodeBaseURI = document.popupNode.baseURI;
         var result = this.getSelection(document.popupNode);
         if (result.control) {
             //For the specials
