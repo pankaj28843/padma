@@ -1,4 +1,4 @@
-// $Id: ElangoTmlPanchali.js,v 1.1 2005/10/21 14:06:36 vnagarjuna Exp $ -->
+// $Id: ElangoTmlPanchali.js,v 1.2 2005/10/21 14:12:33 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -354,9 +354,9 @@ Elango_Tml_Panchali.toPadma[Elango_Tml_Panchali.vowelsn_EE]  = Padma.vowelsn_EE;
 Elango_Tml_Panchali.toPadma[Elango_Tml_Panchali.vowelsn_AI]  = Padma.vowelsn_AI;
 
 // Old format. No lomger used.
-Elango_Tml_Panchali.toPadma[Elango_Tml_Panchali.combo_NNNAA_2] = Padma.consnt_NNNA + Padma.vowelsn_AA;
-Elango_Tml_Panchali.toPadma[Elango_Tml_Panchali.combo_RRAA_2] = Padma.consnt_RRA + Padma.vowelsn_AA;
-Elango_Tml_Panchali.toPadma[Elango_Tml_Panchali.combo_NNAA_2] = Padma.consnt_NNA + Padma.vowelsn_AA;
+Elango_Tml_Panchali.toPadma[Elango_Tml_Panchali.combo_NNAA] = Padma.consnt_NNA + Padma.vowelsn_AA;
+Elango_Tml_Panchali.toPadma[Elango_Tml_Panchali.combo_NNNAA] = Padma.consnt_NNNA + Padma.vowelsn_AA;
+Elango_Tml_Panchali.toPadma[Elango_Tml_Panchali.combo_RRAA] = Padma.consnt_RRA + Padma.vowelsn_AA;
 
 
 Elango_Tml_Panchali.combo_KAU      = Padma.consnt_KA + Padma.vowelsn_AU;
