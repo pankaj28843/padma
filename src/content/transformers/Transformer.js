@@ -1,4 +1,4 @@
-// $Id: Transformer.js,v 1.9 2005/10/21 14:05:06 vnagarjuna Exp $ -->
+// $Id: Transformer.js,v 1.10 2005/10/25 15:58:36 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -77,7 +77,7 @@ Transformer.className_ITRANS  = ITRANS;
 
 Transformer.dynFont_Name = new Array();
 Transformer.dynFont_NameToIndex = new Array();
-Transformer.dynFont_LangCode = new Array();
+Transformer.dynFont_ScriptCode = new Array();
 Transformer.dynFont_DisplayName = new Array();
 
 function Transformer(input, output, rtsWritingStyle, rtsSunnaStyle)
@@ -104,9 +104,9 @@ Transformer.initialize = function () {
     for(i = 0; i < Transformer.dynFont_Unknown; i++)
         Transformer.dynFont_DisplayName[i] = Transformer.dynFont_Class[i].displayName;
 
-    //Language codes
+    //Script codes
     for(i = 0; i < Transformer.dynFont_Unknown; i++)
-        Transformer.dynFont_LangCode[i] = Transformer.dynFont_Class[i].language;
+        Transformer.dynFont_ScriptCode[i] = Transformer.dynFont_Class[i].script;
 }
 
 Transformer.createTransformer = function (input, output, rtsWritingStyle, rtsSunnaStyle)
@@ -194,7 +194,7 @@ Transformer.prototype.setDynamicFontByName = function (face)
         return false;
     this.dynFontIndex = index;
     if (this.output == Transformer.method_Unicode)
-        this.outputWriter.setLanguage(Transformer.dynFont_LangCode[this.dynFontIndex]);
+        this.outputWriter.setScript(Transformer.dynFont_ScriptCode[this.dynFontIndex]);
     return true;
 }
 
@@ -206,18 +206,18 @@ Transformer.prototype.setDynamicFontByIndex = function (index)
         return false;
     this.dynFontIndex = index;
     if (this.output == Transformer.method_Unicode)
-        this.outputWriter.setLanguage(Transformer.dynFont_LangCode[this.dynFontIndex]);
+        this.outputWriter.setScript(Transformer.dynFont_ScriptCode[this.dynFontIndex]);
     return true;
 }
 
 //Currently supported only for ISCII->Unicode & ITRANS->Unicode transform
-Transformer.prototype.setOutputLanguage = function (langCode)
+Transformer.prototype.setOutputScript = function (scriptCode)
 {
-    if (langCode >= Padma.max_LANGS || this.output != Transformer.method_Unicode || 
+    if (scriptCode >= Padma.script_MAXSCRIPTS || this.output != Transformer.method_Unicode || 
         (this.input != Transformer.method_ISCII && this.input != Transformer.method_ITRANS))
     {
         return false;
     }
-    this.outputWriter.setLanguage(langCode);
+    this.outputWriter.setScript(scriptCode);
     return true;
 }

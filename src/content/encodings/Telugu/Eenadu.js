@@ -1,4 +1,4 @@
-// $Id: Eenadu.js,v 1.6 2005/10/14 22:16:16 vnagarjuna Exp $ -->
+// $Id: Eenadu.js,v 1.7 2005/10/25 15:58:20 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -29,7 +29,7 @@ function Eenadu()
 Eenadu.maxLookupLen = 4;
 Eenadu.fontFace     = "Eenadu";
 Eenadu.displayName  = Eenadu.fontFace;
-Eenadu.language     = Padma.lang_TELUGU;
+Eenadu.script       = Padma.script_TELUGU;
 
 Eenadu.lookup = function (str) 
 {

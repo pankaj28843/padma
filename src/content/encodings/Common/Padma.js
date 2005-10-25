@@ -1,4 +1,4 @@
-// $Id: Padma.js,v 1.7 2005/10/19 23:15:20 vnagarjuna Exp $ -->
+// $Id: Padma.js,v 1.8 2005/10/25 15:58:16 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -27,19 +27,19 @@ function Padma()
 {
 }
 
-//Language codes
-Padma.lang_TELUGU     = 0;
-Padma.lang_MALAYALAM  = 1;
-Padma.lang_TAMIL      = 2;
-Padma.lang_DEVANAGARI = 3;
-Padma.lang_BENGALI    = 4;
-Padma.lang_GURMUKHI   = 5;
-Padma.lang_GUJARATI   = 6;
-Padma.lang_ORIYA      = 7;
-Padma.lang_KANNADA    = 8;
+//Script codes
+Padma.script_TELUGU     = 0;
+Padma.script_MALAYALAM  = 1;
+Padma.script_TAMIL      = 2;
+Padma.script_DEVANAGARI = 3;
+Padma.script_BENGALI    = 4;
+Padma.script_GURMUKHI   = 5;
+Padma.script_GUJARATI   = 6;
+Padma.script_ORIYA      = 7;
+Padma.script_KANNADA    = 8;
 
-//Only 3 languages supported now
-Padma.lang_MAXLANGS   = 4;
+//Only 4 scripts supported now
+Padma.script_MAXSCRIPTS = 4;
 
 //Types (values to allow bit wise operations)
 Padma.type_accu      = 1;

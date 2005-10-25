@@ -1,4 +1,4 @@
-// $Id: Kumudam.js,v 1.1 2005/10/21 14:06:36 vnagarjuna Exp $ -->
+// $Id: Kumudam.js,v 1.2 2005/10/25 15:58:19 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -31,7 +31,7 @@ function Kumudam()
 Kumudam.maxLookupLen = Vikatan.maxLookupLen;
 Kumudam.fontFace     = "Kumudam";
 Kumudam.displayName  = "Kumudam";
-Kumudam.language     = Padma.lang_TAMIL;
+Kumudam.script       = Padma.script_TAMIL;
 
 Kumudam.lookup = function (str) 
 {

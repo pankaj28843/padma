@@ -1,4 +1,4 @@
-// $Id: ShreeTel0900.js,v 1.7 2005/10/14 22:16:16 vnagarjuna Exp $ -->
+// $Id: ShreeTel0900.js,v 1.8 2005/10/25 15:58:20 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -31,7 +31,7 @@ function Shree_Tel_0900()
 Shree_Tel_0900.maxLookupLen = 4;
 Shree_Tel_0900.fontFace     = "Shree-Tel-0900";
 Shree_Tel_0900.displayName  = "Shree Tel 0900";
-Shree_Tel_0900.language     = Padma.lang_TELUGU;
+Shree_Tel_0900.script       = Padma.script_TELUGU;
 
 Shree_Tel_0900.lookup = function (str) 
 {

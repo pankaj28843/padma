@@ -1,4 +1,4 @@
-// $Id: TeluguLipi.js,v 1.5 2005/10/14 22:16:16 vnagarjuna Exp $ -->
+// $Id: TeluguLipi.js,v 1.6 2005/10/25 15:58:20 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -29,7 +29,7 @@ function TeluguLipi()
 TeluguLipi.maxLookupLen = 2;
 TeluguLipi.fontFace     = "Telugu Lipi";
 TeluguLipi.displayName  = TeluguLipi.fontFace;
-TeluguLipi.language     = Padma.lang_TELUGU;
+TeluguLipi.script       = Padma.script_TELUGU;
 
 TeluguLipi.lookup = function (str) 
 {

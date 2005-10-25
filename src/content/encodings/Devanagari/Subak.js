@@ -1,4 +1,4 @@
-// $Id: Subak.js,v 1.2 2005/10/19 23:14:07 vnagarjuna Exp $ -->
+// $Id: Subak.js,v 1.3 2005/10/25 15:58:17 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -29,7 +29,7 @@ function Subak()
 Subak.maxLookupLen = 3;
 Subak.fontFace     = "Subak-1";
 Subak.displayName  = "Subak";
-Subak.language     = Padma.lang_DEVANAGARI;
+Subak.script       = Padma.script_DEVANAGARI;
 Subak.hasSuffixes  = true;
 
 Subak.lookup = function (str) 

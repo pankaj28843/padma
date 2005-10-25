@@ -1,4 +1,4 @@
-// $Id: Vikatan.js,v 1.6 2005/10/21 14:06:20 vnagarjuna Exp $ -->
+// $Id: Vikatan.js,v 1.7 2005/10/25 15:58:19 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -29,7 +29,7 @@ function Vikatan()
 Vikatan.maxLookupLen = 2;
 Vikatan.fontFace     = "Vikatan_TAM";
 Vikatan.displayName  = "Vikatan";
-Vikatan.language     = Padma.lang_TAMIL;
+Vikatan.script       = Padma.script_TAMIL;
 
 Vikatan.lookup = function (str) 
 {

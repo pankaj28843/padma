@@ -1,4 +1,4 @@
-// $Id: ITRANS.js,v 1.3 2005/10/06 16:26:32 vnagarjuna Exp $ -->
+// $Id: ITRANS.js,v 1.4 2005/10/25 15:58:16 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -244,5 +244,6 @@ ITRANS.toPadma[ITRANS.digit_NINE]  = Padma.digit_NINE;
 
 ITRANS.lookup = function (str) 
 {
-    return ITRANS.toPadma[str];
+    var val = ITRANS.toPadma[str];
+    return val == undefined ? null : val;
 }

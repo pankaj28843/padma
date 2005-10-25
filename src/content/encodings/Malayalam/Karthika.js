@@ -1,4 +1,4 @@
-// $Id: Karthika.js,v 1.4 2005/10/03 18:16:32 vnagarjuna Exp $ -->
+// $Id: Karthika.js,v 1.5 2005/10/25 15:58:17 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -31,7 +31,7 @@ function Karthika()
 Karthika.maxLookupLen = 2;
 Karthika.fontFace     = "ML-TTKarthika";
 Karthika.displayName  = "Karthika";
-Karthika.language     = Padma.lang_MALAYALAM;
+Karthika.script       = Padma.script_MALAYALAM;
 
 Karthika.lookup = function (str) 
 {

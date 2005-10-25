@@ -1,4 +1,4 @@
-// $Id: Manorama.js,v 1.2 2005/10/03 18:16:32 vnagarjuna Exp $ -->
+// $Id: Manorama.js,v 1.3 2005/10/25 15:58:17 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -31,7 +31,7 @@ function Manorama()
 Manorama.maxLookupLen = 2;
 Manorama.fontFace     = "Manorama";
 Manorama.displayName  = Manorama.fontFace;
-Manorama.language     = Padma.lang_MALAYALAM;
+Manorama.script       = Padma.script_MALAYALAM;
 
 Manorama.lookup = function (str) 
 {

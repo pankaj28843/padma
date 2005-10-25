@@ -1,4 +1,4 @@
-// $Id: RTS.js,v 1.6 2005/10/14 22:16:16 vnagarjuna Exp $ -->
+// $Id: RTS.js,v 1.7 2005/10/25 15:58:20 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -609,7 +609,8 @@ RTS.classicSpecials[Padma.consnt_NA] = true;
 
 RTS.lookup = function (str) 
 {
-    return RTS.toPadma[str];
+    var val = RTS.toPadma[str];
+    return val == undefined ? null : val;
 }
 	
 RTS.isPossibleAnusvara = function (str)
@@ -650,7 +651,7 @@ RTS.prototype.transformFromPadma = function (str)
  
 RTS.prototype.transformSyllableConstituent = function (str)
 {
-    if (this.sunnaStyle == RTS.sstyle_Classic && RTS.classicSpecials[str] == true) {
+    if (this.sunnaStyle == RTS.sstyle_Classic && RTS.classicSpecials[str] != undefined) {
         var ret = "";
         if (this.cache != null)
             ret = this.cleanup();

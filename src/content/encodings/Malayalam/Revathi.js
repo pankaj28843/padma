@@ -1,4 +1,4 @@
-// $Id: Revathi.js,v 1.2 2005/10/03 18:16:32 vnagarjuna Exp $ -->
+// $Id: Revathi.js,v 1.3 2005/10/25 15:58:17 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -31,7 +31,7 @@ function Revathi()
 Revathi.maxLookupLen = 2;
 Revathi.fontFace     = "MLW-TTRevathi";
 Revathi.displayName  = "Revathi";
-Revathi.language     = Padma.lang_MALAYALAM;
+Revathi.script       = Padma.script_MALAYALAM;
 
 Revathi.lookup = function (str) 
 {

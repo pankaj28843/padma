@@ -1,4 +1,4 @@
-// $Id: Tikkana.js,v 1.6 2005/10/14 22:16:16 vnagarjuna Exp $ -->
+// $Id: Tikkana.js,v 1.7 2005/10/25 15:58:20 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 //Copyright 2005 Suresh Kolichala <suresh_kolichala@yahoo.com>
@@ -30,7 +30,7 @@ function Tikkana()
 Tikkana.maxLookupLen = 3;
 Tikkana.fontFace     = "Tikkana";
 Tikkana.displayName  = Tikkana.fontFace;
-Tikkana.language     = Padma.lang_TELUGU;
+Tikkana.script       = Padma.script_TELUGU;
 
 Tikkana.lookup = function (str) 
 {
@@ -452,7 +452,7 @@ Tikkana.toPadma[Tikkana.combo_MOO]     = Padma.consnt_MA + Padma.vowelsn_OO;
 Tikkana.toPadma[Tikkana.combo_MAU]     = Padma.consnt_MA + Padma.vowelsn_AU;
 Tikkana.toPadma[Tikkana.combo_MPOLLU]  = Padma.consnt_MA + Padma.syllbreak;
 
-Tikkana.toPadma[Tikkana.combo_YI]      = Padma.consnt_YA + Padma.vowelsn_I;
+//Tikkana.toPadma[Tikkana.combo_YI]      = Padma.consnt_YA + Padma.vowelsn_I;
 Tikkana.toPadma[Tikkana.combo_YE]     = Padma.consnt_YA + Padma.vowelsn_E;
 Tikkana.toPadma[Tikkana.combo_YEE]     = Padma.consnt_YA + Padma.vowelsn_EE;
 Tikkana.toPadma[Tikkana.combo_YOO]     = Padma.consnt_YA + Padma.vowelsn_OO;

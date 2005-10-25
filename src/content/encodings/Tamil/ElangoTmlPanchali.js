@@ -1,4 +1,4 @@
-// $Id: ElangoTmlPanchali.js,v 1.2 2005/10/21 14:12:33 vnagarjuna Exp $ -->
+// $Id: ElangoTmlPanchali.js,v 1.3 2005/10/25 15:58:19 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -29,7 +29,7 @@ function Elango_Tml_Panchali()
 Elango_Tml_Panchali.maxLookupLen = 2;
 Elango_Tml_Panchali.fontFace     = "ELANGO-TML-Panchali-Normal";
 Elango_Tml_Panchali.displayName  = "Elango Panchali";
-Elango_Tml_Panchali.language     = Padma.lang_TAMIL;
+Elango_Tml_Panchali.script       = Padma.script_TAMIL;
 
 Elango_Tml_Panchali.lookup = function (str) 
 {

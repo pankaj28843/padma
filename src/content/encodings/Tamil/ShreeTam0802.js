@@ -1,4 +1,4 @@
-// $Id: ShreeTam0802.js,v 1.1 2005/10/21 14:06:36 vnagarjuna Exp $ -->
+// $Id: ShreeTam0802.js,v 1.2 2005/10/25 15:58:19 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 //Contributed by Saravana Kumar <saravanannkl@gmail.com>
@@ -30,7 +30,7 @@ function Shree_Tam_0802()
 Shree_Tam_0802.maxLookupLen = 2;
 Shree_Tam_0802.fontFace     = "Shree-Tam-0802";
 Shree_Tam_0802.displayName  = "Shree Tam 0802";
-Shree_Tam_0802.language     = Padma.lang_TAMIL;
+Shree_Tam_0802.script       = Padma.script_TAMIL;
 
 Shree_Tam_0802.lookup = function (str) 
 {

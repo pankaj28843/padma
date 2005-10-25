@@ -1,4 +1,4 @@
-// $Id: ISCII.js,v 1.5 2005/10/08 20:37:04 vnagarjuna Exp $ -->
+// $Id: ISCII.js,v 1.6 2005/10/25 15:58:16 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -308,5 +308,6 @@ ISCII.toPadma[ISCII.misc_VIRAMA + ISCII.letter_RHA]   = Padma.vattu_RHA;
 
 ISCII.lookup = function (str) 
 {
-    return ISCII.toPadma[str];
+    var val = ISCII.toPadma[str];
+    return val == undefined ? null : val;
 }

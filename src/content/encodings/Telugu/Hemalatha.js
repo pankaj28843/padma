@@ -1,4 +1,4 @@
-// $Id: Hemalatha.js,v 1.8 2005/10/14 22:16:16 vnagarjuna Exp $ -->
+// $Id: Hemalatha.js,v 1.9 2005/10/25 15:58:20 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -31,7 +31,7 @@ function Hemalatha()
 Hemalatha.maxLookupLen = 4;
 Hemalatha.fontFace     = "TLW-TTHemalatha";
 Hemalatha.displayName  = "Hemalatha";
-Hemalatha.language     = Padma.lang_TELUGU;
+Hemalatha.script       = Padma.script_TELUGU;
 
 Hemalatha.lookup = function (str) 
 {

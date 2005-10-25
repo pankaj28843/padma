@@ -1,4 +1,4 @@
-// $Id: Vaartha.js,v 1.6 2005/10/14 22:16:16 vnagarjuna Exp $ -->
+// $Id: Vaartha.js,v 1.7 2005/10/25 15:58:20 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -29,7 +29,7 @@ function Vaartha()
 Vaartha.maxLookupLen = 4;
 Vaartha.fontFace     = "Vaartha";
 Vaartha.displayName  = Vaartha.fontFace;
-Vaartha.language     = Padma.lang_TELUGU;
+Vaartha.script       = Padma.script_TELUGU;
 
 Vaartha.lookup = function (str) 
 {

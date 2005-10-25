@@ -1,4 +1,4 @@
-// $Id: Kairali.js,v 1.2 2005/10/03 18:16:31 vnagarjuna Exp $ -->
+// $Id: Kairali.js,v 1.3 2005/10/25 15:58:17 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -31,7 +31,7 @@ function Kairali()
 Kairali.maxLookupLen = 2;
 Kairali.fontFace     = "PMLTKairali";
 Kairali.displayName  = "Kairali";
-Kairali.language     = Padma.lang_MALAYALAM;
+Kairali.script       = Padma.script_MALAYALAM;
 
 Kairali.lookup = function (str) 
 {

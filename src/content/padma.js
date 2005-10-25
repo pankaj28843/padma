@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.10 2005/10/21 14:10:02 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.11 2005/10/25 15:58:13 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -365,8 +365,8 @@ var Padma_Browser_Transformer = {
 
     getSelection : function(node) {
         var result = { selection: null, control: true };
-        if ((node instanceof HTMLTextAreaElement) || (node instanceof HTMLInputElement && 
-                                                      node.type == "text"|| node.type == "password")) 
+        if (node instanceof HTMLTextAreaElement || (node instanceof HTMLInputElement && 
+                                                    (node.type == "text" || node.type == "password"))) 
         {
             result.selection = node.value.substring(node.selectionStart, node.selectionEnd);
         }
@@ -388,7 +388,7 @@ var Padma_Browser_Transformer = {
             if (this.inputMethod == Transformer.method_RTS)
                 this.transformer.setRTSMode(arguments[2]);
             else if (this.inputMethod == Transformer.method_ISCII || this.inputMethod == Transformer.method_ITRANS)
-                this.transformer.setOutputLanguage(arguments[2]);
+                this.transformer.setOutputScript(arguments[2]);
         }
 
         this.popupNodeBaseURI = document.popupNode.baseURI;
@@ -421,7 +421,7 @@ var Padma_Browser_Transformer = {
             hidden = false;
 
         //Hard coded for now
-        //This will change based on language options soon
+        //This will change based on script options soon
         for(var i = 0; i <= 12; ++i) {
             var item = document.getElementById("padmaMenuItem" + i);
             item.hidden = hidden;
