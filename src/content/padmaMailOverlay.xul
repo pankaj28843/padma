@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: padmaMailOverlay.xul,v 1.7 2005/10/21 14:08:11 vnagarjuna Exp $-->
+<!--$Id: padmaMailOverlay.xul,v 1.8 2005/11/05 16:29:12 vnagarjuna Exp $-->
 
 <!--Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
 
@@ -26,11 +26,12 @@
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
 <script type="application/x-javascript" src="encodings/Common/Padma.js"/>
-<script type="application/x-javascript" src="encodings/Common/Unicode.js"/>
 <script type="application/x-javascript" src="encodings/Common/ISCII.js"/>
 <script type="application/x-javascript" src="encodings/Common/ITRANS.js"/>
 <script type="application/x-javascript" src="encodings/Common/Syllable.js"/>
+<script type="application/x-javascript" src="encodings/Common/Unicode/Shared.js"/>
 
+<script type="application/x-javascript" src="encodings/Telugu/Telugu.js"/>
 <script type="application/x-javascript" src="encodings/Telugu/RTS.js"/>
 <script type="application/x-javascript" src="encodings/Telugu/Eenadu.js"/>
 <script type="application/x-javascript" src="encodings/Telugu/ShreeTel0900.js"/>
@@ -39,26 +40,34 @@
 <script type="application/x-javascript" src="encodings/Telugu/Tikkana.js"/>
 <script type="application/x-javascript" src="encodings/Telugu/Vaartha.js"/>
 <script type="application/x-javascript" src="encodings/Telugu/TeluguLipi.js"/>
+<script type="application/x-javascript" src="encodings/Malayalam/Malayalam.js"/>
 <script type="application/x-javascript" src="encodings/Malayalam/Karthika.js"/>
 <script type="application/x-javascript" src="encodings/Malayalam/Kairali.js"/>
 <script type="application/x-javascript" src="encodings/Malayalam/Revathi.js"/>
 <script type="application/x-javascript" src="encodings/Malayalam/Manorama.js"/>
+<script type="application/x-javascript" src="encodings/Tamil/Tamil.js"/>
 <script type="application/x-javascript" src="encodings/Tamil/Vikatan.js"/>
 <script type="application/x-javascript" src="encodings/Tamil/Kumudam.js"/>
 <script type="application/x-javascript" src="encodings/Tamil/ShreeTam0802.js"/>
 <script type="application/x-javascript" src="encodings/Tamil/ElangoTmlPanchali.js"/>
+<script type="application/x-javascript" src="encodings/Devanagari/Devanagari.js"/>
 <script type="application/x-javascript" src="encodings/Devanagari/Subak.js"/>
+<script type="application/x-javascript" src="encodings/Devanagari/Mithi.js"/>
 
 <script type="application/x-javascript" src="parsers/parser.js"/>
 <script type="application/x-javascript" src="parsers/RTSParser.js"/>
 <script type="application/x-javascript" src="parsers/ITRANSParser.js"/>
 <script type="application/x-javascript" src="parsers/DynamicFontParser.js"/>
 
+<script type="application/x-javascript" src="encodings/Common/Unicode/Unicode.js"/>
+
 <script type="application/x-javascript" src="transformers/Transformer.js"/>
 <script type="application/x-javascript" src="transformers/RTSTransformer.js"/>
 
 <script type="application/x-javascript" src="relationships.js"/>
 <script type="application/x-javascript" src="prefs.js"/>
+<script type="application/x-javascript" src="version.js"/>
+<script type="application/x-javascript" src="upgrade.js"/>
 <script type="application/x-javascript" src="padma.js"/>
 
 <!-- TB Context Menu -->
