@@ -1,4 +1,4 @@
-// $Id: Transformer.js,v 1.10 2005/10/25 15:58:36 vnagarjuna Exp $ -->
+// $Id: Transformer.js,v 1.11 2005/11/05 16:36:55 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -48,7 +48,8 @@ Transformer.dynFont_Subak        = 12;
 Transformer.dynFont_Kumudam      = 13;
 Transformer.dynFont_ShreeTam0802 = 14;
 Transformer.dynFont_Elango       = 15;
-Transformer.dynFont_Unknown      = 16;   //this should always be the max, this is used as a sentinel
+Transformer.dynFont_Mithi        = 16;
+Transformer.dynFont_Unknown      = 17;   //this should always be the max, this is used as a sentinel
 
 //Classes that implement the above dynamic fonts
 Transformer.dynFont_Class = new Array();
@@ -68,6 +69,7 @@ Transformer.dynFont_Class[Transformer.dynFont_Subak]        = Subak;
 Transformer.dynFont_Class[Transformer.dynFont_Kumudam]      = Kumudam;
 Transformer.dynFont_Class[Transformer.dynFont_ShreeTam0802] = Shree_Tam_0802;
 Transformer.dynFont_Class[Transformer.dynFont_Elango]       = Elango_Tml_Panchali;
+Transformer.dynFont_Class[Transformer.dynFont_Mithi]        = Mithi;
 
 //Class names for non-dynamic font encodings
 Transformer.className_Unicode = Unicode;
@@ -85,6 +87,7 @@ function Transformer(input, output, rtsWritingStyle, rtsSunnaStyle)
     this.input = input;
     this.output = output;
     this.dynFontIndex = Transformer.dynFont_Unknown;
+    this.scriptCode = -1;
     if (this.output == Transformer.method_RTS)
         this.outputWriter = RTS.getRTSWriter(rtsWritingStyle, rtsSunnaStyle);
     else if (this.output == Transformer.method_Unicode)
@@ -193,7 +196,7 @@ Transformer.prototype.setDynamicFontByName = function (face)
     if (index == Transformer.dynFont_Unknown)
         return false;
     this.dynFontIndex = index;
-    if (this.output == Transformer.method_Unicode)
+    if (this.scriptCode == -1 && this.output == Transformer.method_Unicode)
         this.outputWriter.setScript(Transformer.dynFont_ScriptCode[this.dynFontIndex]);
     return true;
 }
@@ -205,19 +208,16 @@ Transformer.prototype.setDynamicFontByIndex = function (index)
     if (Transformer.dynFont_Name[index] == null)
         return false;
     this.dynFontIndex = index;
-    if (this.output == Transformer.method_Unicode)
+    if (this.scriptCode == -1 && this.output == Transformer.method_Unicode)
         this.outputWriter.setScript(Transformer.dynFont_ScriptCode[this.dynFontIndex]);
     return true;
 }
 
-//Currently supported only for ISCII->Unicode & ITRANS->Unicode transform
 Transformer.prototype.setOutputScript = function (scriptCode)
 {
-    if (scriptCode >= Padma.script_MAXSCRIPTS || this.output != Transformer.method_Unicode || 
-        (this.input != Transformer.method_ISCII && this.input != Transformer.method_ITRANS))
-    {
+    if (scriptCode >= Padma.script_MAXSCRIPTS || this.output != Transformer.method_Unicode)
         return false;
-    }
     this.outputWriter.setScript(scriptCode);
+    this.scriptCode = scriptCode;
     return true;
 }
