@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: whitelist.xul,v 1.5 2005/10/21 14:08:11 vnagarjuna Exp $-->
+<!--$Id: whitelist.xul,v 1.6 2005/11/05 16:26:06 vnagarjuna Exp $-->
 
 <!--Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
 
@@ -27,7 +27,7 @@
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 
 <dialog id="padma_whitelist_dialog"
-        title="Transform List"
+        title="Auto Transform List"
         orient="vertical"
         buttons="accept, cancel"
         width="400"
@@ -38,73 +38,35 @@
         xmlns:html="http://www.w3.org/1999/xhtml">
 
   <script type="application/x-javascript" src="encodings/Common/Padma.js"/>
-  <script type="application/x-javascript" src="encodings/Common/Unicode.js"/>
-  <script type="application/x-javascript" src="encodings/Common/ISCII.js"/>
-  <script type="application/x-javascript" src="encodings/Common/ITRANS.js"/>
-
-  <script type="application/x-javascript" src="encodings/Telugu/RTS.js"/>
-  <script type="application/x-javascript" src="encodings/Telugu/Eenadu.js"/>
-  <script type="application/x-javascript" src="encodings/Telugu/ShreeTel0900.js"/>
-  <script type="application/x-javascript" src="encodings/Telugu/Hemalatha.js"/>
-  <script type="application/x-javascript" src="encodings/Telugu/ShreeTel0902.js"/>
-  <script type="application/x-javascript" src="encodings/Telugu/Tikkana.js"/>
-  <script type="application/x-javascript" src="encodings/Malayalam/Karthika.js"/>
-  <script type="application/x-javascript" src="encodings/Telugu/Vaartha.js"/>
-  <script type="application/x-javascript" src="encodings/Tamil/Vikatan.js"/>
-  <script type="application/x-javascript" src="encodings/Telugu/TeluguLipi.js"/>
-  <script type="application/x-javascript" src="encodings/Malayalam/Kairali.js"/>
-  <script type="application/x-javascript" src="encodings/Malayalam/Revathi.js"/>
-  <script type="application/x-javascript" src="encodings/Malayalam/Manorama.js"/>
-  <script type="application/x-javascript" src="encodings/Devanagari/Subak.js"/>
-  <script type="application/x-javascript" src="encodings/Tamil/Kumudam.js"/>
-  <script type="application/x-javascript" src="encodings/Tamil/ShreeTam0802.js"/>
-  <script type="application/x-javascript" src="encodings/Tamil/ElangoTmlPanchali.js"/>
-
-  <script type="application/x-javascript" src="transformers/Transformer.js"/>
   <script type="application/x-javascript" src="whitelist.js"/>
 
   <groupbox id="whitelist" flex="100">
     <caption label="Whitelist" accesskey="w"/>
 
-    <description id="autoDescription" hidden="true">
-       You can specify a whitelist of websites that can be transformed automatically. Enter the name of a website and click Add to add it to the whitelist.
-    </description>
-    <description id="heurDescription" hidden="true">
-       Some websites require the application of heuristics for transformation. Enter the name of a website, select the font that it uses and click Add to add it to the whitelist.
+    <description id="autoDescription">
+       Specify a whitelist of websites that you want to be transformed automatically. Enter the URL for the website, the script in which you want to view it and click on Add.
     </description>
     <separator class="thin"/>
 
-    <hbox id="autoAddSite" hidden="true">
-      <textbox id="autoSiteTextbox" flex="1" oninput="PadmaWhitelist.onNewSiteInput();"/>
-      <button id="autoBtnAdd" label="Add" disabled="true" accesskey="a" oncommand="PadmaWhitelist.onAddSite();"/>
-    </hbox>
-    <vbox id="heurAddSite" hidden="true">
+    <vbox id="autoAddSite">
       <hbox>
-        <textbox id="heurSiteTextbox" flex="1" oninput="PadmaWhitelist.onNewSiteInput();"/>
+        <textbox id="autoSiteTextbox" flex="1" oninput="PadmaWhitelist.onNewSiteInput();"/>
         <!-- Menulist is populated dynamically. -->
-        <menulist id="heurFontList" disabled="true"/>
+        <menulist id="autoScriptList" disabled="true"/>
       </hbox>
       <hbox> 
         <spacer flex="1"/>
-        <button id="heurBtnAdd" label="Add" disabled="true" accesskey="a" oncommand="PadmaWhitelist.onAddSite();"/>
+        <button id="autoBtnAdd" label="Add" disabled="true" accesskey="a" oncommand="PadmaWhitelist.onAddSite();"/>
       </hbox>
     </vbox>
     <separator class="thin"/>
 
-    <listbox id="autoSitelist" seltype="single" style="height: 18em;" accesskey="l" hidden="true"
-             onkeypress="PadmaWhitelist.onKeyPress(event);"
-             onselect="PadmaWhitelist.onSelected();">
-      <listhead>
-        <listheader label="URI" onclick="PadmaWhitelist.onClick();"/>
-      </listhead>
-    </listbox>
-
-    <listbox id="heurSitelist" seltype="single" style="height: 18em;" accesskey="l" hidden="true"
+    <listbox id="autoSitelist" seltype="single" style="height: 18em;" accesskey="l" 
              onkeypress="PadmaWhitelist.onKeyPress(event);"
              onselect="PadmaWhitelist.onSelected();">
       <listhead>
         <listheader label="URI"/>
-        <listheader label="Font"/>
+        <listheader label="Script"/>
       </listhead>
 
       <listcols>
