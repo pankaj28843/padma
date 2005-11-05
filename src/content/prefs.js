@@ -1,4 +1,4 @@
-// $Id: prefs.js,v 1.2 2005/09/25 14:52:25 vnagarjuna Exp $ -->
+// $Id: prefs.js,v 1.3 2005/11/05 16:28:39 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -30,77 +30,80 @@ var PadmaSettings = {
         this.rtsWritingStyleButton = document.getElementById("RTSWritingStyle");
         this.rtsSunnaStyleButton = document.getElementById("RTSSunnaStyle");
         this.autoCheck = document.getElementById("enableAutoTransform");
-        this.heuristicCheck = document.getElementById("enableHeuristics");
         this.autoListUpdate = document.getElementById("updateAutoTransformList");
-        this.heuristicListUpdate = document.getElementById("updateHeuristicsList");
         this.fixCharEncoding = document.getElementById("fixCharEncoding");
+        this.enableRTS = document.getElementById("enableRTS");
+        this.enableISCII = document.getElementById("enableISCII");
+        this.enableITRANS = document.getElementById("enableITRANS");
+        this.enableTelugu = document.getElementById("enableTelugu");
+        this.enableMalayalam = document.getElementById("enableMalayalam");
+        this.enableTamil = document.getElementById("enableTamil");
+        this.enableDevanagari = document.getElementById("enableDevanagari");
 
-        //RTS Writing Style - default = 0
-        this.rtsWritingStyle = this.branch.prefHasUserValue(this.prefRTSWritingStyle) ? 
-                               this.branch.getIntPref(this.prefRTSWritingStyle) : 0;
-        if (this.rtsWritingStyle > 2 || this.rtsWritingStyle < 0)
-            this.rtsWritingStyle = 0;
-        this.rtsWritingStyleButton.selectedIndex = this.rtsWritingStyle;
+        //RTS Writing Style
+        var rtsWritingStyle = this.branch.getIntPref(this.prefRTSWritingStyle);
+        if (rtsWritingStyle > 2 || rtsWritingStyle < 0)
+            rtsWritingStyle = 0;
+        this.rtsWritingStyleButton.selectedIndex = rtsWritingStyle;
 
-        //RTS Sunna and Pollu Style - default = 0
-        this.rtsSunnaStyle = this.branch.prefHasUserValue(this.prefRTSSunnaStyle) ? this.branch.getIntPref(this.prefRTSSunnaStyle) : 0;
-        if (this.rtsSunnaStyle > 1 || this.rtsSunnaStyle < 0)
-            this.rtsSunnaStyle = 0;
-        this.rtsSunnaStyleButton.selectedIndex = this.rtsSunnaStyle;
+        //RTS Sunna and Pollu Style
+        var rtsSunnaStyle = this.branch.getIntPref(this.prefRTSSunnaStyle);
+        if (rtsSunnaStyle > 1 || rtsSunnaStyle < 0)
+            rtsSunnaStyle = 0;
+        this.rtsSunnaStyleButton.selectedIndex = rtsSunnaStyle;
 
-        //Auto Transform - default = true
-        this.autoCheck.checked = this.branch.prefHasUserValue(this.prefEnableAutoTransform) ? 
-                                 this.branch.getBoolPref(this.prefEnableAutoTransform) : true;
-        if (!this.autoCheck.checked)
-            this.autoListUpdate.disabled = true;
+        //Auto Transform
+        this.autoCheck.checked = this.branch.getBoolPref(this.prefEnableAutoTransform);
+        //Fix Char Encoding
+        this.fixCharEncoding.checked = this.branch.getBoolPref(this.prefFixCharEncoding);
         
-        //Heuristics based Transform - default = true
-        this.heuristicCheck.checked = this.branch.prefHasUserValue(this.prefEnableHeuristics) ? 
-                                      this.branch.getBoolPref(this.prefEnableHeuristics) : true;
-        if (!this.heuristicCheck.checked)
-            this.heuristicListUpdate.disabled = true;
-
         //White list for auto transform
-        this.autoTransformWhiteList = this.branch.prefHasUserValue(this.prefAutoTransformWhiteList) ? 
-                                      this.branch.getCharPref(this.prefAutoTransformWhiteList) : this.defAutoTransformWhiteList;
+        this.autoTransformWhiteList = this.branch.getCharPref(this.prefAutoTransformWhiteList);
 
-        //White list for heuristic transform
-        this.heuristicTransformWhiteList = this.branch.prefHasUserValue(this.prefHeuristicTransformWhiteList) ? 
-                                           this.branch.getCharPref(this.prefHeuristicTransformWhiteList) : this.defHeuristicTransformWhiteList;
-
-        //Fix Char Encoding - default = true
-        this.fixCharEncoding.checked = this.branch.prefHasUserValue(this.prefFixCharEncoding) ? 
-                                 this.branch.getBoolPref(this.prefFixCharEncoding) : true;
-        if (!this.autoCheck.checked)
-            this.fixCharEncoding.disabled = true;
+        //Manual Transform schemes
+        this.enableRTS.checked = this.branch.getBoolPref(this.prefEnableRTS);
+        this.enableISCII.checked = this.branch.getBoolPref(this.prefEnableISCII);
+        this.enableITRANS.checked = this.branch.getBoolPref(this.prefEnableITRANS);
+        this.enableTelugu.checked = this.branch.getBoolPref(this.prefEnableTelugu);
+        this.enableMalayalam.checked = this.branch.getBoolPref(this.prefEnableMalayalam);
+        this.enableTamil.checked = this.branch.getBoolPref(this.prefEnableTamil);
+        this.enableDevanagari.checked = this.branch.getBoolPref(this.prefEnableDevanagari);
 
         this.applyButton = document.documentElement.getButton("extra1");
+        this.onCheckBoxUpdate();
         this.applyButton.disabled = true;
     },
 
     onSave: function() {
-        this.rtsWritingStyle = this.rtsWritingStyleButton.selectedIndex;
-        this.rtsSunnaStyle   = this.rtsSunnaStyleButton.selectedIndex;
-        this.branch.setIntPref(this.prefRTSWritingStyle, this.rtsWritingStyle);
-        this.branch.setIntPref(this.prefRTSSunnaStyle, this.rtsSunnaStyle);
+        this.branch.setIntPref(this.prefRTSWritingStyle, this.rtsWritingStyleButton.selectedIndex);
+        this.branch.setIntPref(this.prefRTSSunnaStyle, this.rtsSunnaStyleButton.selectedIndex);
 
         this.branch.setBoolPref(this.prefEnableAutoTransform, this.autoCheck.checked);
-        this.branch.setBoolPref(this.prefEnableHeuristics, this.heuristicCheck.checked);
         this.branch.setBoolPref(this.prefFixCharEncoding, this.fixCharEncoding.checked);
 
+        this.branch.setBoolPref(this.prefEnableRTS,    this.enableRTS.checked);
+        this.branch.setBoolPref(this.prefEnableISCII,  this.enableISCII.checked);
+        this.branch.setBoolPref(this.prefEnableITRANS, this.enableITRANS.checked);
+
+        this.branch.setBoolPref(this.prefEnableTelugu,     this.enableTelugu.checked);
+        this.branch.setBoolPref(this.prefEnableMalayalam,  this.enableMalayalam.checked);
+        this.branch.setBoolPref(this.prefEnableTamil,      this.enableTamil.checked);
+        this.branch.setBoolPref(this.prefEnableDevanagari, this.enableDevanagari.checked);
+
         this.branch.setCharPref(this.prefAutoTransformWhiteList, this.autoTransformWhiteList);
-        this.branch.setCharPref(this.prefHeuristicTransformWhiteList, this.heuristicTransformWhiteList);
         this.applyButton.disabled = true;
     },
 
     onCheckBoxUpdate: function() {
         this.autoListUpdate.disabled = this.fixCharEncoding.disabled = !this.autoCheck.checked;
-        this.heuristicListUpdate.disabled = !this.heuristicCheck.checked;
+        this.rtsWritingStyleButton.disabled = this.rtsSunnaStyleButton.disabled = !this.enableRTS.checked;
+        this.enableTelugu.disabled = this.enableMalayalam.disabled = this.enableTamil.disabled = this.enableDevanagari.disabled = 
+            !this.enableISCII.checked & !this.enableITRANS.checked;
         this.applyButton.disabled = false;
     },
 
     updateAutoTransformList: function() {
-        var params = { input: this.autoTransformWhiteList, type: 0, title: "Automatic Transform List", output: null };
+        var params = { input: this.autoTransformWhiteList, output: null };
         window.openDialog("chrome://padma/content/whitelist.xul", "updateauottransformlist", "chrome", params);
         if (params.output != null) {
             this.autoTransformWhiteList = params.output;
@@ -108,27 +111,21 @@ var PadmaSettings = {
         }
     },
 
-    updateHeuristicTransformList: function() {
-        var params = { input: this.heuristicTransformWhiteList, type: 1, title: "Heuristic Transform List", output: null };
-        //Setting title from here does not work
-        window.openDialog("chrome://padma/content/whitelist.xul", "updateheuristictransformlist", "chrome,title=\"Heuristic Transform List\"", params);
-        if (params.output != null) {
-            this.heuristicTransformWhiteList = params.output;
-            this.branch.setCharPref(this.prefHeuristicTransformWhiteList, this.heuristicTransformWhiteList);
-        }
-    },
-
     onAbout: function() {
         window.openDialog("chrome://padma/content/about.xul", "padmaabout", "chrome");
     },
 
-    defAutoTransformWhiteList: "www.eenadu.net,www.andhrajyothy.com,www.andhraprabha.com,www.apweekly.com,www.vaarttha.com,www.vaartha.com,www.deepika.com,www.mangalam.com",
-    defHeuristicTransformWhiteList: "www.andhrajyothy.com:1,www.deepika.com:5",
+    prefExtVersion: 'extVersion',
     prefRTSWritingStyle: "RTSOutputFormat",
     prefRTSSunnaStyle: "RTSSunnaStyle", //also for pollu
     prefEnableAutoTransform: "enableAutoTransform",
-    prefEnableHeuristics: "enableHeuristics",
     prefAutoTransformWhiteList: "autoTransformWhiteList",
-    prefHeuristicTransformWhiteList: "heuristicWhiteList",
-    prefFixCharEncoding: "fixCharEncoding"
+    prefFixCharEncoding: "fixCharEncoding",
+    prefEnableRTS: "enableRTS",
+    prefEnableISCII: "enableISCII",
+    prefEnableITRANS: "enableITRANS",
+    prefEnableTelugu: "enableTelugu",
+    prefEnableMalayalam: "enableMalyalam",
+    prefEnableTamil: "enableTamil",
+    prefEnableDevanagari: "enableDevanagari"
 };

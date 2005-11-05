@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: prefs.xul,v 1.2 2005/09/25 14:52:25 vnagarjuna Exp $-->
+<!--$Id: prefs.xul,v 1.3 2005/11/05 16:28:39 vnagarjuna Exp $-->
 
 <!--Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
 
@@ -54,31 +54,46 @@
 
       <rows>
         <row>
-          <checkbox id="enableAutoTransform" label="Enable Auto Transform" checked="true" command="cmd_PadmaCheckBox" accesskey="e"/>
-          <button id="updateAutoTransformList" label="Update" accesskey="u" oncommand="PadmaSettings.updateAutoTransformList();"/>
+          <checkbox id="enableAutoTransform" label="Enable Auto Transform" checked="true" command="cmd_PadmaCheckBox" accesskey="E"/>
+          <button id="updateAutoTransformList" label="Update" accesskey="U" oncommand="PadmaSettings.updateAutoTransformList();"/>
         </row>
         <row>
-          <checkbox id="enableHeuristics" label="Enable Heuristics based Transform" checked="false" command="cmd_PadmaCheckBox" accesskey="h"/>
-          <button id="updateHeuristicsList" label="Update" accesskey="p" oncommand="PadmaSettings.updateHeuristicTransformList();"/>
-        </row>
-        <row>
-          <checkbox id="fixCharEncoding" label="Fix Character Encoding" checked="true" accesskey="f"/>
+          <checkbox id="fixCharEncoding" label="Fix Character Encoding" checked="true" accesskey="F"/>
         </row>
       </rows>
     </grid>
   </groupbox>
   <separator class="thin"/>
 
-  <groupbox orient="Vertical">
-    <caption label="RTS Output Settings" accesskey="R"/>
+  <groupbox id="manual">
+    <caption label="Manual Transform Settings" accesskey="M"/>
+      <hbox>
+        <expander id="schemeExpander" label="Schemes" open="true" persist="open" clearhidden="true">
+          <checkbox id="enableRTS" label="RTS" checked="true" command="cmd_PadmaCheckBox" accesskey="R"/>
+          <checkbox id="enableISCII" label="ISCII" checked="true" command="cmd_PadmaCheckBox" accesskey="I"/>
+          <checkbox id="enableITRANS" label="ITRANS" checked="true" command="cmd_PadmaCheckBox" accesskey="T"/>
+        </expander>
+        <spacer flex="1"/>
+        <expander id="scriptExpander" label="Scripts" open="true" persist="open" clearhidden="true">
+          <checkbox id="enableTelugu" label="Telugu" checked="true" command="cmd_PadmaCheckBox" accesskey="L"/>
+          <checkbox id="enableMalayalam" label="Malayalam" checked="true" command="cmd_PadmaCheckBox" accesskey="Y"/>
+          <checkbox id="enableTamil" label="Tamil" checked="true" command="cmd_PadmaCheckBox" accesskey="A"/>
+          <checkbox id="enableDevanagari" label="Devanagari" checked="true" command="cmd_PadmaCheckBox" accesskey="D"/>
+        </expander>
+      </hbox>
+  </groupbox>
+  <separator class="thin"/>
+
+  <groupbox id="RTSSettings" orient="Vertical">
+    <caption label="RTS Output Settings" accesskey="O"/>
     <hbox>
       <vbox>  
         <description><html:b>Writing Style</html:b></description>
     
         <radiogroup id="RTSWritingStyle" flex="1">
-            <radio id="kanneganti" label="Kanneganti" selected="true" accesskey="k"/>
-            <radio id="pillalamarri" label="Pillalamarri" accesskey="p"/>
-            <radio id="paalana" label="Paalana" accesskey="l"/>
+            <radio id="kanneganti" label="Kanneganti" selected="true" accesskey="K"/>
+            <radio id="pillalamarri" label="Pillalamarri" accesskey="P"/>
+            <radio id="paalana" label="Paalana" accesskey="N"/>
         </radiogroup>
       </vbox>
       <spacer flex="1"/>
@@ -86,8 +101,8 @@
         <description><html:b>Sunnaa Style</html:b></description>
     
         <radiogroup id="RTSSunnaStyle" flex="1">
-            <radio id="raMgavallika" label="raMgavallika" selected="true" accesskey="m"/>
-            <radio id="classic" label="Classic" accesskey="c"/>
+            <radio id="raMgavallika" label="raMgavallika" selected="true" accesskey="V"/>
+            <radio id="classic" label="Classic" accesskey="C"/>
         </radiogroup>
       </vbox>
     </hbox>
