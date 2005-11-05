@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.11 2005/10/25 15:58:13 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.12 2005/11/05 16:30:27 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -38,40 +38,15 @@ var Padma_Browser_Transformer = {
         this.inputMethod = inputMode;
         this.outputMethod = outputMode;
 
-        if (this.outputMethod == Transformer.method_RTS) {
-            var rtsWritingStyle = this.prefBranch.prefHasUserValue(PadmaSettings.prefRTSWritingStyle) ? 
-                                  this.prefBranch.getIntPref(PadmaSettings.prefRTSWritingStyle) : 0; //default = 0
-            var rtsSunnaStyle = this.prefBranch.prefHasUserValue(PadmaSettings.prefRTSSunnaStyle) ? 
-                                  this.prefBranch.getIntPref(PadmaSettings.prefRTSSunnaStyle) : 0; //default = 0
-            this.transformer = Transformer.createTransformer(this.inputMethod, this.outputMethod, rtsWritingStyle, rtsSunnaStyle);
-        }
+        if (this.outputMethod == Transformer.method_RTS)
+            this.transformer = Transformer.createTransformer(this.inputMethod, this.outputMethod, 
+                                                             this.prefBranch.getIntPref(PadmaSettings.prefRTSWritingStyle), 
+                                                             this.prefBranch.getIntPref(PadmaSettings.prefRTSSunnaStyle));
         else this.transformer = Transformer.createTransformer(this.inputMethod, this.outputMethod);
     },
 
-    isHeuristicTransformEnabled: function() {
-        return this.prefBranch.prefHasUserValue(PadmaSettings.prefEnableHeuristics) ? this.prefBranch.getBoolPref(PadmaSettings.prefEnableHeuristics) : true;
-    },
-
     isFixCharEncoding: function() {
-        return this.prefBranch.prefHasUserValue(PadmaSettings.prefFixCharEncoding) ? this.prefBranch.getBoolPref(PadmaSettings.prefFixCharEncoding) : true;
-    },
-
-    getHeuristicTransformSiteList: function() {
-        var whitelist = "";
-        if (this.prefBranch.prefHasUserValue(PadmaSettings.prefHeuristicTransformWhiteList))
-            whitelist = this.prefBranch.getCharPref(PadmaSettings.prefHeuristicTransformWhiteList);
-        else whitelist = PadmaSettings.defHeuristicTransformWhiteList;
-
-        var index = 0, result = { sites: [], fonts: [] };
-        var sites = whitelist.split(",");
-        for(var i = 0; i < sites.length; ++i) {
-            var map = sites[i].split(":");
-            if (map.length < 2)
-                continue;
-            result.sites[index] = map[0];
-            result.fonts[index++] = Transformer.dynFont_Name[map[1]];
-        }
-        return result;
+        return this.prefBranch.getBoolPref(PadmaSettings.prefFixCharEncoding);
     },
 
     //From http://www.mozilla.org/docs/dom/technote/whitespace/nodomws.js
@@ -116,7 +91,11 @@ var Padma_Browser_Transformer = {
 
         //Initialize other one time stuff
         initializeRelationships();
+        Unicode.initialize();
         Transformer.initialize();
+
+        //TODO: Should do this only at install time
+        Padma_Extension_Upgrader.doUpgrade();
     },
 
     //returns font if set, otherwise null
@@ -131,49 +110,27 @@ var Padma_Browser_Transformer = {
     },
 
     //Auto Transform
-    attrNodeVisited: "padma_was_here",
+    attrFontFamilyProperty: "padma_font_family_property",
 
     //The event target is the browser window, this is a hack to make Pamda_Browser_Transformer 'this'
     onPageLoadPre: function(evt) {
         Padma_Browser_Transformer.onPageLoad(evt);
     },
 
-    //No heuristics - auto transform all text nodes that are children of this node
+    //Transform all children of this node
     transformNode: function(page, node) {
-        var style = page.defaultView.getComputedStyle(node, null);
-        var align = style.getPropertyValue("text-align");
-        var font = this.setDynamicFont(style.getPropertyValue("font-family"));
-        var font_is_valid = (font != null ? true : false);
-
-        node.setAttribute(this.attrNodeVisited, "1");
-        for(var j = 0; j < node.childNodes.length; ++j) {
-            var child = node.childNodes.item(j);
-            if(child.nodeType == 3) {
-                if (!font_is_valid || this.is_all_ws(child.nodeValue))
-                    continue;
-                this.transformer.setDynamicFontByName(font);
-                child.replaceData(0, child.length, this.transformer.convert(child.nodeValue));
-                this.setNodeTextAlign(node, align);
-            }
-            //Ignore comment nodes
-            else if (child.nodeType != 8 && child.getAttribute(this.attrNodeVisited) != "1")
-                this.transformNode(page, child);
-        }
-    },
-
-    //Apply heuristics to tree rooted at node
-    //TOOD: remember a node's style while going down rather than going up again
-    processTreeWithHeuristics: function(page, node, newfont) {
         if(node.nodeType == 3) {
             if (this.is_all_ws(node.nodeValue))
                return;
             var parent = node.parentNode;
             if (parent.nodeType == 1) {
                 var style = page.defaultView.getComputedStyle(parent, null);
-                var font = style.getPropertyValue("font-family");
-                if (this.setDynamicFont(font) != null || 
-                    (font == "serif" && this.transformer.setDynamicFontByName(newfont) == true))
-                {
+                var font = parent.getAttribute(this.attrFontFamilyProperty);
+                if (font == null) {
+                    font = style.getPropertyValue("font-family");
+                    parent.setAttribute(this.attrFontFamilyProperty, font);
+                }
+                if (this.setDynamicFont(font) != null) {
                     node.replaceData(0, node.length, this.transformer.convert(node.nodeValue));
                     this.setNodeTextAlign(parent, style.getPropertyValue("text-align"));
                 }
@@ -182,32 +139,45 @@ var Padma_Browser_Transformer = {
         //Ignore comment nodes
         else if (node.nodeType != 8) {
             for(var j = 0; j < node.childNodes.length; ++j)
-                this.processTreeWithHeuristics(page, node.childNodes.item(j), newfont);
+                this.transformNode(page, node.childNodes.item(j));
         }
     },
 
     getAutoTransformSiteList: function() {
-        var whitelist = "";
-        if (this.prefBranch.prefHasUserValue(PadmaSettings.prefAutoTransformWhiteList))
-            whitelist = this.prefBranch.getCharPref(PadmaSettings.prefAutoTransformWhiteList);
-        else whitelist = PadmaSettings.defAutoTransformWhiteList;
-        return this.makeRegExOfURIS(whitelist);
+        var index = 0, result = { sites: [], scripts: [] };
+        var whitelist = this.prefBranch.getCharPref(PadmaSettings.prefAutoTransformWhiteList);
+
+        var sites = whitelist.split(",");
+        for(var i = 0; i < sites.length; ++i) {
+            var map = sites[i].split(":");
+            if (map.length < 2)
+                continue;
+            result.sites[index] = map[0];
+            result.scripts[index++] = map[1];
+        }
+        return result;
     },
 
     isAutoTransformEnabled: function() {
-        return this.prefBranch.prefHasUserValue(PadmaSettings.prefEnableAutoTransform) ? 
-            this.prefBranch.getBoolPref(PadmaSettings.prefEnableAutoTransform) : true;
+        return this.prefBranch.getBoolPref(PadmaSettings.prefEnableAutoTransform);
     },
 
     onPageLoad: function(evt) {
-        //var start = new Date().getTime();
+        var start = new Date().getTime();
         var page = evt.originalTarget;
         if (!page || !page.location || page.location == "about:blank" || !page.location.host || !this.isAutoTransformEnabled())
             return;
 
         //Quickly check if auto transform is enabled and if this page needs to be transformed
+        var index = -1;
         var whitelist = this.getAutoTransformSiteList();
-        if (!whitelist.test(page.location.host))
+        for(var i = 0; i < whitelist.sites.length; ++i) {
+            if (this.makeRegExOfURIS(whitelist.sites[i]).test(page.location.host)) {
+                index = i;
+                break;
+            }
+        }
+        if (index == -1)
             return;
 
         if (page.characterSet == 'x-user-defined' && this.isFixCharEncoding()) {
@@ -220,38 +190,14 @@ var Padma_Browser_Transformer = {
         }
 
         this.createTransformer(Transformer.method_DynFonts, Transformer.method_Unicode);
+        if (whitelist.scripts[index] != -1)
+            this.transformer.setOutputScript(whitelist.scripts[index]);
 
-        //Do we need to apply heuristics
-        if (this.isHeuristicTransformEnabled()) {
-            var transformList = this.getHeuristicTransformSiteList();
-            for(var i = 0; i < transformList.sites.length; ++i) {
-                var regex = this.makeRegExOfURIS(transformList.sites[i]);
-                if (regex.test(page.location.host)) {
-                    var body = page.getElementsByTagName("BODY");
-                    for(var j = 0; j < body.length; ++j)
-                        this.processTreeWithHeuristics(page, body[j], transformList.fonts[i]);
-                    //var end = new Date().getTime();
-                    //alert(end - start);
-                    return;
-                }
-            }
-        }
-
-        //TODO:
-        var elems = page.getElementsByTagName("FONT");
-        for(i = 0; i < elems.length; ++i) {
-            if (elems[i].getAttribute(this.attrNodeVisited) == "1")
-                continue;
-            this.transformNode(page, elems[i]);
-        }
-        elems = page.getElementsByTagName("SPAN");
-        for(i = 0; i < elems.length; ++i) {
-            if (elems[i].getAttribute(this.attrNodeVisited) == "1")
-                continue;
-            this.transformNode(page, elems[i]);
-        }
-        //var end = new Date().getTime();
-        //alert(end - start);
+        var body = page.getElementsByTagName("BODY");
+        for(var j = 0; j < body.length; ++j)
+            this.transformNode(page, body[j]);
+        var end = new Date().getTime();
+        alert(end - start);
     },
 
     //Manual transform starts here
@@ -264,7 +210,7 @@ var Padma_Browser_Transformer = {
     },
 
     //Based on input method, determine if the selected text needs to be transformed
-    requiresTransform: function(node, dynFont) {
+    requiresTransform: function(page, node) {
         if (this.inputMethod == Transformer.method_RTS || this.inputMethod == Transformer.method_ISCII ||
             this.inputMethod == Transformer.method_ITRANS)
             return true;
@@ -283,11 +229,9 @@ var Padma_Browser_Transformer = {
                 return false;
             
             //Check computed style for parent node
-            var style = document.defaultView.getComputedStyle(parent, null);
+            var style = page.defaultView.getComputedStyle(parent, null);
             var font = style.getPropertyValue("font-family");
-            if (this.setDynamicFont(font) != null || 
-                (font == "serif" && dynFont != null && this.transformer.setDynamicFontByName(dynFont) == true))
-            {
+            if (this.setDynamicFont(font) != null) {
                 if (this.outputMethod == Transformer.method_RTS)
                     this.setNodeFontFamily(parent);
                 if (this.outputMethod == Transformer.method_Unicode)
@@ -299,9 +243,9 @@ var Padma_Browser_Transformer = {
     },
 
     //Process all nodes with root "root"
-    processNodes: function(selection, root, start, end, soff, eoff, dynFont) {
+    processNodes: function(page, selection, root, start, end, soff, eoff) {
         if (root.nodeType == 3) {
-            if (selection.containsNode(root, true) && this.requiresTransform(root, dynFont)) {
+            if (selection.containsNode(root, true) && this.requiresTransform(page, root)) {
                 if (root == start && root == end)
                     root.replaceData(soff, eoff - soff, this.transformer.convert(root.nodeValue.substring(soff, eoff)));
                 else if (root == start)
@@ -314,29 +258,17 @@ var Padma_Browser_Transformer = {
         else if (root.nodeType != 8) {
             //Don't process comment nodes
             for(var i = 0; i < root.childNodes.length; ++i)
-                this.processNodes(selection, root.childNodes.item(i), start, end, soff, eoff, dynFont);
+                this.processNodes(page, selection, root.childNodes.item(i), start, end, soff, eoff);
         }
     },
 
-    traverseDOM: function(selection) {
-        var dynFont = null;
+    traverseDOM: function(page, selection) {
         var inputMethod = this.transformer.getInputMethod();
-        //Extract the dynamic font to be used if heuristics are enabled for this website
-        if ((inputMethod == Transformer.method_DynFonts || inputMethod == Transformer.method_Unknown) && this.isHeuristicTransformEnabled()) {
-            var transformList = this.getHeuristicTransformSiteList();
-            for(var i = 0; i < transformList.sites.length; ++i) {
-                var regex = this.makeRegExOfURIS(transformList.sites[i]);
-                if (!regex.test(this.popupNodeBaseURI))
-                    continue;
-                dynFont = transformList.fonts[i];
-                break;
-            }
-        }
 
         for(i = 0; i < selection.rangeCount; i++) {
             var range = selection.getRangeAt(i);
-            this.processNodes(selection, range.commonAncestorContainer, range.startContainer, range.endContainer, 
-                              range.startOffset, range.endOffset, dynFont);
+            this.processNodes(page, selection, range.commonAncestorContainer, range.startContainer, range.endContainer, 
+                              range.startOffset, range.endOffset);
         }
     },
     
@@ -399,7 +331,7 @@ var Padma_Browser_Transformer = {
         }
         else {
             //for regular selection
-            this.traverseDOM(result.selection);
+            this.traverseDOM(document.popupNode.ownerDocument, result.selection);
             if (result.selection.rangeCount != 0)
                 result.selection.collapseToEnd();
         }
@@ -420,12 +352,43 @@ var Padma_Browser_Transformer = {
             //something selected - show menu items
             hidden = false;
 
-        //Hard coded for now
-        //This will change based on script options soon
-        for(var i = 0; i <= 12; ++i) {
-            var item = document.getElementById("padmaMenuItem" + i);
-            item.hidden = hidden;
-        }
+        //Always show menu separator and transform to Unicode options
+        var item = document.getElementById("padmaMenuItem0");
+        item.hidden = hidden;
+        item = document.getElementById("padmaMenuItem1");
+        item.hidden = hidden;
+
+        var rts = this.prefBranch.getBoolPref(PadmaSettings.prefEnableRTS);
+        var iscii = this.prefBranch.getBoolPref(PadmaSettings.prefEnableISCII);
+        var itrans = this.prefBranch.getBoolPref(PadmaSettings.prefEnableITRANS);
+        var telugu = this.prefBranch.getBoolPref(PadmaSettings.prefEnableTelugu);
+        var malayalam = this.prefBranch.getBoolPref(PadmaSettings.prefEnableMalayalam);
+        var tamil = this.prefBranch.getBoolPref(PadmaSettings.prefEnableTamil);
+        var devanagari = this.prefBranch.getBoolPref(PadmaSettings.prefEnableDevanagari);
+
+
+        item = document.getElementById("padmaMenuItem2");
+        item.hidden = hidden | !rts;
+        item = document.getElementById("padmaMenuItem3");
+        item.hidden = hidden | !rts;
+        item = document.getElementById("padmaMenuItem4");
+        item.hidden = hidden | !rts;
+        item = document.getElementById("padmaMenuItem5");
+        item.hidden = hidden | !iscii | !telugu;
+        item = document.getElementById("padmaMenuItem6");
+        item.hidden = hidden | !iscii | !malayalam;
+        item = document.getElementById("padmaMenuItem7");
+        item.hidden = hidden | !iscii | !tamil;
+        item = document.getElementById("padmaMenuItem8");
+        item.hidden = hidden | !iscii | !devanagari;
+        item = document.getElementById("padmaMenuItem9");
+        item.hidden = hidden | !itrans | !telugu;
+        item = document.getElementById("padmaMenuItem10");
+        item.hidden = hidden | !itrans | !malayalam;
+        item = document.getElementById("padmaMenuItem11");
+        item.hidden = hidden | !itrans | !tamil;
+        item = document.getElementById("padmaMenuItem12");
+        item.hidden = hidden | !itrans | !devanagari;
     }
 };
 
