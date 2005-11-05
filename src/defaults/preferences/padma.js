@@ -1,0 +1,12 @@
+pref("Padma.RTSOutputFormat", 0);
+pref("Padma.RTSSunnaStyle", 0);
+pref("Padma.autoTransformWhiteList", "www.eenadu.net,www.andhraprabha.com,www.andhrajyothy.com,www.webprapancham.com,www.teluguone.com,www.shirdisaiashirvadam.org,www.apweekly.com,www.keralahistory.ac.in,www.deepika.com,www.mangalam.com,www.vaarttha.com,thatstelugu.indiainfo.com,www.kaburlu.com,www.sirigina.com,www.suryakumari.com,www.madhyamamonline.in,www.deshabhimani.com,www.manoramaonline.com,www.esakal.com,www.kumudam.com,www.dinamalar.com,www.dailythanthi.com,www.vikatan.com");
+pref("Padma.enableAutoTransform", true);
+pref("Padma.enableISCII", true);
+pref("Padma.enableITRANS", true);
+pref("Padma.enableRTS", true);
+pref("Padma.fixCharEncoding", true);
+pref("Padma.enableTelugu", true);
+pref("Padma.enableMalyalam", true);
+pref("Padma.enableTamil", true);
+pref("Padma.enableDevanagari", true);
