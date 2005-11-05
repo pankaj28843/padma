@@ -1,4 +1,4 @@
-// $Id: Padma.js,v 1.8 2005/10/25 15:58:16 vnagarjuna Exp $ -->
+// $Id: Padma.js,v 1.9 2005/11/05 16:33:40 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -41,6 +41,13 @@ Padma.script_KANNADA    = 8;
 //Only 4 scripts supported now
 Padma.script_MAXSCRIPTS = 4;
 
+//Script names
+Padma.scripts = new Array();
+Padma.scripts[Padma.script_TELUGU]     = "Telugu";
+Padma.scripts[Padma.script_MALAYALAM]  = "Malayalam";
+Padma.scripts[Padma.script_TAMIL]      = "Tamil";
+Padma.scripts[Padma.script_DEVANAGARI] = "Devanagari";
+
 //Types (values to allow bit wise operations)
 Padma.type_accu      = 1;
 Padma.type_gunintam  = 2;
@@ -53,7 +60,7 @@ Padma.type_half_form = 128;
 Padma.type_unknown   = 256;
 
 //Use Unicode Private Use Area for Padma's internal symbols starting with U+EC00.
-//Code pints used: +UEC00-+UEC0F, +UEC10-+UEC1C, +UEC20-+UEC63, +UEC70-+UEC7B, +UECA1-+UECE3.
+//Code pints used: +UEC00-+UEC0F, +UEC10-+UEC1C, +UEC20-+UEC61, +UEC70-+UEC7B, +UECA1-+UECE1, +UED33-+UED61.
 
 //Code points 32-64, 91-96, 123-127 (from the ASCII range) are not explicitly listed here
 //but are part of Padma's internal format and are of type Padma.type_unknown.
@@ -166,10 +173,8 @@ Padma.consnt_SHA  = "\uEC5C";
 Padma.consnt_SSA  = "\uEC5D";
 Padma.consnt_SA   = "\uEC5E";
 Padma.consnt_HA   = "\uEC5F";
-Padma.conjct_KSH  = "\uEC60";   
-Padma.conjct_JNY  = "\uEC61";  //Devanagari
-Padma.consnt_TCH  = "\uEC62";  //Telugu (Extinct)
-Padma.consnt_TJ   = "\uEC63";  //Telugu (Extinct)
+Padma.consnt_TCH  = "\uEC60";  //Telugu (Extinct)
+Padma.consnt_TJ   = "\uEC61";  //Telugu (Extinct)
 
 //Gunimtaalu
 Padma.vowelsn_AA    = "\uECA2";
@@ -241,10 +246,8 @@ Padma.vattu_SHA   = "\uECDC";
 Padma.vattu_SSA   = "\uECDD";
 Padma.vattu_SA    = "\uECDE";
 Padma.vattu_HA    = "\uECDF";
-Padma.vattu_KSH   = "\uECE0";
-Padma.vattu_JNY   = "\uECE1";
-Padma.vattu_TCH   = "\uECE2";
-Padma.vattu_TJ    = "\uECE3";
+Padma.vattu_TCH   = "\uECE0";
+Padma.vattu_TJ    = "\uECE1";
 
 //Half Forms
 Padma.halffm_KA   = "\uED33";
@@ -292,10 +295,8 @@ Padma.halffm_SHA  = "\uED5C";
 Padma.halffm_SSA  = "\uED5D";
 Padma.halffm_SA   = "\uED5E";
 Padma.halffm_HA   = "\uED5F";
-Padma.halffm_KSH  = "\uED60";   
-Padma.halffm_JNY  = "\uED61";  //Devanagari
-Padma.halffm_TCH  = "\uED62";  //Telugu (Extinct)
-Padma.halffm_TJ   = "\uED63";  //Telugu (Extinct)
+Padma.halffm_TCH  = "\uED60";  //Telugu (Extinct)
+Padma.halffm_TJ   = "\uED61";  //Telugu (Extinct)
 
 //Special signs
 Padma.digit_TEN      = "\uEC70";
@@ -312,13 +313,16 @@ Padma.sign_NUMBER    = "\uEC7A";
 
 //Vowel and consonant range (exculudes #a#)
 Padma.base_START = 0xEC22;
-Padma.base_END   = 0xEC63;
+Padma.base_END   = 0xEC61;
 //Dependent form range (exculudes #a#)
 Padma.dep_START = 0xECA2;
-Padma.dep_END   = 0xECE3;
+Padma.dep_END   = 0xECE1;
 //Half form range
 Padma.half_START = 0xED33;
-Padma.half_END   = 0xED63;
+Padma.half_END   = 0xED61;
+//Vattu
+Padma.vattu_START = 0xECB3;
+Padma.vattu_END   = 0xECE1;
 
 //Symbol table
 Padma.symbols = new Array();
@@ -416,8 +420,6 @@ Padma.symbols[Padma.consnt_SHA]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_SSA]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_SA]   = Padma.type_hallu;
 Padma.symbols[Padma.consnt_HA]   = Padma.type_hallu;
-Padma.symbols[Padma.conjct_KSH]  = Padma.type_hallu;   
-Padma.symbols[Padma.conjct_JNY]  = Padma.type_hallu;   
 Padma.symbols[Padma.consnt_TCH]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_TJ]   = Padma.type_hallu;
 
@@ -487,8 +489,6 @@ Padma.symbols[Padma.vattu_SHA]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_SSA]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_SA]    = Padma.type_vattu;
 Padma.symbols[Padma.vattu_HA]    = Padma.type_vattu;
-Padma.symbols[Padma.vattu_KSH]   = Padma.type_vattu;   
-Padma.symbols[Padma.vattu_JNY]   = Padma.type_vattu;   
 Padma.symbols[Padma.vattu_TCH]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_TJ]    = Padma.type_vattu;
 
@@ -537,8 +537,6 @@ Padma.symbols[Padma.halffm_SHA]  = Padma.type_half_form;
 Padma.symbols[Padma.halffm_SSA]  = Padma.type_half_form;
 Padma.symbols[Padma.halffm_SA]   = Padma.type_half_form;
 Padma.symbols[Padma.halffm_HA]   = Padma.type_half_form;
-Padma.symbols[Padma.halffm_KSH]  = Padma.type_half_form;   
-Padma.symbols[Padma.halffm_JNY]  = Padma.type_half_form;   
 Padma.symbols[Padma.halffm_TCH]  = Padma.type_half_form;
 Padma.symbols[Padma.halffm_TJ]   = Padma.type_half_form;
 
@@ -596,6 +594,27 @@ Padma.getType = function (str)
         return Padma.type_unknown;
     var val = Padma.symbols[str];
     return val == null ? Padma.type_unknown : val;
+}
+
+//No Input validation - only one char code assumed
+Padma.fast_Vattu = function (code)
+{
+    return String.fromCharCode(code + 0x80);
+}
+
+Padma.fast_halfForm = function (code)
+{
+    return String.fromCharCode(code + 0x100);
+}
+
+Padma.fast_baseFormFromVattu = function (code)
+{
+    return String.fromCharCode(code - 0x80);
+}
+
+Padma.fast_baseFormFromHalfForm = function (code)
+{
+    return String.fromCharCode(code - 0x100);
 }
 
 Padma.dependentForm = function (str)
