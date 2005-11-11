@@ -1,4 +1,4 @@
-// $Id: ElangoTmlPanchali.js,v 1.4 2005/11/11 14:07:02 vnagarjuna Exp $ -->
+// $Id: ElangoTmlPanchali.js,v 1.5 2005/11/11 15:17:12 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -108,7 +108,7 @@ Elango_Tml_Panchali.consnt_LLA     = "\u005B";
 Elango_Tml_Panchali.consnt_ZHA     = "\u005A";
 Elango_Tml_Panchali.consnt_RRA     = "\u005C";
 Elango_Tml_Panchali.conjct_KSH     = "\u0064";
-Elango_Tml_Panchali.conjct_SRI     = "\u007E";
+Elango_Tml_Panchali.conjct_SRII    = "\u007E";
 
 //Gunintamulu
 Elango_Tml_Panchali.vowelsn_AA     = "\u00D6";
@@ -340,7 +340,7 @@ Elango_Tml_Panchali.toPadma[Elango_Tml_Panchali.consnt_LLA] = Padma.consnt_LLA;
 Elango_Tml_Panchali.toPadma[Elango_Tml_Panchali.consnt_ZHA] = Padma.consnt_ZHA;
 Elango_Tml_Panchali.toPadma[Elango_Tml_Panchali.consnt_RRA] = Padma.consnt_RRA;
 Elango_Tml_Panchali.toPadma[Elango_Tml_Panchali.conjct_KSH] = Padma.consnt_KA + Padma.vattu_SSA;
-Elango_Tml_Panchali.toPadma[Elango_Tml_Panchali.conjct_SRI] = Padma.consnt_SA + Padma.vattu_RA + Padma.vowelsn_I;
+Elango_Tml_Panchali.toPadma[Elango_Tml_Panchali.conjct_SRII] = Padma.consnt_SA + Padma.vattu_RA + Padma.vowelsn_II;
 
 //Gunintamulu
 Elango_Tml_Panchali.toPadma[Elango_Tml_Panchali.vowelsn_AA]  = Padma.vowelsn_AA;

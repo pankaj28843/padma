@@ -1,4 +1,4 @@
-// $Id: Vikatan.js,v 1.8 2005/11/11 14:07:02 vnagarjuna Exp $ -->
+// $Id: Vikatan.js,v 1.9 2005/11/11 15:17:12 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -108,7 +108,7 @@ Vikatan.consnt_LLA     = "\u00F7";
 Vikatan.consnt_ZHA     = "\u00F6";
 Vikatan.consnt_RRA     = "\u00F8";
 Vikatan.conjct_KSH     = "\u00FE";
-Vikatan.conjct_SRI     = "\u00FF";
+Vikatan.conjct_SRII    = "\u00FF";
 
 //Gunintamulu
 Vikatan.vowelsn_AA     = "\u00A3";
@@ -333,7 +333,7 @@ Vikatan.toPadma[Vikatan.consnt_LLA] = Padma.consnt_LLA;
 Vikatan.toPadma[Vikatan.consnt_ZHA] = Padma.consnt_ZHA;
 Vikatan.toPadma[Vikatan.consnt_RRA] = Padma.consnt_RRA;
 Vikatan.toPadma[Vikatan.conjct_KSH] = Padma.consnt_KA + Padma.vattu_SSA;
-Vikatan.toPadma[Vikatan.conjct_SRI] = Padma.consnt_SA + Padma.vattu_RA + Padma.vowelsn_I;
+Vikatan.toPadma[Vikatan.conjct_SRII]= Padma.consnt_SA + Padma.vattu_RA + Padma.vowelsn_II;
 
 //Gunintamulu
 Vikatan.toPadma[Vikatan.vowelsn_AA]  = Padma.vowelsn_AA;

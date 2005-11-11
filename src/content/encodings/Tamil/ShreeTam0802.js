@@ -1,4 +1,4 @@
-// $Id: ShreeTam0802.js,v 1.3 2005/11/11 14:07:02 vnagarjuna Exp $ -->
+// $Id: ShreeTam0802.js,v 1.4 2005/11/11 15:17:12 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 //Contributed by Saravana Kumar <saravanannkl@gmail.com>
@@ -109,7 +109,7 @@ Shree_Tam_0802.consnt_LLA     = "\u00CD";
 Shree_Tam_0802.consnt_ZHA     = "\u00C7";
 Shree_Tam_0802.consnt_RRA     = "\u00D3";
 Shree_Tam_0802.conjct_KSH     = "\u00F1";
-Shree_Tam_0802.conjct_SRI     = "\u00FF";
+Shree_Tam_0802.conjct_SRII    = "\u00FF";
 
 //Gunintamulu
 Shree_Tam_0802.vowelsn_AA     = "\u00F5";
@@ -355,7 +355,7 @@ Shree_Tam_0802.toPadma[Shree_Tam_0802.consnt_LLA] = Padma.consnt_LLA;
 Shree_Tam_0802.toPadma[Shree_Tam_0802.consnt_ZHA] = Padma.consnt_ZHA;
 Shree_Tam_0802.toPadma[Shree_Tam_0802.consnt_RRA] = Padma.consnt_RRA;
 Shree_Tam_0802.toPadma[Shree_Tam_0802.conjct_KSH] = Padma.consnt_KA + Padma.vattu_SSA;
-Shree_Tam_0802.toPadma[Shree_Tam_0802.conjct_SRI] = Padma.consnt_SA + Padma.vattu_RA + Padma.vowelsn_I;
+Shree_Tam_0802.toPadma[Shree_Tam_0802.conjct_SRII] = Padma.consnt_SA + Padma.vattu_RA + Padma.vowelsn_II;
 
 //Gunintamulu
 Shree_Tam_0802.toPadma[Shree_Tam_0802.vowelsn_AA]   = Padma.vowelsn_AA;
