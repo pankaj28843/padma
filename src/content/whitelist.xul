@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: whitelist.xul,v 1.6 2005/11/05 16:26:06 vnagarjuna Exp $-->
+<!--$Id: whitelist.xul,v 1.7 2005/11/11 14:00:04 vnagarjuna Exp $-->
 
 <!--Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
 
@@ -33,7 +33,7 @@
         width="400"
         onload="PadmaWhitelist.onLoad();sizeToContent();"
         ondialogaccept="return PadmaWhitelist.onSave();"
-        persist="screenX screenY"
+        persist="screenX screenY width height"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         xmlns:html="http://www.w3.org/1999/xhtml">
 
@@ -44,7 +44,7 @@
     <caption label="Whitelist" accesskey="w"/>
 
     <description id="autoDescription">
-       Specify a whitelist of websites that you want to be transformed automatically. Enter the URL for the website, the script in which you want to view it and click on Add.
+       Specify a whitelist of websites that you want to be transformed automatically. Enter the URL for the website, the script in which you want to view it and click on Add. You can modify the script later by right clicking on the item in the box.
     </description>
     <separator class="thin"/>
 
@@ -84,5 +84,11 @@
     </hbox>
 
   </groupbox>
+
+  <popupset>
+    <popup id='changeScriptPopup'>
+      <label value='Change script to...'/>
+   </popup>
+  </popupset>
 
 </dialog>
