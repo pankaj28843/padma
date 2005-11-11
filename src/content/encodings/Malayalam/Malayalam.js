@@ -1,4 +1,4 @@
-// $Id: Malayalam.js,v 1.1 2005/11/05 16:35:06 vnagarjuna Exp $ -->
+// $Id: Malayalam.js,v 1.2 2005/11/11 14:06:15 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -129,11 +129,19 @@ Malayalam.codePoints.digit_NINE  = "\u0D6F";
 
 Malayalam.fromPadma = new Array();
 
+Malayalam.fromPadma[Padma.anusvara]    = Malayalam.codePoints.anusvara;
 Malayalam.fromPadma[Padma.visarga]     = Malayalam.codePoints.visarga;
 Malayalam.fromPadma[Padma.chandrakkala] = Malayalam.codePoints.misc_VIRAMA;
-Malayalam.fromPadma[Padma.syllbreak]   = Malayalam.codePoints.misc_VIRAMA + Unicode_Shared.ZWNJ;
 Malayalam.fromPadma[Padma.chillu]      = Malayalam.codePoints.misc_VIRAMA + Unicode_Shared.ZWJ;
-Malayalam.fromPadma[Padma.anusvara]    = Malayalam.codePoints.anusvara;
+Malayalam.fromPadma[Padma.syllbreak]   = Malayalam.codePoints.misc_VIRAMA + Unicode_Shared.ZWNJ;
+Malayalam.fromPadma[Padma.avagraha]    = Unicode_Shared.AVAGRAHA;
+Malayalam.fromPadma[Padma.udAtta]      = Unicode_Shared.UDATTA;
+Malayalam.fromPadma[Padma.anudAtta]    = Unicode_Shared.ANUDATTA;
+Malayalam.fromPadma[Padma.svarita]     = Unicode_Shared.SVARITA;
+Malayalam.fromPadma[Padma.danda]       = Unicode_Shared.DANDA;
+Malayalam.fromPadma[Padma.ddanda]      = Unicode_Shared.DDANDA;
+Malayalam.fromPadma[Padma.abbrev]      = Unicode_Shared.abbrev;
+Malayalam.fromPadma[Padma.om]          = Unicode_Shared.OM;
 
 //digits
 Malayalam.fromPadma[Padma.digit_ZERO]  = Malayalam.codePoints.digit_ZERO;
@@ -218,3 +226,19 @@ Malayalam.fromPadma[Padma.vowelsn_O]   = Malayalam.codePoints.vowelsn_O;
 Malayalam.fromPadma[Padma.vowelsn_OO]  = Malayalam.codePoints.vowelsn_OO;
 Malayalam.fromPadma[Padma.vowelsn_AU]  = Malayalam.codePoints.vowelsn_AU;
 Malayalam.fromPadma[Padma.vowelsn_AULEN]  = Malayalam.codePoints.misc_AULEN;
+
+//The following are not directly present in Malayalam - equivalent transliteration
+Malayalam.fromPadma[Padma.vowel_SHT_A]   = Malayalam.codePoints.letter_A;
+Malayalam.fromPadma[Padma.vowel_CDR_E]   = Malayalam.codePoints.letter_E;
+Malayalam.fromPadma[Padma.vowel_CDR_O]   = Malayalam.codePoints.letter_O;
+Malayalam.fromPadma[Padma.consnt_QA]     = Malayalam.codePoints.letter_KA;
+Malayalam.fromPadma[Padma.consnt_KHHA]   = Malayalam.codePoints.letter_KHA;
+Malayalam.fromPadma[Padma.consnt_GHHA]   = Malayalam.codePoints.letter_GHA;
+Malayalam.fromPadma[Padma.consnt_ZA]     = Malayalam.codePoints.letter_JA;
+Malayalam.fromPadma[Padma.consnt_DDDHA]  = Malayalam.codePoints.letter_DDA;
+Malayalam.fromPadma[Padma.consnt_RHA]    = Malayalam.codePoints.letter_DDHA;
+Malayalam.fromPadma[Padma.consnt_NNNA]   = Malayalam.codePoints.letter_NNA;
+Malayalam.fromPadma[Padma.consnt_FA]     = Malayalam.codePoints.letter_PHA;
+Malayalam.fromPadma[Padma.consnt_YYA]    = Malayalam.codePoints.letter_YA;
+Malayalam.fromPadma[Padma.vowelsn_CDR_E] = Malayalam.codePoints.vowelsn_E;
+Malayalam.fromPadma[Padma.vowelsn_CDR_O] = Malayalam.codePoints.vowelsn_O;

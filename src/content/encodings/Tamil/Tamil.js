@@ -1,4 +1,4 @@
-// $Id: Tamil.js,v 1.1 2005/11/05 16:35:21 vnagarjuna Exp $ -->
+// $Id: Tamil.js,v 1.2 2005/11/11 14:07:02 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -122,10 +122,19 @@ Tamil.codePoints.sign_NUMBER    = "\u0BFA";
 
 Tamil.fromPadma = new Array();
 
+Tamil.fromPadma[Padma.anusvara]    = Tamil.codePoints.anusvara;
 Tamil.fromPadma[Padma.visarga]     = Tamil.codePoints.visarga;
 Tamil.fromPadma[Padma.pulli]       = Tamil.codePoints.misc_VIRAMA;
+Tamil.fromPadma[Padma.chillu]      = Tamil.codePoints.misc_VIRAMA + Unicode_Shared.ZWJ;
 Tamil.fromPadma[Padma.syllbreak]   = Tamil.codePoints.misc_VIRAMA + Unicode_Shared.ZWNJ;
-Tamil.fromPadma[Padma.anusvara]    = Tamil.codePoints.anusvara;
+Tamil.fromPadma[Padma.avagraha]    = Unicode_Shared.AVAGRAHA;
+Tamil.fromPadma[Padma.udAtta]      = Unicode_Shared.UDATTA;
+Tamil.fromPadma[Padma.anudAtta]    = Unicode_Shared.ANUDATTA;
+Tamil.fromPadma[Padma.svarita]     = Unicode_Shared.SVARITA;
+Tamil.fromPadma[Padma.danda]       = Unicode_Shared.DANDA;
+Tamil.fromPadma[Padma.ddanda]      = Unicode_Shared.DDANDA;
+Tamil.fromPadma[Padma.abbrev]      = Unicode_Shared.abbrev;
+Tamil.fromPadma[Padma.om]          = Unicode_Shared.OM;
 
 //digits
 Tamil.fromPadma[Padma.digit_ZERO]  = Tamil.codePoints.digit_ZERO;
@@ -192,3 +201,31 @@ Tamil.fromPadma[Padma.vowelsn_OO]  = Tamil.codePoints.vowelsn_OO;
 Tamil.fromPadma[Padma.vowelsn_AU]  = Tamil.codePoints.vowelsn_AU;
 Tamil.fromPadma[Padma.vowelsn_AULEN]  = Tamil.codePoints.misc_AULEN;
 
+//The following are not directly present in Tamil - equivalent transliteration
+Tamil.fromPadma[Padma.vowel_SHT_A]   = Tamil.codePoints.letter_A;
+Tamil.fromPadma[Padma.vowel_CDR_E]   = Tamil.codePoints.letter_E;
+Tamil.fromPadma[Padma.vowel_CDR_O]   = Tamil.codePoints.letter_O;
+Tamil.fromPadma[Padma.consnt_QA]     = Tamil.codePoints.letter_KA;
+Tamil.fromPadma[Padma.consnt_KHA]    = Tamil.codePoints.letter_KA;
+Tamil.fromPadma[Padma.consnt_KHHA]   = Tamil.codePoints.letter_KA;
+Tamil.fromPadma[Padma.consnt_GA]     = Tamil.codePoints.letter_KA;
+Tamil.fromPadma[Padma.consnt_GHA]    = Tamil.codePoints.letter_KA;
+Tamil.fromPadma[Padma.consnt_GHHA]   = Tamil.codePoints.letter_KA;
+Tamil.fromPadma[Padma.consnt_CHA]    = Tamil.codePoints.letter_CA;
+Tamil.fromPadma[Padma.consnt_ZA]     = Tamil.codePoints.letter_JA;
+Tamil.fromPadma[Padma.consnt_JHA]    = Tamil.codePoints.letter_JA;
+Tamil.fromPadma[Padma.consnt_TTHA]   = Tamil.codePoints.letter_TTA;
+Tamil.fromPadma[Padma.consnt_DDA]    = Tamil.codePoints.letter_TTA;
+Tamil.fromPadma[Padma.consnt_DDHA]   = Tamil.codePoints.letter_TTA;
+Tamil.fromPadma[Padma.consnt_DDDHA]  = Tamil.codePoints.letter_TTA;
+Tamil.fromPadma[Padma.consnt_RHA]    = Tamil.codePoints.letter_TTA;
+Tamil.fromPadma[Padma.consnt_THA]    = Tamil.codePoints.letter_TA;
+Tamil.fromPadma[Padma.consnt_DA]     = Tamil.codePoints.letter_TA;
+Tamil.fromPadma[Padma.consnt_DHA]    = Tamil.codePoints.letter_TA;
+Tamil.fromPadma[Padma.consnt_FA]     = Tamil.codePoints.letter_PA;
+Tamil.fromPadma[Padma.consnt_PHA]    = Tamil.codePoints.letter_PA;
+Tamil.fromPadma[Padma.consnt_BA]     = Tamil.codePoints.letter_PA;
+Tamil.fromPadma[Padma.consnt_BHA]    = Tamil.codePoints.letter_PA;
+Tamil.fromPadma[Padma.consnt_YYA]    = Tamil.codePoints.letter_YA;
+Tamil.fromPadma[Padma.vowelsn_CDR_E] = Tamil.codePoints.vowelsn_E;
+Tamil.fromPadma[Padma.vowelsn_CDR_O] = Tamil.codePoints.vowelsn_O;

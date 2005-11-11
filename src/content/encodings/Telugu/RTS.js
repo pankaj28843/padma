@@ -1,4 +1,4 @@
-// $Id: RTS.js,v 1.7 2005/10/25 15:58:20 vnagarjuna Exp $ -->
+// $Id: RTS.js,v 1.8 2005/11/11 14:08:12 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -361,7 +361,7 @@ RTS.toPadma[RTS.consnt_LLA_5] = Padma.consnt_LLA;
 RTS.toPadma[RTS.consnt_LLA_6] = Padma.consnt_LLA;
 RTS.toPadma[RTS.consnt_RRA_1] = Padma.consnt_RRA;
 RTS.toPadma[RTS.consnt_RRA_2] = Padma.consnt_RRA;
-RTS.toPadma[RTS.conjct_KSH_1] = Padma.conjct_KSH;
+RTS.toPadma[RTS.conjct_KSH_1] = Padma.consnt_KA + Padma.vattu_SSA;
 RTS.toPadma[RTS.consnt_TCH] = Padma.consnt_TCH;
 RTS.toPadma[RTS.consnt_TJ]  = Padma.consnt_TJ;
 RTS.toPadma[RTS.misc_JN] = Padma.consnt_JA + Padma.vattu_NYA;
@@ -454,7 +454,6 @@ RTS.fromPadma[Padma.consnt_SSA]  = RTS.consnt_SSA_1;
 RTS.fromPadma[Padma.consnt_SA]   = RTS.consnt_SA;
 RTS.fromPadma[Padma.consnt_HA]   = RTS.consnt_HA_1;
 RTS.fromPadma[Padma.consnt_LLA]  = RTS.consnt_LLA_1;
-RTS.fromPadma[Padma.conjct_KSH]  = RTS.conjct_KSH_2;
 RTS.fromPadma[Padma.consnt_RRA]  = RTS.consnt_RRA_1;
 RTS.fromPadma[Padma.consnt_TCH]  = RTS.consnt_TCH;
 RTS.fromPadma[Padma.consnt_TJ]   = RTS.consnt_TJ;
@@ -507,7 +506,6 @@ RTS.fromPadma[Padma.vattu_SSA]   = RTS.consnt_SSA_1;
 RTS.fromPadma[Padma.vattu_SA]    = RTS.consnt_SA;
 RTS.fromPadma[Padma.vattu_HA]    = RTS.consnt_HA_1;
 RTS.fromPadma[Padma.vattu_LLA]   = RTS.consnt_LLA_1;
-RTS.fromPadma[Padma.vattu_KSH]   = RTS.conjct_KSH_2;
 RTS.fromPadma[Padma.vattu_RRA]   = RTS.consnt_RRA_1;
 RTS.fromPadma[Padma.vattu_TCH]   = RTS.consnt_TCH;
 RTS.fromPadma[Padma.vattu_TJ]    = RTS.consnt_TJ;

@@ -1,4 +1,4 @@
-// $Id: Tikkana.js,v 1.7 2005/10/25 15:58:20 vnagarjuna Exp $ -->
+// $Id: Tikkana.js,v 1.8 2005/11/11 14:08:12 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 //Copyright 2005 Suresh Kolichala <suresh_kolichala@yahoo.com>
@@ -385,8 +385,7 @@ Tikkana.toPadma[Tikkana.consnt_SA_2] = Padma.consnt_SA;
 Tikkana.toPadma[Tikkana.consnt_HA] = Padma.consnt_HA;
 Tikkana.toPadma[Tikkana.consnt_LLA] = Padma.consnt_LLA;
 Tikkana.toPadma[Tikkana.consnt_RRA] = Padma.consnt_RRA;
-Tikkana.toPadma[Tikkana.conjct_KSHA] = Padma.conjct_KSH;
-
+Tikkana.toPadma[Tikkana.conjct_KSHA] = Padma.consnt_KA + Padma.vattu_SSA;;
 
 //Gunintamulu
 Tikkana.toPadma[Tikkana.vowelsn_AA_1]  = Padma.vowelsn_AA;

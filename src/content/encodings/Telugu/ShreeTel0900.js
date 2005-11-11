@@ -1,4 +1,4 @@
-// $Id: ShreeTel0900.js,v 1.8 2005/10/25 15:58:20 vnagarjuna Exp $ -->
+// $Id: ShreeTel0900.js,v 1.9 2005/11/11 14:08:12 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -430,9 +430,8 @@ Shree_Tel_0900.toPadma[Shree_Tel_0900.consnt_SA_2] = Padma.consnt_SA;
 Shree_Tel_0900.toPadma[Shree_Tel_0900.consnt_HA] = Padma.consnt_HA;
 Shree_Tel_0900.toPadma[Shree_Tel_0900.consnt_LLA] = Padma.consnt_LLA;
 Shree_Tel_0900.toPadma[Shree_Tel_0900.consnt_RRA] = Padma.consnt_RRA;
-Shree_Tel_0900.toPadma[Shree_Tel_0900.conjct_KSHA_1] = Padma.conjct_KSH;
-Shree_Tel_0900.toPadma[Shree_Tel_0900.conjct_KSHA_2] = Padma.conjct_KSH;
-
+Shree_Tel_0900.toPadma[Shree_Tel_0900.conjct_KSHA_1] = Padma.consnt_KA + Padma.vattu_SSA;
+Shree_Tel_0900.toPadma[Shree_Tel_0900.conjct_KSHA_2] = Padma.consnt_KA + Padma.vattu_SSA;
 
 //Gunintamulu
 Shree_Tel_0900.toPadma[Shree_Tel_0900.vowelsn_AA_1]  = Padma.vowelsn_AA;

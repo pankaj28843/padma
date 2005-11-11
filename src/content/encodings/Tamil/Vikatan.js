@@ -1,4 +1,4 @@
-// $Id: Vikatan.js,v 1.7 2005/10/25 15:58:19 vnagarjuna Exp $ -->
+// $Id: Vikatan.js,v 1.8 2005/11/11 14:07:02 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -332,7 +332,7 @@ Vikatan.toPadma[Vikatan.consnt_HA]  = Padma.consnt_HA;
 Vikatan.toPadma[Vikatan.consnt_LLA] = Padma.consnt_LLA;
 Vikatan.toPadma[Vikatan.consnt_ZHA] = Padma.consnt_ZHA;
 Vikatan.toPadma[Vikatan.consnt_RRA] = Padma.consnt_RRA;
-Vikatan.toPadma[Vikatan.conjct_KSH] = Padma.conjct_KSH;
+Vikatan.toPadma[Vikatan.conjct_KSH] = Padma.consnt_KA + Padma.vattu_SSA;
 Vikatan.toPadma[Vikatan.conjct_SRI] = Padma.consnt_SA + Padma.vattu_RA + Padma.vowelsn_I;
 
 //Gunintamulu
@@ -366,7 +366,7 @@ Vikatan.combo_HAU      = Padma.consnt_HA + Padma.vowelsn_AU;
 Vikatan.combo_LLAU     = Padma.consnt_LLA + Padma.vowelsn_AU;
 Vikatan.combo_ZHAU     = Padma.consnt_ZHA + Padma.vowelsn_AU;
 Vikatan.combo_RRAU     = Padma.consnt_RRA + Padma.vowelsn_AU;
-Vikatan.combo_KSHAU    = Padma.conjct_KSH + Padma.vowelsn_AU;
+Vikatan.combo_KSHAU    = Padma.consnt_KA + Padma.vattu_SSA + Padma.vowelsn_AU;
 
 //Special Combinations
 Vikatan.toPadma[Vikatan.combo_KI]      = Padma.consnt_KA + Padma.vowelsn_I;
@@ -471,9 +471,9 @@ Vikatan.toPadma[Vikatan.combo_RRII]    = Padma.consnt_RRA + Padma.vowelsn_II;
 Vikatan.toPadma[Vikatan.combo_RRU]     = Padma.consnt_RRA + Padma.vowelsn_U;
 Vikatan.toPadma[Vikatan.combo_RRUU]    = Padma.consnt_RRA + Padma.vowelsn_UU;
 Vikatan.toPadma[Vikatan.combo_RRPULLI] = Padma.consnt_RRA + Padma.pulli;
-Vikatan.toPadma[Vikatan.combo_KSHI]    = Padma.conjct_KSH + Padma.vowelsn_I;
-Vikatan.toPadma[Vikatan.combo_KSHII]   = Padma.conjct_KSH + Padma.vowelsn_II;
-Vikatan.toPadma[Vikatan.combo_KSHPULLI]= Padma.conjct_KSH + Padma.pulli;
+Vikatan.toPadma[Vikatan.combo_KSHI]    = Padma.consnt_KA + Padma.vattu_SSA + Padma.vowelsn_I;
+Vikatan.toPadma[Vikatan.combo_KSHII]   = Padma.consnt_KA + Padma.vattu_SSA + Padma.vowelsn_II;
+Vikatan.toPadma[Vikatan.combo_KSHPULLI]= Padma.consnt_KA + Padma.vattu_SSA + Padma.pulli;
 
 Vikatan.toPadma[Vikatan.HYPHEN]   = "-";
 

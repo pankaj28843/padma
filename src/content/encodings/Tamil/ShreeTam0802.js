@@ -1,4 +1,4 @@
-// $Id: ShreeTam0802.js,v 1.2 2005/10/25 15:58:19 vnagarjuna Exp $ -->
+// $Id: ShreeTam0802.js,v 1.3 2005/11/11 14:07:02 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 //Contributed by Saravana Kumar <saravanannkl@gmail.com>
@@ -354,7 +354,7 @@ Shree_Tam_0802.toPadma[Shree_Tam_0802.consnt_HA]  = Padma.consnt_HA;
 Shree_Tam_0802.toPadma[Shree_Tam_0802.consnt_LLA] = Padma.consnt_LLA;
 Shree_Tam_0802.toPadma[Shree_Tam_0802.consnt_ZHA] = Padma.consnt_ZHA;
 Shree_Tam_0802.toPadma[Shree_Tam_0802.consnt_RRA] = Padma.consnt_RRA;
-Shree_Tam_0802.toPadma[Shree_Tam_0802.conjct_KSH] = Padma.conjct_KSH;
+Shree_Tam_0802.toPadma[Shree_Tam_0802.conjct_KSH] = Padma.consnt_KA + Padma.vattu_SSA;
 Shree_Tam_0802.toPadma[Shree_Tam_0802.conjct_SRI] = Padma.consnt_SA + Padma.vattu_RA + Padma.vowelsn_I;
 
 //Gunintamulu
@@ -396,7 +396,7 @@ Shree_Tam_0802.combo_HAU      = Padma.consnt_HA + Padma.vowelsn_AU;
 Shree_Tam_0802.combo_LLAU     = Padma.consnt_LLA + Padma.vowelsn_AU;
 Shree_Tam_0802.combo_ZHAU     = Padma.consnt_ZHA + Padma.vowelsn_AU;
 Shree_Tam_0802.combo_RRAU     = Padma.consnt_RRA + Padma.vowelsn_AU;
-Shree_Tam_0802.combo_KSHAU    = Padma.conjct_KSH + Padma.vowelsn_AU;
+Shree_Tam_0802.combo_KSHAU    = Padma.consnt_KA + Padma.vattu_SSA + Padma.vowelsn_AU;
 
 //Special Combinations
 Shree_Tam_0802.toPadma[Shree_Tam_0802.combo_KI]      = Padma.consnt_KA + Padma.vowelsn_I;
@@ -501,9 +501,9 @@ Shree_Tam_0802.toPadma[Shree_Tam_0802.combo_RRII]    = Padma.consnt_RRA + Padma.
 Shree_Tam_0802.toPadma[Shree_Tam_0802.combo_RRU]     = Padma.consnt_RRA + Padma.vowelsn_U;
 Shree_Tam_0802.toPadma[Shree_Tam_0802.combo_RRUU]    = Padma.consnt_RRA + Padma.vowelsn_UU;
 Shree_Tam_0802.toPadma[Shree_Tam_0802.combo_RRPULLI] = Padma.consnt_RRA + Padma.pulli;
-Shree_Tam_0802.toPadma[Shree_Tam_0802.combo_KSHI]    = Padma.conjct_KSH + Padma.vowelsn_I;
-Shree_Tam_0802.toPadma[Shree_Tam_0802.combo_KSHII]   = Padma.conjct_KSH + Padma.vowelsn_II;
-Shree_Tam_0802.toPadma[Shree_Tam_0802.combo_KSHPULLI]= Padma.conjct_KSH + Padma.pulli;
+Shree_Tam_0802.toPadma[Shree_Tam_0802.combo_KSHI]    = Padma.consnt_KA + Padma.vattu_SSA + Padma.vowelsn_I;
+Shree_Tam_0802.toPadma[Shree_Tam_0802.combo_KSHII]   = Padma.consnt_KA + Padma.vattu_SSA + Padma.vowelsn_II;
+Shree_Tam_0802.toPadma[Shree_Tam_0802.combo_KSHPULLI]= Padma.consnt_KA + Padma.vattu_SSA + Padma.pulli;
 
 Shree_Tam_0802.toPadma[Shree_Tam_0802.HYPHEN]   = "-";
 

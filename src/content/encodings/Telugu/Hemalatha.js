@@ -1,4 +1,4 @@
-// $Id: Hemalatha.js,v 1.9 2005/10/25 15:58:20 vnagarjuna Exp $ -->
+// $Id: Hemalatha.js,v 1.10 2005/11/11 14:08:12 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -447,8 +447,7 @@ Hemalatha.toPadma[Hemalatha.consnt_SA_2] = Padma.consnt_SA;
 Hemalatha.toPadma[Hemalatha.consnt_HA] = Padma.consnt_HA;
 Hemalatha.toPadma[Hemalatha.consnt_LLA] = Padma.consnt_LLA;
 Hemalatha.toPadma[Hemalatha.consnt_RRA] = Padma.consnt_RRA;
-Hemalatha.toPadma[Hemalatha.conjct_KSHA] = Padma.conjct_KSH;
-
+Hemalatha.toPadma[Hemalatha.conjct_KSHA] = Padma.consnt_KA + Padma.vattu_SSA;
 
 //Gunintamulu
 Hemalatha.toPadma[Hemalatha.vowelsn_AA_1]  = Padma.vowelsn_AA;

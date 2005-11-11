@@ -1,4 +1,4 @@
-// $Id: Eenadu.js,v 1.7 2005/10/25 15:58:20 vnagarjuna Exp $ -->
+// $Id: Eenadu.js,v 1.8 2005/11/11 14:08:12 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -485,7 +485,7 @@ Eenadu.toPadma[Eenadu.consnt_SA_2] = Padma.consnt_SA;
 Eenadu.toPadma[Eenadu.consnt_HA] = Padma.consnt_HA;
 Eenadu.toPadma[Eenadu.consnt_LLA] = Padma.consnt_LLA;
 Eenadu.toPadma[Eenadu.consnt_RRA] = Padma.consnt_RRA;
-Eenadu.toPadma[Eenadu.conjct_KSHA] = Padma.conjct_KSH;
+Eenadu.toPadma[Eenadu.conjct_KSHA] = Padma.consnt_KA + Padma.vattu_SSA;
 
 
 //Gunintamulu

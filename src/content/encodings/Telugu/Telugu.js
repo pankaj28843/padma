@@ -1,4 +1,4 @@
-// $Id: Telugu.js,v 1.1 2005/11/05 16:35:45 vnagarjuna Exp $ -->
+// $Id: Telugu.js,v 1.2 2005/11/11 14:08:12 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -233,16 +233,18 @@ Telugu.fromPadma[Padma.vowelsn_AU]  = Telugu.codePoints.vowelsn_AU;
 Telugu.fromPadma[Padma.vowelsn_AILEN]  = Telugu.codePoints.misc_AILEN;
 
 //The following are not directly present in Telugu - equivalent transliteration
-Telugu.fromPadma[Padma.vowel_SHT_A] = Telugu.codePoints.letter_A;
-Telugu.fromPadma[Padma.vowel_CDR_E] = Telugu.codePoints.letter_E;
-Telugu.fromPadma[Padma.vowel_CDR_O] = Telugu.codePoints.letter_O;
-Telugu.fromPadma[Padma.consnt_QA]   = Telugu.codePoints.letter_KA;
-Telugu.fromPadma[Padma.consnt_KHHA] = Telugu.codePoints.letter_KHA;
-Telugu.fromPadma[Padma.consnt_GHHA] = Telugu.codePoints.letter_GHA;
-Telugu.fromPadma[Padma.consnt_ZA]   = Telugu.codePoints.letter_JA;
-Telugu.fromPadma[Padma.consnt_DDDHA]= Telugu.codePoints.letter_DDA;
-Telugu.fromPadma[Padma.consnt_RHA]  = Telugu.codePoints.letter_DDHA;
-Telugu.fromPadma[Padma.consnt_NNNA] = Telugu.codePoints.letter_NNA;
-Telugu.fromPadma[Padma.consnt_FA]   = Telugu.codePoints.letter_PHA;
-Telugu.fromPadma[Padma.consnt_YYA]  = Telugu.codePoints.letter_YA;
-Telugu.fromPadma[Padma.consnt_ZHA]  = Telugu.codePoints.letter_LLA;
+Telugu.fromPadma[Padma.vowel_SHT_A]   = Telugu.codePoints.letter_A;
+Telugu.fromPadma[Padma.vowel_CDR_E]   = Telugu.codePoints.letter_E;
+Telugu.fromPadma[Padma.vowel_CDR_O]   = Telugu.codePoints.letter_O;
+Telugu.fromPadma[Padma.consnt_QA]     = Telugu.codePoints.letter_KA;
+Telugu.fromPadma[Padma.consnt_KHHA]   = Telugu.codePoints.letter_KHA;
+Telugu.fromPadma[Padma.consnt_GHHA]   = Telugu.codePoints.letter_GHA;
+Telugu.fromPadma[Padma.consnt_ZA]     = Telugu.codePoints.letter_JA;
+Telugu.fromPadma[Padma.consnt_DDDHA]  = Telugu.codePoints.letter_DDA;
+Telugu.fromPadma[Padma.consnt_RHA]    = Telugu.codePoints.letter_DDHA;
+Telugu.fromPadma[Padma.consnt_NNNA]   = Telugu.codePoints.letter_NNA;
+Telugu.fromPadma[Padma.consnt_FA]     = Telugu.codePoints.letter_PHA;
+Telugu.fromPadma[Padma.consnt_YYA]    = Telugu.codePoints.letter_YA;
+Telugu.fromPadma[Padma.consnt_ZHA]    = Telugu.codePoints.letter_LLA;
+Telugu.fromPadma[Padma.vowelsn_CDR_E] = Telugu.codePoints.vowelsn_E;
+Telugu.fromPadma[Padma.vowelsn_CDR_O] = Telugu.codePoints.vowelsn_O;
