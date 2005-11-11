@@ -1,4 +1,4 @@
-// $Id: ITRANS.js,v 1.4 2005/10/25 15:58:16 vnagarjuna Exp $ -->
+// $Id: ITRANS.js,v 1.5 2005/11/11 14:03:34 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -110,9 +110,9 @@ ITRANS.consnt_HA      = "h";
 ITRANS.consnt_RRA     = "R";
 ITRANS.conjct_KSH_1   = "x";   //ksh is automatically handled
 ITRANS.conjct_KSH_2   = "ksh";
-ITRANS.conjct_GN_1    = "GY";  //j~n is automatically handled
-ITRANS.conjct_GN_2    = "dny";
-ITRANS.conjct_GN_3    = "j~n";
+ITRANS.conjct_JNY_1   = "GY";  //j~n is automatically handled
+ITRANS.conjct_JNY_2   = "dny";
+ITRANS.conjct_JNY_3    = "j~n";
 ITRANS.consnt_QA      = "q";
 ITRANS.consnt_KHHA    = "K";
 ITRANS.consnt_GHHA    = "G";
@@ -218,9 +218,9 @@ ITRANS.toPadma[ITRANS.consnt_SSA_2] = Padma.consnt_SSA;
 ITRANS.toPadma[ITRANS.consnt_SA]    = Padma.consnt_SA;
 ITRANS.toPadma[ITRANS.consnt_HA]    = Padma.consnt_HA;
 ITRANS.toPadma[ITRANS.consnt_RRA]   = Padma.consnt_RRA;
-ITRANS.toPadma[ITRANS.conjct_KSH_1] = Padma.conjct_KSH;
-ITRANS.toPadma[ITRANS.conjct_GN_1]  = Padma.conjct_GN;
-ITRANS.toPadma[ITRANS.conjct_GN_2]  = Padma.conjct_GN;
+ITRANS.toPadma[ITRANS.conjct_KSH_1] = Padma.consnt_KA + Padma.vattu_SSA;
+ITRANS.toPadma[ITRANS.conjct_JNY_1] = Padma.consnt_JA + Padma.vattu_NYA;
+ITRANS.toPadma[ITRANS.conjct_JNY_2] = Padma.consnt_JA + Padma.vattu_NYA;
 ITRANS.toPadma[ITRANS.consnt_QA]    = Padma.consnt_QA;
 ITRANS.toPadma[ITRANS.consnt_KHHA]  = Padma.consnt_KHHA;
 ITRANS.toPadma[ITRANS.consnt_GHHA]  = Padma.consnt_GHHA;

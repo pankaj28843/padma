@@ -1,4 +1,4 @@
-// $Id: Unicode.js,v 1.1 2005/11/05 16:32:00 vnagarjuna Exp $ -->
+// $Id: Unicode.js,v 1.2 2005/11/11 14:04:35 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -50,8 +50,8 @@ Unicode.toPadma = new Array();
 Unicode.toPadma[Telugu.codePoints.candrabindu]   = Padma.candrabindu;
 Unicode.toPadma[Telugu.codePoints.visarga]       = Padma.visarga;
 Unicode.toPadma[Telugu.codePoints.misc_VIRAMA] = Padma.pollu;
-Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Unicode.misc_ZWNJ] = Padma.syllbreak;
-Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Unicode.misc_ZWJ]  = Padma.chillu;
+Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Unicode_Shared.ZWNJ] = Padma.syllbreak;
+Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Unicode_Shared.ZWJ]  = Padma.chillu;
 Unicode.toPadma[Telugu.codePoints.anusvara]      = Padma.anusvara;
 Unicode.toPadma[Unicode_Shared.AVAGRAHA] = Padma.avagraha;
 Unicode.toPadma[Unicode_Shared.UDATTA]   = Padma.udAtta;
@@ -125,11 +125,9 @@ Unicode.toPadma[Telugu.codePoints.letter_SSA]   = Padma.consnt_SSA;
 Unicode.toPadma[Telugu.codePoints.letter_SA]    = Padma.consnt_SA;
 Unicode.toPadma[Telugu.codePoints.letter_HA]    = Padma.consnt_HA;
 Unicode.toPadma[Telugu.codePoints.letter_LLA]   = Padma.consnt_LLA;
-Unicode.toPadma[Telugu.codePoints.conjct_KSH]   = Padma.conjct_KSH;
 Unicode.toPadma[Telugu.codePoints.letter_RRA]   = Padma.consnt_RRA;
 Unicode.toPadma[Telugu.codePoints.letter_TCH]   = Padma.consnt_TCH;
 Unicode.toPadma[Telugu.codePoints.letter_TJ]    = Padma.consnt_TJ;
-Unicode.toPadma[Telugu.codePoints.letter_ZHA]   = Padma.consnt_ZHA;
 
 //Gunimtaalu
 Unicode.toPadma[Telugu.codePoints.vowelsn_AA]  = Padma.vowelsn_AA;
@@ -182,11 +180,9 @@ Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Telugu.codePoints.letter_SSA]   
 Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Telugu.codePoints.letter_SA]    = Padma.vattu_SA;
 Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Telugu.codePoints.letter_HA]    = Padma.vattu_HA;
 Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Telugu.codePoints.letter_LLA]   = Padma.vattu_LLA;
-Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Telugu.codePoints.conjct_KSH]   = Padma.vattu_KSH;
 Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Telugu.codePoints.letter_RRA]   = Padma.vattu_RRA;
 Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Telugu.codePoints.letter_TCH]   = Padma.vattu_TCH;
 Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Telugu.codePoints.letter_TJ]    = Padma.vattu_TJ;
-Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Telugu.codePoints.letter_ZHA]   = Padma.vattu_ZHA;
 
 Unicode.lookup = function (str) 
 {
