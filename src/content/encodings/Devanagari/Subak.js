@@ -1,4 +1,4 @@
-// $Id: Subak.js,v 1.3 2005/10/25 15:58:17 vnagarjuna Exp $ -->
+// $Id: Subak.js,v 1.4 2005/11/11 14:05:33 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -390,8 +390,8 @@ Subak.toPadma[Subak.consnt_SSA]  = Padma.consnt_SSA;
 Subak.toPadma[Subak.consnt_SA]   = Padma.consnt_SA;
 Subak.toPadma[Subak.consnt_HA] = Padma.consnt_HA;
 Subak.toPadma[Subak.consnt_LLA]  = Padma.consnt_LLA;
-Subak.toPadma[Subak.conjct_KSH]  = Padma.conjct_KSH;
-Subak.toPadma[Subak.conjct_JNY]  = Padma.conjct_JNY;
+Subak.toPadma[Subak.conjct_KSH]  = Padma.consnt_KA + Padma.vattu_SSA;
+Subak.toPadma[Subak.conjct_JNY]  = Padma.consnt_JA + Padma.vattu_NYA;
 
 //Gunintamulu
 Subak.toPadma[Subak.vowelsn_AA]   = Padma.vowelsn_AA;
