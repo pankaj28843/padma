@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.12 2005/11/05 16:30:27 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.13 2005/11/11 15:49:13 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -163,7 +163,7 @@ var Padma_Browser_Transformer = {
     },
 
     onPageLoad: function(evt) {
-        var start = new Date().getTime();
+        //var start = new Date().getTime();
         var page = evt.originalTarget;
         if (!page || !page.location || page.location == "about:blank" || !page.location.host || !this.isAutoTransformEnabled())
             return;
@@ -196,8 +196,8 @@ var Padma_Browser_Transformer = {
         var body = page.getElementsByTagName("BODY");
         for(var j = 0; j < body.length; ++j)
             this.transformNode(page, body[j]);
-        var end = new Date().getTime();
-        alert(end - start);
+        //var end = new Date().getTime();
+        //alert(end - start);
     },
 
     //Manual transform starts here
