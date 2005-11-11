@@ -1,6 +1,6 @@
 pref("Padma.RTSOutputFormat", 0);
 pref("Padma.RTSSunnaStyle", 0);
-pref("Padma.autoTransformWhiteList", "www.eenadu.net,www.andhraprabha.com,www.andhrajyothy.com,www.webprapancham.com,www.teluguone.com,www.shirdisaiashirvadam.org,www.apweekly.com,www.keralahistory.ac.in,www.deepika.com,www.mangalam.com,www.vaarttha.com,thatstelugu.indiainfo.com,www.kaburlu.com,www.madhyamamonline.in,www.deshabhimani.com,www.manoramaonline.com,www.esakal.com,www.kumudam.com,www.dinamalar.com,www.dailythanthi.com,www.vikatan.com,www.dainikbhaskar.com");
+pref("Padma.autoTransformWhiteList", "www.eenadu.net:-1,www.andhraprabha.com:-1,www.andhrajyothy.com:-1,www.webprapancham.com:-1,www.teluguone.com:-1,www.shirdisaiashirvadam.org:-1,www.apweekly.com:-1,www.keralahistory.ac.in:-1,www.deepika.com:-1,www.mangalam.com:-1,www.vaarttha.com:-1,thatstelugu.indiainfo.com:-1,www.kaburlu.com:-1,www.madhyamamonline.in:-1,www.deshabhimani.com:-1,www.manoramaonline.com:-1,www.esakal.com:-1,www.kumudam.com:-1,www.dinamalar.com:-1,www.dailythanthi.com:-1,www.vikatan.com:-1,www.dainikbhaskar.com:-1");
 pref("Padma.enableAutoTransform", true);
 pref("Padma.enableISCII", true);
 pref("Padma.enableITRANS", true);
