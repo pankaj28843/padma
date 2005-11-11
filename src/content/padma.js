@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.13 2005/11/11 15:49:13 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.14 2005/11/11 16:26:34 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -245,7 +245,7 @@ var Padma_Browser_Transformer = {
     //Process all nodes with root "root"
     processNodes: function(page, selection, root, start, end, soff, eoff) {
         if (root.nodeType == 3) {
-            if (selection.containsNode(root, true) && this.requiresTransform(page, root)) {
+            if (selection.containsNode(root, true) && !this.is_all_ws(root.nodeValue) && this.requiresTransform(page, root)) {
                 if (root == start && root == end)
                     root.replaceData(soff, eoff - soff, this.transformer.convert(root.nodeValue.substring(soff, eoff)));
                 else if (root == start)
@@ -265,7 +265,7 @@ var Padma_Browser_Transformer = {
     traverseDOM: function(page, selection) {
         var inputMethod = this.transformer.getInputMethod();
 
-        for(i = 0; i < selection.rangeCount; i++) {
+        for(var i = 0; i < selection.rangeCount; i++) {
             var range = selection.getRangeAt(i);
             this.processNodes(page, selection, range.commonAncestorContainer, range.startContainer, range.endContainer, 
                               range.startOffset, range.endOffset);
