@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: install.rdf,v 1.14 2005/11/05 16:37:49 vnagarjuna Exp $-->
+<!--$Id: install.rdf,v 1.15 2005/11/11 15:13:00 vnagarjuna Exp $-->
 
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:em="http://www.mozilla.org/2004/em-rdf#">
@@ -9,7 +9,7 @@
     <!-- Front End MetaData -->
     <em:name>Padma</em:name>
     <em:id>{3e450467-892a-45b8-9ed8-90e8d3bf2ad7}</em:id>
-    <em:version>0.4.2</em:version>
+    <em:version>0.4.3</em:version>
     <em:description>Transformer for Indic Scripts</em:description>
     <em:creator>Nagarjuna Venna</em:creator>
     <em:contributor>Suresh Kolichala</em:contributor>
@@ -27,7 +27,7 @@
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
         <em:minVersion>0.9</em:minVersion>
-        <em:maxVersion>1.5</em:maxVersion>
+        <em:maxVersion>1.6</em:maxVersion>
       </Description>
     </em:targetApplication> 
 
@@ -36,7 +36,7 @@
      <Description>
         <em:id>{3550f703-e582-4d05-9a08-453d09bdfdc6}</em:id>
         <em:minVersion>0.7</em:minVersion>
-        <em:maxVersion>1.0</em:maxVersion>
+        <em:maxVersion>1.6</em:maxVersion>
      </Description>
     </em:targetApplication>
 
@@ -45,7 +45,7 @@
      <Description>
         <em:id>{3db10fab-e461-4c80-8b97-957ad5f8ea47}</em:id>
         <em:minVersion>8.0</em:minVersion>
-        <em:maxVersion>8.0.2</em:maxVersion>
+        <em:maxVersion>8.0.4</em:maxVersion>
      </Description>
     </em:targetApplication>
 
