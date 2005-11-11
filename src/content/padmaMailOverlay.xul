@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: padmaMailOverlay.xul,v 1.8 2005/11/05 16:29:12 vnagarjuna Exp $-->
+<!--$Id: padmaMailOverlay.xul,v 1.9 2005/11/11 14:02:05 vnagarjuna Exp $-->
 
 <!--Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
 
@@ -53,6 +53,7 @@
 <script type="application/x-javascript" src="encodings/Devanagari/Devanagari.js"/>
 <script type="application/x-javascript" src="encodings/Devanagari/Subak.js"/>
 <script type="application/x-javascript" src="encodings/Devanagari/Mithi.js"/>
+<script type="application/x-javascript" src="encodings/Devanagari/Bhaskar.js"/>
 
 <script type="application/x-javascript" src="parsers/parser.js"/>
 <script type="application/x-javascript" src="parsers/RTSParser.js"/>
