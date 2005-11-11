@@ -1,0 +1,5 @@
+
+overlay	chrome://browser/content/browser.xul	chrome://padma/content/padma.xul
+overlay	chrome://messenger/content/mailWindowOverlay.xul	chrome://padma/content/padmaMailOverlay.xul
+overlay	chrome://messenger/content/messengercompose/messengercompose.xul	chrome://padma/content/padmaMailOverlay.xul
+content	padma	jar:chrome/padma.jar!/content/
