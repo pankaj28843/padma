@@ -1,4 +1,4 @@
-// $Id: whitelist.js,v 1.5 2005/11/11 14:00:04 vnagarjuna Exp $ -->
+// $Id: whitelist.js,v 1.6 2005/11/23 19:54:43 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -199,7 +199,7 @@ var PadmaWhitelist = {
     listHasSite: function(site) {
         var rows = this.whitelistBox.getRowCount();
         for(var i = 0; i < rows; ++i)
-            if (this.whitelistBox.getItemAtIndex(i).label == site)
+            if (this.whitelistBox.getItemAtIndex(i).firstChild.getAttribute('label') == site)
                 return true;
 
         return false;
