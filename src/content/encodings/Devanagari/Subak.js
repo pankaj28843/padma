@@ -1,4 +1,4 @@
-// $Id: Subak.js,v 1.4 2005/11/11 14:05:33 vnagarjuna Exp $ -->
+// $Id: Subak.js,v 1.5 2005/11/23 19:56:20 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -63,7 +63,7 @@ Subak.handleTwoPartVowelSigns = function (sign1, sign2)
     return sign1 + sign2;    
 }
 
-Subak.isRedundant = function (str, prev)
+Subak.isRedundant = function (str)
 {
     return Subak.redundantList[str] != null;
 }

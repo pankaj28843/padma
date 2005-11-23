@@ -1,4 +1,4 @@
-// $Id: Bhaskar.js,v 1.1 2005/11/11 14:05:33 vnagarjuna Exp $ -->
+// $Id: Bhaskar.js,v 1.2 2005/11/23 19:56:20 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -63,7 +63,7 @@ Bhaskar.handleTwoPartVowelSigns = function (sign1, sign2)
     return sign1 + sign2;    
 }
 
-Bhaskar.isRedundant = function (str, prev)
+Bhaskar.isRedundant = function (str)
 {
     return Bhaskar.redundantList[str] != null;
 }
