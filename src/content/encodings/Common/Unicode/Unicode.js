@@ -1,4 +1,4 @@
-// $Id: Unicode.js,v 1.2 2005/11/11 14:04:35 vnagarjuna Exp $ -->
+// $Id: Unicode.js,v 1.3 2005/11/23 19:55:47 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -33,6 +33,7 @@ Unicode.script_Class[Padma.script_TELUGU]     = Telugu;
 Unicode.script_Class[Padma.script_MALAYALAM]  = Malayalam;
 Unicode.script_Class[Padma.script_TAMIL]      = Tamil;
 Unicode.script_Class[Padma.script_DEVANAGARI] = Devanagari;
+Unicode.script_Class[Padma.script_GUJARATI]   = Gujarati;
 
 Unicode.fromPadma = new Array();
 

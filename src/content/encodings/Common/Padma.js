@@ -1,4 +1,4 @@
-// $Id: Padma.js,v 1.10 2005/11/11 14:03:08 vnagarjuna Exp $ -->
+// $Id: Padma.js,v 1.11 2005/11/23 19:55:31 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -32,14 +32,14 @@ Padma.script_TELUGU     = 0;
 Padma.script_MALAYALAM  = 1;
 Padma.script_TAMIL      = 2;
 Padma.script_DEVANAGARI = 3;
-Padma.script_BENGALI    = 4;
-Padma.script_GURMUKHI   = 5;
-Padma.script_GUJARATI   = 6;
+Padma.script_GUJARATI   = 4;
+Padma.script_BENGALI    = 5;
+Padma.script_GURMUKHI   = 6;
 Padma.script_ORIYA      = 7;
 Padma.script_KANNADA    = 8;
 
-//Only 4 scripts supported now
-Padma.script_MAXSCRIPTS = 4;
+//5 scripts supported now
+Padma.script_MAXSCRIPTS = 5;
 
 //Script names
 Padma.scripts = new Array();
@@ -47,6 +47,7 @@ Padma.scripts[Padma.script_TELUGU]     = "Telugu";
 Padma.scripts[Padma.script_MALAYALAM]  = "Malayalam";
 Padma.scripts[Padma.script_TAMIL]      = "Tamil";
 Padma.scripts[Padma.script_DEVANAGARI] = "Devanagari";
+Padma.scripts[Padma.script_GUJARATI]   = "Gujarati";
 
 //Types (values to allow bit wise operations)
 Padma.type_accu      = 1;

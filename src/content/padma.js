@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.14 2005/11/11 16:26:34 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.15 2005/11/23 19:53:55 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -163,7 +163,7 @@ var Padma_Browser_Transformer = {
     },
 
     onPageLoad: function(evt) {
-        //var start = new Date().getTime();
+        var start = new Date().getTime();
         var page = evt.originalTarget;
         if (!page || !page.location || page.location == "about:blank" || !page.location.host || !this.isAutoTransformEnabled())
             return;
@@ -196,7 +196,7 @@ var Padma_Browser_Transformer = {
         var body = page.getElementsByTagName("BODY");
         for(var j = 0; j < body.length; ++j)
             this.transformNode(page, body[j]);
-        //var end = new Date().getTime();
+        var end = new Date().getTime();
         //alert(end - start);
     },
 
@@ -312,6 +312,7 @@ var Padma_Browser_Transformer = {
 
     //Callback
     onManualTransform: function(inputMode, outputMode) {
+        var start = new Date().getTime();
         
         //Create a transformer
         this.createTransformer(inputMode, outputMode);
@@ -335,6 +336,9 @@ var Padma_Browser_Transformer = {
             if (result.selection.rangeCount != 0)
                 result.selection.collapseToEnd();
         }
+
+        var end = new Date().getTime();
+        alert(end - start);
     },
 
  
@@ -365,30 +369,34 @@ var Padma_Browser_Transformer = {
         var malayalam = this.prefBranch.getBoolPref(PadmaSettings.prefEnableMalayalam);
         var tamil = this.prefBranch.getBoolPref(PadmaSettings.prefEnableTamil);
         var devanagari = this.prefBranch.getBoolPref(PadmaSettings.prefEnableDevanagari);
-
+        var gujarati = this.prefBranch.getBoolPref(PadmaSettings.prefEnableGujarati);
 
         item = document.getElementById("padmaMenuItem2");
-        item.hidden = hidden | !rts;
+        item.hidden = hidden || !rts;
         item = document.getElementById("padmaMenuItem3");
-        item.hidden = hidden | !rts;
+        item.hidden = hidden || !rts;
         item = document.getElementById("padmaMenuItem4");
-        item.hidden = hidden | !rts;
+        item.hidden = hidden || !rts;
         item = document.getElementById("padmaMenuItem5");
-        item.hidden = hidden | !iscii | !telugu;
+        item.hidden = hidden || !iscii || !telugu;
         item = document.getElementById("padmaMenuItem6");
-        item.hidden = hidden | !iscii | !malayalam;
+        item.hidden = hidden || !iscii || !malayalam;
         item = document.getElementById("padmaMenuItem7");
-        item.hidden = hidden | !iscii | !tamil;
+        item.hidden = hidden || !iscii || !tamil;
         item = document.getElementById("padmaMenuItem8");
-        item.hidden = hidden | !iscii | !devanagari;
+        item.hidden = hidden || !iscii || !devanagari;
         item = document.getElementById("padmaMenuItem9");
-        item.hidden = hidden | !itrans | !telugu;
+        item.hidden = hidden || !itrans || !telugu;
         item = document.getElementById("padmaMenuItem10");
-        item.hidden = hidden | !itrans | !malayalam;
+        item.hidden = hidden || !itrans || !malayalam;
         item = document.getElementById("padmaMenuItem11");
-        item.hidden = hidden | !itrans | !tamil;
+        item.hidden = hidden || !itrans || !tamil;
         item = document.getElementById("padmaMenuItem12");
-        item.hidden = hidden | !itrans | !devanagari;
+        item.hidden = hidden || !itrans || !devanagari;
+        item = document.getElementById("padmaMenuItem13");
+        item.hidden = hidden || !itrans || !gujarati;
+        item = document.getElementById("padmaMenuItem14");
+        item.hidden = hidden || !itrans || !gujarati;
     }
 };
 
