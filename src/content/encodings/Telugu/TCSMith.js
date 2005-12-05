@@ -1,4 +1,4 @@
-// $Id: TCSMith.js,v 1.1 2005/11/23 19:57:47 vnagarjuna Exp $ -->
+// $Id: TCSMith.js,v 1.2 2005/12/05 18:09:52 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -103,7 +103,7 @@ TCSMith.virama_2       = "\u00EA";
 TCSMith.virama_3       = "\u00EB";
 TCSMith.virama_4       = "\u00EC";
 TCSMith.virama_5       = "\u00ED";
-TCSMith.anusvara       = "\u004D";  //verify
+TCSMith.anusvara       = "\u004D";
 
 //Vowels
 TCSMith.vowel_A        = "\u0041";
@@ -113,7 +113,6 @@ TCSMith.vowel_II       = "\u0044";
 TCSMith.vowel_U        = "\u0045";
 TCSMith.vowel_UU       = "\u0046";
 TCSMith.vowel_R        = "\u0065\u00C0\u00C0";
-//TCSMith.vowel_RR       = "\u00A6\u00D5\u00D6";
 TCSMith.vowel_E        = "\u0047";
 TCSMith.vowel_EE       = "\u0048";
 TCSMith.vowel_AI       = "\u0049";
@@ -130,16 +129,15 @@ TCSMith.consnt_GHA     = "\u0064\u00CC\u00C0";
 TCSMith.consnt_NGA     = "\u00C5";
 
 TCSMith.consnt_CA      = "\u0053";
-//TCSMith.consnt_CHA     = "\u00CD\u00B5";
+TCSMith.consnt_CHA     = "\u0053\u00CB";
 TCSMith.consnt_JA      = "\u0054";
-//TCSMith.consnt_JHA     = "\u00AA\u2014";
 TCSMith.consnt_NYA     = "\u00C6";
 
 TCSMith.consnt_TTA_1   = "\u0055";
 TCSMith.consnt_TTA_2   = "\u0056";
 TCSMith.consnt_TTHA    = "\u0057";
-TCSMith.consnt_DDA     = "\u0058";  //verify
-//TCSMith.consnt_DDHA    = "\u0153\u00B5";
+TCSMith.consnt_DDA     = "\u0058";
+TCSMith.consnt_DDHA    = "\u0058\u00CB";
 TCSMith.consnt_NNA     = "\u0059";
 
 TCSMith.consnt_TA      = "\u005A";
@@ -212,50 +210,27 @@ TCSMith.vowelsn_OO     = "\u00B3";
 TCSMith.vowelsn_AU_1   = "\u00B4";
 TCSMith.vowelsn_AU_2   = "\u00B5";
 TCSMith.vowelsn_AU_3   = "\u00B6";
-TCSMith.vowelsn_AU_4   = "\u00B7";  //verify
+TCSMith.vowelsn_AU_4   = "\u00B7";
 TCSMith.vowelsn_AU_5   = "\u00B8";
 
-TCSMith.vowelsn_EELEN_1 = "\u00E6";
+TCSMith.vowelsn_EELEN  = "\u00E6";
 TCSMith.vowelsn_AILEN_1 = "\u201D";
 TCSMith.vowelsn_AILEN_2 = "\u00E8";
 
 //Special Combinations
-TCSMith.conjct_KSHA    = "\u004F";
+TCSMith.combo_KSHA     = "\u004F";
 TCSMith.combo_KHI      = "\u0077";
-//TCSMith.combo_KHII     = "\u0026";
-//TCSMith.combo_GI       = "\u0054";
-//TCSMith.combo_GII      = "\u0055";
 TCSMith.combo_GHAA     = "\u0064\u00CC\u00C1";
-//TCSMith.combo_GHAA_2   = "\u0058\u00B6\u00D6";
-//TCSMith.combo_GHI      = "\u0058\u00B6\u00CF\u00D5";
-//TCSMith.combo_GHII     = "\u0058\u00B6\u00D4\u00D5";
-//TCSMith.combo_GHU      = "\u0058\u00B6\u00E1";
-//TCSMith.combo_GHUU     = "\u0058\u00B6\u00E2";
-//TCSMith.combo_GHPOLLU  = "\u0058\u00B6\u00FD\u00D5";
 
 TCSMith.combo_CI       = "\u0076";
 TCSMith.combo_CII      = "\u0076\u00DC";
-//TCSMith.combo_CHI      = "\u002A\u00B5";
-//TCSMith.combo_CHII     = "\u003C\u00B5";
+TCSMith.combo_CHI      = "\u0076\u00CB";
+TCSMith.combo_CHII     = "\u0076\u00CB\u00DC";
 TCSMith.combo_JI       = "\u00C9";
 TCSMith.combo_JII      = "\u00CA";
-//TCSMith.combo_JU       = "\u0056";
-//TCSMith.combo_JUU      = "\u0057";
-//TCSMith.combo_JHI      = "\u004A\u2014";
-//TCSMith.combo_JHII     = "\u004B\u2014";
-//TCSMith.combo_JHPOLLU  = "\u00AA\u00FD\u2014";
-
-//TCSMith.combo_TTHI     = "\u004A\u00B8";
-//TCSMith.combo_TTHII    = "\u004B\u00B8";
 
 TCSMith.combo_TI       = "\u0075";
 TCSMith.combo_TII      = "\u0075\u00DC";
-//TCSMith.combo_THI      = "\u0043\u00B1";
-//TCSMith.combo_THII     = "\u0044\u00B1";
-//TCSMith.combo_DI       = "\u0043";
-//TCSMith.combo_DII      = "\u0044";
-//TCSMith.combo_DHI      = "\u0043\u00B5";
-//TCSMith.combo_DHII     = "\u0044\u00B5";
 TCSMith.combo_NI       = "\u0074";
 TCSMith.combo_NII      = "\u0074\u00DC";
 
@@ -266,18 +241,10 @@ TCSMith.combo_PAU      = "\u0047\u00B6";
 TCSMith.combo_BI       = "\u0078";
 TCSMith.combo_BII      = "\u0078\u00DC";
 TCSMith.combo_BHI      = "\u0078\u00CB";
-TCSMith.combo_BHII     = "\u0048\u00CB\u00DC";
+TCSMith.combo_BHII     = "\u0078\u00CB\u00DC";
 TCSMith.combo_MAA      = "\u0067\u00C1";
 TCSMith.combo_MI       = "\u0073\u00C0";
 TCSMith.combo_MII      = "\u0073\u00DC\u00C0";
-//TCSMith.combo_MU       = "\u00AB\u00E1";
-//TCSMith.combo_MUU      = "\u00AB\u00E2";
-//TCSMith.combo_ME_1     = "\u201E\u00E3\u00D5";
-//TCSMith.combo_ME_2     = "\u201E\u00E7\u00D5";
-//TCSMith.combo_MEE      = "\u201E\u00E4\u00D5";
-//TCSMith.combo_MAI      = "\u201E\u00E7\u00D5\u0069";
-//TCSMith.combo_MO       = "\u201E\u00E7\u00E1";
-//TCSMith.combo_MOO      = "\u201E\u00E7\u00D6";
 TCSMith.combo_MAU      = "\u0067\u00B7";
 TCSMith.combo_MPOLLU   = "\u0067\u00EB\u00C0";
 TCSMith.combo_M_EELEN  = "\u0067\u00E6\u00C0";
@@ -285,13 +252,6 @@ TCSMith.combo_M_EELEN  = "\u0067\u00E6\u00C0";
 TCSMith.combo_YAA      = "\u0068\u00D0\u00C1";
 TCSMith.combo_YI       = "\u0068\u00C0";
 TCSMith.combo_YII      = "\u0068\u00C1";
-//TCSMith.combo_YE       = "\u00A7\u00E7\u00D5";
-//TCSMith.combo_YEE      = "\u00A7\u00E4\u00D5";
-//TCSMith.combo_YAI      = "\u00A7\u00E7\u0069\u00D5";
-//TCSMith.combo_YO       = "\u00A7\u00E7\u00E1";
-//TCSMith.combo_YOO      = "\u00A7\u00E7\u00D6";
-//TCSMith.combo_YPOLLU_1 = "\u00A7\u00FC\u00D5";
-//TCSMith.combo_YPOLLU_2 = "\u00A7\u00FD\u00D5";
 TCSMith.combo_Y_EELEN  = "\u0068\u00E6\u00C0";
 TCSMith.combo_RAA      = "\u004D\u00B0";
 TCSMith.combo_RI       = "\u004D\u00D5";
@@ -401,13 +361,6 @@ TCSMith.PIPE           = "\u007C";
 TCSMith.CURLYBKTRIGHT  = "\u007D";
 TCSMith.TILDE          = "\u007E";
 
-//Does not match ASCII
-//TCSMith.DIVIDE         = "\u0023";
-//TCSMith.MULTIPLY       = "\u0024";
-//TCSMith.PIPE           = "\u0049";
-//TCSMith.ASTERISK       = "\u005B";
-//TCSMith.PERCENT        = "\u005D";
-
 //Kommu
 TCSMith.misc_TICK_1    = "\u00D0";
 TCSMith.misc_TICK_2    = "\u00D1";
@@ -429,9 +382,6 @@ TCSMith.misc_vattu_2   = "\u00AF";
 TCSMith.misc_vattu_3   = "\u00CB";
 TCSMith.misc_vattu_4   = "\u00CC";
 
-//TCSMith.extra_HYPHEN   = "\u00D0";
-//TCSMith.extra_QTSINGLE = "\u00D1";
-
 TCSMith.toPadma = new Array();
 
 TCSMith.toPadma[TCSMith.candrabindu] = Padma.candrabindu;
@@ -450,7 +400,6 @@ TCSMith.toPadma[TCSMith.vowel_II] = Padma.vowel_II;
 TCSMith.toPadma[TCSMith.vowel_U]  = Padma.vowel_U;
 TCSMith.toPadma[TCSMith.vowel_UU] = Padma.vowel_UU;
 TCSMith.toPadma[TCSMith.vowel_R]  = Padma.vowel_R;
-//TCSMith.toPadma[TCSMith.vowel_RR] = Padma.vowel_RR;
 TCSMith.toPadma[TCSMith.vowel_E]  = Padma.vowel_E;
 TCSMith.toPadma[TCSMith.vowel_EE] = Padma.vowel_EE;
 TCSMith.toPadma[TCSMith.vowel_AI] = Padma.vowel_AI;
@@ -462,20 +411,19 @@ TCSMith.toPadma[TCSMith.consnt_KA]    = Padma.consnt_KA;
 TCSMith.toPadma[TCSMith.consnt_KHA_1] = Padma.consnt_KHA;
 TCSMith.toPadma[TCSMith.consnt_KHA_2] = Padma.consnt_KHA;
 TCSMith.toPadma[TCSMith.consnt_GA]    = Padma.consnt_GA;
-TCSMith.toPadma[TCSMith.consnt_GHA] = Padma.consnt_GHA;
+TCSMith.toPadma[TCSMith.consnt_GHA]   = Padma.consnt_GHA;
 TCSMith.toPadma[TCSMith.consnt_NGA]   = Padma.consnt_NGA;
 
-TCSMith.toPadma[TCSMith.consnt_CA] = Padma.consnt_CA;
-//TCSMith.toPadma[TCSMith.consnt_CHA] = Padma.consnt_CHA;
-TCSMith.toPadma[TCSMith.consnt_JA] = Padma.consnt_JA;
-//TCSMith.toPadma[TCSMith.consnt_JHA] = Padma.consnt_JHA;
+TCSMith.toPadma[TCSMith.consnt_CA]  = Padma.consnt_CA;
+TCSMith.toPadma[TCSMith.consnt_CHA] = Padma.consnt_CHA;
+TCSMith.toPadma[TCSMith.consnt_JA]  = Padma.consnt_JA;
 TCSMith.toPadma[TCSMith.consnt_NYA] = Padma.consnt_NYA;
 
 TCSMith.toPadma[TCSMith.consnt_TTA_1] = Padma.consnt_TTA;
 TCSMith.toPadma[TCSMith.consnt_TTA_2] = Padma.consnt_TTA;
 TCSMith.toPadma[TCSMith.consnt_TTHA]  = Padma.consnt_TTHA;
 TCSMith.toPadma[TCSMith.consnt_DDA]   = Padma.consnt_DDA;
-//TCSMith.toPadma[TCSMith.consnt_DDHA] = Padma.consnt_DDHA;
+TCSMith.toPadma[TCSMith.consnt_DDHA]  = Padma.consnt_DDHA;
 TCSMith.toPadma[TCSMith.consnt_NNA]   = Padma.consnt_NNA;
 
 TCSMith.toPadma[TCSMith.consnt_TA]  = Padma.consnt_TA;
@@ -550,22 +498,14 @@ TCSMith.toPadma[TCSMith.vowelsn_AU_2]  = Padma.vowelsn_AU;
 TCSMith.toPadma[TCSMith.vowelsn_AU_3]  = Padma.vowelsn_AU;
 TCSMith.toPadma[TCSMith.vowelsn_AU_4]  = Padma.vowelsn_AU;
 TCSMith.toPadma[TCSMith.vowelsn_AU_5]  = Padma.vowelsn_AU;
-TCSMith.toPadma[TCSMith.vowelsn_EELEN_1] = Padma.vowelsn_EELEN;
+TCSMith.toPadma[TCSMith.vowelsn_EELEN] = Padma.vowelsn_EELEN;
 TCSMith.toPadma[TCSMith.vowelsn_AILEN_1] = Padma.vowelsn_AILEN;
 TCSMith.toPadma[TCSMith.vowelsn_AILEN_2] = Padma.vowelsn_AILEN;
 
 //Special Combinations
-TCSMith.toPadma[TCSMith.conjct_KSHA]   = Padma.consnt_KA + Padma.vattu_SSA;
+TCSMith.toPadma[TCSMith.combo_KSHA]    = Padma.consnt_KA + Padma.vattu_SSA;
 TCSMith.toPadma[TCSMith.combo_KHI]     = Padma.consnt_KHA + Padma.vowelsn_I;
-TCSMith.toPadma[TCSMith.combo_KHII]    = Padma.consnt_KHA + Padma.vowelsn_II;
-TCSMith.toPadma[TCSMith.combo_GI]      = Padma.consnt_GA + Padma.vowelsn_I;
-TCSMith.toPadma[TCSMith.combo_GII]     = Padma.consnt_GA + Padma.vowelsn_II;
 TCSMith.toPadma[TCSMith.combo_GHAA]    = Padma.consnt_GHA + Padma.vowelsn_AA;
-TCSMith.toPadma[TCSMith.combo_GHI]     = Padma.consnt_GHA + Padma.vowelsn_I;
-TCSMith.toPadma[TCSMith.combo_GHII]    = Padma.consnt_GHA + Padma.vowelsn_II;
-TCSMith.toPadma[TCSMith.combo_GHU]     = Padma.consnt_GHA + Padma.vowelsn_U;
-TCSMith.toPadma[TCSMith.combo_GHUU]    = Padma.consnt_GHA + Padma.vowelsn_UU;
-TCSMith.toPadma[TCSMith.combo_GHPOLLU] = Padma.consnt_GHA + Padma.syllbreak;
 
 TCSMith.toPadma[TCSMith.combo_CI]      = Padma.consnt_CA + Padma.vowelsn_I;
 TCSMith.toPadma[TCSMith.combo_CII]     = Padma.consnt_CA + Padma.vowelsn_II;
@@ -573,23 +513,9 @@ TCSMith.toPadma[TCSMith.combo_CHI]     = Padma.consnt_CHA + Padma.vowelsn_I;
 TCSMith.toPadma[TCSMith.combo_CHII]    = Padma.consnt_CHA + Padma.vowelsn_II;
 TCSMith.toPadma[TCSMith.combo_JI]      = Padma.consnt_JA + Padma.vowelsn_I;
 TCSMith.toPadma[TCSMith.combo_JII]     = Padma.consnt_JA + Padma.vowelsn_II;
-TCSMith.toPadma[TCSMith.combo_JU]      = Padma.consnt_JA + Padma.vowelsn_U;
-TCSMith.toPadma[TCSMith.combo_JUU]     = Padma.consnt_JA + Padma.vowelsn_UU;
-TCSMith.toPadma[TCSMith.combo_JHI]     = Padma.consnt_JHA + Padma.vowelsn_I;
-TCSMith.toPadma[TCSMith.combo_JHII]    = Padma.consnt_JHA + Padma.vowelsn_II;
-TCSMith.toPadma[TCSMith.combo_JHPOLLU] = Padma.consnt_JHA + Padma.syllbreak;
-
-TCSMith.toPadma[TCSMith.combo_TTHI]    = Padma.consnt_TTHA + Padma.vowelsn_I;
-TCSMith.toPadma[TCSMith.combo_TTHII]   = Padma.consnt_TTHA + Padma.vowelsn_II;
 
 TCSMith.toPadma[TCSMith.combo_TI]      = Padma.consnt_TA + Padma.vowelsn_I;
 TCSMith.toPadma[TCSMith.combo_TII]     = Padma.consnt_TA + Padma.vowelsn_II;
-TCSMith.toPadma[TCSMith.combo_THI]     = Padma.consnt_THA + Padma.vowelsn_I;
-TCSMith.toPadma[TCSMith.combo_THII]    = Padma.consnt_THA + Padma.vowelsn_II;
-TCSMith.toPadma[TCSMith.combo_DI]      = Padma.consnt_DA + Padma.vowelsn_I;
-TCSMith.toPadma[TCSMith.combo_DII]     = Padma.consnt_DA + Padma.vowelsn_II;
-TCSMith.toPadma[TCSMith.combo_DHI]     = Padma.consnt_DHA + Padma.vowelsn_I;
-TCSMith.toPadma[TCSMith.combo_DHII]    = Padma.consnt_DHA + Padma.vowelsn_II;
 TCSMith.toPadma[TCSMith.combo_NI]      = Padma.consnt_NA + Padma.vowelsn_I;
 TCSMith.toPadma[TCSMith.combo_NII]     = Padma.consnt_NA + Padma.vowelsn_II;
 
@@ -604,14 +530,6 @@ TCSMith.toPadma[TCSMith.combo_BHII]    = Padma.consnt_BHA + Padma.vowelsn_II;
 TCSMith.toPadma[TCSMith.combo_MAA]     = Padma.consnt_MA + Padma.vowelsn_AA;
 TCSMith.toPadma[TCSMith.combo_MI]      = Padma.consnt_MA + Padma.vowelsn_I;
 TCSMith.toPadma[TCSMith.combo_MII]     = Padma.consnt_MA + Padma.vowelsn_II;
-TCSMith.toPadma[TCSMith.combo_MU]      = Padma.consnt_MA + Padma.vowelsn_U;
-TCSMith.toPadma[TCSMith.combo_MUU]     = Padma.consnt_MA + Padma.vowelsn_UU;
-TCSMith.toPadma[TCSMith.combo_ME_1]    = Padma.consnt_MA + Padma.vowelsn_E;
-TCSMith.toPadma[TCSMith.combo_ME_2]    = Padma.consnt_MA + Padma.vowelsn_E;
-TCSMith.toPadma[TCSMith.combo_MEE]     = Padma.consnt_MA + Padma.vowelsn_EE;
-TCSMith.toPadma[TCSMith.combo_MAI]     = Padma.consnt_MA + Padma.vowelsn_AI;
-TCSMith.toPadma[TCSMith.combo_MO]      = Padma.consnt_MA + Padma.vowelsn_O;
-TCSMith.toPadma[TCSMith.combo_MOO]     = Padma.consnt_MA + Padma.vowelsn_OO;
 TCSMith.toPadma[TCSMith.combo_MAU]     = Padma.consnt_MA + Padma.vowelsn_AU;
 TCSMith.toPadma[TCSMith.combo_MPOLLU]  = Padma.consnt_MA + Padma.syllbreak;
 TCSMith.toPadma[TCSMith.combo_M_EELEN] = Padma.consnt_MA + Padma.vowelsn_EELEN;
@@ -619,13 +537,6 @@ TCSMith.toPadma[TCSMith.combo_M_EELEN] = Padma.consnt_MA + Padma.vowelsn_EELEN;
 TCSMith.toPadma[TCSMith.combo_YAA]     = Padma.consnt_YA + Padma.vowelsn_AA;
 TCSMith.toPadma[TCSMith.combo_YI]      = Padma.consnt_YA + Padma.vowelsn_I;
 TCSMith.toPadma[TCSMith.combo_YII]     = Padma.consnt_YA + Padma.vowelsn_II;
-TCSMith.toPadma[TCSMith.combo_YE]      = Padma.consnt_YA + Padma.vowelsn_E;
-TCSMith.toPadma[TCSMith.combo_YEE]     = Padma.consnt_YA + Padma.vowelsn_EE;
-TCSMith.toPadma[TCSMith.combo_YAI]     = Padma.consnt_YA + Padma.vowelsn_AI;
-TCSMith.toPadma[TCSMith.combo_YO]      = Padma.consnt_YA + Padma.vowelsn_O;
-TCSMith.toPadma[TCSMith.combo_YOO]     = Padma.consnt_YA + Padma.vowelsn_OO;
-TCSMith.toPadma[TCSMith.combo_YPOLLU_1]= Padma.consnt_YA + Padma.syllbreak;
-TCSMith.toPadma[TCSMith.combo_YPOLLU_2]= Padma.consnt_YA + Padma.syllbreak;
 TCSMith.toPadma[TCSMith.combo_Y_EELEN] = Padma.consnt_YA + Padma.vowelsn_EELEN;
 TCSMith.toPadma[TCSMith.combo_RAA]     = Padma.consnt_RA + Padma.vowelsn_AA;
 TCSMith.toPadma[TCSMith.combo_RI]      = Padma.consnt_RA + Padma.vowelsn_I;
@@ -720,6 +631,8 @@ TCSMith.prefixList[TCSMith.vowelsn_AILEN_2] = true;
 TCSMith.overloadList = new Array();
 TCSMith.overloadList[TCSMith.anusvara]    = true;
 TCSMith.overloadList[TCSMith.vowel_E]     = true;
+TCSMith.overloadList[TCSMith.consnt_CA]   = true;
+TCSMith.overloadList[TCSMith.consnt_DDA]  = true;
 TCSMith.overloadList[TCSMith.consnt_DA]   = true;
 TCSMith.overloadList[TCSMith.consnt_PA]   = true;
 TCSMith.overloadList[TCSMith.consnt_PHA_2] = true;
@@ -731,8 +644,9 @@ TCSMith.overloadList[TCSMith.vattu_DA]    = true;
 TCSMith.overloadList[TCSMith.vattu_PA]    = true;
 TCSMith.overloadList[TCSMith.vattu_BA]    = true;
 TCSMith.overloadList[TCSMith.combo_CI]    = true;
-TCSMith.overloadList[TCSMith.combo_NI]    = true;
+TCSMith.overloadList[TCSMith.combo_CHI]   = true;
 TCSMith.overloadList[TCSMith.combo_TI]    = true;
+TCSMith.overloadList[TCSMith.combo_NI]    = true;
 TCSMith.overloadList[TCSMith.combo_BI]    = true;
 TCSMith.overloadList[TCSMith.combo_BHI]   = true;
 TCSMith.overloadList[TCSMith.combo_RO]    = true;
