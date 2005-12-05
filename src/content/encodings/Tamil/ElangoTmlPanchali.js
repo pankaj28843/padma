@@ -1,4 +1,4 @@
-// $Id: ElangoTmlPanchali.js,v 1.5 2005/11/11 15:17:12 vnagarjuna Exp $ -->
+// $Id: ElangoTmlPanchali.js,v 1.6 2005/12/05 21:27:34 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -186,7 +186,7 @@ Elango_Tml_Panchali.combo_NNI     = "\u201A";
 Elango_Tml_Panchali.combo_NNII    = "\u0192";
 Elango_Tml_Panchali.combo_NNU     = "\u201E";
 Elango_Tml_Panchali.combo_NNUU    = "\u2026";
-Elango_Tml_Panchali.combo_NNPULLI = "\u2021";
+Elango_Tml_Panchali.combo_NNPULLI = "\u0081";
 
 Elango_Tml_Panchali.combo_TI      = "\u2021";
 Elango_Tml_Panchali.combo_TII     = "\u02C6";
@@ -194,9 +194,9 @@ Elango_Tml_Panchali.combo_TU      = "\u2030";
 Elango_Tml_Panchali.combo_TUU     = "\u0160";
 Elango_Tml_Panchali.combo_TPULLI  = "\u2020";
 Elango_Tml_Panchali.combo_NI      = "\u0152";
-Elango_Tml_Panchali.combo_NII     = "\u0063";
+Elango_Tml_Panchali.combo_NII     = "\u008D";
 Elango_Tml_Panchali.combo_NU      = "\u00EE";
-Elango_Tml_Panchali.combo_NUU     = "\u00CB";
+Elango_Tml_Panchali.combo_NUU     = "\u008F";
 Elango_Tml_Panchali.combo_NPULLI  = "\u2039";
 Elango_Tml_Panchali.combo_NNNI    = "\u00C2";
 Elango_Tml_Panchali.combo_NNNII   = "\u00C3";
