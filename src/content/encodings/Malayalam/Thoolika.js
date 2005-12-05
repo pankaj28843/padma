@@ -1,4 +1,4 @@
-// $Id: Thoolika.js,v 1.1 2005/11/23 19:57:16 vnagarjuna Exp $ -->
+// $Id: Thoolika.js,v 1.2 2005/12/05 21:30:24 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -429,7 +429,7 @@ Thoolika.toPadma[Thoolika.conj_NDH]  = Padma.consnt_NA +  Padma.vattu_DHA;
 Thoolika.toPadma[Thoolika.conj_N_N]  = Padma.consnt_NA +  Padma.vattu_NA;
 Thoolika.toPadma[Thoolika.conj_NM]   = Padma.consnt_NA +  Padma.vattu_MA;
 Thoolika.toPadma[Thoolika.conj_NRR]  = Padma.consnt_NA +  Padma.vattu_RRA;
-Thoolika.toPadma[Thoolika.conj_NAU]  = Padma.consnt_NA +  Padma.chandrakkala;
+//Thoolika.toPadma[Thoolika.conj_NAU]  = Padma.consnt_NA +  Padma.chandrakkala;
 
 Thoolika.toPadma[Thoolika.conj_PP]  = Padma.consnt_PA +  Padma.vattu_PA;
 Thoolika.toPadma[Thoolika.conj_BB]  = Padma.consnt_BA +  Padma.vattu_BA;
