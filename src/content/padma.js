@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.15 2005/11/23 19:53:55 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.16 2005/12/05 18:07:22 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -136,8 +136,8 @@ var Padma_Browser_Transformer = {
                 }
             }
         }
-        //Ignore comment nodes
-        else if (node.nodeType != 8) {
+        //Ignore comment nodes and script nodes
+        else if (node.nodeType != 8 && (node.nodeType != 1 || !(node instanceof HTMLScriptElement))) {
             for(var j = 0; j < node.childNodes.length; ++j)
                 this.transformNode(page, node.childNodes.item(j));
         }
@@ -338,7 +338,7 @@ var Padma_Browser_Transformer = {
         }
 
         var end = new Date().getTime();
-        alert(end - start);
+        //alert(end - start);
     },
 
  
