@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: prefs.xul,v 1.4 2005/11/23 19:53:55 vnagarjuna Exp $-->
+<!--$Id: prefs.xul,v 1.5 2005/12/05 21:46:01 vnagarjuna Exp $-->
 
 <!--Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
 
@@ -58,7 +58,7 @@
           <button id="updateAutoTransformList" label="Update" accesskey="U" oncommand="PadmaSettings.updateAutoTransformList();"/>
         </row>
         <row>
-          <checkbox id="fixCharEncoding" label="Fix Character Encoding" checked="true" accesskey="F"/>
+          <checkbox id="fixCharEncoding" label="Fix Character Encoding" checked="true"  command="cmd_PadmaCheckBox" accesskey="F"/>
         </row>
       </rows>
     </grid>
