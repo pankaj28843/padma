@@ -1,4 +1,4 @@
-// $Id: RTSParser.js,v 1.5 2005/10/14 22:16:17 vnagarjuna Exp $ -->
+// $Id: RTSParser.js,v 1.6 2005/12/05 23:09:25 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -65,7 +65,7 @@ function RTSParser_getNextMatch(length, index)
                     if (next.value == null || Padma.getType(next.value) != Padma.type_hallu)
                         value = Padma.pollu;
                 }
-                if (next.value != null && RTS.isAnusvara(value, next.value)) {
+                else if (next.value != null && RTS.isAnusvara(value, next.value)) {
                     result.key = key;
                     result.value = Padma.anusvara;
                     return result;
