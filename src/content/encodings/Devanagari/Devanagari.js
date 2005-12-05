@@ -1,4 +1,4 @@
-// $Id: Devanagari.js,v 1.2 2005/11/11 14:05:33 vnagarjuna Exp $ -->
+// $Id: Devanagari.js,v 1.3 2005/12/05 18:09:07 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -125,6 +125,7 @@ Devanagari.codePoints.vowelsn_CDR_E = "\u0945";
 Devanagari.codePoints.vowelsn_E     = "\u0946";
 Devanagari.codePoints.vowelsn_EE    = "\u0947";
 Devanagari.codePoints.vowelsn_AI    = "\u0948";
+Devanagari.codePoints.vowelsn_CDR_O = "\u0949";
 Devanagari.codePoints.vowelsn_O     = "\u094A";
 Devanagari.codePoints.vowelsn_OO    = "\u094B";
 Devanagari.codePoints.vowelsn_AU    = "\u094C";
@@ -251,9 +252,11 @@ Devanagari.fromPadma[Padma.vowelsn_U]   = Devanagari.codePoints.vowelsn_U;
 Devanagari.fromPadma[Padma.vowelsn_UU]  = Devanagari.codePoints.vowelsn_UU;
 Devanagari.fromPadma[Padma.vowelsn_R]   = Devanagari.codePoints.vowelsn_R;
 Devanagari.fromPadma[Padma.vowelsn_RR]  = Devanagari.codePoints.vowelsn_RR;
+Devanagari.fromPadma[Padma.vowelsn_CDR_E] = Devanagari.codePoints.vowelsn_CDR_E;
 Devanagari.fromPadma[Padma.vowelsn_E]   = Devanagari.codePoints.vowelsn_E;
 Devanagari.fromPadma[Padma.vowelsn_EE]  = Devanagari.codePoints.vowelsn_EE;
 Devanagari.fromPadma[Padma.vowelsn_AI]  = Devanagari.codePoints.vowelsn_AI;
+Devanagari.fromPadma[Padma.vowelsn_CDR_O] = Devanagari.codePoints.vowelsn_CDR_O;
 Devanagari.fromPadma[Padma.vowelsn_O]   = Devanagari.codePoints.vowelsn_O;
 Devanagari.fromPadma[Padma.vowelsn_OO]  = Devanagari.codePoints.vowelsn_OO;
 Devanagari.fromPadma[Padma.vowelsn_AU]  = Devanagari.codePoints.vowelsn_AU;

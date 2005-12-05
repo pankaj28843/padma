@@ -1,4 +1,4 @@
-// $Id: Bhaskar.js,v 1.3 2005/12/05 18:09:07 vnagarjuna Exp $ -->
+// $Id: Jagran.js,v 1.1 2005/12/05 18:09:07 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -21,43 +21,43 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-function Bhaskar()
+function Jagran()
 {
 }
 
 //The interface every dynamic font encoding should implement
-Bhaskar.maxLookupLen = BEJA.maxLookupLen;
-Bhaskar.fontFace     = "Bhaskar";
-Bhaskar.displayName  = Bhaskar.fontFace;
-Bhaskar.script       = Padma.script_DEVANAGARI;
-Bhaskar.hasSuffixes  = true;
+Jagran.maxLookupLen = BEJA.maxLookupLen;
+Jagran.fontFace     = "Jagran";
+Jagran.displayName  = Jagran.fontFace;
+Jagran.script       = Padma.script_DEVANAGARI;
+Jagran.hasSuffixes  = true;
 
-Bhaskar.lookup = function (str) 
+Jagran.lookup = function (str) 
 {
-    return BEJA.toPadma_BE[str];
+    return BEJA.toPadma_JA[str];
 }
 
-Bhaskar.isPrefixSymbol = function (str)
+Jagran.isPrefixSymbol = function (str)
 {
     return BEJA.isPrefixSymbol(str);
 }
 
-Bhaskar.isSuffixSymbol = function (str)
+Jagran.isSuffixSymbol = function (str)
 {
     return BEJA.isSuffixSymbol(str);
 }
 
-Bhaskar.isOverloaded = function (str)
+Jagran.isOverloaded = function (str)
 {
-    return BEJA.isOverloaded(str);
+    return BEJA.overloadList_JA[str] != null;
 }
 
-Bhaskar.handleTwoPartVowelSigns = function (sign1, sign2)
+Jagran.handleTwoPartVowelSigns = function (sign1, sign2)
 {
     return BEJA.handleTwoPartVowelSigns(sign1, sign2);
 }
 
-Bhaskar.isRedundant = function (str)
+Jagran.isRedundant = function (str)
 {
     return BEJA.isRedundant(str);
 }

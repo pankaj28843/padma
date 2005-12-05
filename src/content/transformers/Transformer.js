@@ -1,4 +1,4 @@
-// $Id: Transformer.js,v 1.14 2005/11/23 19:58:13 vnagarjuna Exp $ -->
+// $Id: Transformer.js,v 1.15 2005/12/05 18:10:18 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -52,7 +52,11 @@ Transformer.dynFont_Bhaskar      = 16;
 Transformer.dynFont_Thoolika     = 17;
 Transformer.dynFont_TCSMith      = 18;
 Transformer.dynFont_Gopika       = 19;
-Transformer.dynFont_Unknown      = 20;   //this should always be the max, this is used as a sentinel
+Transformer.dynFont_Jagran       = 20;
+Transformer.dynFont_EPatrika     = 21;
+Transformer.dynFont_Ujala        = 22;
+Transformer.dynFont_Chanakya     = 23;
+Transformer.dynFont_Unknown      = 24;   //this should always be the max, this is used as a sentinel
 
 //Classes that implement the above dynamic fonts
 Transformer.dynFont_Class = new Array();
@@ -72,11 +76,14 @@ Transformer.dynFont_Class[Transformer.dynFont_Subak]        = Subak;
 Transformer.dynFont_Class[Transformer.dynFont_Kumudam]      = Kumudam;
 Transformer.dynFont_Class[Transformer.dynFont_ShreeTam0802] = Shree_Tam_0802;
 Transformer.dynFont_Class[Transformer.dynFont_Elango]       = Elango_Tml_Panchali;
-//Transformer.dynFont_Class[Transformer.dynFont_Mithi]        = Mithi;
 Transformer.dynFont_Class[Transformer.dynFont_Bhaskar]      = Bhaskar;
 Transformer.dynFont_Class[Transformer.dynFont_Thoolika]     = Thoolika;
 Transformer.dynFont_Class[Transformer.dynFont_TCSMith]      = TCSMith;
 Transformer.dynFont_Class[Transformer.dynFont_Gopika]       = Gopika;
+Transformer.dynFont_Class[Transformer.dynFont_Jagran]       = Jagran;
+Transformer.dynFont_Class[Transformer.dynFont_EPatrika]     = EPatrika;
+Transformer.dynFont_Class[Transformer.dynFont_Ujala]        = Ujala;
+Transformer.dynFont_Class[Transformer.dynFont_Chanakya]     = Chanakya;
 
 //Class names for non-dynamic font encodings
 Transformer.className_Unicode = Unicode;
@@ -117,6 +124,9 @@ Transformer.initialize = function () {
     //Script codes
     for(i = 0; i < Transformer.dynFont_Unknown; i++)
         Transformer.dynFont_ScriptCode[i] = Transformer.dynFont_Class[i].script;
+
+    //Initialize BEJA lookup tables used by Bhaskar, Jagran, EPatrika and AmarUjala fonts
+    BEJA.initialize();
 }
 
 Transformer.createTransformer = function (input, output, rtsWritingStyle, rtsSunnaStyle)
