@@ -1,4 +1,4 @@
-// $Id: whitelist.js,v 1.6 2005/11/23 19:54:43 vnagarjuna Exp $ -->
+// $Id: whitelist.js,v 1.7 2005/12/06 16:39:56 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -62,6 +62,15 @@ var PadmaWhitelist = {
             }
         }
         else this.removeAllButton.disabled = true;
+
+        //Multi cell list box behavior has changed between 1.0.x and 1.5 releases
+        //Bugs in 1.0.x release requiring hacks for manipulating the lists are not necessary anymore
+        //It is enough to check if nsIXULAppInfo  is supported, pre 1.5 releases didn't have it.
+        if("@mozilla.org/xre/app-info;1" in Components.classes)
+            this.pre1_5 = false;
+
+        // get a reference to the prompt service component.
+        this.promptService = Components.classes["@mozilla.org/embedcomp/prompt-service;1"].getService(Components.interfaces.nsIPromptService);
     },
 
     onSave: function() {
@@ -95,19 +104,19 @@ var PadmaWhitelist = {
 
     onAddSite: function() {
         var host;
-        if ((host = this.checkSite(this.newSiteBox.value)) == null) {
+        if ((host = this.checkSite(this.newSiteBox.value)) == null)
             return false;
-        }
 
         if (!this.listHasSite(host)) {
             var item = this.appendItem(host, this.scriptList.selectedItem.value);
             this.whitelistBox.ensureElementIsVisible(item);
-            this.scriptList.disabled = true;
         }
+        else this.promptService.alert(window, "Add Failure", "URL is already in the whitelist");
             
         this.newSiteBox.value = "";
         this.addButton.disabled = true;
         this.newSiteBox.focus();
+        this.scriptList.disabled = true;
         //Remove any selection
         this.whitelistBox.selectedIndex = -1;
         this.removeButton.disabled = true;
@@ -123,9 +132,12 @@ var PadmaWhitelist = {
         var rows = this.whitelistBox.getRowCount();
         var selItem = this.whitelistBox.selectedItem;
 
-        //+1 because there is a header row
-        //Mysteriously +1 more for the multi-column list
-        this.whitelistBox.removeItemAt(index + 1 + 1);
+        if (this.pre1_5) {
+            //+1 because there is a header row
+            //Mysteriously +1 more for the multi-column list
+            this.whitelistBox.removeItemAt(index + 1 + 1);
+        }
+        else this.whitelistBox.removeItemAt(index);
 
         //set focus on next site unless we just deleted the last site
         if (index == rows - 1) {
@@ -142,12 +154,18 @@ var PadmaWhitelist = {
     },
     
     onRemoveAll: function() {
-        if (confirm("Are you sure you want to remove all the sites?")) {
+        if (this.promptService.confirm(window, "Remove All Sites?", "Are you sure you want to remove all the sites?")) {
             var rows = this.whitelistBox.getRowCount();
-            //Account for the header row
-            //Mysteriously +1 more for the multi-column list
-            for(var i = rows; i > 0; --i)
-                this.whitelistBox.removeItemAt(i + 1);
+            if (this.pre1_5) {
+                //Account for the header row
+                //Mysteriously +1 more for the multi-column list
+                for(var i = rows; i > 0; --i)
+                    this.whitelistBox.removeItemAt(i + 1);
+            }
+            else {
+                for(i = rows - 1; i >= 0; --i)
+                    this.whitelistBox.removeItemAt(i);
+            }
             this.removeAllButton.disabled = true;
         }
     },
@@ -198,12 +216,14 @@ var PadmaWhitelist = {
 
     listHasSite: function(site) {
         var rows = this.whitelistBox.getRowCount();
-        for(var i = 0; i < rows; ++i)
-            if (this.whitelistBox.getItemAtIndex(i).firstChild.getAttribute('label') == site)
+        for(var i = 0; i < rows; ++i) {
+            var list = this.whitelistBox.getItemAtIndex(i).firstChild.getAttribute('label');
+            if (new RegExp(list.replace(/www\./gi, '').replace(/\./gi, "\\.")).test(site))
                 return true;
-
+        }
         return false;
     },
 
-    cellAttributeIndexName: 'padma_internalindex'
+    cellAttributeIndexName: 'padma_internalindex',
+    pre1_5: true
 };
