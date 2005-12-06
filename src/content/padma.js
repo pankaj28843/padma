@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.16 2005/12/05 18:07:22 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.17 2005/12/06 16:39:04 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -165,7 +165,7 @@ var Padma_Browser_Transformer = {
     onPageLoad: function(evt) {
         var start = new Date().getTime();
         var page = evt.originalTarget;
-        if (!page || !page.location || page.location == "about:blank" || !page.location.host || !this.isAutoTransformEnabled())
+        if (!page || !page.location || page.location == "about:blank" || page.location.host == undefined || !this.isAutoTransformEnabled())
             return;
 
         //Quickly check if auto transform is enabled and if this page needs to be transformed
