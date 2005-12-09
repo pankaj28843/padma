@@ -1,4 +1,4 @@
-// $Id: Gopika.js,v 1.1 2005/11/23 19:56:55 vnagarjuna Exp $ -->
+// $Id: Gopika.js,v 1.2 2005/12/09 15:05:44 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -356,7 +356,7 @@ Gopika.extra_QTSINGLE_2 = "\u00A5";
 Gopika.extra_QTSINGLE_3 = "\u00FC";
 Gopika.extra_QTDOUBLE_1 = "\u00AA";
 
-Gopika.toPadma = new Array();
+Gopika.toPadma = new Object();
 
 Gopika.toPadma[Gopika.anusvara]      = Padma.anusvara;
 Gopika.toPadma[Gopika.candrabindu_1] = Padma.candrabindu;
@@ -627,17 +627,17 @@ Gopika.toPadma[Gopika.extra_QTSINGLE_2] = "'";
 Gopika.toPadma[Gopika.extra_QTSINGLE_3] = "'";
 Gopika.toPadma[Gopika.extra_QTDOUBLE_1] = '"';
 
-Gopika.prefixList = new Array();
+Gopika.prefixList = new Object();
 Gopika.prefixList[Gopika.vowelsn_I_1] = true;
 Gopika.prefixList[Gopika.vowelsn_I_2] = true;
 Gopika.prefixList[Gopika.vowelsn_IM]  = true;
 Gopika.prefixList[Gopika.nukta]       = true;
 
-Gopika.suffixList = new Array();
+Gopika.suffixList = new Object();
 Gopika.suffixList[Gopika.halffm_RA]     = true;
 Gopika.suffixList[Gopika.halffm_RA_ANU] = true;
 
-Gopika.overloadList = new Array();
+Gopika.overloadList = new Object();
 Gopika.overloadList[Gopika.vowel_A]     = true;
 Gopika.overloadList[Gopika.vowel_AA]    = true;
 Gopika.overloadList[Gopika.vowelsn_AA]  = true;

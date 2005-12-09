@@ -1,4 +1,4 @@
-// $Id: BEJA.js,v 1.1 2005/12/05 18:09:07 vnagarjuna Exp $ -->
+// $Id: BEJA.js,v 1.2 2005/12/09 15:04:44 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -382,7 +382,7 @@ BEJA.halffm_MA_JA   = "\u007B";
 BEJA.halffm_TT_JA   = "\u007D";
 BEJA.vowelsn_EE_JA  = "\u007E";
 
-BEJA.toPadma = new Array();
+BEJA.toPadma = new Object();
 
 BEJA.toPadma[BEJA.avagraha]    = Padma.avagraha;
 BEJA.toPadma[BEJA.anusvara_1]  = Padma.anusvara;
@@ -625,7 +625,7 @@ BEJA.toPadma[BEJA.PERCENT]          = "%";
 BEJA.toPadma[BEJA.extra_COLON]      = ":";
 
 //BE specfic
-BEJA.toPadma_BE = new Array();
+BEJA.toPadma_BE = new Object();
 BEJA.toPadma_BE[BEJA.DIVIDE_BE]     = "\u00F7"; //Unicode for division symbol
 BEJA.toPadma_BE[BEJA.digit_ONE_BE]  = '1';
 BEJA.toPadma_BE[BEJA.digit_TWO_BE]  = '2';
@@ -638,7 +638,7 @@ BEJA.toPadma_BE[BEJA.digit_EIGHT_BE]= '8';
 BEJA.toPadma_BE[BEJA.digit_NINE_BE] = '9';
 
 //JA specific
-BEJA.toPadma_JA = new Array();
+BEJA.toPadma_JA = new Object();
 BEJA.toPadma_JA[BEJA.consnt_KHA_JA] = Padma.consnt_KHA;
 BEJA.toPadma_JA[BEJA.consnt_BA_JA]  = Padma.consnt_BA;
 BEJA.toPadma_JA[BEJA.consnt_BHA_JA] = Padma.consnt_BHA;
@@ -653,23 +653,23 @@ BEJA.toPadma_JA[BEJA.halffm_MA_JA]  = Padma.halffm_MA;
 BEJA.toPadma_JA[BEJA.halffm_TT_JA]  = Padma.halffm_TA + Padma.halffm_TA;
 BEJA.toPadma_JA[BEJA.vowelsn_EE_JA] = Padma.vowelsn_EE;
 
-BEJA.prefixList = new Array();
+BEJA.prefixList = new Object();
 BEJA.prefixList[BEJA.vowelsn_I]  = true;
 BEJA.prefixList[BEJA.vowelsn_IM] = true;
 BEJA.prefixList[BEJA.nukta_1]    = true;
 BEJA.prefixList[BEJA.halffm_RI]  = true;
 BEJA.prefixList[BEJA.halffm_RIM] = true;
 
-BEJA.suffixList = new Array();
+BEJA.suffixList = new Object();
 BEJA.suffixList[BEJA.halffm_RA]     = true;
 BEJA.suffixList[BEJA.halffm_RA_ANU] = true;
 
-BEJA.redundantList = new Array();
+BEJA.redundantList = new Object();
 BEJA.redundantList[BEJA.misc_UNKNOWN_1] = true;
 BEJA.redundantList[BEJA.misc_UNKNOWN_2] = true;
 BEJA.redundantList[BEJA.misc_UNKNOWN_3] = true;
 
-BEJA.overloadList = new Array();
+BEJA.overloadList = new Object();
 BEJA.overloadList[BEJA.vowel_A]     = true;
 BEJA.overloadList[BEJA.vowel_AA]    = true;
 BEJA.overloadList[BEJA.vowel_EE]    = true;
@@ -704,7 +704,7 @@ BEJA.overloadList[BEJA.halffm_SHA_2]= true;
 BEJA.overloadList[BEJA.halffm_SHR]  = true;
 BEJA.overloadList[BEJA.halffm_SSA]  = true;
 
-BEJA.overloadList_JA = new Array();
+BEJA.overloadList_JA = new Object();
 BEJA.overloadList_JA[BEJA.halffm_KHA_JA]  = true;
 BEJA.overloadList_JA[BEJA.halffm_BA_JA]   = true;
 BEJA.overloadList_JA[BEJA.halffm_BHA_JA]  = true;

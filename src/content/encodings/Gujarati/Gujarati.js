@@ -1,4 +1,4 @@
-// $Id: Gujarati.js,v 1.1 2005/11/23 19:56:55 vnagarjuna Exp $ -->
+// $Id: Gujarati.js,v 1.2 2005/12/09 15:05:44 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -108,6 +108,7 @@ Gujarati.codePoints.vowelsn_LL    = "\u0AE3";
 Gujarati.codePoints.vowelsn_CDR_E = "\u0AC5";
 Gujarati.codePoints.vowelsn_EE    = "\u0AC7";
 Gujarati.codePoints.vowelsn_AI    = "\u0AC8";
+Gujarati.codePoints.vowelsn_CDR_O = "\u0AC9";
 Gujarati.codePoints.vowelsn_OO    = "\u0ACB";
 Gujarati.codePoints.vowelsn_AU    = "\u0ACC";
 
@@ -130,14 +131,15 @@ Gujarati.codePoints.digit_SEVEN = "\u0AED";
 Gujarati.codePoints.digit_EIGHT = "\u0AEE";
 Gujarati.codePoints.digit_NINE  = "\u0AEF";
 
-Gujarati.fromPadma = new Array();
+Gujarati.fromPadma = new Object();
 
 Gujarati.fromPadma[Padma.anusvara]    = Gujarati.codePoints.anusvara;
 Gujarati.fromPadma[Padma.visarga]     = Gujarati.codePoints.visarga;
-Gujarati.fromPadma[Padma.candrabindu] = Gujarati.codePoints.candrabindu;
 Gujarati.fromPadma[Padma.halant]      = Gujarati.codePoints.misc_VIRAMA;
 Gujarati.fromPadma[Padma.chillu]      = Gujarati.codePoints.misc_VIRAMA + Unicode_Shared.ZWJ;
 Gujarati.fromPadma[Padma.syllbreak]   = Gujarati.codePoints.misc_VIRAMA + Unicode_Shared.ZWNJ;
+Gujarati.fromPadma[Padma.nukta]       = Gujarati.codePoints.misc_NUKTA;
+Gujarati.fromPadma[Padma.candrabindu] = Gujarati.codePoints.candrabindu;
 Gujarati.fromPadma[Padma.avagraha]    = Gujarati.codePoints.misc_AVAGRAHA;
 Gujarati.fromPadma[Padma.udAtta]      = Unicode_Shared.UDATTA;
 Gujarati.fromPadma[Padma.anudAtta]    = Unicode_Shared.ANUDATTA;
@@ -146,7 +148,6 @@ Gujarati.fromPadma[Padma.danda]       = Unicode_Shared.DANDA;
 Gujarati.fromPadma[Padma.ddanda]      = Unicode_Shared.DDANDA;
 Gujarati.fromPadma[Padma.om]          = Gujarati.codePoints.misc_OM;
 Gujarati.fromPadma[Padma.abbrev]      = Unicode_Shared.abbrev;
-Gujarati.fromPadma[Padma.nukta]       = Gujarati.codePoints.misc_NUKTA;
 
 //digits
 Gujarati.fromPadma[Padma.digit_ZERO]  = Gujarati.codePoints.digit_ZERO;
@@ -222,9 +223,26 @@ Gujarati.fromPadma[Padma.vowelsn_U]   = Gujarati.codePoints.vowelsn_U;
 Gujarati.fromPadma[Padma.vowelsn_UU]  = Gujarati.codePoints.vowelsn_UU;
 Gujarati.fromPadma[Padma.vowelsn_R]   = Gujarati.codePoints.vowelsn_R;
 Gujarati.fromPadma[Padma.vowelsn_RR]  = Gujarati.codePoints.vowelsn_RR;
-Gujarati.fromPadma[Padma.vowelsn_E]   = Gujarati.codePoints.vowelsn_E;
+Gujarati.fromPadma[Padma.vowelsn_CDR_E] = Gujarati.codePoints.vowelsn_CDR_E;
 Gujarati.fromPadma[Padma.vowelsn_EE]  = Gujarati.codePoints.vowelsn_EE;
 Gujarati.fromPadma[Padma.vowelsn_AI]  = Gujarati.codePoints.vowelsn_AI;
-Gujarati.fromPadma[Padma.vowelsn_O]   = Gujarati.codePoints.vowelsn_O;
+Gujarati.fromPadma[Padma.vowelsn_CDR_O] = Gujarati.codePoints.vowelsn_CDR_O;
 Gujarati.fromPadma[Padma.vowelsn_OO]  = Gujarati.codePoints.vowelsn_OO;
 Gujarati.fromPadma[Padma.vowelsn_AU]  = Gujarati.codePoints.vowelsn_AU;
+
+//The following are not directly present in Gujarati - equivalent transliteration
+Gujarati.fromPadma[Padma.vowel_SHT_A]  = Gujarati.codePoints.letter_A;
+Gujarati.fromPadma[Padma.vowel_E]      = Gujarati.codePoints.letter_EE;
+Gujarati.fromPadma[Padma.vowel_O]      = Gujarati.codePoints.letter_OO;
+Gujarati.fromPadma[Padma.consnt_QA]    = Gujarati.codePoints.letter_KA;
+Gujarati.fromPadma[Padma.consnt_KHHA]  = Gujarati.codePoints.letter_KHA;
+Gujarati.fromPadma[Padma.consnt_GHHA]  = Gujarati.codePoints.letter_GHA;
+Gujarati.fromPadma[Padma.consnt_ZA]    = Gujarati.codePoints.letter_JA;
+Gujarati.fromPadma[Padma.consnt_DDDHA] = Gujarati.codePoints.letter_DDA;
+Gujarati.fromPadma[Padma.consnt_RHA]   = Gujarati.codePoints.letter_DDHA;
+Gujarati.fromPadma[Padma.consnt_NNNA]  = Gujarati.codePoints.letter_NNA;
+Gujarati.fromPadma[Padma.consnt_FA]    = Gujarati.codePoints.letter_PHA;
+Gujarati.fromPadma[Padma.consnt_YYA]   = Gujarati.codePoints.letter_YA;
+Gujarati.fromPadma[Padma.consnt_ZHA]   = Gujarati.codePoints.letter_LLA;
+Gujarati.fromPadma[Padma.vowelsn_E]    = Gujarati.codePoints.vowelsn_EE;
+Gujarati.fromPadma[Padma.vowelsn_O]    = Gujarati.codePoints.vowelsn_OO;

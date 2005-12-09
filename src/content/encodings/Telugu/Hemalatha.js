@@ -1,4 +1,4 @@
-// $Id: Hemalatha.js,v 1.10 2005/11/11 14:08:12 vnagarjuna Exp $ -->
+// $Id: Hemalatha.js,v 1.11 2005/12/09 15:06:47 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -374,7 +374,7 @@ Hemalatha.misc_UNKNOWN_10 = "\u00E1";
 Hemalatha.misc_UNKNOWN_11 = "\u00E2";
 Hemalatha.misc_UNKNOWN_12 = "\u00E3";
 
-Hemalatha.toPadma = new Array();
+Hemalatha.toPadma = new Object();
 
 Hemalatha.toPadma[Hemalatha.candrabindu] = Padma.candrabindu;
 Hemalatha.toPadma[Hemalatha.avagraha] = Padma.avagraha;
@@ -617,7 +617,7 @@ Hemalatha.toPadma[Hemalatha.extra_QTSINGLE] = Hemalatha.QTSINGLE;
 Hemalatha.toPadma[Hemalatha.HYPHEN]         = "-";
 Hemalatha.toPadma[Hemalatha.PIPE]           = "|";
 
-Hemalatha.redundantList = new Array();
+Hemalatha.redundantList = new Object();
 Hemalatha.redundantList[Hemalatha.misc_TICK_1] = true;
 Hemalatha.redundantList[Hemalatha.misc_TICK_2] = true;
 Hemalatha.redundantList[Hemalatha.misc_TICK_3] = true;
@@ -635,7 +635,7 @@ Hemalatha.redundantList[Hemalatha.misc_UNKNOWN_10] = true;
 Hemalatha.redundantList[Hemalatha.misc_UNKNOWN_11] = true;
 Hemalatha.redundantList[Hemalatha.misc_UNKNOWN_12] = true;
 
-Hemalatha.prefixList = new Array();
+Hemalatha.prefixList = new Object();
 Hemalatha.prefixList[Hemalatha.virama_2]     = true;
 Hemalatha.prefixList[Hemalatha.vowelsn_I_3]  = true;
 Hemalatha.prefixList[Hemalatha.vowelsn_II_3] = true;
@@ -651,7 +651,7 @@ Hemalatha.prefixList[Hemalatha.vowelsn_EE_1] = true;
 Hemalatha.prefixList[Hemalatha.vowelsn_AILEN_1] = true;
 Hemalatha.prefixList[Hemalatha.vattu_RA_1]   = true;
 
-Hemalatha.overloadList = new Array();
+Hemalatha.overloadList = new Object();
 Hemalatha.overloadList[Hemalatha.anusvara]    = true;
 Hemalatha.overloadList[Hemalatha.vowel_E]     = true;
 Hemalatha.overloadList[Hemalatha.consnt_CA]   = true;

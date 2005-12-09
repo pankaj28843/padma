@@ -1,4 +1,4 @@
-// $Id: ISCII.js,v 1.6 2005/10/25 15:58:16 vnagarjuna Exp $ -->
+// $Id: ISCII.js,v 1.7 2005/12/09 15:00:36 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -149,7 +149,7 @@ ISCII.misc_VIRAMA     = "\u00E8";       //halant
 ISCII.misc_SOFTHALANT = "\u00E8\u00E9"; //equivalent of HALANT + ZWJ in Unicode
 ISCII.misc_EXPHALANT  = "\u00E8\u00E8"; //equivalent of HALANT + ZWNJ in Unicode
 
-ISCII.toPadma = new Array();
+ISCII.toPadma = new Object();
 
 ISCII.toPadma[ISCII.candrabindu]     = Padma.candrabindu;
 ISCII.toPadma[ISCII.visarga]         = Padma.visarga;

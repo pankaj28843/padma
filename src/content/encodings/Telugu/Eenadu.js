@@ -1,4 +1,4 @@
-// $Id: Eenadu.js,v 1.8 2005/11/11 14:08:12 vnagarjuna Exp $ -->
+// $Id: Eenadu.js,v 1.9 2005/12/09 15:06:47 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -401,7 +401,7 @@ Eenadu.misc_vattu_3   = "\u00B6";               //Gha, pha etc
 Eenadu.extra_HYPHEN   = "\u00D0";
 Eenadu.extra_QTSINGLE = "\u00D1";
 
-Eenadu.toPadma = new Array();
+Eenadu.toPadma = new Object();
 
 Eenadu.toPadma[Eenadu.candrabindu] = Padma.candrabindu;
 Eenadu.toPadma[Eenadu.visarga]  = Padma.visarga;
@@ -670,7 +670,7 @@ Eenadu.toPadma[Eenadu.PIPE]           = "|";
 Eenadu.toPadma[Eenadu.ASTERISK]       = "*";
 Eenadu.toPadma[Eenadu.PERCENT]        = "%";
 
-Eenadu.redundantList = new Array();
+Eenadu.redundantList = new Object();
 Eenadu.redundantList[Eenadu.misc_TICK_1] = true;
 Eenadu.redundantList[Eenadu.misc_TICK_2] = true;
 Eenadu.redundantList[Eenadu.misc_TICK_3] = true;
@@ -680,7 +680,7 @@ Eenadu.redundantList[Eenadu.misc_TICK_6] = true;
 Eenadu.redundantList[Eenadu.misc_TICK_7] = true;
 Eenadu.redundantList[Eenadu.HYPHEN]      = true;
 
-Eenadu.prefixList = new Array();
+Eenadu.prefixList = new Object();
 Eenadu.prefixList[Eenadu.vattu_RA_1]   = true;
 Eenadu.prefixList[Eenadu.vattu_RA_2]   = true;
 Eenadu.prefixList[Eenadu.vowelsn_E_2]  = true;
@@ -688,7 +688,7 @@ Eenadu.prefixList[Eenadu.vowelsn_E_4]  = true;
 Eenadu.prefixList[Eenadu.vowelsn_EE_2] = true;
 Eenadu.prefixList[Eenadu.vowelsn_EE_3] = true;
 
-Eenadu.overloadList = new Array();
+Eenadu.overloadList = new Object();
 Eenadu.overloadList[Eenadu.consnt_KA_2]   = true;
 Eenadu.overloadList[Eenadu.consnt_CA]     = true;
 Eenadu.overloadList[Eenadu.consnt_DDA]    = true;

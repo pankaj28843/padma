@@ -1,4 +1,4 @@
-// $Id: Unicode.js,v 1.3 2005/11/23 19:55:47 vnagarjuna Exp $ -->
+// $Id: Unicode.js,v 1.4 2005/12/09 15:00:37 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -46,7 +46,7 @@ Unicode.initialize = function () {
 
 Unicode.maxLookupLen = 2;
 
-Unicode.toPadma = new Array();
+Unicode.toPadma = new Object();
 
 Unicode.toPadma[Telugu.codePoints.candrabindu]   = Padma.candrabindu;
 Unicode.toPadma[Telugu.codePoints.visarga]       = Padma.visarga;

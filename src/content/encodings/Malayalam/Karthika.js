@@ -1,4 +1,4 @@
-// $Id: Karthika.js,v 1.5 2005/10/25 15:58:17 vnagarjuna Exp $ -->
+// $Id: Karthika.js,v 1.6 2005/12/09 15:06:33 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -284,7 +284,7 @@ Karthika.extra_HYPHEN   = "\u00FE";
 //Dont need
 Karthika.misc_UNKNOWN_1  = "\u002D";
 
-Karthika.toPadma = new Array();
+Karthika.toPadma = new Object();
 
 Karthika.toPadma[Karthika.anusvara] = Padma.anusvara;
 Karthika.toPadma[Karthika.visarga]  = Padma.visarga;
@@ -464,16 +464,16 @@ Karthika.toPadma[Karthika.extra_DBLQT]    = '"';
 Karthika.toPadma[Karthika.extra_ASTERISK] = '*';
 Karthika.toPadma[Karthika.extra_HYPHEN]   = '-';
 
-Karthika.redundantList = new Array();
+Karthika.redundantList = new Object();
 Karthika.redundantList[Karthika.misc_UNKNOWN_1] = true;
 
-Karthika.prefixList = new Array();
+Karthika.prefixList = new Object();
 Karthika.prefixList[Karthika.vattu_RA]   = true;
 Karthika.prefixList[Karthika.vowelsn_E]  = true;
 Karthika.prefixList[Karthika.vowelsn_EE] = true;
 Karthika.prefixList[Karthika.vowelsn_AI] = true;
 
-Karthika.overloadList = new Array();
+Karthika.overloadList = new Object();
 Karthika.overloadList[Karthika.vowel_I]        = true;
 Karthika.overloadList[Karthika.vowel_U]        = true;
 Karthika.overloadList[Karthika.vowel_R]        = true;

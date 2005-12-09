@@ -1,4 +1,4 @@
-// $Id: ShreeTam0802.js,v 1.5 2005/12/05 21:27:34 vnagarjuna Exp $ -->
+// $Id: ShreeTam0802.js,v 1.6 2005/12/09 15:06:34 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 //Contributed by Saravana Kumar <saravanannkl@gmail.com>
@@ -323,7 +323,7 @@ Shree_Tam_0802.misc_UNKNOWN_17 = "\u00FE";
 //Does not match ASCII
 Shree_Tam_0802.HYPHEN         = "\u0026";
 
-Shree_Tam_0802.toPadma = new Array();
+Shree_Tam_0802.toPadma = new Object();
 
 Shree_Tam_0802.toPadma[Shree_Tam_0802.visarga]  = Padma.visarga;
 Shree_Tam_0802.toPadma[Shree_Tam_0802.vowel_A]  = Padma.vowel_A;
@@ -521,7 +521,7 @@ Shree_Tam_0802.toPadma[Shree_Tam_0802.combo_KSHPULLI]= Padma.consnt_KA + Padma.v
 
 Shree_Tam_0802.toPadma[Shree_Tam_0802.HYPHEN]   = "-";
 
-Shree_Tam_0802.redundantList = new Array();
+Shree_Tam_0802.redundantList = new Object();
 Shree_Tam_0802.redundantList[Shree_Tam_0802.misc_UNKNOWN_1]  = true;
 Shree_Tam_0802.redundantList[Shree_Tam_0802.misc_UNKNOWN_2]  = true;
 Shree_Tam_0802.redundantList[Shree_Tam_0802.misc_UNKNOWN_3]  = true;
@@ -540,13 +540,13 @@ Shree_Tam_0802.redundantList[Shree_Tam_0802.misc_UNKNOWN_15] = true;
 Shree_Tam_0802.redundantList[Shree_Tam_0802.misc_UNKNOWN_16] = true;
 Shree_Tam_0802.redundantList[Shree_Tam_0802.misc_UNKNOWN_17] = true;
 
-Shree_Tam_0802.prefixList = new Array();
+Shree_Tam_0802.prefixList = new Object();
 Shree_Tam_0802.prefixList[Shree_Tam_0802.vowelsn_E_1] = true;
 Shree_Tam_0802.prefixList[Shree_Tam_0802.vowelsn_E_2] = true;
 Shree_Tam_0802.prefixList[Shree_Tam_0802.vowelsn_EE]  = true;
 Shree_Tam_0802.prefixList[Shree_Tam_0802.vowelsn_AI]  = true;
 
-Shree_Tam_0802.overloadList = new Array();
+Shree_Tam_0802.overloadList = new Object();
 Shree_Tam_0802.overloadList[Shree_Tam_0802.vowel_O]   = true;
 Shree_Tam_0802.overloadList[Shree_Tam_0802.vowelsn_E_1] = true;
 Shree_Tam_0802.overloadList[Shree_Tam_0802.vowelsn_E_2] = true;

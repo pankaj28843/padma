@@ -1,4 +1,4 @@
-// $Id: Devanagari.js,v 1.3 2005/12/05 18:09:07 vnagarjuna Exp $ -->
+// $Id: Devanagari.js,v 1.4 2005/12/09 15:04:44 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -146,7 +146,7 @@ Devanagari.codePoints.digit_SEVEN = "\u096D";
 Devanagari.codePoints.digit_EIGHT = "\u096E";
 Devanagari.codePoints.digit_NINE  = "\u096F";
 
-Devanagari.fromPadma = new Array();
+Devanagari.fromPadma = new Object();
 
 Devanagari.fromPadma[Padma.anusvara]    = Devanagari.codePoints.anusvara;
 Devanagari.fromPadma[Padma.visarga]     = Devanagari.codePoints.visarga;

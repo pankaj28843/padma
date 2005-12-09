@@ -1,4 +1,4 @@
-// $Id: Subak.js,v 1.5 2005/11/23 19:56:20 vnagarjuna Exp $ -->
+// $Id: Subak.js,v 1.6 2005/12/09 15:04:44 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -320,7 +320,7 @@ Subak.extra_COLON    = "\u2026";
 Subak.misc_UNKNOWN_1 = "\u0024";
 Subak.misc_UNKNOWN_2 = "\u003E";
 
-Subak.toPadma = new Array();
+Subak.toPadma = new Object();
 
 Subak.toPadma[Subak.avagraha]      = Padma.avagraha;
 Subak.toPadma[Subak.anusvara_1]    = Padma.anusvara;
@@ -542,13 +542,13 @@ Subak.toPadma[Subak.MULTIPLY]       = "\u00D7"; //Unicode for multiplication sym
 Subak.toPadma[Subak.DIVIDE]         = "\u00F7"; //Unicode for division symbol
 Subak.toPadma[Subak.extra_COLON]    = ":";
 
-Subak.prefixList = new Array();
+Subak.prefixList = new Object();
 Subak.prefixList[Subak.vowelsn_I_1]  = true;
 Subak.prefixList[Subak.vowelsn_I_2]  = true;
 Subak.prefixList[Subak.vowelsn_I_3]  = true;
 Subak.prefixList[Subak.vowelsn_IM]   = true;
 
-Subak.suffixList = new Array();
+Subak.suffixList = new Object();
 Subak.suffixList[Subak.halffm_RA]     = true;
 Subak.suffixList[Subak.halffm_RII]    = true;
 Subak.suffixList[Subak.halffm_RIIM]   = true;
@@ -558,11 +558,11 @@ Subak.suffixList[Subak.halffm_RAI]    = true;
 Subak.suffixList[Subak.halffm_RAIM]   = true;
 Subak.suffixList[Subak.halffm_RA_ANU] = true;
 
-Subak.redundantList = new Array();
+Subak.redundantList = new Object();
 Subak.redundantList[Subak.misc_UNKNOWN_1] = true;
 Subak.redundantList[Subak.misc_UNKNOWN_2] = true;
 
-Subak.overloadList = new Array();
+Subak.overloadList = new Object();
 Subak.overloadList[Subak.vowel_A]    = true;
 Subak.overloadList[Subak.vowel_AA]   = true;
 Subak.overloadList[Subak.vowel_EE]   = true;

@@ -1,4 +1,4 @@
-// $Id: Tikkana.js,v 1.8 2005/11/11 14:08:12 vnagarjuna Exp $ -->
+// $Id: Tikkana.js,v 1.9 2005/12/09 15:06:47 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 //Copyright 2005 Suresh Kolichala <suresh_kolichala@yahoo.com>
@@ -307,7 +307,7 @@ Tikkana.danda          = "\u00B4";
 Tikkana.misc_vattu     = "\u00B5";
 Tikkana.danda          = "\u00B6";
 
-Tikkana.toPadma = new Array();
+Tikkana.toPadma = new Object();
 
 Tikkana.toPadma[Tikkana.candrabindu] = Padma.candrabindu;
 Tikkana.toPadma[Tikkana.visarga]  = Padma.visarga;
@@ -516,13 +516,13 @@ Tikkana.toPadma[Tikkana.vattu_TAI]     = Padma.vattu_TA +  Padma.vowelsn_AILEN;
 Tikkana.toPadma[Tikkana.vattu_TLA]     = Padma.vattu_TA +  Padma.vattu_LA;;
 Tikkana.toPadma[Tikkana.vattu_NGGA]    = Padma.vattu_NGA + Padma.vattu_GA;
 
-Tikkana.redundantList = new Array();
+Tikkana.redundantList = new Object();
 Tikkana.redundantList[Tikkana.misc_TICK_1] = true;
 Tikkana.redundantList[Tikkana.misc_TICK_2] = true;
 Tikkana.redundantList[Tikkana.misc_TICK_3] = true;
 Tikkana.redundantList[Tikkana.misc_HYPHEN] = true;
 
-Tikkana.prefixList = new Array();
+Tikkana.prefixList = new Object();
 
 // Prefix non-vattu symbols
 Tikkana.prefixList[Tikkana.vowelsn_I_1]  = true;
@@ -559,7 +559,7 @@ Tikkana.prefixList[Tikkana.vattu_RRA]    = true;
 Tikkana.prefixList[Tikkana.vattu_TRA]    = true; //KS
 
 
-Tikkana.overloadList = new Array();
+Tikkana.overloadList = new Object();
 Tikkana.overloadList[Tikkana.vowel_R]   = true;
 Tikkana.overloadList[Tikkana.vowel_L]   = true;
 Tikkana.overloadList[Tikkana.consnt_RA] = true;

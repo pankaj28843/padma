@@ -1,4 +1,4 @@
-// $Id: TeluguLipi.js,v 1.7 2005/11/11 14:08:12 vnagarjuna Exp $ -->
+// $Id: TeluguLipi.js,v 1.8 2005/12/09 15:06:47 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -230,7 +230,7 @@ TeluguLipi.digit_NINE     = "\u00BD";
 //Kommu
 TeluguLipi.misc_TICK      = "\u00C1";
 
-TeluguLipi.toPadma = new Array();
+TeluguLipi.toPadma = new Object();
 
 TeluguLipi.toPadma[TeluguLipi.candrabindu] = Padma.candrabindu;
 TeluguLipi.toPadma[TeluguLipi.visarga]  = Padma.visarga;
@@ -379,10 +379,10 @@ TeluguLipi.toPadma[TeluguLipi.extra_QTSINGLE_2] = "'";
 TeluguLipi.toPadma[TeluguLipi.extra_QTDOUBLE_1] = '"';
 TeluguLipi.toPadma[TeluguLipi.extra_QTDOUBLE_2] = '"';
 
-TeluguLipi.redundantList = new Array();
+TeluguLipi.redundantList = new Object();
 TeluguLipi.redundantList[TeluguLipi.misc_TICK] = true;
 
-TeluguLipi.overloadList = new Array();
+TeluguLipi.overloadList = new Object();
 TeluguLipi.overloadList[TeluguLipi.combo_YI]   = true;
 
 TeluguLipi.isRedundant = function (str, prev)

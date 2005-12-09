@@ -1,4 +1,4 @@
-// $Id: Transformer.js,v 1.15 2005/12/05 18:10:18 vnagarjuna Exp $ -->
+// $Id: Transformer.js,v 1.16 2005/12/09 15:08:23 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -92,7 +92,7 @@ Transformer.className_ISCII   = ISCII;
 Transformer.className_ITRANS  = ITRANS;
 
 Transformer.dynFont_Name = new Array();
-Transformer.dynFont_NameToIndex = new Array();
+Transformer.dynFont_NameToIndex = new Object();
 Transformer.dynFont_ScriptCode = new Array();
 Transformer.dynFont_DisplayName = new Array();
 

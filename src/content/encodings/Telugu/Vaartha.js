@@ -1,4 +1,4 @@
-// $Id: Vaartha.js,v 1.7 2005/10/25 15:58:20 vnagarjuna Exp $ -->
+// $Id: Vaartha.js,v 1.8 2005/12/09 15:06:47 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -350,7 +350,7 @@ Vaartha.misc_VATTU_1   = "\u006B";
 Vaartha.misc_VATTU_2   = "\u0071";
 Vaartha.arasunna       = "\u2022";
 
-Vaartha.toPadma = new Array();
+Vaartha.toPadma = new Object();
 
 Vaartha.toPadma[Vaartha.visarga]  = Padma.visarga;
 Vaartha.toPadma[Vaartha.virama_1] = Padma.syllbreak;
@@ -592,7 +592,7 @@ Vaartha.toPadma[Vaartha.digit_SEVEN]    = "7";
 Vaartha.toPadma[Vaartha.digit_EIGHT]    = "8";
 Vaartha.toPadma[Vaartha.digit_NINE]     = "9";
 
-Vaartha.redundantList = new Array();
+Vaartha.redundantList = new Object();
 Vaartha.redundantList[Vaartha.misc_TICK_1]    = true;
 Vaartha.redundantList[Vaartha.misc_TICK_2]    = true;
 Vaartha.redundantList[Vaartha.misc_TICK_3]    = true;
@@ -600,13 +600,13 @@ Vaartha.redundantList[Vaartha.misc_TICK_4]    = true;
 Vaartha.redundantList[Vaartha.misc_TICK_5]    = true;
 Vaartha.redundantList[Vaartha.misc_UNKNOWN_1] = true;
 
-Vaartha.prefixList = new Array();
+Vaartha.prefixList = new Object();
 Vaartha.prefixList[Vaartha.virama_1]     = true;
 Vaartha.prefixList[Vaartha.vattu_RA]     = true;
 Vaartha.prefixList[Vaartha.vattu_TTRA]   = true;
 Vaartha.prefixList[Vaartha.vattu_TRA]    = true;
 
-Vaartha.overloadList = new Array();
+Vaartha.overloadList = new Object();
 Vaartha.overloadList[Vaartha.anusvara]    = true;
 Vaartha.overloadList[Vaartha.consnt_CA]   = true;
 Vaartha.overloadList[Vaartha.consnt_DA]   = true;

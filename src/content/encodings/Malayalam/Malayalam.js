@@ -1,4 +1,4 @@
-// $Id: Malayalam.js,v 1.2 2005/11/11 14:06:15 vnagarjuna Exp $ -->
+// $Id: Malayalam.js,v 1.3 2005/12/09 15:06:33 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -127,7 +127,7 @@ Malayalam.codePoints.digit_SEVEN = "\u0D6D";
 Malayalam.codePoints.digit_EIGHT = "\u0D6E";
 Malayalam.codePoints.digit_NINE  = "\u0D6F";
 
-Malayalam.fromPadma = new Array();
+Malayalam.fromPadma = new Object();
 
 Malayalam.fromPadma[Padma.anusvara]    = Malayalam.codePoints.anusvara;
 Malayalam.fromPadma[Padma.visarga]     = Malayalam.codePoints.visarga;

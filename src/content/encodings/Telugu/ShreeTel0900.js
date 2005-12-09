@@ -1,4 +1,4 @@
-// $Id: ShreeTel0900.js,v 1.9 2005/11/11 14:08:12 vnagarjuna Exp $ -->
+// $Id: ShreeTel0900.js,v 1.10 2005/12/09 15:06:47 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -353,7 +353,7 @@ Shree_Tel_0900.misc_UNKNOWN_4 = "\u00FE";
 Shree_Tel_0900.misc_UNKNOWN_5 = "\u00FF";
 Shree_Tel_0900.misc_UNKNOWN_6 = "\u203A";
 
-Shree_Tel_0900.toPadma = new Array();
+Shree_Tel_0900.toPadma = new Object();
 
 Shree_Tel_0900.toPadma[Shree_Tel_0900.candrabindu] = Padma.candrabindu;
 Shree_Tel_0900.toPadma[Shree_Tel_0900.visarga]  = Padma.visarga;
@@ -596,7 +596,7 @@ Shree_Tel_0900.toPadma[Shree_Tel_0900.ASTERISK]       = "*";
 Shree_Tel_0900.toPadma[Shree_Tel_0900.misc_danda]     = Padma.danda;
 Shree_Tel_0900.toPadma[Shree_Tel_0900.misc_ddanda]    = Padma.ddanda;
 
-Shree_Tel_0900.redundantList = new Array();
+Shree_Tel_0900.redundantList = new Object();
 Shree_Tel_0900.redundantList[Shree_Tel_0900.misc_TICK_1] = true;
 Shree_Tel_0900.redundantList[Shree_Tel_0900.misc_TICK_2] = true;
 Shree_Tel_0900.redundantList[Shree_Tel_0900.misc_TICK_3] = true;
@@ -607,7 +607,7 @@ Shree_Tel_0900.redundantList[Shree_Tel_0900.misc_UNKNOWN_4] = true;
 Shree_Tel_0900.redundantList[Shree_Tel_0900.misc_UNKNOWN_5] = true;
 Shree_Tel_0900.redundantList[Shree_Tel_0900.misc_UNKNOWN_6] = true;
 
-Shree_Tel_0900.prefixList = new Array();
+Shree_Tel_0900.prefixList = new Object();
 Shree_Tel_0900.prefixList[Shree_Tel_0900.virama_2]     = true;
 Shree_Tel_0900.prefixList[Shree_Tel_0900.vowelsn_I_2]  = true;
 Shree_Tel_0900.prefixList[Shree_Tel_0900.vowelsn_II_2] = true;
@@ -615,7 +615,7 @@ Shree_Tel_0900.prefixList[Shree_Tel_0900.vowelsn_E_3]  = true;
 Shree_Tel_0900.prefixList[Shree_Tel_0900.vowelsn_EE_3] = true;
 Shree_Tel_0900.prefixList[Shree_Tel_0900.vattu_RA_2]   = true;
 
-Shree_Tel_0900.overloadList = new Array();
+Shree_Tel_0900.overloadList = new Object();
 Shree_Tel_0900.overloadList[Shree_Tel_0900.vowelsn_I_2]  = true;
 Shree_Tel_0900.overloadList[Shree_Tel_0900.consnt_PHA_1] = true;
 Shree_Tel_0900.overloadList[Shree_Tel_0900.consnt_BA_1]  = true;

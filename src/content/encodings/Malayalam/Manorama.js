@@ -1,4 +1,4 @@
-// $Id: Manorama.js,v 1.3 2005/10/25 15:58:17 vnagarjuna Exp $ -->
+// $Id: Manorama.js,v 1.4 2005/12/09 15:06:33 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -297,7 +297,7 @@ Manorama.misc_UNKNOWN_7  = "\u0178";
 Manorama.misc_UNKNOWN_8  = "\u00A4";
 Manorama.misc_UNKNOWN_9  = "\u00FF";
 
-Manorama.toPadma = new Array();
+Manorama.toPadma = new Object();
 
 Manorama.toPadma[Manorama.anusvara] = Padma.anusvara;
 Manorama.toPadma[Manorama.visarga]  = Padma.visarga;
@@ -484,7 +484,7 @@ Manorama.toPadma[Manorama.extra_HYPHEN_3] = '-';
 Manorama.toPadma[Manorama.extra_HYPHEN_4] = '-';
 Manorama.toPadma[Manorama.extra_HYPHEN_5] = '-';
 
-Manorama.redundantList = new Array();
+Manorama.redundantList = new Object();
 Manorama.redundantList[Manorama.misc_UNKNOWN_1] = true;
 Manorama.redundantList[Manorama.misc_UNKNOWN_2] = true;
 Manorama.redundantList[Manorama.misc_UNKNOWN_3] = true;
@@ -495,14 +495,14 @@ Manorama.redundantList[Manorama.misc_UNKNOWN_7] = true;
 Manorama.redundantList[Manorama.misc_UNKNOWN_8] = true;
 Manorama.redundantList[Manorama.misc_UNKNOWN_9] = true;
 
-Manorama.prefixList = new Array();
+Manorama.prefixList = new Object();
 Manorama.prefixList[Manorama.vattu_RA]   = true;
 Manorama.prefixList[Manorama.vowelsn_E]  = true;
 Manorama.prefixList[Manorama.vowelsn_EE] = true;
 Manorama.prefixList[Manorama.vowelsn_AI_1] = true;
 Manorama.prefixList[Manorama.vowelsn_AI_2] = true;
 
-Manorama.overloadList = new Array();
+Manorama.overloadList = new Object();
 Manorama.overloadList[Manorama.consnt_CA]      = true;
 Manorama.overloadList[Manorama.consnt_BA]      = true;
 Manorama.overloadList[Manorama.consnt_VA]      = true;

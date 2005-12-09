@@ -1,4 +1,4 @@
-// $Id: Kairali.js,v 1.3 2005/10/25 15:58:17 vnagarjuna Exp $ -->
+// $Id: Kairali.js,v 1.4 2005/12/09 15:06:33 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -248,7 +248,7 @@ Kairali.extra_HYPHEN     = "\u00AD";
 //Dont need
 Kairali.misc_UNKNOWN_1  = "\u002D";
 
-Kairali.toPadma = new Array();
+Kairali.toPadma = new Object();
 
 Kairali.toPadma[Kairali.anusvara] = Padma.anusvara;
 Kairali.toPadma[Kairali.visarga]  = Padma.visarga;
@@ -411,16 +411,16 @@ Kairali.toPadma[Kairali.extra_QTDOUBLE_1] = '"';
 Kairali.toPadma[Kairali.extra_QTDOUBLE_2] = '"';
 Kairali.toPadma[Kairali.extra_HYPHEN]   = '-';
 
-Kairali.redundantList = new Array();
+Kairali.redundantList = new Object();
 Kairali.redundantList[Kairali.misc_UNKNOWN_1] = true;
 
-Kairali.prefixList = new Array();
+Kairali.prefixList = new Object();
 Kairali.prefixList[Kairali.vattu_RA]   = true;
 Kairali.prefixList[Kairali.vowelsn_E]  = true;
 Kairali.prefixList[Kairali.vowelsn_EE] = true;
 Kairali.prefixList[Kairali.vowelsn_AI] = true;
 
-Kairali.overloadList = new Array();
+Kairali.overloadList = new Object();
 Kairali.overloadList[Kairali.vowel_I]        = true;
 Kairali.overloadList[Kairali.vowel_U]        = true;
 Kairali.overloadList[Kairali.vowel_R]        = true;

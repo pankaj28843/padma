@@ -1,4 +1,4 @@
-// $Id: Vikatan.js,v 1.9 2005/11/11 15:17:12 vnagarjuna Exp $ -->
+// $Id: Vikatan.js,v 1.10 2005/12/09 15:06:41 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -294,7 +294,7 @@ Vikatan.digit_NINE     = "\u0039";
 //Does not match ASCII
 Vikatan.HYPHEN         = "\u0026";
 
-Vikatan.toPadma = new Array();
+Vikatan.toPadma = new Object();
 
 Vikatan.toPadma[Vikatan.visarga]  = Padma.visarga;
 Vikatan.toPadma[Vikatan.vowel_A]  = Padma.vowel_A;
@@ -477,12 +477,12 @@ Vikatan.toPadma[Vikatan.combo_KSHPULLI]= Padma.consnt_KA + Padma.vattu_SSA + Pad
 
 Vikatan.toPadma[Vikatan.HYPHEN]   = "-";
 
-Vikatan.prefixList = new Array();
+Vikatan.prefixList = new Object();
 Vikatan.prefixList[Vikatan.vowelsn_E]   = true;
 Vikatan.prefixList[Vikatan.vowelsn_EE]  = true;
 Vikatan.prefixList[Vikatan.vowelsn_AI]  = true;
 
-Vikatan.overloadList = new Array();
+Vikatan.overloadList = new Object();
 Vikatan.overloadList[Vikatan.vowel_O]   = true;
 Vikatan.overloadList[Vikatan.vowelsn_E] = true;
 Vikatan.overloadList["\u00AA\u00E8"]    = true;

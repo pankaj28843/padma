@@ -1,4 +1,4 @@
-// $Id: ElangoTmlPanchali.js,v 1.6 2005/12/05 21:27:34 vnagarjuna Exp $ -->
+// $Id: ElangoTmlPanchali.js,v 1.7 2005/12/09 15:06:34 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -301,7 +301,7 @@ Elango_Tml_Panchali.digit_NINE     = "\u0039";
 //Does not match ASCII
 Elango_Tml_Panchali.HYPHEN         = "\u005F";
 
-Elango_Tml_Panchali.toPadma = new Array();
+Elango_Tml_Panchali.toPadma = new Object();
 
 Elango_Tml_Panchali.toPadma[Elango_Tml_Panchali.visarga]  = Padma.visarga;
 Elango_Tml_Panchali.toPadma[Elango_Tml_Panchali.vowel_A]  = Padma.vowel_A;
@@ -492,14 +492,14 @@ Elango_Tml_Panchali.toPadma[Elango_Tml_Panchali.combo_KSHPULLI]= Padma.consnt_KA
 
 Elango_Tml_Panchali.toPadma[Elango_Tml_Panchali.HYPHEN]   = "-";
 
-Elango_Tml_Panchali.prefixList = new Array();
+Elango_Tml_Panchali.prefixList = new Object();
 Elango_Tml_Panchali.prefixList[Elango_Tml_Panchali.vowelsn_E_1]   = true;
 Elango_Tml_Panchali.prefixList[Elango_Tml_Panchali.vowelsn_E_2]   = true;
 Elango_Tml_Panchali.prefixList[Elango_Tml_Panchali.vowelsn_E_3]   = true;
 Elango_Tml_Panchali.prefixList[Elango_Tml_Panchali.vowelsn_EE]    = true;
 Elango_Tml_Panchali.prefixList[Elango_Tml_Panchali.vowelsn_AI]    = true;
 
-Elango_Tml_Panchali.overloadList = new Array();
+Elango_Tml_Panchali.overloadList = new Object();
 Elango_Tml_Panchali.overloadList[Elango_Tml_Panchali.vowel_O]     = true;
 Elango_Tml_Panchali.overloadList[Elango_Tml_Panchali.vowelsn_E_1] = true;
 Elango_Tml_Panchali.overloadList[Elango_Tml_Panchali.vowelsn_E_2] = true;

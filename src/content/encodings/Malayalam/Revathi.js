@@ -1,4 +1,4 @@
-// $Id: Revathi.js,v 1.3 2005/10/25 15:58:17 vnagarjuna Exp $ -->
+// $Id: Revathi.js,v 1.4 2005/12/09 15:06:34 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -275,7 +275,7 @@ Revathi.extra_HYPHEN_2 = "\u00FE";
 //Dont need
 Revathi.misc_UNKNOWN_1  = "\u002D";
 
-Revathi.toPadma = new Array();
+Revathi.toPadma = new Object();
 
 Revathi.toPadma[Revathi.anusvara] = Padma.anusvara;
 Revathi.toPadma[Revathi.visarga]  = Padma.visarga;
@@ -446,16 +446,16 @@ Revathi.toPadma[Revathi.extra_PERIOD_2] = '.';
 Revathi.toPadma[Revathi.extra_HYPHEN_1] = '-';
 Revathi.toPadma[Revathi.extra_HYPHEN_2] = '-';
 
-Revathi.redundantList = new Array();
+Revathi.redundantList = new Object();
 Revathi.redundantList[Revathi.misc_UNKNOWN_1] = true;
 
-Revathi.prefixList = new Array();
+Revathi.prefixList = new Object();
 Revathi.prefixList[Revathi.vattu_RA]   = true;
 Revathi.prefixList[Revathi.vowelsn_E]  = true;
 Revathi.prefixList[Revathi.vowelsn_EE] = true;
 Revathi.prefixList[Revathi.vowelsn_AI] = true;
 
-Revathi.overloadList = new Array();
+Revathi.overloadList = new Object();
 Revathi.overloadList[Revathi.vowel_I]        = true;
 Revathi.overloadList[Revathi.vowel_U]        = true;
 Revathi.overloadList[Revathi.vowel_R]        = true;

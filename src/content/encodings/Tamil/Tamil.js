@@ -1,4 +1,4 @@
-// $Id: Tamil.js,v 1.2 2005/11/11 14:07:02 vnagarjuna Exp $ -->
+// $Id: Tamil.js,v 1.3 2005/12/09 15:06:41 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -120,7 +120,7 @@ Tamil.codePoints.sign_ASABOVE   = "\u0BF8";
 Tamil.codePoints.sign_RUPEE     = "\u0BF9";
 Tamil.codePoints.sign_NUMBER    = "\u0BFA";
 
-Tamil.fromPadma = new Array();
+Tamil.fromPadma = new Object();
 
 Tamil.fromPadma[Padma.anusvara]    = Tamil.codePoints.anusvara;
 Tamil.fromPadma[Padma.visarga]     = Tamil.codePoints.visarga;

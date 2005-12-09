@@ -1,4 +1,4 @@
-// $Id: Padma.js,v 1.11 2005/11/23 19:55:31 vnagarjuna Exp $ -->
+// $Id: Padma.js,v 1.12 2005/12/09 15:00:36 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -327,7 +327,7 @@ Padma.vattu_START = 0xECB3;
 Padma.vattu_END   = 0xECE1;
 
 //Symbol table
-Padma.symbols = new Array();
+Padma.symbols = new Object();
 Padma.symbols[Padma.vowel_A]     = Padma.type_accu;
 Padma.symbols[Padma.vowel_SHT_A] = Padma.type_accu;
 Padma.symbols[Padma.vowel_AA]    = Padma.type_accu;

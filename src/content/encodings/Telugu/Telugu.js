@@ -1,4 +1,4 @@
-// $Id: Telugu.js,v 1.2 2005/11/11 14:08:12 vnagarjuna Exp $ -->
+// $Id: Telugu.js,v 1.3 2005/12/09 15:06:47 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -130,7 +130,7 @@ Telugu.codePoints.digit_SEVEN = "\u0C6D";
 Telugu.codePoints.digit_EIGHT = "\u0C6E";
 Telugu.codePoints.digit_NINE  = "\u0C6F";
 
-Telugu.fromPadma = new Array();
+Telugu.fromPadma = new Object();
 
 Telugu.fromPadma[Padma.anusvara]    = Telugu.codePoints.anusvara;
 Telugu.fromPadma[Padma.visarga]     = Telugu.codePoints.visarga;

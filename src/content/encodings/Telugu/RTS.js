@@ -1,4 +1,4 @@
-// $Id: RTS.js,v 1.8 2005/11/11 14:08:12 vnagarjuna Exp $ -->
+// $Id: RTS.js,v 1.9 2005/12/09 15:06:47 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -214,7 +214,7 @@ RTS.digit_SEVEN    = "~7";
 RTS.digit_EIGHT    = "~8";
 RTS.digit_NINE     = "~9";
 
-RTS.toPadma = new Array();
+RTS.toPadma = new Object();
 	
 RTS.toPadma[RTS.candrabindu_1] = Padma.candrabindu;
 RTS.toPadma[RTS.candrabindu_2] = Padma.candrabindu;
@@ -379,7 +379,7 @@ RTS.toPadma[RTS.digit_EIGHT] = Padma.digit_EIGHT;
 RTS.toPadma[RTS.digit_NINE] = Padma.digit_NINE;
 
 //Default style is Kanneganti
-RTS.fromPadma = new Array();
+RTS.fromPadma = new Object();
 RTS.fromPadma[Padma.candrabindu] = RTS.candrabindu_1;
 RTS.fromPadma[Padma.visarga]     = RTS.visarga_1;
 RTS.fromPadma[Padma.syllbreak]   = RTS.virama_1;
@@ -511,7 +511,7 @@ RTS.fromPadma[Padma.vattu_TCH]   = RTS.consnt_TCH;
 RTS.fromPadma[Padma.vattu_TJ]    = RTS.consnt_TJ;
 
 //The following consonants when preceeded by n or m make it a sunna
-RTS.anusvaraMakerCommon = new Array();
+RTS.anusvaraMakerCommon = new Object();
 RTS.anusvaraMakerCommon[Padma.consnt_KA]   = true;
 RTS.anusvaraMakerCommon[Padma.consnt_KHA]  = true;
 RTS.anusvaraMakerCommon[Padma.consnt_GA]   = true;
@@ -534,14 +534,14 @@ RTS.anusvaraMakerCommon[Padma.consnt_BA]   = true;
 RTS.anusvaraMakerCommon[Padma.consnt_BHA]  = true;
 
 //The following consonats when preceeded by m make it a sunna
-RTS.anusvaraMakerForMOnly = new Array();
+RTS.anusvaraMakerForMOnly = new Object();
 RTS.anusvaraMakerForMOnly[Padma.consnt_LA]  = true;
 RTS.anusvaraMakerForMOnly[Padma.consnt_SA]  = true;
 RTS.anusvaraMakerForMOnly[Padma.consnt_SHA] = true;
 RTS.anusvaraMakerForMOnly[Padma.consnt_VA]  = true;
 
 RTS.Pillalamarri = new Object();
-RTS.Pillalamarri.fromPadma = new Array();
+RTS.Pillalamarri.fromPadma = new Object();
 RTS.Pillalamarri.fromPadma[Padma.vowel_AA]    = RTS.vowel_AA_2;
 RTS.Pillalamarri.fromPadma[Padma.vowel_II]    = RTS.vowel_II_3;
 RTS.Pillalamarri.fromPadma[Padma.vowel_UU]    = RTS.vowel_UU_3;
@@ -562,7 +562,7 @@ RTS.Pillalamarri.fromPadma[Padma.vattu_JHA]   = RTS.consnt_JHA_3;
 RTS.Pillalamarri.fromPadma[Padma.vattu_BHA]   = RTS.consnt_BHA_3;
 
 RTS.Paalana = new Object();
-RTS.Paalana.fromPadma = new Array();
+RTS.Paalana.fromPadma = new Object();
 RTS.Paalana.fromPadma[Padma.vowel_AA]    = RTS.vowel_AA_3;
 RTS.Paalana.fromPadma[Padma.vowel_II]    = RTS.vowel_II_4;
 RTS.Paalana.fromPadma[Padma.vowel_UU]    = RTS.vowel_UU_4;
@@ -597,7 +597,7 @@ RTS.Paalana.fromPadma[Padma.vattu_BHA]   = RTS.consnt_BHA_3;
 RTS.Paalana.fromPadma[Padma.vattu_LLA]   = RTS.consnt_LLA_2;
 
 //Special handling in Classic style (different from rangavallika)
-RTS.classicSpecials = new Array();
+RTS.classicSpecials = new Object();
 RTS.classicSpecials[Padma.anusvara]  = true;
 RTS.classicSpecials[Padma.pollu]     = true;
 RTS.classicSpecials[Padma.consnt_MA] = true;

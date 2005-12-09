@@ -1,4 +1,4 @@
-// $Id: ITRANS.js,v 1.5 2005/11/11 14:03:34 vnagarjuna Exp $ -->
+// $Id: ITRANS.js,v 1.6 2005/12/09 15:00:36 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -139,7 +139,7 @@ ITRANS.digit_NINE     = "9";
 //Not supported yet, listed here for completenesss
 ITRANS.candrae        = ".c";
 
-ITRANS.toPadma = new Array();
+ITRANS.toPadma = new Object();
 	
 ITRANS.toPadma[ITRANS.candrabindu_1] = Padma.candrabindu;
 ITRANS.toPadma[ITRANS.candrabindu_2] = Padma.candrabindu;

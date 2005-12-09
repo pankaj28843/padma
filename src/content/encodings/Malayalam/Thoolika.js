@@ -1,4 +1,4 @@
-// $Id: Thoolika.js,v 1.2 2005/12/05 21:30:24 vnagarjuna Exp $ -->
+// $Id: Thoolika.js,v 1.3 2005/12/09 15:06:34 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -289,7 +289,7 @@ Thoolika.extra_HYPHEN_3   = "\u2013";  //Y
 //Dont need
 Thoolika.misc_UNKNOWN_1  = "\u002D";
 
-Thoolika.toPadma = new Array();
+Thoolika.toPadma = new Object();
 
 Thoolika.toPadma[Thoolika.anusvara] = Padma.anusvara;
 Thoolika.toPadma[Thoolika.visarga]  = Padma.visarga;
@@ -464,16 +464,16 @@ Thoolika.toPadma[Thoolika.extra_HYPHEN_1]   = '-';
 Thoolika.toPadma[Thoolika.extra_HYPHEN_2]   = '-';
 Thoolika.toPadma[Thoolika.extra_HYPHEN_3]   = '-';
 
-Thoolika.redundantList = new Array();
+Thoolika.redundantList = new Object();
 Thoolika.redundantList[Thoolika.misc_UNKNOWN_1] = true;
 
-Thoolika.prefixList = new Array();
+Thoolika.prefixList = new Object();
 Thoolika.prefixList[Thoolika.vattu_RA]   = true;
 Thoolika.prefixList[Thoolika.vowelsn_E]  = true;
 Thoolika.prefixList[Thoolika.vowelsn_EE] = true;
 Thoolika.prefixList[Thoolika.vowelsn_AI] = true;
 
-Thoolika.overloadList = new Array();
+Thoolika.overloadList = new Object();
 Thoolika.overloadList[Thoolika.vowel_I]        = true;
 Thoolika.overloadList[Thoolika.vowel_U]        = true;
 Thoolika.overloadList[Thoolika.vowel_R]        = true;

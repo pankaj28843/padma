@@ -1,4 +1,4 @@
-// $Id: TCSMith.js,v 1.2 2005/12/05 18:09:52 vnagarjuna Exp $ -->
+// $Id: TCSMith.js,v 1.3 2005/12/09 15:06:47 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -382,7 +382,7 @@ TCSMith.misc_vattu_2   = "\u00AF";
 TCSMith.misc_vattu_3   = "\u00CB";
 TCSMith.misc_vattu_4   = "\u00CC";
 
-TCSMith.toPadma = new Array();
+TCSMith.toPadma = new Object();
 
 TCSMith.toPadma[TCSMith.candrabindu] = Padma.candrabindu;
 TCSMith.toPadma[TCSMith.visarga]  = Padma.visarga;
@@ -594,7 +594,7 @@ TCSMith.toPadma[TCSMith.vattu_RRA]     = Padma.vattu_RRA;
 TCSMith.toPadma[TCSMith.misc_danda]     = Padma.danda;
 TCSMith.toPadma[TCSMith.misc_ddanda]    = Padma.ddanda;
 
-TCSMith.redundantList = new Array();
+TCSMith.redundantList = new Object();
 TCSMith.redundantList[TCSMith.misc_TICK_1]    = true;
 TCSMith.redundantList[TCSMith.misc_TICK_2]    = true;
 TCSMith.redundantList[TCSMith.misc_TICK_3]    = true;
@@ -611,7 +611,7 @@ TCSMith.redundantList[TCSMith.misc_UNKNOWN_9] = true;
 TCSMith.redundantList[TCSMith.misc_UNKNOWN_A] = true;
 //TCSMith.redundantList[TCSMith.HYPHEN]      = true;
 
-TCSMith.prefixList = new Array();
+TCSMith.prefixList = new Object();
 TCSMith.prefixList[TCSMith.virama_2]        = true;
 TCSMith.prefixList[TCSMith.vattu_RA_2]      = true;
 TCSMith.prefixList[TCSMith.vowelsn_I_3]     = true;
@@ -628,7 +628,7 @@ TCSMith.prefixList[TCSMith.vowelsn_E_9]     = true;
 TCSMith.prefixList[TCSMith.vowelsn_EE]      = true;
 TCSMith.prefixList[TCSMith.vowelsn_AILEN_2] = true;
 
-TCSMith.overloadList = new Array();
+TCSMith.overloadList = new Object();
 TCSMith.overloadList[TCSMith.anusvara]    = true;
 TCSMith.overloadList[TCSMith.vowel_E]     = true;
 TCSMith.overloadList[TCSMith.consnt_CA]   = true;
