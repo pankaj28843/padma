@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: install.rdf,v 1.17 2005/12/05 21:38:03 vnagarjuna Exp $-->
+<!--$Id: install.rdf,v 1.18 2005/12/09 16:17:54 vnagarjuna Exp $-->
 
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:em="http://www.mozilla.org/2004/em-rdf#">
@@ -48,15 +48,6 @@
         <em:id>{3db10fab-e461-4c80-8b97-957ad5f8ea47}</em:id>
         <em:minVersion>8.0</em:minVersion>
         <em:maxVersion>8.0.4</em:maxVersion>
-     </Description>
-    </em:targetApplication>
-
-    <!-- Flock -->
-    <em:targetApplication>
-     <Description>
-        <em:id>{a463f10c-3994-11da-9945-000d60ca027b}</em:id>
-        <em:maxVersion>1.0+</em:maxVersion>
-        <em:minVersion>1.0+</em:minVersion>
      </Description>
     </em:targetApplication>
 
