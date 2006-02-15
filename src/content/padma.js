@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.18 2005/12/09 14:59:43 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.19 2006/02/15 21:59:36 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -27,12 +27,13 @@ var Padma_Browser_Transformer = {
 
     //Common stuff
 
-    inputMethod: Transformer.method_Unknown,
+    inputMethod:  Transformer.method_Unknown,
     outputMethod: Transformer.method_Unknown,
-    transfomer: null,
+    transfomer:   null,
 
     //Preferences
-    prefBranch:Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService).getBranch("Padma."),
+    prefBranch: Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService).getBranch("Padma."),
+    whitelist:  null,
 
     createTransformer : function(inputMode, outputMode) {
         this.inputMethod = inputMode;
@@ -54,11 +55,6 @@ var Padma_Browser_Transformer = {
         return !(/[^\t\n\r ]/.test(text));
     },
 
-    //multiple uri's should be separated by ,
-    makeRegExOfURIS: function(list) {
-        return new RegExp(list.replace(/www\./gi, '').replace(/,/gi, '|').replace(/\./gi, "\\."));
-    },
-
     //text-align:justify does not work for Unicode, set it to left if the alignmet is not supported
     unModifiableTextAligns: { left: true, right: true, center: true, start: true },
 
@@ -76,7 +72,6 @@ var Padma_Browser_Transformer = {
         if (messagepane)
             messagepane.addEventListener("DOMContentLoaded", this.onPageLoadPre, true);
 
-
         //Before the manual transform popup window is shown
         var contextMenu = document.getElementById("contentAreaContextMenu"); //browser
         if (contextMenu)
@@ -93,6 +88,13 @@ var Padma_Browser_Transformer = {
         initializeRelationships();
         Unicode.initialize();
         Transformer.initialize();
+
+        //Install this as a preference observer for autotransform  white list 
+        this.prefBranch.QueryInterface(Components.interfaces.nsIPrefBranchInternal);
+        this.prefBranch.addObserver(PadmaSettings.prefAutoTransformWhiteList, this, false);
+
+        //Build auto transform whitelist
+        this.buildAutoTransformWhiteList();
 
         //TODO: Should do this only at install time
         Padma_Extension_Upgrader.doUpgrade();
@@ -143,19 +145,20 @@ var Padma_Browser_Transformer = {
         }
     },
 
-    getAutoTransformSiteList: function() {
-        var index = 0, result = { sites: [], scripts: [] };
+    buildAutoTransformWhiteList: function() {
         var whitelist = this.prefBranch.getCharPref(PadmaSettings.prefAutoTransformWhiteList);
 
+        this.whitelist = new Object();
         var sites = whitelist.split(",");
         for(var i = 0; i < sites.length; ++i) {
             var map = sites[i].split(":");
             if (map.length < 2)
                 continue;
-            result.sites[index] = map[0];
-            result.scripts[index++] = map[1];
+            //Let the beginning www. be optional
+            if (map[0].match(/^www./) != null)
+                this.whitelist[map[0].substr(4)] = map[1];
+            else this.whitelist[map[0]] = map[1];
         }
-        return result;
     },
 
     isAutoTransformEnabled: function() {
@@ -168,16 +171,16 @@ var Padma_Browser_Transformer = {
         if (!page || !page.location || page.location.toString().match('^about:') || page.location.host == undefined || !this.isAutoTransformEnabled())
             return;
 
-        //Quickly check if auto transform is enabled and if this page needs to be transformed
-        var index = -1;
-        var whitelist = this.getAutoTransformSiteList();
-        for(var i = 0; i < whitelist.sites.length; ++i) {
-            if (this.makeRegExOfURIS(whitelist.sites[i]).test(page.location.host)) {
-                index = i;
-                break;
-            }
+        //check if this page needs to be transformed
+        var script;
+        if (page.location.host.match(/^www./) != null)
+            script = this.whitelist[page.location.host.substr(4)];
+        else {
+            script = this.whitelist[page.location.host];
+            if (script == undefined)
+                script = this.whitelist[page.location.host.replace(/^[^.]*\./, '')];
         }
-        if (index == -1)
+        if (script == undefined)
             return;
 
         if (page.characterSet == 'x-user-defined' && this.isFixCharEncoding()) {
@@ -190,8 +193,8 @@ var Padma_Browser_Transformer = {
         }
 
         this.createTransformer(Transformer.method_DynFonts, Transformer.method_Unicode);
-        if (whitelist.scripts[index] != -1)
-            this.transformer.setOutputScript(whitelist.scripts[index]);
+        if (script != -1)
+            this.transformer.setOutputScript(script);
 
         var body = page.getElementsByTagName("BODY");
         for(var j = 0; j < body.length; ++j)
@@ -397,6 +400,16 @@ var Padma_Browser_Transformer = {
         item.hidden = hidden || !itrans || !gujarati;
         item = document.getElementById("padmaMenuItem14");
         item.hidden = hidden || !itrans || !gujarati;
+    },
+
+    //Preference observer
+    observe: function(subject, topic, data) {
+        if (topic != 'nsPref:changed')
+            return;
+        if (data == PadmaSettings.prefAutoTransformWhiteList)
+            this.buildAutoTransformWhiteList();
+        else alert('Subject = ' + subject + ', topic = ' + topic + ', data = ' + data);
+        return;
     }
 };
 
