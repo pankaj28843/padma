@@ -1,4 +1,4 @@
-// $Id: Padma.js,v 1.12 2005/12/09 15:00:36 vnagarjuna Exp $ -->
+// $Id: Padma.js,v 1.13 2006/02/17 03:57:11 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -33,13 +33,13 @@ Padma.script_MALAYALAM  = 1;
 Padma.script_TAMIL      = 2;
 Padma.script_DEVANAGARI = 3;
 Padma.script_GUJARATI   = 4;
+Padma.script_KANNADA    = 5;
 Padma.script_BENGALI    = 5;
 Padma.script_GURMUKHI   = 6;
 Padma.script_ORIYA      = 7;
-Padma.script_KANNADA    = 8;
 
-//5 scripts supported now
-Padma.script_MAXSCRIPTS = 5;
+//6 scripts supported now
+Padma.script_MAXSCRIPTS = 6;
 
 //Script names
 Padma.scripts = new Array();
@@ -48,6 +48,7 @@ Padma.scripts[Padma.script_MALAYALAM]  = "Malayalam";
 Padma.scripts[Padma.script_TAMIL]      = "Tamil";
 Padma.scripts[Padma.script_DEVANAGARI] = "Devanagari";
 Padma.scripts[Padma.script_GUJARATI]   = "Gujarati";
+Padma.scripts[Padma.script_KANNADA]    = "Kannada";
 
 //Types (values to allow bit wise operations)
 Padma.type_accu      = 1;
@@ -61,7 +62,7 @@ Padma.type_half_form = 128;
 Padma.type_unknown   = 256;
 
 //Use Unicode Private Use Area for Padma's internal symbols starting with U+EC00.
-//Code pints used: +UEC00-+UEC0F, +UEC10-+UEC1C, +UEC20-+UEC61, +UEC70-+UEC7C, +UECA1-+UECE1, +UED33-+UED61.
+//Code pints used: +UEC00-+UEC0F, +UEC10-+UEC1D, +UEC20-+UEC61, +UEC70-+UEC7C, +UECA1-+UECE1, +UED33-+UED61.
 
 //Code points 32-64, 91-96, 123-127 (from the ASCII range) are not explicitly listed here
 //but are part of Padma's internal format and are of type Padma.type_unknown.
@@ -201,6 +202,7 @@ Padma.vowelsn_AU    = "\uECB2";
 Padma.vowelsn_EELEN = "\uEC1A";
 Padma.vowelsn_AILEN = "\uEC1B";
 Padma.vowelsn_AULEN = "\uEC1C";
+Padma.vowelsn_IILEN = "\uEC1D";
 
 //vattulu
 Padma.vattu_KA    = "\uECB3";
@@ -446,6 +448,7 @@ Padma.symbols[Padma.vowelsn_AU]  = Padma.type_gunintam;
 Padma.symbols[Padma.vowelsn_EELEN] = Padma.type_gunintam;
 Padma.symbols[Padma.vowelsn_AILEN] = Padma.type_gunintam;
 Padma.symbols[Padma.vowelsn_AULEN] = Padma.type_gunintam;
+Padma.symbols[Padma.vowelsn_IILEN] = Padma.type_gunintam;
 
 Padma.symbols[Padma.vattu_KA]    = Padma.type_vattu;
 Padma.symbols[Padma.vattu_QA]    = Padma.type_hallu;

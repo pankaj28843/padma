@@ -1,4 +1,4 @@
-// $Id: prefs.js,v 1.4 2005/11/23 19:53:55 vnagarjuna Exp $ -->
+// $Id: prefs.js,v 1.5 2006/02/17 03:57:27 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -40,6 +40,7 @@ var PadmaSettings = {
         this.enableTamil = document.getElementById("enableTamil");
         this.enableDevanagari = document.getElementById("enableDevanagari");
         this.enableGujarati = document.getElementById("enableGujarati");
+        this.enableKannada = document.getElementById("enableKannada");
 
         //RTS Writing Style
         var rtsWritingStyle = this.branch.getIntPref(this.prefRTSWritingStyle);
@@ -70,6 +71,7 @@ var PadmaSettings = {
         this.enableTamil.checked = this.branch.getBoolPref(this.prefEnableTamil);
         this.enableDevanagari.checked = this.branch.getBoolPref(this.prefEnableDevanagari);
         this.enableGujarati.checked = this.branch.getBoolPref(this.prefEnableGujarati);
+        this.enableKannada.checked = this.branch.getBoolPref(this.prefEnableKannada);
 
         this.applyButton = document.documentElement.getButton("extra1");
         this.onCheckBoxUpdate();
@@ -92,6 +94,7 @@ var PadmaSettings = {
         this.branch.setBoolPref(this.prefEnableTamil,      this.enableTamil.checked);
         this.branch.setBoolPref(this.prefEnableDevanagari, this.enableDevanagari.checked);
         this.branch.setBoolPref(this.prefEnableGujarati,   this.enableGujarati.checked);
+        this.branch.setBoolPref(this.prefEnableKannada,    this.enableKannada.checked);
 
         this.branch.setCharPref(this.prefAutoTransformWhiteList, this.autoTransformWhiteList);
         this.applyButton.disabled = true;
@@ -101,7 +104,7 @@ var PadmaSettings = {
         this.autoListUpdate.disabled = this.fixCharEncoding.disabled = !this.autoCheck.checked;
         this.rtsWritingStyleButton.disabled = this.rtsSunnaStyleButton.disabled = !this.enableRTS.checked;
         this.enableTelugu.disabled = this.enableMalayalam.disabled = this.enableTamil.disabled = this.enableDevanagari.disabled = 
-        this.enableGujarati.disabled = !this.enableISCII.checked & !this.enableITRANS.checked;
+        this.enableGujarati.disabled = this.enableKannada.disabled = !this.enableISCII.checked & !this.enableITRANS.checked;
         this.applyButton.disabled = false;
     },
 
@@ -131,5 +134,6 @@ var PadmaSettings = {
     prefEnableMalayalam: "enableMalyalam",
     prefEnableTamil: "enableTamil",
     prefEnableDevanagari: "enableDevanagari",
-    prefEnableGujarati: "enableGujarati"
+    prefEnableGujarati: "enableGujarati",
+    prefEnableKannada: "enableKannada"
 };
