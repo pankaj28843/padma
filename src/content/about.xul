@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: about.xul,v 1.10 2006/02/20 21:18:53 vnagarjuna Exp $-->
+<!--$Id: about.xul,v 1.11 2006/02/20 21:29:53 vnagarjuna Exp $-->
 
 <!--Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
 
@@ -62,12 +62,12 @@
       </description>
       <separator class="thin"/>
 
-      <description style="font-weight:large">
+      <description style="font-size:small;">
         © 2005-2006 Nagarjuna Venna
       </description>
       <separator class="thin"/>
 
-      <description class="url" style="font-weight:bold" onclick="openURL('http://padma.mozdev.org');">
+      <description class="url" style="font-weight:bold;" onclick="openURL('http://padma.mozdev.org');">
         http://padma.mozdev.org
       </description>
       <separator class="thin"/>
