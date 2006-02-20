@@ -1,7 +1,7 @@
-// $Id: Tikkana.js,v 1.9 2005/12/09 15:06:47 vnagarjuna Exp $ -->
+// $Id: Tikkana.js,v 1.10 2006/02/20 21:10:48 vnagarjuna Exp $ -->
 
-//Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
-//Copyright 2005 Suresh Kolichala <suresh_kolichala@yahoo.com>
+//Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
+//Copyright 2005-2006 Suresh Kolichala <suresh_kolichala@yahoo.com>
 
 /* ****** BEGIN LICENSE BLOCK ***** 
  *  This file is part of Padma.
@@ -49,9 +49,38 @@ Tikkana.isOverloaded = function (str)
 
 Tikkana.handleTwoPartVowelSigns = function (sign1, sign2)
 {
-    if (sign1 == Padma.vowelsn_UU && sign2 == Padma.vowelsn_E)
+	//alert("sign1 = " + sign1 + " sign2= " + sign2);
+    if (sign2 == Padma.vowelsn_E && sign1 == Padma.vowelsn_AILEN)
+        return Padma.vowelsn_AI;
+    if (sign2 == Padma.vowelsn_E && sign1 == Padma.vowelsn_U)
+        return Padma.vowelsn_O;
+    if (sign2 == Padma.vowelsn_U && sign1 == Padma.vowelsn_E)
+        return Padma.vowelsn_O;
+    if (sign2 ==  Padma.vowelsn_E && sign1 == Padma.vowelsn_UU)
         return Padma.vowelsn_OO;
+    if (sign2 ==  Padma.vowelsn_AA && sign1 == Padma.vowelsn_I)
+        return Padma.vowelsn_II;
     return sign1 + sign2;
+}
+
+//replace yi with ya + i-guNintamu
+Tikkana.preprocessMessage = function (input)
+{
+    var output = "", last = null;
+    for(var i = 0; i < input.length; ++i) {
+        var cur = input.charAt(i);
+        if (cur == Tikkana.vowelsn_U_3 && last == Tikkana.combo_YA_STEM)
+        {
+            output += Tikkana.vowelsn_U_3 + Tikkana.vowelsn_I_3; // adding dummy i-karamu for getting YI
+        }
+        else if (!Tikkana.isRedundant(cur))
+        {
+            output += cur;
+        }
+		// copy it into last even if it is redundant.
+        last = cur;
+    }
+    return output;
 }
 
 Tikkana.isRedundant = function (str)
@@ -156,6 +185,7 @@ Tikkana.vowelsn_U_3    = "\u00A8";  //NV
 Tikkana.vowelsn_UU_1   = "\u00A9";  //NV
 Tikkana.vowelsn_UU_2   = "\u00AA";  //NV
 Tikkana.vowelsn_UU_3   = "\u00AB";
+Tikkana.vowelsn_UU_4   = "\u00A8\u007C";
 Tikkana.vowelsn_R      = "\u00AC";  //NV
 Tikkana.vowelsn_Ru     = "\u00AE";               
 Tikkana.vowelsn_Alu    = "\u00B0";               
@@ -214,10 +244,11 @@ Tikkana.combo_MEE      = "\u0070\u00B6\u00A8";
 Tikkana.combo_MAI      = "\u00B9\u0070\u00B2\u00A8";
 Tikkana.combo_MO       = "\u0070\u00B2\u00A8\u00A8";
 Tikkana.combo_MOO      = "\u0070\u00B2\u00A9";
-Tikkana.combo_MAU      = "\u0070\u007B\u00A8\u00C0";
+Tikkana.combo_MAU      = "\u0070\u00A8\u00C0";
 Tikkana.combo_MPOLLU   = "\u0070\u002B\u00A8";
 
 
+Tikkana.combo_YA_STEM  = "\u006C"; // Not included in the lookup table
 Tikkana.combo_YU       = "\u006C\u00A8\u00A8";
 Tikkana.combo_YUU      = "\u006C\u00A8\u00A8\u00A9";
 Tikkana.combo_YE       = "\u006C\u00B2\u00A8";
@@ -225,7 +256,7 @@ Tikkana.combo_YEE      = "\u006C\u00B6\u00A8";
 Tikkana.combo_YAI      = "\u00B9\u006C\u00B2\u00A8";
 Tikkana.combo_YO       = "\u006C\u00B2\u00A8\u00A8";
 Tikkana.combo_YOO      = "\u006C\u00B2\u00A9";  //NV
-Tikkana.combo_YAU      = "\u006C\u007B\u00A8\u00C0";
+Tikkana.combo_YAU      = "\u006C\u00A8\u00C0";
 Tikkana.combo_YPOLLU   = "\u006C\u002B\u00A8";
 
 Tikkana.combo_GHOO   = "\u00b1\u0052\u00a8\u007c";
@@ -298,7 +329,6 @@ Tikkana.misc_PIPE      = "\u0049";
 Tikkana.misc_ASTERISK  = "\u005B";
 Tikkana.misc_PERCENT   = "\u005D";
 
-//Kommu
 Tikkana.misc_TICK_1    = "\u007A";  //NV
 Tikkana.misc_TICK_2    = "\u007B";  //NV
 Tikkana.misc_TICK_3    = "\u0152";               
@@ -402,6 +432,7 @@ Tikkana.toPadma[Tikkana.vowelsn_U_3]   = Padma.vowelsn_U;
 Tikkana.toPadma[Tikkana.vowelsn_UU_1]  = Padma.vowelsn_UU;
 Tikkana.toPadma[Tikkana.vowelsn_UU_2]  = Padma.vowelsn_UU;
 Tikkana.toPadma[Tikkana.vowelsn_UU_3]  = Padma.vowelsn_UU;
+Tikkana.toPadma[Tikkana.vowelsn_UU_4]  = Padma.vowelsn_UU;
 Tikkana.toPadma[Tikkana.vowelsn_R]     = Padma.vowelsn_R;
 Tikkana.toPadma[Tikkana.vowelsn_Ru]    = Padma.vowelsn_RR;
 Tikkana.toPadma[Tikkana.vowelsn_E_1]   = Padma.vowelsn_E;
@@ -451,7 +482,6 @@ Tikkana.toPadma[Tikkana.combo_MOO]     = Padma.consnt_MA + Padma.vowelsn_OO;
 Tikkana.toPadma[Tikkana.combo_MAU]     = Padma.consnt_MA + Padma.vowelsn_AU;
 Tikkana.toPadma[Tikkana.combo_MPOLLU]  = Padma.consnt_MA + Padma.syllbreak;
 
-//Tikkana.toPadma[Tikkana.combo_YI]      = Padma.consnt_YA + Padma.vowelsn_I;
 Tikkana.toPadma[Tikkana.combo_YE]     = Padma.consnt_YA + Padma.vowelsn_E;
 Tikkana.toPadma[Tikkana.combo_YEE]     = Padma.consnt_YA + Padma.vowelsn_EE;
 Tikkana.toPadma[Tikkana.combo_YOO]     = Padma.consnt_YA + Padma.vowelsn_OO;
@@ -530,6 +560,7 @@ Tikkana.prefixList[Tikkana.vowelsn_II_1] = true;
 Tikkana.prefixList[Tikkana.vowelsn_E_1]  = true;
 Tikkana.prefixList[Tikkana.vowelsn_EE_1] = true;
 Tikkana.prefixList[Tikkana.vowelsn_AILEN_1] = true;
+Tikkana.prefixList[Tikkana.vowelsn_AILEN_2] = true;
 Tikkana.prefixList[Tikkana.virama_1]     = true;
 
 //Prefix vattulu
@@ -550,6 +581,7 @@ Tikkana.prefixList[Tikkana.vattu_THA]    = true;
 Tikkana.prefixList[Tikkana.vattu_DA]     = true;
 Tikkana.prefixList[Tikkana.vattu_DHA]    = true;
 Tikkana.prefixList[Tikkana.vattu_RA_1]   = true;
+Tikkana.prefixList[Tikkana.vattu_RA_2]   = true;
 Tikkana.prefixList[Tikkana.vattu_LA]     = true;
 Tikkana.prefixList[Tikkana.vattu_SSA]    = true;
 Tikkana.prefixList[Tikkana.vattu_SSA]    = true;
@@ -566,22 +598,18 @@ Tikkana.overloadList[Tikkana.consnt_RA] = true;
 Tikkana.overloadList[Tikkana.consnt_VA] = true;
 Tikkana.overloadList[Tikkana.combo_VI]  = true;
 Tikkana.overloadList[Tikkana.combo_VII] = true;
+Tikkana.overloadList[Tikkana.combo_ME]  = true;
 Tikkana.overloadList["\u006C"]          = true;
 
-Tikkana.overloadList["\u0070\u00B2"]    = true;
-Tikkana.overloadList["\u0070\u00B6"]    = true;
-Tikkana.overloadList["\u007b\u0070\u00B2"]    = true;
-Tikkana.overloadList["\u0070\u002B"]    = true;
+Tikkana.overloadList["\u0070\u00B2"]    = true; //ve vs me
+Tikkana.overloadList["\u0070\u00B6"]    = true; //vE vs mE
+Tikkana.overloadList["\u0070\u002B"]    = true; // v^ vs m^
 
-Tikkana.overloadList["\u006C\u00B2"]    = true;
+Tikkana.overloadList["\u006C\u00B2"]    = true; //
 Tikkana.overloadList["\u006C\u00B6"]    = true;
-Tikkana.overloadList["\u007b\u006C\u00B2"]    = true;
 Tikkana.overloadList["\u006C\u002B"]    = true;
-Tikkana.overloadList["\u00ED"]    = true;
 
-// My ghOsha in trying to transform "ghOsha"
-Tikkana.overloadList["\u0052"]    = true;
-Tikkana.overloadList["\u0052\u00a8"]    = true;
-Tikkana.overloadList["\u00b1\u0052\u00a8"]    = true;
-Tikkana.overloadList["\u00b1\u0052\u00a8\u007c"]    = true;
+Tikkana.overloadList[Tikkana.combo_JU]    = true;
+
+Tikkana.overloadList[Tikkana.vowelsn_U_3]    = true;
 Tikkana.overloadList[Tikkana.misc_COLON] = true;
