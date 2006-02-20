@@ -1,4 +1,4 @@
-// $Id: Karthika.js,v 1.6 2005/12/09 15:06:33 vnagarjuna Exp $ -->
+// $Id: Karthika.js,v 1.7 2006/02/20 21:10:09 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -148,7 +148,7 @@ Karthika.vowelsn_AU     = "\u0075";
 //Chillu (5)
 Karthika.chillu_ENN     = "\u00AC";
 Karthika.chillu_IN      = "\u00B3";
-Karthika.chillu_IRR     = "\u00C0";
+Karthika.chillu_IR      = "\u00C0";
 Karthika.chillu_IL      = "\u00C2";
 Karthika.chillu_ILL     = "\u00C4";
 
@@ -363,7 +363,7 @@ Karthika.toPadma[Karthika.vowelsn_AU] = Padma.vowelsn_AU;
 //Chillu
 Karthika.toPadma[Karthika.chillu_ENN] = Padma.consnt_NNA + Padma.chillu;
 Karthika.toPadma[Karthika.chillu_IN]  = Padma.consnt_NA + Padma.chillu;
-Karthika.toPadma[Karthika.chillu_IRR] = Padma.consnt_RRA + Padma.chillu;
+Karthika.toPadma[Karthika.chillu_IR]  = Padma.consnt_RA + Padma.chillu;
 Karthika.toPadma[Karthika.chillu_IL]  = Padma.consnt_LA + Padma.chillu;
 Karthika.toPadma[Karthika.chillu_ILL] = Padma.consnt_LLA + Padma.chillu;
 

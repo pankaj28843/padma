@@ -1,4 +1,4 @@
-// $Id: Revathi.js,v 1.4 2005/12/09 15:06:34 vnagarjuna Exp $ -->
+// $Id: Revathi.js,v 1.5 2006/02/20 21:10:09 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -148,7 +148,7 @@ Revathi.vowelsn_AU     = "\u0075";
 //Chillu (5)
 Revathi.chillu_ENN     = "\u00AC";
 Revathi.chillu_IN      = "\u00B3";
-Revathi.chillu_IRR     = "\u00C0";
+Revathi.chillu_IR      = "\u00C0";
 Revathi.chillu_IL      = "\u00F0";
 Revathi.chillu_ILL     = "\u00C4";
 
@@ -354,7 +354,7 @@ Revathi.toPadma[Revathi.vowelsn_AU] = Padma.vowelsn_AU;
 //Chillu
 Revathi.toPadma[Revathi.chillu_ENN] = Padma.consnt_NNA + Padma.chillu;
 Revathi.toPadma[Revathi.chillu_IN]  = Padma.consnt_NA + Padma.chillu;
-Revathi.toPadma[Revathi.chillu_IRR] = Padma.consnt_RRA + Padma.chillu;
+Revathi.toPadma[Revathi.chillu_IR]  = Padma.consnt_RA + Padma.chillu;
 Revathi.toPadma[Revathi.chillu_IL]  = Padma.consnt_LA + Padma.chillu;
 Revathi.toPadma[Revathi.chillu_ILL] = Padma.consnt_LLA + Padma.chillu;
 

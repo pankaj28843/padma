@@ -1,4 +1,4 @@
-// $Id: Manorama.js,v 1.4 2005/12/09 15:06:33 vnagarjuna Exp $ -->
+// $Id: Manorama.js,v 1.5 2006/02/20 21:10:09 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -161,8 +161,8 @@ Manorama.vowelsn_AU     = "\u00EC";
 //Chillu (5)
 Manorama.chillu_ENN     = "\u0059";
 Manorama.chillu_IN      = "\u0058";
-Manorama.chillu_IRR_1   = "\u0056";
-Manorama.chillu_IRR_2   = "\u005E";
+Manorama.chillu_IR_1    = "\u0056";
+Manorama.chillu_IR_2    = "\u005E";
 Manorama.chillu_IL      = "\u0057";
 Manorama.chillu_ILL_1   = "\u005A";
 Manorama.chillu_ILL_2   = "\u005C";
@@ -389,8 +389,8 @@ Manorama.toPadma[Manorama.vowelsn_AU] = Padma.vowelsn_AU;
 //Chillu
 Manorama.toPadma[Manorama.chillu_ENN] = Padma.consnt_NNA + Padma.chillu;
 Manorama.toPadma[Manorama.chillu_IN]  = Padma.consnt_NA + Padma.chillu;
-Manorama.toPadma[Manorama.chillu_IRR_1] = Padma.consnt_RRA + Padma.chillu;
-Manorama.toPadma[Manorama.chillu_IRR_2] = Padma.consnt_RRA + Padma.chillu;
+Manorama.toPadma[Manorama.chillu_IR_1] = Padma.consnt_RA + Padma.chillu;
+Manorama.toPadma[Manorama.chillu_IR_2] = Padma.consnt_RA + Padma.chillu;
 Manorama.toPadma[Manorama.chillu_IL]  = Padma.consnt_LA + Padma.chillu;
 Manorama.toPadma[Manorama.chillu_ILL_1] = Padma.consnt_LLA + Padma.chillu;
 Manorama.toPadma[Manorama.chillu_ILL_2] = Padma.consnt_LLA + Padma.chillu;

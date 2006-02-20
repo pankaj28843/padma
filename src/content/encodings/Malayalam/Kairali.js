@@ -1,4 +1,4 @@
-// $Id: Kairali.js,v 1.4 2005/12/09 15:06:33 vnagarjuna Exp $ -->
+// $Id: Kairali.js,v 1.5 2006/02/20 21:10:09 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -148,7 +148,7 @@ Kairali.vowelsn_AU     = "\u00AA";
 //Chillu (5)
 Kairali.chillu_ENN     = "\u00FF";
 Kairali.chillu_IN      = "\u00FC";
-Kairali.chillu_IRR     = "\u00FB";
+Kairali.chillu_IR      = "\u00FB";
 Kairali.chillu_IL      = "\u00FD";
 Kairali.chillu_ILL     = "\u00FE";
 
@@ -327,7 +327,7 @@ Kairali.toPadma[Kairali.vowelsn_AU] = Padma.vowelsn_AU;
 //Chillu
 Kairali.toPadma[Kairali.chillu_ENN] = Padma.consnt_NNA + Padma.chillu;
 Kairali.toPadma[Kairali.chillu_IN]  = Padma.consnt_NA + Padma.chillu;
-Kairali.toPadma[Kairali.chillu_IRR] = Padma.consnt_RRA + Padma.chillu;
+Kairali.toPadma[Kairali.chillu_IR]  = Padma.consnt_RA + Padma.chillu;
 Kairali.toPadma[Kairali.chillu_IL]  = Padma.consnt_LA + Padma.chillu;
 Kairali.toPadma[Kairali.chillu_ILL] = Padma.consnt_LLA + Padma.chillu;
 

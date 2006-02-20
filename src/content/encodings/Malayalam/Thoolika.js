@@ -1,4 +1,4 @@
-// $Id: Thoolika.js,v 1.3 2005/12/09 15:06:34 vnagarjuna Exp $ -->
+// $Id: Thoolika.js,v 1.4 2006/02/20 21:10:09 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -148,8 +148,8 @@ Thoolika.vowelsn_AU     = "\u00AA";  //Y
 //Chillu (5)
 Thoolika.chillu_ENN     = "\u0078";  //Y
 Thoolika.chillu_IN      = "\u0075";  //Y
-Thoolika.chillu_IRR_1   = "\u0074";  //Y
-Thoolika.chillu_IRR_2   = "\u2014";  //Y
+Thoolika.chillu_IR_1    = "\u0074";  //Y
+Thoolika.chillu_IR_2    = "\u2014";  //Y
 Thoolika.chillu_IL      = "\u0076";  //Y
 Thoolika.chillu_ILL     = "\u0077";  //Y
 
@@ -368,8 +368,8 @@ Thoolika.toPadma[Thoolika.vowelsn_AU] = Padma.vowelsn_AU;
 //Chillu
 Thoolika.toPadma[Thoolika.chillu_ENN] = Padma.consnt_NNA + Padma.chillu;
 Thoolika.toPadma[Thoolika.chillu_IN]  = Padma.consnt_NA + Padma.chillu;
-Thoolika.toPadma[Thoolika.chillu_IRR_1] = Padma.consnt_RRA + Padma.chillu;
-Thoolika.toPadma[Thoolika.chillu_IRR_2] = Padma.consnt_RRA + Padma.chillu;
+Thoolika.toPadma[Thoolika.chillu_IR_1] = Padma.consnt_RA + Padma.chillu;
+Thoolika.toPadma[Thoolika.chillu_IR_2] = Padma.consnt_RA + Padma.chillu;
 Thoolika.toPadma[Thoolika.chillu_IL]  = Padma.consnt_LA + Padma.chillu;
 Thoolika.toPadma[Thoolika.chillu_ILL] = Padma.consnt_LLA + Padma.chillu;
 
