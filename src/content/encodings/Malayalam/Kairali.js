@@ -1,6 +1,6 @@
-// $Id: Kairali.js,v 1.5 2006/02/20 21:10:09 vnagarjuna Exp $ -->
+// $Id: Kairali.js,v 1.6 2006/02/20 21:16:29 vnagarjuna Exp $ -->
 
-//Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
+//Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
 /* ***** BEGIN LICENSE BLOCK ***** 
  *  This file is part of Padma.

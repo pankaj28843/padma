@@ -1,6 +1,6 @@
-// $Id: prefs.js,v 1.6 2006/02/20 21:08:34 vnagarjuna Exp $ -->
+// $Id: prefs.js,v 1.7 2006/02/20 21:16:28 vnagarjuna Exp $ -->
 
-//Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
+//Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
 /* ****** BEGIN LICENSE BLOCK ***** 
  *  This file is part of Padma.

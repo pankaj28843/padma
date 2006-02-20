@@ -1,6 +1,6 @@
-// $Id: Unicode.js,v 1.5 2006/02/17 03:56:57 vnagarjuna Exp $ -->
+// $Id: Unicode.js,v 1.6 2006/02/20 21:16:28 vnagarjuna Exp $ -->
 
-//Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
+//Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
 /* ***** BEGIN LICENSE BLOCK ***** 
  *  This file is part of Padma.

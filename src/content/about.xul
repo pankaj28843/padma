@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<!--$Id: about.xul,v 1.8 2006/02/20 21:05:38 vnagarjuna Exp $-->
+<!--$Id: about.xul,v 1.9 2006/02/20 21:16:28 vnagarjuna Exp $-->
 
-<!--Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
+<!--Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
 
 <!-- ***** BEGIN LICENSE BLOCK ***** 
  *  This file is part of Padma.
@@ -63,7 +63,7 @@
       <separator class="thin"/>
 
       <description style="font-weight:large">
-        © 2005 Nagarjuna Venna
+        © 2005-2006 Nagarjuna Venna
       </description>
       <separator class="thin"/>
 

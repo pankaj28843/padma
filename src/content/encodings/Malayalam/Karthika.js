@@ -1,6 +1,6 @@
-// $Id: Karthika.js,v 1.7 2006/02/20 21:10:09 vnagarjuna Exp $ -->
+// $Id: Karthika.js,v 1.8 2006/02/20 21:16:29 vnagarjuna Exp $ -->
 
-//Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
+//Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
 /* ***** BEGIN LICENSE BLOCK ***** 
  *  This file is part of Padma.

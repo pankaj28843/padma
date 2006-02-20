@@ -1,6 +1,6 @@
-// $Id: Kannada.js,v 1.1 2006/02/17 03:56:08 vnagarjuna Exp $ -->
+// $Id: Kannada.js,v 1.2 2006/02/20 21:16:29 vnagarjuna Exp $ -->
 
-//Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
+//Copyright 2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
 /* ***** BEGIN LICENSE BLOCK ***** 
  *  This file is part of Padma.
