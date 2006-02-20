@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: padma.xul,v 1.14 2006/02/17 03:57:26 vnagarjuna Exp $-->
+<!--$Id: padma.xul,v 1.15 2006/02/20 21:07:25 vnagarjuna Exp $-->
 
 <!--Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
 
@@ -79,6 +79,7 @@
 <script type="application/x-javascript" src="prefs.js"/>
 <script type="application/x-javascript" src="version.js"/>
 <script type="application/x-javascript" src="upgrade.js"/>
+<script type="application/x-javascript" src="defaults.js"/>
 <script type="application/x-javascript" src="padma.js"/>
 
 <popup id="contentAreaContextMenu">
@@ -116,5 +117,17 @@
     <menuitem id="padmaMenuItem16" label="Transform ITRANS To Kannada" accesskey="K" 
         oncommand="Padma_Browser_Transformer.onManualTransform(3, 1, 5)"/>
 </popup>
+
+<!--Mozilla suite tools menu-->
+<menupopup id='taskPopup'>
+    <menu label='Padma' accesskey='P' position='7'>
+        <menupopup id='Padma_MozSuite_Tools_Popup'>
+            <menuitem id='Padma_MozSuite_Tools_Popup_Prefs' label='Preferences...' accesskey='P'
+                oncommand='Padma_Browser_Transformer.launchPrefsDialog()'/>
+            <menuitem id='Padma_MozSuite_Tools_Popup_About' label='About...' accesskey='A'
+                oncommand='Padma_Browser_Transformer.launchAboutDialog()'/>
+        </menupopup>
+    </menu>
+</menupopup>
 
 </overlay>

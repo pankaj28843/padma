@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: padmaMailOverlay.xul,v 1.13 2006/02/17 03:57:26 vnagarjuna Exp $-->
+<!--$Id: padmaMailOverlay.xul,v 1.14 2006/02/20 21:07:25 vnagarjuna Exp $-->
 
 <!--Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
 
@@ -79,6 +79,7 @@
 <script type="application/x-javascript" src="prefs.js"/>
 <script type="application/x-javascript" src="version.js"/>
 <script type="application/x-javascript" src="upgrade.js"/>
+<script type="application/x-javascript" src="defaults.js"/>
 <script type="application/x-javascript" src="padma.js"/>
 
 <!-- TB Context Menu -->

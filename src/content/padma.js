@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.20 2006/02/17 03:57:26 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.21 2006/02/20 21:07:25 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -88,6 +88,9 @@ var Padma_Browser_Transformer = {
         initializeRelationships();
         Unicode.initialize();
         Transformer.initialize();
+
+        //Ensure default prefs are available on Mozilla suite
+        Padma_Extension_DefaultPrefCheck.check();
 
         //Install this as a preference observer for autotransform  white list 
         this.prefBranch.QueryInterface(Components.interfaces.nsIPrefBranchInternal);
@@ -415,6 +418,38 @@ var Padma_Browser_Transformer = {
             this.buildAutoTransformWhiteList();
         else alert('Subject = ' + subject + ', topic = ' + topic + ', data = ' + data);
         return;
+    },
+
+    //Launch prefs dialog from tools menu
+    launchPrefsDialog: function(filterURL, url, type) {
+        var winMediator = Components.classes['@mozilla.org/appshell/window-mediator;1'].getService(Components.interfaces.nsIWindowMediator);
+        var win = winMediator.getMostRecentWindow(type || 'padma:prefs');
+        if (win && !win.closed) {
+            win.document.commandDispatcher.focusedWindow.focus();
+            win._filterURL = filterURL;
+        }
+        else {
+            win = window.openDialog("chrome://padma/content/prefs.xul", "padmaPreferences", "chrome,centerscreen");
+            win._filterURL = filterURL;
+        }
+        win.focus();
+        return win;
+    },
+
+    //Launch about dialog from tools menu
+    launchAboutDialog: function(filterURL, url, type) {
+        var winMediator = Components.classes['@mozilla.org/appshell/window-mediator;1'].getService(Components.interfaces.nsIWindowMediator);
+        var win = winMediator.getMostRecentWindow(type || 'padma:about');
+        if (win && !win.closed) {
+            win.document.commandDispatcher.focusedWindow.focus();
+            win._filterURL = filterURL;
+        }
+        else {
+            win = window.openDialog("chrome://padma/content/about.xul", "padmaAbout", "chrome,centerscreen");
+            win._filterURL = filterURL;
+        }
+        win.focus();
+        return win;
     }
 };
 
