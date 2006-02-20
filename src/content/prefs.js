@@ -1,4 +1,4 @@
-// $Id: prefs.js,v 1.5 2006/02/17 03:57:27 vnagarjuna Exp $ -->
+// $Id: prefs.js,v 1.6 2006/02/20 21:08:34 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -110,7 +110,7 @@ var PadmaSettings = {
 
     updateAutoTransformList: function() {
         var params = { input: this.autoTransformWhiteList, output: null };
-        window.openDialog("chrome://padma/content/whitelist.xul", "updateauottransformlist", "chrome", params);
+        window.openDialog("chrome://padma/content/whitelist.xul", "updateauottransformlist", "chrome,modal", params);
         if (params.output != null) {
             this.autoTransformWhiteList = params.output;
             this.branch.setCharPref(this.prefAutoTransformWhiteList, this.autoTransformWhiteList);
