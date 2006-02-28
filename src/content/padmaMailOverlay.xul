@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: padmaMailOverlay.xul,v 1.15 2006/02/20 21:16:28 vnagarjuna Exp $-->
+<!--$Id: padmaMailOverlay.xul,v 1.16 2006/02/28 02:53:46 vnagarjuna Exp $-->
 
 <!--Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
 
@@ -41,6 +41,7 @@
 <script type="application/x-javascript" src="encodings/Telugu/Vaartha.js"/>
 <script type="application/x-javascript" src="encodings/Telugu/TeluguLipi.js"/>
 <script type="application/x-javascript" src="encodings/Telugu/TCSMith.js"/>
+<script type="application/x-javascript" src="encodings/Telugu/TeluguFont.js"/>
 <script type="application/x-javascript" src="encodings/Malayalam/Malayalam.js"/>
 <script type="application/x-javascript" src="encodings/Malayalam/Karthika.js"/>
 <script type="application/x-javascript" src="encodings/Malayalam/Kairali.js"/>
