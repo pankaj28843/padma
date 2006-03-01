@@ -1,4 +1,4 @@
-// $Id: SuriTln.js,v 1.2 2006/03/01 19:39:32 vnagarjuna Exp $ -->
+// $Id: SuriTln.js,v 1.3 2006/03/01 22:39:54 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -220,7 +220,8 @@ SuriTln.combo_MI       = "\u0070\u00E2";
 SuriTln.combo_MII      = "\u0070\u00DB\u00E2";
 SuriTln.combo_MU       = "\u006F\u00DD\u00E2";
 SuriTln.combo_MUU      = "\u006F\u00DD\u00E4";
-SuriTln.combo_MAILEN   = "\u006F\u00F0\u00E2";
+SuriTln.combo_MAILEN_1 = "\u006F\u00F0\u00E2";
+SuriTln.combo_MAILEN_2 = "\u006F\u00F3\u00E2";
 SuriTln.combo_MPOLLU   = "\u006F\u00FE\u00E2";
 
 SuriTln.combo_YAA      = "\u0068\u0178\u00E4";
@@ -233,6 +234,7 @@ SuriTln.combo_YEE      = "\u0068\u00EF\u00E1\u00E2";
 SuriTln.combo_YAI      = "\u0068\u007A\u00F2\u00E2";
 SuriTln.combo_YO       = "\u0068\u007A\u00DD\u00E2";
 SuriTln.combo_YOO      = "\u0068\u007A\u00E4";
+SuriTln.combo_YPOLLU   = "\u0068\u00E1\u00FE\u00E2";
 SuriTln.combo_LI       = "\u006C";
 SuriTln.combo_VI       = "\u0070";
 SuriTln.combo_SHI      = "\u0072";
@@ -495,7 +497,8 @@ SuriTln.toPadma[SuriTln.combo_MI]      = Padma.consnt_MA + Padma.vowelsn_I;
 SuriTln.toPadma[SuriTln.combo_MII]     = Padma.consnt_MA + Padma.vowelsn_II;
 SuriTln.toPadma[SuriTln.combo_MU]      = Padma.consnt_MA + Padma.vowelsn_U;
 SuriTln.toPadma[SuriTln.combo_MUU]     = Padma.consnt_MA + Padma.vowelsn_UU;
-SuriTln.toPadma[SuriTln.combo_MAILEN]  = Padma.consnt_MA + Padma.vowelsn_AILEN;
+SuriTln.toPadma[SuriTln.combo_MAILEN_1] = Padma.consnt_MA + Padma.vowelsn_AILEN;
+SuriTln.toPadma[SuriTln.combo_MAILEN_2] = Padma.consnt_MA + Padma.vowelsn_AILEN;
 SuriTln.toPadma[SuriTln.combo_MPOLLU]  = Padma.consnt_MA + Padma.syllbreak;
 
 SuriTln.toPadma[SuriTln.combo_YAA]     = Padma.consnt_YA + Padma.vowelsn_AA;
@@ -508,6 +511,7 @@ SuriTln.toPadma[SuriTln.combo_YEE]     = Padma.consnt_YA + Padma.vowelsn_EE;
 SuriTln.toPadma[SuriTln.combo_YAI]     = Padma.consnt_YA + Padma.vowelsn_AI;
 SuriTln.toPadma[SuriTln.combo_YO]      = Padma.consnt_YA + Padma.vowelsn_O;
 SuriTln.toPadma[SuriTln.combo_YOO]     = Padma.consnt_YA + Padma.vowelsn_OO;
+SuriTln.toPadma[SuriTln.combo_YPOLLU]  = Padma.consnt_YA + Padma.syllbreak;
 SuriTln.toPadma[SuriTln.combo_LI]      = Padma.consnt_LA + Padma.vowelsn_I;
 SuriTln.toPadma[SuriTln.combo_VI]      = Padma.consnt_VA + Padma.vowelsn_I;
 SuriTln.toPadma[SuriTln.combo_SHI]     = Padma.consnt_SHA + Padma.vowelsn_I;
@@ -592,7 +596,7 @@ SuriTln.redundantList[SuriTln.misc_TICK_2]    = true;
 SuriTln.redundantList[SuriTln.misc_UNKNOWN_1] = true;
 
 SuriTln.prefixList = new Object();
-SuriTln.prefixList[SuriTln.virama_3]        = true;
+SuriTln.prefixList[SuriTln.virama_2]        = true;
 SuriTln.prefixList[SuriTln.vowelsn_I_2]     = true;
 SuriTln.prefixList[SuriTln.vowelsn_I_3]     = true;
 SuriTln.prefixList[SuriTln.vowelsn_II_2]    = true;
@@ -604,12 +608,16 @@ SuriTln.prefixList[SuriTln.vowelsn_EE_1]    = true;
 SuriTln.prefixList[SuriTln.vowelsn_EE_3]    = true;
 SuriTln.prefixList[SuriTln.vattu_KHA]       = true;
 SuriTln.prefixList[SuriTln.vattu_GA_1]      = true;
+SuriTln.prefixList[SuriTln.vattu_GA_2]      = true;
 SuriTln.prefixList[SuriTln.vattu_GHA]       = true;
+SuriTln.prefixList[SuriTln.vattu_NGA]       = true;
 SuriTln.prefixList[SuriTln.vattu_JA_1]      = true;
 SuriTln.prefixList[SuriTln.vattu_JHA]       = true;
 SuriTln.prefixList[SuriTln.vattu_NYA]       = true;
 SuriTln.prefixList[SuriTln.vattu_TTA_1]     = true;
 SuriTln.prefixList[SuriTln.vattu_TTHA]      = true;
+SuriTln.prefixList[SuriTln.vattu_DDA]       = true;
+SuriTln.prefixList[SuriTln.vattu_DDHA]      = true;
 SuriTln.prefixList[SuriTln.vattu_NNA_1]     = true;
 SuriTln.prefixList[SuriTln.vattu_TA_1]      = true;
 SuriTln.prefixList[SuriTln.vattu_THA_1]     = true;
@@ -619,6 +627,7 @@ SuriTln.prefixList[SuriTln.vattu_RA_1]      = true;
 SuriTln.prefixList[SuriTln.vattu_RA_3]      = true;
 SuriTln.prefixList[SuriTln.vattu_RA_5]      = true;
 SuriTln.prefixList[SuriTln.vattu_LA_1]      = true;
+SuriTln.prefixList[SuriTln.vattu_SSA]       = true;
 SuriTln.prefixList[SuriTln.vattu_RRA]       = true;
 
 SuriTln.overloadList = new Object();
@@ -643,10 +652,13 @@ SuriTln.overloadList["\u0068\u007A\u00F2"]  = true;
 SuriTln.overloadList["\u0068\u0178"]        = true;
 SuriTln.overloadList["\u0068\u0178\u00DD"]  = true;
 SuriTln.overloadList["\u0068\u00DD"]        = true;
+SuriTln.overloadList["\u0068\u00E1"]        = true;
+SuriTln.overloadList["\u0068\u00E1\u00FE"]  = true;
 SuriTln.overloadList["\u0068\u00EF"]        = true;
 SuriTln.overloadList["\u0068\u00EF\u00E1"]  = true;
 SuriTln.overloadList["\u006F\u00DD"]        = true;
 SuriTln.overloadList["\u006F\u00F0"]        = true;
+SuriTln.overloadList["\u006F\u00F3"]        = true;
 SuriTln.overloadList["\u006F\u00FE"]        = true;
 SuriTln.overloadList["\u0070\u00DB"]        = true;
 SuriTln.overloadList["\u00CB"]              = true;
