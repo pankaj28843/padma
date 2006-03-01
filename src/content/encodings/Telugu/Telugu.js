@@ -1,4 +1,4 @@
-// $Id: Telugu.js,v 1.3 2005/12/09 15:06:47 vnagarjuna Exp $ -->
+// $Id: Telugu.js,v 1.4 2006/03/01 18:49:27 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -95,8 +95,8 @@ Telugu.codePoints.letter_SHA  = "\u0C36";
 Telugu.codePoints.letter_SSA  = "\u0C37";
 Telugu.codePoints.letter_SA   = "\u0C38";
 Telugu.codePoints.letter_HA   = "\u0C39";
-Telugu.codePoints.letter_TCH  = "\u0C1A\u093C";    //not known to be correct
-Telugu.codePoints.letter_TJ   = "\u0C1C\u093C";    //not known to be correct
+Telugu.codePoints.letter_TCH  = "\u093C\u0C1A";    //not known to be correct
+Telugu.codePoints.letter_TJ   = "\u093C\u0C1C";    //not known to be correct
 
 //Dependent Vowel Signs
 Telugu.codePoints.vowelsn_AA  = "\u0C3E";
