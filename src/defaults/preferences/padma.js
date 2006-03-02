@@ -13,3 +13,4 @@ pref("Padma.enableDevanagari", true);
 pref("Padma.enableGujarati", true);
 pref("Padma.enableKannada", true);
 pref("Padma.enableTSCII", true);
+pref("Padma.enableTAB", true);

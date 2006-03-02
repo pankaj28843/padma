@@ -1,4 +1,4 @@
-// $Id: prefs.js,v 1.8 2006/03/02 20:51:08 vnagarjuna Exp $ -->
+// $Id: prefs.js,v 1.9 2006/03/02 23:14:15 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -36,6 +36,7 @@ var PadmaSettings = {
         this.enableISCII = document.getElementById("enableISCII");
         this.enableITRANS = document.getElementById("enableITRANS");
         this.enableTSCII = document.getElementById("enableTSCII");
+        this.enableTAB = document.getElementById("enableTAB");
         this.enableTelugu = document.getElementById("enableTelugu");
         this.enableMalayalam = document.getElementById("enableMalayalam");
         this.enableTamil = document.getElementById("enableTamil");
@@ -68,6 +69,7 @@ var PadmaSettings = {
         this.enableISCII.checked = this.branch.getBoolPref(this.prefEnableISCII);
         this.enableITRANS.checked = this.branch.getBoolPref(this.prefEnableITRANS);
         this.enableTSCII.checked = this.branch.getBoolPref(this.prefEnableTSCII);
+        this.enableTAB.checked = this.branch.getBoolPref(this.prefEnableTAB);
         this.enableTelugu.checked = this.branch.getBoolPref(this.prefEnableTelugu);
         this.enableMalayalam.checked = this.branch.getBoolPref(this.prefEnableMalayalam);
         this.enableTamil.checked = this.branch.getBoolPref(this.prefEnableTamil);
@@ -91,6 +93,7 @@ var PadmaSettings = {
         this.branch.setBoolPref(this.prefEnableISCII,  this.enableISCII.checked);
         this.branch.setBoolPref(this.prefEnableITRANS, this.enableITRANS.checked);
         this.branch.setBoolPref(this.prefEnableTSCII,  this.enableTSCII.checked);
+        this.branch.setBoolPref(this.prefEnableTAB,    this.enableTAB.checked);
 
         this.branch.setBoolPref(this.prefEnableTelugu,     this.enableTelugu.checked);
         this.branch.setBoolPref(this.prefEnableMalayalam,  this.enableMalayalam.checked);
@@ -110,7 +113,7 @@ var PadmaSettings = {
         this.enableISCII.disabled = this.enableITRANS.disabled = !this.enableTelugu.checked && !this.enableTamil.checked &&
                                     !this.enableMalayalam.checked && !this.enableDevanagari.checked && !this.enableGujarati.checked && 
                                     !this.enableKannada.checked;
-        this.enableTSCII.disabled = !this.enableTamil.checked;
+        this.enableTSCII.disabled = this.enableTAB.disabled = !this.enableTamil.checked;
         this.applyButton.disabled = false;
     },
 
@@ -137,6 +140,7 @@ var PadmaSettings = {
     prefEnableISCII: "enableISCII",
     prefEnableITRANS: "enableITRANS",
     prefEnableTSCII: "enableTSCII",
+    prefEnableTAB: "enableTAB",
     prefEnableTelugu: "enableTelugu",
     prefEnableMalayalam: "enableMalyalam",
     prefEnableTamil: "enableTamil",

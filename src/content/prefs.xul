@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: prefs.xul,v 1.9 2006/03/02 20:51:08 vnagarjuna Exp $-->
+<!--$Id: prefs.xul,v 1.10 2006/03/02 23:14:15 vnagarjuna Exp $-->
 
 <!--Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
 
@@ -83,6 +83,7 @@
           <checkbox id="enableISCII" label="ISCII" checked="true" command="cmd_PadmaCheckBox" accesskey="I"/>
           <checkbox id="enableITRANS" label="ITRANS" checked="true" command="cmd_PadmaCheckBox" accesskey="T"/>
           <checkbox id="enableTSCII" label="TSCII" checked="true" command="cmd_PadmaCheckBox" accesskey="S"/>
+          <checkbox id="enableTAB" label="TAB" checked="true" command="cmd_PadmaCheckBox" accesskey="B"/>
         </expander>
       </hbox>
   </groupbox>
