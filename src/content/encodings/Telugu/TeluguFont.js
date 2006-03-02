@@ -1,6 +1,6 @@
-// $Id: TeluguFont.js,v 1.2 2006/02/28 22:38:42 vnagarjuna Exp $ -->
+// $Id: TeluguFont.js,v 1.3 2006/03/02 20:52:14 vnagarjuna Exp $ -->
 
-//Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
+//Copyright 2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
 /* ***** BEGIN LICENSE BLOCK ***** 
  *  This file is part of Padma.
