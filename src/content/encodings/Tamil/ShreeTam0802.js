@@ -1,6 +1,6 @@
-// $Id: ShreeTam0802.js,v 1.6 2005/12/09 15:06:34 vnagarjuna Exp $ -->
+// $Id: ShreeTam0802.js,v 1.7 2006/03/02 23:14:39 vnagarjuna Exp $ -->
 
-//Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
+//Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 //Contributed by Saravana Kumar <saravanannkl@gmail.com>
 
 /* ***** BEGIN LICENSE BLOCK ***** 
@@ -27,7 +27,7 @@ function Shree_Tam_0802()
 }
 
 //The interface every dynamic font encoding should implement
-Shree_Tam_0802.maxLookupLen = 2;
+Shree_Tam_0802.maxLookupLen = 3;
 Shree_Tam_0802.fontFace     = "Shree-Tam-0802";
 Shree_Tam_0802.displayName  = "Shree Tam 0802";
 Shree_Tam_0802.script       = Padma.script_TAMIL;

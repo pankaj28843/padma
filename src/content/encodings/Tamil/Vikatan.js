@@ -1,6 +1,6 @@
-// $Id: Vikatan.js,v 1.10 2005/12/09 15:06:41 vnagarjuna Exp $ -->
+// $Id: Vikatan.js,v 1.11 2006/03/02 23:14:39 vnagarjuna Exp $ -->
 
-//Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
+//Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
 /* ***** BEGIN LICENSE BLOCK ***** 
  *  This file is part of Padma.
@@ -26,7 +26,7 @@ function Vikatan()
 }
 
 //The interface every dynamic font encoding should implement
-Vikatan.maxLookupLen = 2;
+Vikatan.maxLookupLen = 3;
 Vikatan.fontFace     = "Vikatan_TAM";
 Vikatan.displayName  = "Vikatan";
 Vikatan.script       = Padma.script_TAMIL;

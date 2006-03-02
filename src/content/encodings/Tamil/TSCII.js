@@ -1,4 +1,4 @@
-// $Id: TSCII.js,v 1.1 2006/03/02 20:51:46 vnagarjuna Exp $ -->
+// $Id: TSCII.js,v 1.2 2006/03/02 23:14:39 vnagarjuna Exp $ -->
 
 //Copyright 2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -53,7 +53,7 @@ TSCII.handleTwoPartVowelSigns = function (sign1, sign2)
         return Padma.vowelsn_O;
     if (sign2 == Padma.vowelsn_EE && sign1 == Padma.vowelsn_AA)
         return Padma.vowelsn_OO;
-    if (sign2 == Padma.vowelsn_EE && sign1 == Padma.vowelsn_AULEN)
+    if (sign2 == Padma.vowelsn_E && sign1 == Padma.vowelsn_AULEN)
         return Padma.vowelsn_AU;
     return sign1 + sign2;    
 }
@@ -130,7 +130,7 @@ TSCII.combo_KPULLI   = "\u00EC";
 TSCII.combo_NGPULLI  = "\u00ED";
 TSCII.combo_CPULLI   = "\u00EE";
 TSCII.combo_JPULLI   = "\u02C6";
-TSCII.combo_NGPULLI  = "\u00EF";
+TSCII.combo_NYPULLI  = "\u00EF";
 TSCII.combo_TTPULLI  = "\u00F0";
 TSCII.combo_NNPULLI  = "\u00F1";
 TSCII.combo_TPULLI   = "\u00F2";
@@ -150,8 +150,8 @@ TSCII.combo_HPULLI   = "\u2039";
 TSCII.combo_RRPULLI  = "\u00FC";
 TSCII.combo_KSHPULLI = "\u0152";
 
-TSCII.combo_TI      = "\u00CA";
-TSCII.combo_TII     = "\u00CB";
+TSCII.combo_TTI     = "\u00CA";
+TSCII.combo_TTII    = "\u00CB";
 
 TSCII.combo_KU      = "\u00CC";
 TSCII.combo_KUU     = "\u00DC";
@@ -278,14 +278,14 @@ TSCII.toPadma[TSCII.combo_JPULLI]  = Padma.consnt_JA + Padma.pulli;
 TSCII.toPadma[TSCII.combo_NYU]     = Padma.consnt_NYA + Padma.vowelsn_U;
 TSCII.toPadma[TSCII.combo_NYUU]    = Padma.consnt_NYA + Padma.vowelsn_UU;
 TSCII.toPadma[TSCII.combo_NYPULLI] = Padma.consnt_NYA + Padma.pulli;
+TSCII.toPadma[TSCII.combo_TTI]     = Padma.consnt_TTA + Padma.vowelsn_I;
+TSCII.toPadma[TSCII.combo_TTII]    = Padma.consnt_TTA + Padma.vowelsn_II;
 TSCII.toPadma[TSCII.combo_TTU]     = Padma.consnt_TTA + Padma.vowelsn_U;
 TSCII.toPadma[TSCII.combo_TTUU]    = Padma.consnt_TTA + Padma.vowelsn_UU;
 TSCII.toPadma[TSCII.combo_TTPULLI] = Padma.consnt_TTA + Padma.pulli;
 TSCII.toPadma[TSCII.combo_NNU]     = Padma.consnt_NNA + Padma.vowelsn_U;
 TSCII.toPadma[TSCII.combo_NNUU]    = Padma.consnt_NNA + Padma.vowelsn_UU;
 TSCII.toPadma[TSCII.combo_NNPULLI] = Padma.consnt_NNA + Padma.pulli;
-TSCII.toPadma[TSCII.combo_TI]      = Padma.consnt_TA + Padma.vowelsn_I;
-TSCII.toPadma[TSCII.combo_TII]     = Padma.consnt_TA + Padma.vowelsn_II;
 TSCII.toPadma[TSCII.combo_TU]      = Padma.consnt_TA + Padma.vowelsn_U;
 TSCII.toPadma[TSCII.combo_TUU]     = Padma.consnt_TA + Padma.vowelsn_UU;
 TSCII.toPadma[TSCII.combo_TPULLI]  = Padma.consnt_TA + Padma.pulli;
@@ -307,8 +307,8 @@ TSCII.toPadma[TSCII.combo_YPULLI]  = Padma.consnt_YA + Padma.pulli;
 TSCII.toPadma[TSCII.combo_RU]      = Padma.consnt_RA + Padma.vowelsn_U;
 TSCII.toPadma[TSCII.combo_RUU]     = Padma.consnt_RA + Padma.vowelsn_UU;
 TSCII.toPadma[TSCII.combo_RPULLI]  = Padma.consnt_RA + Padma.pulli;
-TSCII.toPadma[TSCII.combo_LI]      = Padma.consnt_LA + Padma.vowelsn_I;
-TSCII.toPadma[TSCII.combo_LII]     = Padma.consnt_LA + Padma.vowelsn_II;
+TSCII.toPadma[TSCII.combo_LU]      = Padma.consnt_LA + Padma.vowelsn_U;
+TSCII.toPadma[TSCII.combo_LUU]     = Padma.consnt_LA + Padma.vowelsn_UU;
 TSCII.toPadma[TSCII.combo_LPULLI]  = Padma.consnt_LA + Padma.pulli;
 TSCII.toPadma[TSCII.combo_VU]      = Padma.consnt_VA + Padma.vowelsn_U;
 TSCII.toPadma[TSCII.combo_VUU]     = Padma.consnt_VA + Padma.vowelsn_UU;
@@ -326,6 +326,25 @@ TSCII.toPadma[TSCII.combo_RRU]     = Padma.consnt_RRA + Padma.vowelsn_U;
 TSCII.toPadma[TSCII.combo_RRUU]    = Padma.consnt_RRA + Padma.vowelsn_UU;
 TSCII.toPadma[TSCII.combo_RRPULLI] = Padma.consnt_RRA + Padma.pulli;
 TSCII.toPadma[TSCII.combo_KSHPULLI]= Padma.consnt_KA + Padma.vattu_SSA + Padma.pulli;
+
+TSCII.toPadma[TSCII.LQTSINGLE]   = "\u2018";
+TSCII.toPadma[TSCII.RQTSINGLE]   = "\u2019";
+TSCII.toPadma[TSCII.LQTDOUBLE]   = "\u201C";
+TSCII.toPadma[TSCII.RQTDOUBLE]   = "\u201D";
+
+TSCII.toPadma[TSCII.digit_ZERO]    = Padma.digit_ZERO;
+TSCII.toPadma[TSCII.digit_ONE]     = Padma.digit_ONE;
+TSCII.toPadma[TSCII.digit_TWO]     = Padma.digit_TWO;
+TSCII.toPadma[TSCII.digit_THREE]   = Padma.digit_THREE;
+TSCII.toPadma[TSCII.digit_FOUR]    = Padma.digit_FOUR;
+TSCII.toPadma[TSCII.digit_FIVE]    = Padma.digit_FIVE;
+TSCII.toPadma[TSCII.digit_SIX]     = Padma.digit_SIX;
+TSCII.toPadma[TSCII.digit_SEVEN]   = Padma.digit_SEVEN;
+TSCII.toPadma[TSCII.digit_EIGHT]   = Padma.digit_EIGHT;
+TSCII.toPadma[TSCII.digit_NINE]    = Padma.digit_NINE;
+TSCII.toPadma[TSCII.digit_TEN]     = Padma.digit_TEN;
+TSCII.toPadma[TSCII.digit_HUNDRED] = Padma.digit_HUNDRED;
+TSCII.toPadma[TSCII.digit_THOUSAND] = Padma.digit_THOUSAND;
 
 TSCII.prefixList = new Object();
 TSCII.prefixList[TSCII.vowelsn_E]   = true;

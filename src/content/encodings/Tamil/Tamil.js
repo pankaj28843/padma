@@ -1,6 +1,6 @@
-// $Id: Tamil.js,v 1.3 2005/12/09 15:06:41 vnagarjuna Exp $ -->
+// $Id: Tamil.js,v 1.4 2006/03/02 23:14:39 vnagarjuna Exp $ -->
 
-//Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
+//Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
 /* ***** BEGIN LICENSE BLOCK ***** 
  *  This file is part of Padma.
@@ -147,6 +147,9 @@ Tamil.fromPadma[Padma.digit_SIX]   = Tamil.codePoints.digit_SIX;
 Tamil.fromPadma[Padma.digit_SEVEN] = Tamil.codePoints.digit_SEVEN;
 Tamil.fromPadma[Padma.digit_EIGHT] = Tamil.codePoints.digit_EIGHT;
 Tamil.fromPadma[Padma.digit_NINE]  = Tamil.codePoints.digit_NINE;
+Tamil.fromPadma[Padma.digit_TEN]   = Tamil.codePoints.digit_TEN;
+Tamil.fromPadma[Padma.digit_HUNDRED] = Tamil.codePoints.digit_HUNDRED;
+Tamil.fromPadma[Padma.digit_THOUSAND] = Tamil.codePoints.digit_THOUSAND;
 
 //Vowels
 Tamil.fromPadma[Padma.vowel_A]     = Tamil.codePoints.letter_A;
@@ -200,6 +203,16 @@ Tamil.fromPadma[Padma.vowelsn_O]   = Tamil.codePoints.vowelsn_O;
 Tamil.fromPadma[Padma.vowelsn_OO]  = Tamil.codePoints.vowelsn_OO;
 Tamil.fromPadma[Padma.vowelsn_AU]  = Tamil.codePoints.vowelsn_AU;
 Tamil.fromPadma[Padma.vowelsn_AULEN]  = Tamil.codePoints.misc_AULEN;
+
+//Misc
+Tamil.fromPadma[Padma.sign_DAY]     = Tamil.codePoints.sign_DAY;
+Tamil.fromPadma[Padma.sign_MONTH]   = Tamil.codePoints.sign_MONTH;
+Tamil.fromPadma[Padma.sign_YEAR]    = Tamil.codePoints.sign_YEAR;
+Tamil.fromPadma[Padma.sign_DEBIT]   = Tamil.codePoints.sign_DEBIT;
+Tamil.fromPadma[Padma.sign_CREDIT]  = Tamil.codePoints.sign_CREDIT;
+Tamil.fromPadma[Padma.sign_ASABOVE] = Tamil.codePoints.sign_ASABOVE;
+Tamil.fromPadma[Padma.sign_RUPEE]   = Tamil.codePoints.sign_RUPEE;
+Tamil.fromPadma[Padma.sign_NUMBER]  = Tamil.codePoints.sign_NUMBER;
 
 //The following are not directly present in Tamil - equivalent transliteration
 Tamil.fromPadma[Padma.vowel_SHT_A]   = Tamil.codePoints.letter_A;

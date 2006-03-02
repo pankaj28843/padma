@@ -1,6 +1,6 @@
-// $Id: ElangoTmlPanchali.js,v 1.7 2005/12/09 15:06:34 vnagarjuna Exp $ -->
+// $Id: ElangoTmlPanchali.js,v 1.8 2006/03/02 23:14:39 vnagarjuna Exp $ -->
 
-//Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
+//Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
 /* ***** BEGIN LICENSE BLOCK ***** 
  *  This file is part of Padma.
@@ -26,7 +26,7 @@ function Elango_Tml_Panchali()
 }
 
 //The interface every dynamic font encoding should implement
-Elango_Tml_Panchali.maxLookupLen = 2;
+Elango_Tml_Panchali.maxLookupLen = 3;
 Elango_Tml_Panchali.fontFace     = "ELANGO-TML-Panchali-Normal";
 Elango_Tml_Panchali.displayName  = "Elango Panchali";
 Elango_Tml_Panchali.script       = Padma.script_TAMIL;
