@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.22 2006/02/20 21:16:28 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.23 2006/03/02 20:51:08 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -218,7 +218,7 @@ var Padma_Browser_Transformer = {
     //Based on input method, determine if the selected text needs to be transformed
     requiresTransform: function(page, node) {
         if (this.inputMethod == Transformer.method_RTS || this.inputMethod == Transformer.method_ISCII ||
-            this.inputMethod == Transformer.method_ITRANS)
+            this.inputMethod == Transformer.method_ITRANS || this.inputMethod == Transformer.method_TSCII)
             return true;
 
         if (this.inputMethod == Transformer.method_Unknown) {
@@ -326,7 +326,8 @@ var Padma_Browser_Transformer = {
         if (arguments.length > 2) {
             if (this.inputMethod == Transformer.method_RTS)
                 this.transformer.setRTSMode(arguments[2]);
-            else if (this.inputMethod == Transformer.method_ISCII || this.inputMethod == Transformer.method_ITRANS)
+            else if (this.inputMethod == Transformer.method_ISCII || this.inputMethod == Transformer.method_ITRANS || 
+                     this.inputMethod == Transformer.method_TSCII)
                 this.transformer.setOutputScript(arguments[2]);
         }
 
@@ -371,6 +372,7 @@ var Padma_Browser_Transformer = {
         var rts = this.prefBranch.getBoolPref(PadmaSettings.prefEnableRTS);
         var iscii = this.prefBranch.getBoolPref(PadmaSettings.prefEnableISCII);
         var itrans = this.prefBranch.getBoolPref(PadmaSettings.prefEnableITRANS);
+        var tscii = this.prefBranch.getBoolPref(PadmaSettings.prefEnableTSCII);
         var telugu = this.prefBranch.getBoolPref(PadmaSettings.prefEnableTelugu);
         var malayalam = this.prefBranch.getBoolPref(PadmaSettings.prefEnableMalayalam);
         var tamil = this.prefBranch.getBoolPref(PadmaSettings.prefEnableTamil);
@@ -408,6 +410,8 @@ var Padma_Browser_Transformer = {
         item.hidden = hidden || !itrans || !kannada;
         item = document.getElementById("padmaMenuItem16");
         item.hidden = hidden || !itrans || !kannada;
+        item = document.getElementById("padmaMenuItem17");
+        item.hidden = hidden || !tscii || !tamil;
     },
 
     //Preference observer
