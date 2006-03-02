@@ -1,4 +1,4 @@
-// $Id: prefs.js,v 1.7 2006/02/20 21:16:28 vnagarjuna Exp $ -->
+// $Id: prefs.js,v 1.8 2006/03/02 20:51:08 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -35,6 +35,7 @@ var PadmaSettings = {
         this.enableRTS = document.getElementById("enableRTS");
         this.enableISCII = document.getElementById("enableISCII");
         this.enableITRANS = document.getElementById("enableITRANS");
+        this.enableTSCII = document.getElementById("enableTSCII");
         this.enableTelugu = document.getElementById("enableTelugu");
         this.enableMalayalam = document.getElementById("enableMalayalam");
         this.enableTamil = document.getElementById("enableTamil");
@@ -66,6 +67,7 @@ var PadmaSettings = {
         this.enableRTS.checked = this.branch.getBoolPref(this.prefEnableRTS);
         this.enableISCII.checked = this.branch.getBoolPref(this.prefEnableISCII);
         this.enableITRANS.checked = this.branch.getBoolPref(this.prefEnableITRANS);
+        this.enableTSCII.checked = this.branch.getBoolPref(this.prefEnableTSCII);
         this.enableTelugu.checked = this.branch.getBoolPref(this.prefEnableTelugu);
         this.enableMalayalam.checked = this.branch.getBoolPref(this.prefEnableMalayalam);
         this.enableTamil.checked = this.branch.getBoolPref(this.prefEnableTamil);
@@ -88,6 +90,7 @@ var PadmaSettings = {
         this.branch.setBoolPref(this.prefEnableRTS,    this.enableRTS.checked);
         this.branch.setBoolPref(this.prefEnableISCII,  this.enableISCII.checked);
         this.branch.setBoolPref(this.prefEnableITRANS, this.enableITRANS.checked);
+        this.branch.setBoolPref(this.prefEnableTSCII,  this.enableTSCII.checked);
 
         this.branch.setBoolPref(this.prefEnableTelugu,     this.enableTelugu.checked);
         this.branch.setBoolPref(this.prefEnableMalayalam,  this.enableMalayalam.checked);
@@ -102,9 +105,12 @@ var PadmaSettings = {
 
     onCheckBoxUpdate: function() {
         this.autoListUpdate.disabled = this.fixCharEncoding.disabled = !this.autoCheck.checked;
-        this.rtsWritingStyleButton.disabled = this.rtsSunnaStyleButton.disabled = !this.enableRTS.checked;
-        this.enableTelugu.disabled = this.enableMalayalam.disabled = this.enableTamil.disabled = this.enableDevanagari.disabled = 
-        this.enableGujarati.disabled = this.enableKannada.disabled = !this.enableISCII.checked & !this.enableITRANS.checked;
+        this.enableRTS.disabled = !this.enableTelugu.checked;
+        this.rtsWritingStyleButton.disabled = this.rtsSunnaStyleButton.disabled = !this.enableTelugu.checked || !this.enableRTS.checked;
+        this.enableISCII.disabled = this.enableITRANS.disabled = !this.enableTelugu.checked && !this.enableTamil.checked &&
+                                    !this.enableMalayalam.checked && !this.enableDevanagari.checked && !this.enableGujarati.checked && 
+                                    !this.enableKannada.checked;
+        this.enableTSCII.disabled = !this.enableTamil.checked;
         this.applyButton.disabled = false;
     },
 
@@ -130,6 +136,7 @@ var PadmaSettings = {
     prefEnableRTS: "enableRTS",
     prefEnableISCII: "enableISCII",
     prefEnableITRANS: "enableITRANS",
+    prefEnableTSCII: "enableTSCII",
     prefEnableTelugu: "enableTelugu",
     prefEnableMalayalam: "enableMalyalam",
     prefEnableTamil: "enableTamil",
