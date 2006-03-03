@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: padma.xul,v 1.21 2006/03/02 23:14:15 vnagarjuna Exp $-->
+<!--$Id: padma.xul,v 1.22 2006/03/03 15:34:54 vnagarjuna Exp $-->
 
 <!--Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
 
@@ -50,6 +50,7 @@
 <script type="application/x-javascript" src="encodings/Malayalam/Manorama.js"/>
 <script type="application/x-javascript" src="encodings/Malayalam/Thoolika.js"/>
 <script type="application/x-javascript" src="encodings/Tamil/Tamil.js"/>
+<script type="application/x-javascript" src="encodings/Tamil/TAM.js"/>
 <script type="application/x-javascript" src="encodings/Tamil/Vikatan.js"/>
 <script type="application/x-javascript" src="encodings/Tamil/Kumudam.js"/>
 <script type="application/x-javascript" src="encodings/Tamil/ShreeTam0802.js"/>
@@ -89,9 +90,9 @@
 <popup id="contentAreaContextMenu">
     <menuseparator id="padmaMenuItem0"/>
     <menuitem id="padmaMenuItem1" label="Transform To Unicode" accesskey="U" 
-        oncommand="Padma_Browser_Transformer.onManualTransform(7, 1)"/>
+        oncommand="Padma_Browser_Transformer.onManualTransform(8, 1)"/>
     <menuitem id="padmaMenuItem2" label="Transform To RTS" accesskey="R" 
-        oncommand="Padma_Browser_Transformer.onManualTransform(7, 0)"/>
+        oncommand="Padma_Browser_Transformer.onManualTransform(8, 0)"/>
     <menuitem id="padmaMenuItem3" label="Transform RTS To Telugu (E)" accesskey="E" 
         oncommand="Padma_Browser_Transformer.onManualTransform(0, 1, 0)"/>
     <menuitem id="padmaMenuItem4" label="Transform RTS To Telugu (T)" accesskey="G" 
@@ -124,6 +125,8 @@
         oncommand="Padma_Browser_Transformer.onManualTransform(4, 1, 2)"/>
     <menuitem id="padmaMenuItem18" label="Transform TAB To Tamil" accesskey="B" 
         oncommand="Padma_Browser_Transformer.onManualTransform(5, 1, 2)"/>
+    <menuitem id="padmaMenuItem19" label="Transform TAM To Tamil" accesskey="I" 
+        oncommand="Padma_Browser_Transformer.onManualTransform(6, 1, 2)"/>
 </popup>
 
 <!--Mozilla suite tools menu-->

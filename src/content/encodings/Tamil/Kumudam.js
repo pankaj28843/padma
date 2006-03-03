@@ -1,6 +1,6 @@
-// $Id: Kumudam.js,v 1.2 2005/10/25 15:58:19 vnagarjuna Exp $ -->
+// $Id: Kumudam.js,v 1.3 2006/03/03 15:39:05 vnagarjuna Exp $ -->
 
-//Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
+//Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
 /* ***** BEGIN LICENSE BLOCK ***** 
  *  This file is part of Padma.
@@ -21,44 +21,44 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-//Kumudam Tamil
+//Kumudam Tamil - an implementation of TAM encoding standard
 
 function Kumudam()
 {
 }
 
 //The interface every dynamic font encoding should implement
-Kumudam.maxLookupLen = Vikatan.maxLookupLen;
+Kumudam.maxLookupLen = TAM.maxLookupLen;
 Kumudam.fontFace     = "Kumudam";
 Kumudam.displayName  = "Kumudam";
 Kumudam.script       = Padma.script_TAMIL;
 
 Kumudam.lookup = function (str) 
 {
-    return Vikatan.lookup(str);
+    return TAM.lookup(str);
 }
 
 Kumudam.isPrefixSymbol = function (str)
 {
-    return Vikatan.isPrefixSymbol(str);
+    return TAM.isPrefixSymbol(str);
 }
 
 Kumudam.isOverloaded = function (str)
 {
-    return Vikatan.isOverloaded(str);
+    return TAM.isOverloaded(str);
 }
 
 Kumudam.handleTwoPartVowelSigns = function (sign1, sign2)
 {
-    return Vikatan.handleTwoPartVowelSigns(sign1, sign2);
+    return TAM.handleTwoPartVowelSigns(sign1, sign2);
 }
 
 Kumudam.isRedundant = function (str)
 {
-    return Vikatan.isRedundant(str);
+    return TAM.isRedundant(str);
 }
 
 Kumudam.preprocessMessage = function (input)
 {
-    return Vikatan.preprocessMessage(input);
+    return TAM.preprocessMessage(input);
 }

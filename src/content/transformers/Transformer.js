@@ -1,4 +1,4 @@
-// $Id: Transformer.js,v 1.22 2006/03/02 23:16:28 vnagarjuna Exp $ -->
+// $Id: Transformer.js,v 1.23 2006/03/03 15:42:29 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -29,9 +29,10 @@ Transformer.method_Unicode  = 1;
 Transformer.method_ISCII    = 2;
 Transformer.method_ITRANS   = 3;
 Transformer.method_TSCII    = 4;
-Transformer.method_TAB      = 5;
-Transformer.method_DynFonts = 6;
-Transformer.method_Unknown  = 7;
+Transformer.method_TAB      = 5; //Tamil Bilingual
+Transformer.method_TAM      = 6; //Tamil Monolingual
+Transformer.method_DynFonts = 7;
+Transformer.method_Unknown  = 8;
 
 //Dynamic fonts supported
 Transformer.dynFont_Eenadu       = 0;
@@ -98,8 +99,9 @@ Transformer.className_Unicode = Unicode;
 Transformer.className_RTS     = RTS;
 Transformer.className_ISCII   = ISCII;
 Transformer.className_ITRANS  = ITRANS;
-Transformer.className_TSCII   = TSCII; //TSCII is treated as a dynamic scheme for parsing purposes
-Transformer.className_TAB     = TAB;   //TAB is treated as a dynamic scheme for parsing purposes
+Transformer.className_TSCII   = TSCII; //really a font encoding, but treated as a scheme
+Transformer.className_TAB     = TAB;   //really a font encoding, but treated as a scheme
+Transformer.className_TAM     = TAM;   //really a font encoding, but treated as a scheme
 
 Transformer.dynFont_Name = new Array();
 Transformer.dynFont_NameToIndex = new Object();
@@ -164,7 +166,7 @@ Transformer.isValidInputMethod = function (method)
 {
     return method == Transformer.method_RTS || method == Transformer.method_DynFonts || method == Transformer.method_Unicode 
                      || method == Transformer.method_ISCII || method == Transformer.method_ITRANS || method == Transformer.method_TSCII
-                     || method == Transformer.method_TAB || method == Transformer.method_Unknown;
+                     || method == Transformer.method_TAB || method == Transformer.method_TAM || method == Transformer.method_Unknown;
 }
 
 Transformer.isValidOutputMethod = function (method)
@@ -196,6 +198,9 @@ Transformer.prototype.convert = function (text)
     }
     else if (this.input == Transformer.method_TAB) {
         parser = new DynamicFontParser(text, Transformer.className_TAB);
+    }
+    else if (this.input == Transformer.method_TAM) {
+        parser = new DynamicFontParser(text, Transformer.className_TAM);
     }
 
     while (parser.more())

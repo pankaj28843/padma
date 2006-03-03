@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.24 2006/03/02 23:14:14 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.25 2006/03/03 15:34:54 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -219,7 +219,7 @@ var Padma_Browser_Transformer = {
     requiresTransform: function(page, node) {
         if (this.inputMethod == Transformer.method_RTS || this.inputMethod == Transformer.method_ISCII ||
             this.inputMethod == Transformer.method_ITRANS || this.inputMethod == Transformer.method_TSCII ||
-            this.inputMethod == Transformer.method_TAB)
+            this.inputMethod == Transformer.method_TAB || this.inputMethod == Transformer.method_TAM)
             return true;
 
         if (this.inputMethod == Transformer.method_Unknown) {
@@ -328,7 +328,8 @@ var Padma_Browser_Transformer = {
             if (this.inputMethod == Transformer.method_RTS)
                 this.transformer.setRTSMode(arguments[2]);
             else if (this.inputMethod == Transformer.method_ISCII || this.inputMethod == Transformer.method_ITRANS || 
-                     this.inputMethod == Transformer.method_TSCII || this.inputMethod == Transformer.method_TAB)
+                     this.inputMethod == Transformer.method_TSCII || this.inputMethod == Transformer.method_TAB || 
+                     this.inputMethod == Transformer.method_TAM)
                 this.transformer.setOutputScript(arguments[2]);
         }
 
@@ -375,6 +376,7 @@ var Padma_Browser_Transformer = {
         var itrans = this.prefBranch.getBoolPref(PadmaSettings.prefEnableITRANS);
         var tscii = this.prefBranch.getBoolPref(PadmaSettings.prefEnableTSCII);
         var tab = this.prefBranch.getBoolPref(PadmaSettings.prefEnableTAB);
+        var tam = this.prefBranch.getBoolPref(PadmaSettings.prefEnableTAM);
         var telugu = this.prefBranch.getBoolPref(PadmaSettings.prefEnableTelugu);
         var malayalam = this.prefBranch.getBoolPref(PadmaSettings.prefEnableMalayalam);
         var tamil = this.prefBranch.getBoolPref(PadmaSettings.prefEnableTamil);
@@ -416,6 +418,8 @@ var Padma_Browser_Transformer = {
         item.hidden = hidden || !tscii || !tamil;
         item = document.getElementById("padmaMenuItem18");
         item.hidden = hidden || !tab || !tamil;
+        item = document.getElementById("padmaMenuItem19");
+        item.hidden = hidden || !tam || !tamil;
     },
 
     //Preference observer
