@@ -1,6 +1,6 @@
-// $Id: version.js,v 1.4 2006/02/20 21:18:53 vnagarjuna Exp $ -->
+// $Id: version.js,v 1.5 2006/03/03 15:32:08 vnagarjuna Exp $ -->
 
-//Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
+//Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
 /* ***** BEGIN LICENSE BLOCK ***** 
  *  This file is part of Padma.
