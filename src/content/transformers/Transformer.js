@@ -1,4 +1,4 @@
-// $Id: Transformer.js,v 1.23 2006/03/03 15:42:29 vnagarjuna Exp $ -->
+// $Id: Transformer.js,v 1.24 2006/03/06 16:30:33 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -62,7 +62,23 @@ Transformer.dynFont_Chanakya     = 23;
 Transformer.dynFont_Nandi        = 24;
 Transformer.dynFont_TeluguFont   = 25;
 Transformer.dynFont_Suri         = 26;
-Transformer.dynFont_Unknown      = 27;  //this should always be the max, this is used as a sentinel
+Transformer.dynFont_TSCMylai     = 27;
+Transformer.dynFont_TSCComic     = 28;
+Transformer.dynFont_TSCJanani    = 29;
+Transformer.dynFont_TSCKomathi   = 30;
+Transformer.dynFont_TSCSri       = 31;
+Transformer.dynFont_TSCTimes     = 32;
+Transformer.dynFont_TSCAandaal   = 33;
+Transformer.dynFont_TSCAparanarPdf = 34;
+Transformer.dynFont_TSCKannadaasan = 35;
+Transformer.dynFont_TSCParanbold = 36;
+Transformer.dynFont_TSCParanar   = 37;
+Transformer.dynFont_TSCParanarPdf = 38;
+Transformer.dynFont_TSCAvarangal = 39;
+Transformer.dynFont_TSCAvarangalFxd = 40;
+Transformer.dynFont_TSCThunaivan = 41;
+Transformer.dynFont_TSCNattai    = 42;
+Transformer.dynFont_Unknown      = 43;  //this should always be the max, this is used as a sentinel
 
 //Classes that implement the above dynamic fonts
 Transformer.dynFont_Class = new Array();
@@ -93,6 +109,22 @@ Transformer.dynFont_Class[Transformer.dynFont_Chanakya]     = Chanakya;
 Transformer.dynFont_Class[Transformer.dynFont_Nandi]        = Nandi;
 Transformer.dynFont_Class[Transformer.dynFont_TeluguFont]   = TeluguFont;
 Transformer.dynFont_Class[Transformer.dynFont_Suri]         = SuriTln;
+Transformer.dynFont_Class[Transformer.dynFont_TSCMylai]     = TSCMylai;
+Transformer.dynFont_Class[Transformer.dynFont_TSCComic]     = TSCComic;
+Transformer.dynFont_Class[Transformer.dynFont_TSCJanani]    = TSCJanani;
+Transformer.dynFont_Class[Transformer.dynFont_TSCKomathi]   = TSCKomathi;
+Transformer.dynFont_Class[Transformer.dynFont_TSCSri]	    = TSCSri;
+Transformer.dynFont_Class[Transformer.dynFont_TSCTimes]	    = TSCTimes;
+Transformer.dynFont_Class[Transformer.dynFont_TSCAandaal]   = TSCAandaal;
+Transformer.dynFont_Class[Transformer.dynFont_TSCAparanarPdf] = TSCAparanarPdf;
+Transformer.dynFont_Class[Transformer.dynFont_TSCKannadaasan] = TSCKannadaasan;
+Transformer.dynFont_Class[Transformer.dynFont_TSCParanbold] = TSCParanbold;
+Transformer.dynFont_Class[Transformer.dynFont_TSCParanar]   = TSCParanar;
+Transformer.dynFont_Class[Transformer.dynFont_TSCParanarPdf] = TSCParanarPdf;
+Transformer.dynFont_Class[Transformer.dynFont_TSCAvarangal] = TSCAvarangal;
+Transformer.dynFont_Class[Transformer.dynFont_TSCAvarangalFxd] = TSCAvarangalFxd;
+Transformer.dynFont_Class[Transformer.dynFont_TSCThunaivan] = TSCThunaivan;
+Transformer.dynFont_Class[Transformer.dynFont_TSCNattai]    = TSCNattai;
 
 //Class names for non-dynamic font encodings
 Transformer.className_Unicode = Unicode;
