@@ -1,4 +1,4 @@
-// $Id: TAB.js,v 1.1 2006/03/02 23:16:10 vnagarjuna Exp $ -->
+// $Id: TAB.js,v 1.2 2006/03/07 18:30:29 vnagarjuna Exp $ -->
 
 //Copyright 2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -275,7 +275,6 @@ TAB.toPadma[TAB.combo_TTII]    = Padma.consnt_TTA + Padma.vowelsn_II;
 TAB.toPadma[TAB.combo_KU]      = Padma.consnt_KA + Padma.vowelsn_U;
 TAB.toPadma[TAB.combo_NGU]     = Padma.consnt_NGA + Padma.vowelsn_U;
 TAB.toPadma[TAB.combo_CU]      = Padma.consnt_CA + Padma.vowelsn_U;
-TAB.toPadma[TAB.combo_JU]      = Padma.consnt_JA + Padma.vowelsn_U;
 TAB.toPadma[TAB.combo_NYU]     = Padma.consnt_NYA + Padma.vowelsn_U;
 TAB.toPadma[TAB.combo_TTU]     = Padma.consnt_TTA + Padma.vowelsn_U;
 TAB.toPadma[TAB.combo_NNU]     = Padma.consnt_NNA + Padma.vowelsn_U;
@@ -288,16 +287,12 @@ TAB.toPadma[TAB.combo_YU]      = Padma.consnt_YA + Padma.vowelsn_U;
 TAB.toPadma[TAB.combo_RU]      = Padma.consnt_RA + Padma.vowelsn_U;
 TAB.toPadma[TAB.combo_LU]      = Padma.consnt_LA + Padma.vowelsn_U;
 TAB.toPadma[TAB.combo_VU]      = Padma.consnt_VA + Padma.vowelsn_U;
-TAB.toPadma[TAB.combo_SSU]     = Padma.consnt_SSA + Padma.vowelsn_U;
-TAB.toPadma[TAB.combo_SU]      = Padma.consnt_SA + Padma.vowelsn_U;
-TAB.toPadma[TAB.combo_HU]      = Padma.consnt_HA + Padma.vowelsn_U;
 TAB.toPadma[TAB.combo_LLU]     = Padma.consnt_LLA + Padma.vowelsn_U;
 TAB.toPadma[TAB.combo_ZHU]     = Padma.consnt_ZHA + Padma.vowelsn_U;
 TAB.toPadma[TAB.combo_RRU]     = Padma.consnt_RRA + Padma.vowelsn_U;
 TAB.toPadma[TAB.combo_KUU]      = Padma.consnt_KA + Padma.vowelsn_UU;
 TAB.toPadma[TAB.combo_NGUU]     = Padma.consnt_NGA + Padma.vowelsn_UU;
 TAB.toPadma[TAB.combo_CUU]      = Padma.consnt_CA + Padma.vowelsn_UU;
-TAB.toPadma[TAB.combo_JUU]      = Padma.consnt_JA + Padma.vowelsn_UU;
 TAB.toPadma[TAB.combo_NYUU]     = Padma.consnt_NYA + Padma.vowelsn_UU;
 TAB.toPadma[TAB.combo_TTUU]     = Padma.consnt_TTA + Padma.vowelsn_UU;
 TAB.toPadma[TAB.combo_NNUU]     = Padma.consnt_NNA + Padma.vowelsn_UU;
@@ -310,9 +305,6 @@ TAB.toPadma[TAB.combo_YUU]      = Padma.consnt_YA + Padma.vowelsn_UU;
 TAB.toPadma[TAB.combo_RUU]      = Padma.consnt_RA + Padma.vowelsn_UU;
 TAB.toPadma[TAB.combo_LUU]      = Padma.consnt_LA + Padma.vowelsn_UU;
 TAB.toPadma[TAB.combo_VUU]      = Padma.consnt_VA + Padma.vowelsn_UU;
-TAB.toPadma[TAB.combo_SSUU]     = Padma.consnt_SSA + Padma.vowelsn_UU;
-TAB.toPadma[TAB.combo_SUU]      = Padma.consnt_SA + Padma.vowelsn_UU;
-TAB.toPadma[TAB.combo_HUU]      = Padma.consnt_HA + Padma.vowelsn_UU;
 TAB.toPadma[TAB.combo_LLUU]     = Padma.consnt_LLA + Padma.vowelsn_UU;
 TAB.toPadma[TAB.combo_ZHUU]     = Padma.consnt_ZHA + Padma.vowelsn_UU;
 TAB.toPadma[TAB.combo_RRUU]     = Padma.consnt_RRA + Padma.vowelsn_UU;

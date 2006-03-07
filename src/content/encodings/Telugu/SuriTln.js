@@ -1,4 +1,4 @@
-// $Id: SuriTln.js,v 1.4 2006/03/02 20:52:14 vnagarjuna Exp $ -->
+// $Id: SuriTln.js,v 1.5 2006/03/07 18:30:23 vnagarjuna Exp $ -->
 
 //Copyright 2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -490,7 +490,6 @@ SuriTln.toPadma[SuriTln.combo_TI]      = Padma.consnt_TA + Padma.vowelsn_I;
 SuriTln.toPadma[SuriTln.combo_NI]      = Padma.consnt_NA + Padma.vowelsn_I;
 
 SuriTln.toPadma[SuriTln.combo_BI]      = Padma.consnt_BA + Padma.vowelsn_I;
-SuriTln.toPadma[SuriTln.combo_BII]     = Padma.consnt_BA + Padma.vowelsn_II;
 SuriTln.toPadma[SuriTln.combo_BHI]     = Padma.consnt_BHA + Padma.vowelsn_I;
 SuriTln.toPadma[SuriTln.combo_MAA]     = Padma.consnt_MA + Padma.vowelsn_AA;
 SuriTln.toPadma[SuriTln.combo_MI]      = Padma.consnt_MA + Padma.vowelsn_I;
@@ -587,8 +586,6 @@ SuriTln.toPadma[SuriTln.digit_SIX]     = Padma.digit_SIX;
 SuriTln.toPadma[SuriTln.digit_SEVEN]   = Padma.digit_SEVEN;
 SuriTln.toPadma[SuriTln.digit_EIGHT]   = Padma.digit_EIGHT;
 SuriTln.toPadma[SuriTln.digit_NINE]    = Padma.digit_NINE;
-
-SuriTln.toPadma[SuriTln.extra_HYPHEN] = '-';
 
 SuriTln.redundantList = new Object();
 SuriTln.redundantList[SuriTln.misc_TICK_1]    = true;

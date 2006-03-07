@@ -1,4 +1,4 @@
-// $Id: TeluguFont.js,v 1.3 2006/03/02 20:52:14 vnagarjuna Exp $ -->
+// $Id: TeluguFont.js,v 1.4 2006/03/07 18:30:23 vnagarjuna Exp $ -->
 
 //Copyright 2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -292,7 +292,7 @@ TeluguFont.vattu_RA_2     = "\u00FB";
 TeluguFont.vattu_LA       = "\u201D";
 TeluguFont.vattu_VA       = "\u002A";
 TeluguFont.vattu_SHA      = "\u002B";
-TeluguFont.vattu_SSA_1    = "\u003C";
+TeluguFont.vattu_SSA      = "\u003C";
 TeluguFont.vattu_SA       = "\u003D";
 TeluguFont.vattu_HA       = "\u003E";
 TeluguFont.vattu_LLA      = "\u2022";
@@ -485,7 +485,6 @@ TeluguFont.toPadma[TeluguFont.combo_PAU]     = Padma.consnt_PA + Padma.vowelsn_A
 TeluguFont.toPadma[TeluguFont.combo_PPOLLU]  = Padma.consnt_PA + Padma.syllbreak;
 TeluguFont.toPadma[TeluguFont.combo_PHPOLLU] = Padma.consnt_PHA + Padma.syllbreak;
 TeluguFont.toPadma[TeluguFont.combo_BI]      = Padma.consnt_BA + Padma.vowelsn_I;
-TeluguFont.toPadma[TeluguFont.combo_BII]     = Padma.consnt_BA + Padma.vowelsn_II;
 TeluguFont.toPadma[TeluguFont.combo_BHI]     = Padma.consnt_BHA + Padma.vowelsn_I;
 TeluguFont.toPadma[TeluguFont.combo_MAA_1]   = Padma.consnt_MA + Padma.vowelsn_AA;
 TeluguFont.toPadma[TeluguFont.combo_MAA_2]   = Padma.consnt_MA + Padma.vowelsn_AA;
@@ -549,8 +548,7 @@ TeluguFont.toPadma[TeluguFont.vattu_RA_2]    = Padma.vattu_RA;
 TeluguFont.toPadma[TeluguFont.vattu_LA]      = Padma.vattu_LA;
 TeluguFont.toPadma[TeluguFont.vattu_VA]      = Padma.vattu_VA;
 TeluguFont.toPadma[TeluguFont.vattu_SHA]     = Padma.vattu_SHA;
-TeluguFont.toPadma[TeluguFont.vattu_SSA_1]   = Padma.vattu_SSA;
-TeluguFont.toPadma[TeluguFont.vattu_SSA_2]   = Padma.vattu_SSA;
+TeluguFont.toPadma[TeluguFont.vattu_SSA]     = Padma.vattu_SSA;
 TeluguFont.toPadma[TeluguFont.vattu_SA]      = Padma.vattu_SA;
 TeluguFont.toPadma[TeluguFont.vattu_HA]      = Padma.vattu_HA;
 TeluguFont.toPadma[TeluguFont.vattu_LLA]     = Padma.vattu_LLA;
