@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.26 2006/03/08 14:18:27 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.27 2006/03/08 14:20:48 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -389,7 +389,7 @@ var Padma_Browser_Transformer = {
         item = document.getElementById("padmaMenuItem3");
         item.hidden = hidden || !rts || !telugu;
         item = document.getElementById("padmaMenuItem4");
-        item.hidden = hidden || !rts;
+        item.hidden = hidden || !rts || !telugu;
         item = document.getElementById("padmaMenuItem5");
         item.hidden = hidden || !iscii || !telugu;
         item = document.getElementById("padmaMenuItem6");
