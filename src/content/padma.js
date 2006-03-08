@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.25 2006/03/03 15:34:54 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.26 2006/03/08 14:18:27 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -385,9 +385,9 @@ var Padma_Browser_Transformer = {
         var kannada = this.prefBranch.getBoolPref(PadmaSettings.prefEnableKannada);
 
         item = document.getElementById("padmaMenuItem2");
-        item.hidden = hidden || !rts;
+        item.hidden = hidden || !rts || !telugu;
         item = document.getElementById("padmaMenuItem3");
-        item.hidden = hidden || !rts;
+        item.hidden = hidden || !rts || !telugu;
         item = document.getElementById("padmaMenuItem4");
         item.hidden = hidden || !rts;
         item = document.getElementById("padmaMenuItem5");
