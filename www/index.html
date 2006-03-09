@@ -1,9 +1,19 @@
 
 <!-- ***************** INFO/NEWS *************** -->
 <div id="infoTabs">
+
+<div class="infoTab" id="other-stuff">
+<h5 class="infoHeader">Other Stuff</h5>
+<ul>
+<li><a href="installation.html">Release Notes</a></li>
+<li><a href="https://addons.mozilla.org/extensions/moreinfo.php?id=873">Mozilla Update</a></li>
+</ul>
+</div>
+
 <div class="infoTab" id="whats-new">
 <h5 class="infoHeader">What's New</h5>
 <ul>
+<li>Padma 0.4.6 released on March 7<sup>th</sup>, 2006</li>
 <li>Padma 0.4.5 released on February 22<sup>nd</sup>, 2006</li>
 <li>Padma 0.4.4 released on December 9<sup>th</sup>, 2005</li>
 <li>Padma 0.4.3 released on November 11<sup>th</sup>, 2005</li>
@@ -26,11 +36,6 @@
 <li>Padma 0.2.2 released on March 5<sup>th</sup>, 2005</li>
 <li><a href="http://www.mozdev.org/">mozdev.org</a></li>
 </ul>
-</div>
-
-<div class="infoTab" id="other-stuff">
-<h5 class="infoHeader">Other Stuff</h5>
-Click <a href="installation.html">here</a> for Release Notes.
 </div>
 
 <!-- alternative image/table base tab works better in NS4 -->
@@ -65,7 +70,7 @@ Click <a href="installation.html">here</a> for Release Notes.
 
 </style>
 <h2 class="first"><strong>Padma</strong>: Transformer for Indic Scripts</h2>
-<p class="first"><a href="http://downloads.mozdev.org/padma/padma-0.4.5.xpi">Padma 0.4.5</a>, by Nagarjuna Venna</p>
+<p class="first"><a href="http://downloads.mozdev.org/padma/padma-0.4.6.xpi">Padma 0.4.6</a>, by Nagarjuna Venna</p>
 
 <p><strong>Padma</strong> is a technology for transforming Indic text between various public and proprietary formats. This extension applies the technology to Mozilla based applications. <strong>Padma</strong> is available as an extension for Firefox, Thunderbird, Netscape, Mozilla suite and SeaMonkey platforms. <strong>Padma</strong> currently supports <a href="http://en.wikipedia.org/wiki/Telugu">Telugu</a>, <a href="http://en.wikipedia.org/wiki/Malayalam">Malayalam</a>, <a href="http://en.wikipedia.org/wiki/Tamil_language">Tamil</a>, <a href="http://en.wikipedia.org/wiki/Devanagari">Devanagari</a>, <a href="http://en.wikipedia.org/wiki/Gujarati_language">Gujarati</a> and <a href="http://en.wikipedia.org/wiki/Kannada">Kannada</a> scripts. The following output formats are supported:</p>
 <ul>
@@ -79,6 +84,8 @@ Click <a href="installation.html">here</a> for Release Notes.
 <li class="padma1"><a href="http://www.unicode.org">Unicode</a></li> 
 <li class="padma1"><a href="http://varamozhi.sourceforge.net/iscii91.pdf">ISCII</a></li> 
 <li class="padma1"><a href="http://www.aczoom.com/itrans">ITRANS</a></li> 
+<li class="padma1"><a href="http://www.tamil.net/tscii/">TSCII</a></li>
+<li class="padma1"><a href="http://www.tamilvu.org/Tamilnet99/font.htm"><acronym title="Tamil Monolingual and Bilingual encoding standards">TAB & TAM</a></acronym></li>
 <li class="padma1"> The following dynamic font schemes
   <ul>
   <li class="padma2">Eenadu</li>
@@ -105,6 +112,9 @@ Click <a href="installation.html">here</a> for Release Notes.
   <li class="padma2">Gopika</li>
   <li class="padma2">TCSMith</li>
   <li class="padma2">Nandi</li>
+  <li class="padma2">Telugu Font</li>
+  <li class="padma2">SuriTln</li>
+  <li class="padma2">and <a href="installation.html#TSCII_fonts">16 fonts</a> supporting TSCII</li>
   </ul>
 </li>
 </ul>
@@ -134,11 +144,13 @@ Click <a href="installation.html">here</a> for Release Notes.
 <li class="padma1"><a href="http://www.gujaratsamachar.com">Gujarat Samachar</a> (Gujarati)</li>
 <li class="padma1"><a href="http://www.aponline.gov.in">State of Andhra Pradesh</a> (Telugu)</li>
 <li class="padma1"><a href="http://www.kannadaprabha.com">Kannada Prabha</a> (Kannada)</li>
+<li class="padma1"><a href="http://www.telugupeople.com">Telugu People</a> (Telugu)</li>
+<li class="padma1"><a href="http://www.andhrabharati.com">Andhra Bharati</a> (Telugu)</li>
 </ul>
 
-<p><strong>Padma</strong>'s manual transformer is accessible whenever the context menu is launched after selecting a region in the page (typically by a right click). This menu is also configurable from the options window. Configurable options include schemes (<a href="http://groups-beta.google.com/group/soc.culture.indian.telugu/browse_thread/thread/48eac8e35ba0bef4/69ec85d46731ce73">RTS</a>, <a href="http://www.aczoom.com/itrans">ITRANS</a>, <a href="http://varamozhi.sourceforge.net/iscii91.pdf">ISCII</a>) and scripts (<a href="http://en.wikipedia.org/wiki/Telugu">Telugu</a>, <a href="http://en.wikipedia.org/wiki/Malayalam">Malayalam</a>, <a href="http://en.wikipedia.org/wiki/Tamil_language">Tamil</a> and <a href="http://en.wikipedia.org/wiki/Devanagari">Devanagari</a>). One menu item - 'Transform to Unicode' is always displayed. The selection can span arbitrary page elements. For RTS output, three different writing styles are supported - Kanneganti, Pillalamarri and Palana. See <a href="http://www.bhaavana.net/telusa/1995/0299.html">here</a> for a definition of these 3 styles. RTS output can be further refined by choosing how "sunnaa" should be generated - the scheme popularized by <a href="http://chaitanya.bhaavana.net/Rangavalli/webeditor.html"><i>Ramgvallika</i></a> is supported in addition to the standard RTS method.</p>
+<p><strong>Padma</strong>'s manual transformer is accessible whenever the context menu is launched after selecting a region in the page (typically by a right click). This menu is also configurable from the options window. Configurable options include schemes (<a href="http://groups-beta.google.com/group/soc.culture.indian.telugu/browse_thread/thread/48eac8e35ba0bef4/69ec85d46731ce73">RTS</a>, <a href="http://www.aczoom.com/itrans">ITRANS</a>, <a href="http://varamozhi.sourceforge.net/iscii91.pdf">ISCII</a>), <a href="http://www.tamil.net/tscii/">TSCII</a>, <a href="http://www.tamilvu.org/Tamilnet99/font.htm">TAB, TAM</a> and scripts (<a href="http://en.wikipedia.org/wiki/Telugu">Telugu</a>, <a href="http://en.wikipedia.org/wiki/Malayalam">Malayalam</a>, <a href="http://en.wikipedia.org/wiki/Tamil_language">Tamil</a>, <a href="http://en.wikipedia.org/wiki/Devanagari">Devanagari</a>, <a href="http://en.wikipedia.org/wiki/Gujarati_language">Gujarati</a> and <a href="http://en.wikipedia.org/wiki/Kannada">Kannada</a>). One menu item - 'Transform to Unicode' is always displayed. The selection can span arbitrary page elements. For RTS output, three different writing styles are supported - Kanneganti, Pillalamarri and Palana. See <a href="http://www.bhaavana.net/telusa/1995/0299.html">here</a> for a definition of these 3 styles. RTS output can be further refined by choosing how "sunnaa" should be generated - the scheme popularized by <a href="http://chaitanya.bhaavana.net/Rangavalli/webeditor.html"><i>Ramgvallika</i></a> is supported in addition to the standard RTS method.</p>
 
-<p>The current stable version of <strong>Padma</strong> is <a href="http://downloads.mozdev.org/padma/padma-0.4.5.xpi" onclick="return install(this, 'Padma 0.4.5');">0.4.5</a>. 0.4.5 was released on February 22nd, 2006 and may not be available for download from the mirrors for about 24 hours. Click <a href="installation.html">here</a> for Release Notes.</p> You can leave a comment at <a href="https://addons.mozilla.org/extensions/moreinfo.php?id=873">Mozilla Update</a> or send a mail to the <a href="mailto:padma@mozdev.org">Padma mailing list</a>.
+<p>The current stable version of <strong>Padma</strong> is <a href="http://downloads.mozdev.org/padma/padma-0.4.6.xpi" onclick="return install(this, 'Padma 0.4.6');">0.4.6</a>. 0.4.6 was released on March 7th, 2006 and may not be available for download from the mirrors for about 24 hours. Click <a href="installation.html">here</a> for Release Notes. You can leave a comment at <a href="https://addons.mozilla.org/extensions/moreinfo.php?id=873">Mozilla Update</a> or send a mail to the <a href="mailto:padma@mozdev.org">Padma mailing list</a>. </p>
 
 <p><strong>Padma</strong> is inspired by Kolichala Suresh's implementation of a converter from RTS to Unicode for the Internet Explorer. Many thanks to Kolichala Suresh, Saravan Kumar, M K Paul, Mayuresh Kadu, Indraganti Padma, Ben Bennett and C.J. Cibu for their code contributions, input and advice.</p>
 
