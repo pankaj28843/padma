@@ -1,6 +1,6 @@
-// $Id: HTChanakya.js,v 1.1 2006/03/13 20:48:16 vnagarjuna Exp $ -->
+// $Id: HTChanakya.js,v 1.2 2006/03/13 20:49:34 vnagarjuna Exp $ -->
 
-//Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
+//Copyright 2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
 /* ***** BEGIN LICENSE BLOCK ***** 
  *  This file is part of Padma.
