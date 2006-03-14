@@ -1,4 +1,4 @@
-// $Id: ITRANS.js,v 1.6 2005/12/09 15:00:36 vnagarjuna Exp $ -->
+// $Id: ITRANS.js,v 1.7 2006/03/14 21:32:45 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -136,8 +136,8 @@ ITRANS.digit_SEVEN    = "7";
 ITRANS.digit_EIGHT    = "8";
 ITRANS.digit_NINE     = "9";
 
-//Not supported yet, listed here for completenesss
-ITRANS.candrae        = ".c";
+//vowel signs
+ITRANS.vowelsn_CDR_E  = ".c";
 
 ITRANS.toPadma = new Object();
 	
@@ -241,6 +241,8 @@ ITRANS.toPadma[ITRANS.digit_SIX]   = Padma.digit_SIX;
 ITRANS.toPadma[ITRANS.digit_SEVEN] = Padma.digit_SEVEN;
 ITRANS.toPadma[ITRANS.digit_EIGHT] = Padma.digit_EIGHT;
 ITRANS.toPadma[ITRANS.digit_NINE]  = Padma.digit_NINE;
+
+ITRANS.toPadma[ITRANS.vowelsn_CDR_E] = Padma.vowelsn_CDR_E;
 
 ITRANS.lookup = function (str) 
 {
