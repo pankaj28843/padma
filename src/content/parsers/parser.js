@@ -1,4 +1,4 @@
-// $Id: parser.js,v 1.3 2005/10/19 23:12:29 vnagarjuna Exp $ -->
+// $Id: parser.js,v 1.4 2006/03/20 20:09:04 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -115,7 +115,7 @@ Parser.prototype.handleInput = function (value, key, current)
     if (arguments.length >= 5)
         suffix = arguments[4];
 
-    //alert("state = " + this.state + ", type = " + old_type + ", prefix = " + prefix);
+    //alert("state = " + this.state + ", type = " + old_type + ", prefix = " + prefix + ", suffix = " + suffix);
         
     var type = this.updateSymbolType(old_type);
     if (type != old_type) {
