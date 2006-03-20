@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: padmaMailOverlay.xul,v 1.23 2006/03/20 16:38:07 vnagarjuna Exp $-->
+<!--$Id: padmaMailOverlay.xul,v 1.24 2006/03/20 20:12:30 vnagarjuna Exp $-->
 
 <!--Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
 
@@ -68,8 +68,10 @@
 <script type="application/x-javascript" src="encodings/Devanagari/Chanakya.js"/>
 <script type="application/x-javascript" src="encodings/Devanagari/Shusha.js"/>
 <script type="application/x-javascript" src="encodings/Devanagari/HTChanakya.js"/>
+<script type="application/x-javascript" src="encodings/Devanagari/Shivaji.js"/>
 <script type="application/x-javascript" src="encodings/Gujarati/Gujarati.js"/>
 <script type="application/x-javascript" src="encodings/Gujarati/Gopika.js"/>
+<script type="application/x-javascript" src="encodings/Gujarati/Vakil.js"/>
 <script type="application/x-javascript" src="encodings/Kannada/Kannada.js"/>
 <script type="application/x-javascript" src="encodings/Kannada/Nandi.js"/>
 
