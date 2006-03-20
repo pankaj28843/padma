@@ -74,7 +74,7 @@ Shusha.isRedundant = function (str)
 }
 
 //This font unfortunately overloads period and nukta...
-//TODO: 218, 214,  181-185, 156, 149-151, 130, 132 - 135, 153, 173, 
+//TODO: 218, 214,  181-184, 156, 149-151, 130, 132 - 135, 153, 173, 
 
 //Vowel modifiers
 Shusha.avagraha	      = "\u007C";
@@ -136,7 +136,8 @@ Shusha.consnt_NA      = "\u006E\u0061";
 
 Shusha.consnt_PA      = "\u0070";
 Shusha.consnt_PHA     = "\u0066";
-Shusha.consnt_FA      = "\u00D4";
+Shusha.consnt_FA_1    = "\u0066\u002C";
+Shusha.consnt_FA_2    = "\u00D4";
 Shusha.consnt_BA      = "\u0062\u0061";
 Shusha.consnt_BHA     = "\u0042\u0061";
 Shusha.consnt_MA      = "\u006D\u0061";
@@ -145,7 +146,9 @@ Shusha.consnt_YA      = "\u0079\u0061";
 Shusha.consnt_RA      = "\u0072";
 Shusha.consnt_LA      = "\u006C\u0061";
 Shusha.consnt_VA      = "\u0076\u0061";
-Shusha.consnt_SHA     = "\u0053\u0061";
+Shusha.consnt_SHA_1   = "\u0053\u0061";
+Shusha.consnt_SHA_2   = "\u0058\u0061";
+Shusha.consnt_SHA_3   = "\u00CF\u0061";
 Shusha.consnt_SSA     = "\u0059\u0061";
 Shusha.consnt_SA      = "\u0073\u0061";
 Shusha.consnt_HA      = "\u0068";
@@ -266,6 +269,7 @@ Shusha.SQBKTRIGHT     = "\u00A5";
 Shusha.BACKQUOTE      = "\u00AA";
 Shusha.PARENLEFT      = "\u00B3";
 Shusha.PARENRIGHT     = "\u00B4";
+Shusha.HYPHEN         = "\u00B9";
 Shusha.PERIOD_2       = "\u00BA";
 Shusha.SLASH          = "\u00C0";
 Shusha.COLON          = "\u00C1";
@@ -342,7 +346,8 @@ Shusha.toPadma[Shusha.consnt_NA]  = Padma.consnt_NA;
 
 Shusha.toPadma[Shusha.consnt_PA]  = Padma.consnt_PA;
 Shusha.toPadma[Shusha.consnt_PHA] = Padma.consnt_PHA;
-Shusha.toPadma[Shusha.consnt_FA]  = Padma.consnt_FA;
+Shusha.toPadma[Shusha.consnt_FA_1] = Padma.consnt_FA;
+Shusha.toPadma[Shusha.consnt_FA_2] = Padma.consnt_FA;
 Shusha.toPadma[Shusha.consnt_BA]  = Padma.consnt_BA;
 Shusha.toPadma[Shusha.consnt_BHA] = Padma.consnt_BHA;
 Shusha.toPadma[Shusha.consnt_MA]  = Padma.consnt_MA;
@@ -351,7 +356,9 @@ Shusha.toPadma[Shusha.consnt_YA]  = Padma.consnt_YA;
 Shusha.toPadma[Shusha.consnt_RA]  = Padma.consnt_RA;
 Shusha.toPadma[Shusha.consnt_LA]  = Padma.consnt_LA;
 Shusha.toPadma[Shusha.consnt_VA]  = Padma.consnt_VA;
-Shusha.toPadma[Shusha.consnt_SHA] = Padma.consnt_SHA;
+Shusha.toPadma[Shusha.consnt_SHA_1] = Padma.consnt_SHA;
+Shusha.toPadma[Shusha.consnt_SHA_2] = Padma.consnt_SHA;
+Shusha.toPadma[Shusha.consnt_SHA_3] = Padma.consnt_SHA;
 Shusha.toPadma[Shusha.consnt_SSA] = Padma.consnt_SSA;
 Shusha.toPadma[Shusha.consnt_SA]  = Padma.consnt_SA;
 Shusha.toPadma[Shusha.consnt_HA]  = Padma.consnt_HA;
@@ -456,6 +463,7 @@ Shusha.toPadma[Shusha.SQBKTRIGHT]    = "]";
 Shusha.toPadma[Shusha.BACKQUOTE]     = "`";
 Shusha.toPadma[Shusha.PARENLEFT]     = "(";
 Shusha.toPadma[Shusha.PARENRIGHT]    = ")";
+Shusha.toPadma[Shusha.HYPHEN]        = "-";
 Shusha.toPadma[Shusha.PERIOD_2]      = ".";
 Shusha.toPadma[Shusha.SLASH]         = "/";
 Shusha.toPadma[Shusha.COLON]         = ":";
@@ -486,11 +494,12 @@ Shusha.overloadList[Shusha.vowel_A]     = true;
 Shusha.overloadList[Shusha.vowel_AA]    = true;
 Shusha.overloadList[Shusha.vowel_I]     = true;
 Shusha.overloadList[Shusha.vowel_EE]    = true;
-Shusha.overloadList[Shusha.consnt_KHA]  = true;
+Shusha.overloadList[Shusha.consnt_KHA_2] = true;
 Shusha.overloadList[Shusha.consnt_GA]   = true;
 Shusha.overloadList[Shusha.consnt_JA]   = true;
 Shusha.overloadList[Shusha.consnt_DDA]  = true;
 Shusha.overloadList[Shusha.consnt_DDHA] = true;
+Shusha.overloadList[Shusha.consnt_PHA]  = true;
 Shusha.overloadList[Shusha.vowelsn_AA]  = true;
 Shusha.overloadList[Shusha.halffm_KSH]  = true;
 Shusha.overloadList[Shusha.halffm_KHA]  = true;
@@ -513,6 +522,8 @@ Shusha.overloadList[Shusha.halffm_YA]   = true;
 Shusha.overloadList[Shusha.halffm_LA]   = true;
 Shusha.overloadList[Shusha.halffm_VA]   = true;
 Shusha.overloadList[Shusha.halffm_SHA_1] = true;
+Shusha.overloadList[Shusha.halffm_SHA_2] = true;
+Shusha.overloadList[Shusha.halffm_SHA_3] = true;
 Shusha.overloadList[Shusha.halffm_SHR]  = true;
 Shusha.overloadList[Shusha.halffm_SSA]  = true;
 Shusha.overloadList[Shusha.halffm_SA]   = true;
