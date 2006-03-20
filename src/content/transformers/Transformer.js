@@ -1,4 +1,4 @@
-// $Id: Transformer.js,v 1.24 2006/03/06 16:30:33 vnagarjuna Exp $ -->
+// $Id: Transformer.js,v 1.25 2006/03/20 16:39:02 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -78,7 +78,11 @@ Transformer.dynFont_TSCAvarangal = 39;
 Transformer.dynFont_TSCAvarangalFxd = 40;
 Transformer.dynFont_TSCThunaivan = 41;
 Transformer.dynFont_TSCNattai    = 42;
-Transformer.dynFont_Unknown      = 43;  //this should always be the max, this is used as a sentinel
+Transformer.dynFont_Shusha       = 43;
+Transformer.dynFont_Shusha02     = 44;
+Transformer.dynFont_Shusha05     = 45;
+Transformer.dynFont_HTChanakya   = 46;
+Transformer.dynFont_Unknown      = 47;  //this should always be the max, this is used as a sentinel
 
 //Classes that implement the above dynamic fonts
 Transformer.dynFont_Class = new Array();
@@ -125,6 +129,10 @@ Transformer.dynFont_Class[Transformer.dynFont_TSCAvarangal] = TSCAvarangal;
 Transformer.dynFont_Class[Transformer.dynFont_TSCAvarangalFxd] = TSCAvarangalFxd;
 Transformer.dynFont_Class[Transformer.dynFont_TSCThunaivan] = TSCThunaivan;
 Transformer.dynFont_Class[Transformer.dynFont_TSCNattai]    = TSCNattai;
+Transformer.dynFont_Class[Transformer.dynFont_Shusha]       = Shusha;
+Transformer.dynFont_Class[Transformer.dynFont_Shusha02]     = Shusha02;
+Transformer.dynFont_Class[Transformer.dynFont_Shusha05]     = Shusha05;
+Transformer.dynFont_Class[Transformer.dynFont_HTChanakya]   = HTChanakya;
 
 //Class names for non-dynamic font encodings
 Transformer.className_Unicode = Unicode;
