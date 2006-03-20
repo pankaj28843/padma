@@ -1,4 +1,4 @@
-// $Id: SuriTln.js,v 1.5 2006/03/07 18:30:23 vnagarjuna Exp $ -->
+// $Id: SuriTln.js,v 1.6 2006/03/20 16:38:37 vnagarjuna Exp $ -->
 
 //Copyright 2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -603,6 +603,7 @@ SuriTln.prefixList[SuriTln.vowelsn_E_1]     = true;
 SuriTln.prefixList[SuriTln.vowelsn_E_3]     = true;
 SuriTln.prefixList[SuriTln.vowelsn_EE_1]    = true;
 SuriTln.prefixList[SuriTln.vowelsn_EE_3]    = true;
+SuriTln.prefixList[SuriTln.vattu_KSHA]      = true;
 SuriTln.prefixList[SuriTln.vattu_KHA]       = true;
 SuriTln.prefixList[SuriTln.vattu_GA_1]      = true;
 SuriTln.prefixList[SuriTln.vattu_GA_2]      = true;
