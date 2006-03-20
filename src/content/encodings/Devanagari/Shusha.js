@@ -1,10 +1,7 @@
+//$Id: Shusha.js,v 1.3 2006/03/20 20:11:41 vnagarjuna Exp $
+
 /* Copyright 2006 G Karunakar <karunakar@freedomink.org> */
 /* Copyright 2006 Nagarjuna Venna <vnagarjuna@yahoo.com> */
-
-/* ***** BEGIN LICENSE BLOCK ***** 
- *  This file is part of Padma.
- *
- *  Padma is free software; you can redistribute it and/or modify
 
 /* ***** BEGIN LICENSE BLOCK ***** 
  *  This file is part of Padma.
