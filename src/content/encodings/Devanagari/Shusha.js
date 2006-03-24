@@ -1,4 +1,4 @@
-//$Id: Shusha.js,v 1.3 2006/03/20 20:11:41 vnagarjuna Exp $
+//$Id: Shusha.js,v 1.4 2006/03/24 17:27:57 vnagarjuna Exp $
 
 /* Copyright 2006 G Karunakar <karunakar@freedomink.org> */
 /* Copyright 2006 Nagarjuna Venna <vnagarjuna@yahoo.com> */
@@ -71,7 +71,7 @@ Shusha.isRedundant = function (str)
 }
 
 //This font unfortunately overloads period and nukta...
-//TODO: 218, 214,  181-184, 156, 149-151, 130, 132 - 135, 153, 173, 
+//TODO: 218, 214,  181-184, 149-151, 130, 132 - 135, 153, 173, 
 
 //Vowel modifiers
 Shusha.avagraha	      = "\u007C";
@@ -204,7 +204,7 @@ Shusha.conjct_KT      = "\u003E";
 Shusha.conjct_KSH     = "\u0078\u0061";
 Shusha.conjct_KR      = "\u00CB";
 Shusha.conjct_JNY     = "\u0026";
-Shusha.conjct_TT_TTH  = "\u002B";
+Shusha.conjct_TTTT    = "\u002B";
 Shusha.conjct_TTHTTH  = "\u007B";
 Shusha.conjct_T_T     = "\u003C\u0061";
 Shusha.conjct_TR      = "\u007E";
@@ -215,6 +215,7 @@ Shusha.conjct_DV      = "\u0057";
 Shusha.conjct_NN      = "\u00D9";
 Shusha.conjct_PHR     = "\u00CD";
 Shusha.conjct_SHR     = "\u0045\u0061";
+Shusha.conjct_HR      = "\u0153";
 Shusha.conjct_HY      = "\u0028";
 
 //rakar
@@ -415,7 +416,6 @@ Shusha.toPadma[Shusha.conjct_KSH]    = Padma.consnt_KA + Padma.vattu_SSA;
 Shusha.toPadma[Shusha.conjct_KR]     = Padma.consnt_KA + Padma.vattu_RA;
 Shusha.toPadma[Shusha.conjct_JNY]    = Padma.consnt_JA + Padma.vattu_NYA;
 Shusha.toPadma[Shusha.conjct_TTTT]   = Padma.consnt_TTA + Padma.vattu_TTA;
-Shusha.toPadma[Shusha.conjct_TT_TTH] = Padma.consnt_TTA + Padma.vattu_TTHA;
 Shusha.toPadma[Shusha.conjct_TTHTTH] = Padma.consnt_TTHA + Padma.vattu_TTHA;
 Shusha.toPadma[Shusha.conjct_T_T]    = Padma.consnt_TA + Padma.vattu_TA;
 Shusha.toPadma[Shusha.conjct_TR]     = Padma.consnt_TA + Padma.vattu_RA;
@@ -426,6 +426,7 @@ Shusha.toPadma[Shusha.conjct_DV]     = Padma.consnt_DA + Padma.vattu_VA;
 Shusha.toPadma[Shusha.conjct_NN]     = Padma.consnt_NA + Padma.vattu_NA;
 Shusha.toPadma[Shusha.conjct_PHR]    = Padma.consnt_PHA + Padma.vattu_RA;
 Shusha.toPadma[Shusha.conjct_SHR]    = Padma.consnt_SHA + Padma.vattu_RA;
+Shusha.toPadma[Shusha.conjct_HR]     = Padma.consnt_HA + Padma.vattu_RA;
 Shusha.toPadma[Shusha.conjct_HY]     = Padma.consnt_HA + Padma.vattu_YA;
 
 Shusha.toPadma[Shusha.vattu_RA_1]    = Padma.vattu_RA;

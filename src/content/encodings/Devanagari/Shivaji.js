@@ -1,4 +1,4 @@
-//$Id: Shivaji.js,v 1.2 2006/03/20 20:11:41 vnagarjuna Exp $
+//$Id: Shivaji.js,v 1.3 2006/03/24 17:27:57 vnagarjuna Exp $
 
 /* Copyright 2006 Nagarjuna Venna <vnagarjuna@yahoo.com> */
 
@@ -144,7 +144,6 @@ Shivaji05.isRedundant = function (str)
 }
 
 //Generate the slightly different lookup tables from Shusha
-
 function Shivaji()
 {
 }
