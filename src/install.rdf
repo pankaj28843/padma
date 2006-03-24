@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: install.rdf,v 1.21 2006/03/07 16:54:03 vnagarjuna Exp $-->
+<!--$Id: install.rdf,v 1.22 2006/03/24 21:17:43 vnagarjuna Exp $-->
 
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:em="http://www.mozilla.org/2004/em-rdf#">
@@ -9,7 +9,7 @@
     <!-- Front End MetaData -->
     <em:name>Padma</em:name>
     <em:id>{3e450467-892a-45b8-9ed8-90e8d3bf2ad7}</em:id>
-    <em:version>0.4.6</em:version>
+    <em:version>0.4.7</em:version>
     <em:description>Transformer for Indic Scripts</em:description>
     <em:homepageURL>http://padma.mozdev.org</em:homepageURL>
     <em:optionsURL>chrome://padma/content/prefs.xul</em:optionsURL>
@@ -21,6 +21,7 @@
     <em:contributor>Suresh Kolichala</em:contributor>
     <em:contributor>Saravana Kumar</em:contributor>
     <em:contributor>M K Paul</em:contributor>
+    <em:contributor>Guntupalli Karunakar</em:contributor>
 
     <!-- Target Application this extension can install into, 
         with minimum and maximum supported versions. --> 
