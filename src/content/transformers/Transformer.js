@@ -1,4 +1,4 @@
-// $Id: Transformer.js,v 1.26 2006/03/20 20:12:31 vnagarjuna Exp $ -->
+// $Id: Transformer.js,v 1.27 2006/03/24 17:28:44 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -82,11 +82,13 @@ Transformer.dynFont_Shusha       = 43;
 Transformer.dynFont_Shusha02     = 44;
 Transformer.dynFont_Shusha05     = 45;
 Transformer.dynFont_HTChanakya   = 46;
-Transformer.dynFont_Vakil        = 47;
+Transformer.dynFont_Vakil01      = 47;
 Transformer.dynFont_Shivaji01    = 48;
 Transformer.dynFont_Shivaji02    = 49;
 Transformer.dynFont_Shivaji05    = 50;
-Transformer.dynFont_Unknown      = 51;  //this should always be the max, this is used as a sentinel
+Transformer.dynFont_Vakil02      = 51;
+Transformer.dynFont_Vakil05      = 52;
+Transformer.dynFont_Unknown      = 53;  //this should always be the max, this is used as a sentinel
 
 //Classes that implement the above dynamic fonts
 Transformer.dynFont_Class = new Array();
@@ -137,10 +139,12 @@ Transformer.dynFont_Class[Transformer.dynFont_Shusha]       = Shusha;
 Transformer.dynFont_Class[Transformer.dynFont_Shusha02]     = Shusha02;
 Transformer.dynFont_Class[Transformer.dynFont_Shusha05]     = Shusha05;
 Transformer.dynFont_Class[Transformer.dynFont_HTChanakya]   = HTChanakya;
-Transformer.dynFont_Class[Transformer.dynFont_Vakil]        = Vakil;
+Transformer.dynFont_Class[Transformer.dynFont_Vakil01]      = Vakil01;
 Transformer.dynFont_Class[Transformer.dynFont_Shivaji01]    = Shivaji01;
 Transformer.dynFont_Class[Transformer.dynFont_Shivaji02]    = Shivaji02;
 Transformer.dynFont_Class[Transformer.dynFont_Shivaji05]    = Shivaji05;
+Transformer.dynFont_Class[Transformer.dynFont_Vakil02]      = Vakil02;
+Transformer.dynFont_Class[Transformer.dynFont_Vakil05]      = Vakil05;
 
 //Class names for non-dynamic font encodings
 Transformer.className_Unicode = Unicode;
@@ -188,8 +192,10 @@ Transformer.initialize = function () {
     //Custom font inits
     //Initialize BEJA lookup tables used by Bhaskar, Jagran, EPatrika and AmarUjala fonts
     BEJA.initialize();
-    //Shivaji is based on Shusha but is slightly different
+    //Shivaji fonts are based on Shusha but are slightly different
     Shivaji.initialize();
+    //Vakil fonts are based on Shusha but iare slightly different
+    Vakil.initialize();
 }
 
 Transformer.createTransformer = function (input, output, rtsWritingStyle, rtsSunnaStyle)
