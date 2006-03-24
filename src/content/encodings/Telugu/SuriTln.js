@@ -1,4 +1,4 @@
-// $Id: SuriTln.js,v 1.6 2006/03/20 16:38:37 vnagarjuna Exp $ -->
+// $Id: SuriTln.js,v 1.7 2006/03/24 16:43:36 vnagarjuna Exp $ -->
 
 //Copyright 2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -107,7 +107,8 @@ SuriTln.consnt_NGA     = "\u00CD\u0053";
 SuriTln.consnt_CA      = "\u0054";
 SuriTln.consnt_CHA     = "\u0027";
 SuriTln.consnt_JA      = "\u00CD\u00DE";
-SuriTln.consnt_JHA     = "\u0068\u0058\u00E2";
+SuriTln.consnt_JHA_1   = "\u0068\u0058\u00E1";
+SuriTln.consnt_JHA_2   = "\u0068\u0058\u00E2";
 SuriTln.consnt_NYA     = "\u00C5\u0053";
 
 SuriTln.consnt_TTA_1   = "\u0059";
@@ -384,7 +385,8 @@ SuriTln.toPadma[SuriTln.consnt_NGA]   = Padma.consnt_NGA;
 SuriTln.toPadma[SuriTln.consnt_CA]  = Padma.consnt_CA;
 SuriTln.toPadma[SuriTln.consnt_CHA] = Padma.consnt_CHA;
 SuriTln.toPadma[SuriTln.consnt_JA]  = Padma.consnt_JA;
-SuriTln.toPadma[SuriTln.consnt_JHA] = Padma.consnt_JHA;
+SuriTln.toPadma[SuriTln.consnt_JHA_1] = Padma.consnt_JHA;
+SuriTln.toPadma[SuriTln.consnt_JHA_2] = Padma.consnt_JHA;
 SuriTln.toPadma[SuriTln.consnt_NYA] = Padma.consnt_NYA;
 
 SuriTln.toPadma[SuriTln.consnt_TTA_1]  = Padma.consnt_TTA;
