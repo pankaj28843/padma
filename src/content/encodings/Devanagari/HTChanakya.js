@@ -1,4 +1,4 @@
-// $Id: HTChanakya.js,v 1.2 2006/03/13 20:49:34 vnagarjuna Exp $ -->
+// $Id: HTChanakya.js,v 1.3 2006/03/24 21:20:28 vnagarjuna Exp $ -->
 
 //Copyright 2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -371,7 +371,7 @@ HTChanakya.toPadma[HTChanakya.vowel_II]   = Padma.vowel_II;
 HTChanakya.toPadma[HTChanakya.vowel_U]    = Padma.vowel_U;
 HTChanakya.toPadma[HTChanakya.vowel_UU]   = Padma.vowel_UU;
 HTChanakya.toPadma[HTChanakya.vowel_R]    = Padma.vowel_R;
-HTChanakya.toPadma[HTChanakya.vowel_RR]   = Padma.vowel_RR;
+//HTChanakya.toPadma[HTChanakya.vowel_RR]   = Padma.vowel_RR;
 HTChanakya.toPadma[HTChanakya.vowel_CDR_E] = Padma.vowel_CDR_E;
 HTChanakya.toPadma[HTChanakya.vowel_EE]   = Padma.vowel_EE;
 HTChanakya.toPadma[HTChanakya.vowel_AI]   = Padma.vowel_AI;
@@ -500,7 +500,6 @@ HTChanakya.toPadma[HTChanakya.halffm_LA]   = Padma.halffm_LA;
 HTChanakya.toPadma[HTChanakya.halffm_VA]   = Padma.halffm_VA;
 HTChanakya.toPadma[HTChanakya.halffm_SHA_1]= Padma.halffm_SHA;
 HTChanakya.toPadma[HTChanakya.halffm_SHA_2]= Padma.halffm_SHA;
-HTChanakya.toPadma[HTChanakya.halffm_SHR]  = Padma.halffm_SHA + Padma.halffm_RA;
 HTChanakya.toPadma[HTChanakya.halffm_SSA]  = Padma.halffm_SSA;
 HTChanakya.toPadma[HTChanakya.halffm_SA]   = Padma.halffm_SA;
 HTChanakya.toPadma[HTChanakya.halffm_HA]   = Padma.halffm_HA;
@@ -536,7 +535,6 @@ HTChanakya.toPadma[HTChanakya.conjct_DGH]    = Padma.consnt_DA + Padma.vattu_GHA
 HTChanakya.toPadma[HTChanakya.conjct_DD]     = Padma.consnt_DA + Padma.vattu_DA;
 HTChanakya.toPadma[HTChanakya.conjct_D_DH]   = Padma.consnt_DA + Padma.vattu_DHA;
 HTChanakya.toPadma[HTChanakya.conjct_DB]     = Padma.consnt_DA + Padma.vattu_BA;
-HTChanakya.toPadma[HTChanakya.conjct_DBR]    = Padma.consnt_DA + Padma.vattu_BA + Padma.vattu_RA;
 HTChanakya.toPadma[HTChanakya.conjct_DBH]    = Padma.consnt_DA + Padma.vattu_BHA;
 HTChanakya.toPadma[HTChanakya.conjct_DM]     = Padma.consnt_DA + Padma.vattu_MA;
 HTChanakya.toPadma[HTChanakya.conjct_DY]     = Padma.consnt_DA + Padma.vattu_YA;
@@ -659,5 +657,4 @@ HTChanakya.overloadList[HTChanakya.halffm_YA]   = true;
 HTChanakya.overloadList[HTChanakya.halffm_LA]   = true;
 HTChanakya.overloadList[HTChanakya.halffm_SHA_1]= true;
 HTChanakya.overloadList[HTChanakya.halffm_SHA_2]= true;
-HTChanakya.overloadList[HTChanakya.halffm_SHR]  = true;
 HTChanakya.overloadList[HTChanakya.halffm_SSA]  = true;
