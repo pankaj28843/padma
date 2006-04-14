@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: install.rdf,v 1.23 2006/03/24 21:32:23 vnagarjuna Exp $-->
+<!--$Id: install.rdf,v 1.24 2006/04/14 13:45:36 vnagarjuna Exp $-->
 
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:em="http://www.mozilla.org/2004/em-rdf#">
@@ -22,6 +22,7 @@
     <em:contributor>Saravana Kumar</em:contributor>
     <em:contributor>M K Paul</em:contributor>
     <em:contributor>Guntupalli Karunakar</em:contributor>
+    <em:contributor>Poonam Kainthura</em:contributor>
 
     <!-- Target Application this extension can install into, 
         with minimum and maximum supported versions. --> 
