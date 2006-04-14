@@ -1,4 +1,4 @@
-// $Id: Transformer.js,v 1.27 2006/03/24 17:28:44 vnagarjuna Exp $ -->
+// $Id: Transformer.js,v 1.28 2006/04/14 13:44:49 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -88,7 +88,8 @@ Transformer.dynFont_Shivaji02    = 49;
 Transformer.dynFont_Shivaji05    = 50;
 Transformer.dynFont_Vakil02      = 51;
 Transformer.dynFont_Vakil05      = 52;
-Transformer.dynFont_Unknown      = 53;  //this should always be the max, this is used as a sentinel
+Transformer.dynFont_Mithi        = 53;
+Transformer.dynFont_Unknown      = 54;  //this should always be the max, this is used as a sentinel
 
 //Classes that implement the above dynamic fonts
 Transformer.dynFont_Class = new Array();
@@ -145,6 +146,7 @@ Transformer.dynFont_Class[Transformer.dynFont_Shivaji02]    = Shivaji02;
 Transformer.dynFont_Class[Transformer.dynFont_Shivaji05]    = Shivaji05;
 Transformer.dynFont_Class[Transformer.dynFont_Vakil02]      = Vakil02;
 Transformer.dynFont_Class[Transformer.dynFont_Vakil05]      = Vakil05;
+Transformer.dynFont_Class[Transformer.dynFont_Mithi]        = Mithi;
 
 //Class names for non-dynamic font encodings
 Transformer.className_Unicode = Unicode;
