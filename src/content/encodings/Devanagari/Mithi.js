@@ -1,4 +1,4 @@
-// $Id: Mithi.js,v 1.2 2006/04/14 13:44:42 vnagarjuna Exp $ -->
+// $Id: Mithi.js,v 1.3 2006/09/26 19:16:37 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 // The mapping for Mithi font herein has been added by Indictrans(www.indictrans.org)
@@ -488,7 +488,7 @@ Mithi.toPadma[Mithi.halffm_HA]     = Padma.halffm_HA;
 Mithi.toPadma[Mithi.halffm_HR]     = Padma.halffm_HA  +  Padma.halffm_RA;
 Mithi.toPadma[Mithi.halffm_LLA]    = Padma.halffm_LLA;
 Mithi.toPadma[Mithi.halffm_KSH]    = Padma.halffm_KA  + Padma.halffm_SSA;
-Mithi.toPadma[Mithi.halffm_JNY]    = Padma.halffm_JA  + Padma.halfm_NYA;
+//Mithi.toPadma[Mithi.halffm_JNY]    = Padma.halffm_JA  + Padma.halfm_NYA;
 Mithi.toPadma[Mithi.halffm_SHV]    = Padma.halffm_SHA +  Padma.halffm_VA;
 
 
@@ -516,7 +516,7 @@ Mithi.toPadma[Mithi.conjct_GR]     = Padma.consnt_GA + Padma.vattu_RA;
 Mithi.toPadma[Mithi.conjct_HY]     = Padma.consnt_HA + Padma.vattu_YA;
 Mithi.toPadma[Mithi.conjct_HM]     = Padma.consnt_HA + Padma.vattu_MA;
 Mithi.toPadma[Mithi.conjct_SHV]    = Padma.consnt_SHA + Padma.vattu_VA;
-Mithi.toPadma[Mithi.conjct_HL]     = Padma.consnt_HA + Padma.vattu_LA;
+//Mithi.toPadma[Mithi.conjct_HL]     = Padma.consnt_HA + Padma.vattu_LA;
 Mithi.toPadma[Mithi.conjct_FR]     = Padma.consnt_FA + Padma.vattu_RA;
 Mithi.toPadma[Mithi.conjct_PR]     = Padma.consnt_PA + Padma.vattu_RA ;
 Mithi.toPadma[Mithi.conjct_BR]     = Padma.consnt_BA + Padma.vattu_RA;

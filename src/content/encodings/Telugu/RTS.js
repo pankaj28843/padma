@@ -1,4 +1,4 @@
-// $Id: RTS.js,v 1.9 2005/12/09 15:06:47 vnagarjuna Exp $ -->
+// $Id: RTS.js,v 1.10 2006/09/26 19:20:51 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -622,6 +622,7 @@ RTS.isAnusvara = function (prefix, suffix)
         return true;
     if (prefix == Padma.consnt_MA)
         return RTS.anusvaraMakerForMOnly[suffix] != null ? true : false;
+    return false;
 }
 
 RTS.getRTSWriter = function (wstyle, sstyle)
