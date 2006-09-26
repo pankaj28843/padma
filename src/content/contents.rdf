@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: contents.rdf,v 1.14 2006/03/24 21:17:43 vnagarjuna Exp $-->
+<!--$Id: contents.rdf,v 1.15 2006/09/26 19:05:23 vnagarjuna Exp $-->
 
 <RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:chrome="http://www.mozilla.org/rdf/chrome#">
@@ -11,13 +11,13 @@
 
   <!-- package information -->
   <RDF:Description about="urn:mozilla:package:padma"
-        chrome:displayName="Padma 0.4.7"
+        chrome:displayName="Padma 0.4.8"
         chrome:author="Nagarjuna Venna"
         chrome:authorURL="http://geocities.com/vnagarjuna"
         chrome:name="padma"
         chrome:description="Transformer for Indic Text"
         chrome:extension="true"
-        chrome:localVersion="0.4.7"
+        chrome:localVersion="0.4.8"
   />
 
   <!-- overlay information -->
