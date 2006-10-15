@@ -1,4 +1,4 @@
-// $Id: Padma.js,v 1.14 2006/02/20 21:16:28 vnagarjuna Exp $ -->
+// $Id: Padma.js,v 1.15 2006/10/15 17:26:01 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -34,12 +34,12 @@ Padma.script_TAMIL      = 2;
 Padma.script_DEVANAGARI = 3;
 Padma.script_GUJARATI   = 4;
 Padma.script_KANNADA    = 5;
-Padma.script_BENGALI    = 5;
-Padma.script_GURMUKHI   = 6;
-Padma.script_ORIYA      = 7;
+Padma.script_BENGALI    = 6;
+Padma.script_GURMUKHI   = 7;
+Padma.script_ORIYA      = 8;
 
-//6 scripts supported now
-Padma.script_MAXSCRIPTS = 6;
+//7 scripts supported now
+Padma.script_MAXSCRIPTS = 7;
 
 //Script names
 Padma.scripts = new Array();
@@ -49,6 +49,7 @@ Padma.scripts[Padma.script_TAMIL]      = "Tamil";
 Padma.scripts[Padma.script_DEVANAGARI] = "Devanagari";
 Padma.scripts[Padma.script_GUJARATI]   = "Gujarati";
 Padma.scripts[Padma.script_KANNADA]    = "Kannada";
+Padma.scripts[Padma.script_BENGALI]    = "Bengali";
 
 //Types (values to allow bit wise operations)
 Padma.type_accu      = 1;
@@ -59,10 +60,10 @@ Padma.type_vattu     = 16;
 Padma.type_hallu     = 32;
 Padma.type_hallu_mod = 64;
 Padma.type_half_form = 128;
-Padma.type_unknown   = 256;
+Padma.type_unknown   = 256; //catch all
 
 //Use Unicode Private Use Area for Padma's internal symbols starting with U+EC00.
-//Code pints used: +UEC00-+UEC0F, +UEC10-+UEC1D, +UEC20-+UEC61, +UEC70-+UEC7C, +UECA1-+UECE1, +UED33-+UED61.
+//Code pints used: +UEC00-+UEC0F, +UEC10-+UEC1D, +UEC20-+UEC67, +UEC70-+UEC7D, +UECA1-+UECE7, +UED33-+UED67.
 
 //Code points 32-64, 91-96, 123-127 (from the ASCII range) are not explicitly listed here
 //but are part of Padma's internal format and are of type Padma.type_unknown.
@@ -76,12 +77,14 @@ Padma.pollu       = "\uEC02";   //dead consonant
 Padma.chillu      = "\uEC0D";   //half consonant - in honor of the Malayalam word chillksharamu (anything generated with a ZWJ in Unicode)
 Padma.syllbreak   = "\uEC7B";   //syllable break - (anything generated with a ZWNJ in Unicode)
 Padma.nukta       = "\uEC7C";
+Padma.ardhavisarga = "\uEC7D";
 
 //Other names for the equivalent of pollu
 Padma.virama       = Padma.pollu;   //Telugu
 Padma.chandrakkala = Padma.pollu;   //Malayalam
 Padma.pulli        = Padma.pollu;   //Tamil
 Padma.halant       = Padma.pollu;   //Devanagari
+Padma.hasant       = Padma.pollu;   //Bengali
 
 //Specials
 Padma.candrabindu = "\uEC03";
@@ -94,7 +97,7 @@ Padma.guru        = "\uEC09";
 Padma.laghu       = "\uEC0A";
 Padma.danda       = "\uEC0B";   //purna virama
 Padma.ddanda      = "\uEC0C";   //deergha virama (double danda)
-Padma.abbrev      = "\uEC0E";   //Devanagari
+Padma.abbrev      = "\uEC0E";
 Padma.om          = "\uEC0F";
 
 //digits
@@ -176,8 +179,14 @@ Padma.consnt_SHA  = "\uEC5C";
 Padma.consnt_SSA  = "\uEC5D";
 Padma.consnt_SA   = "\uEC5E";
 Padma.consnt_HA   = "\uEC5F";
-Padma.consnt_TCH  = "\uEC60";  //Telugu (Extinct)
-Padma.consnt_TJ   = "\uEC61";  //Telugu (Extinct)
+Padma.consnt_TSA  = "\uEC60";  //Telugu (Extinct)
+Padma.consnt_DJA  = "\uEC61";  //Telugu (Extinct)
+Padma.consnt_GGA  = "\uEC62";  //Sindhi
+Padma.consnt_JJA  = "\uEC63";  //Sindhi
+Padma.consnt_DDDA = "\uEC64";  //Sindhi
+Padma.consnt_BBA  = "\uEC65";  //Sindhi
+Padma.consnt_RA_MD = "\uEC66";  //Assamese - RA with mid diagonal
+Padma.consnt_RA_LD = "\uEC67";  //Assamese - RA with lower diagonal
 
 //Gunimtaalu
 Padma.vowelsn_AA    = "\uECA2";
@@ -250,8 +259,14 @@ Padma.vattu_SHA   = "\uECDC";
 Padma.vattu_SSA   = "\uECDD";
 Padma.vattu_SA    = "\uECDE";
 Padma.vattu_HA    = "\uECDF";
-Padma.vattu_TCH   = "\uECE0";
-Padma.vattu_TJ    = "\uECE1";
+Padma.vattu_TSA   = "\uECE0";
+Padma.vattu_DJA   = "\uECE1";
+Padma.vattu_GGA   = "\uECE2";
+Padma.vattu_JJA   = "\uECE3";
+Padma.vattu_DDDA  = "\uECE4";
+Padma.vattu_BBA   = "\uECE5";
+Padma.vattu_RA_MD = "\uECE6";
+Padma.vattu_RA_LD = "\uECE7";
 
 //Half Forms
 Padma.halffm_KA   = "\uED33";
@@ -299,8 +314,14 @@ Padma.halffm_SHA  = "\uED5C";
 Padma.halffm_SSA  = "\uED5D";
 Padma.halffm_SA   = "\uED5E";
 Padma.halffm_HA   = "\uED5F";
-Padma.halffm_TCH  = "\uED60";  //Telugu (Extinct)
-Padma.halffm_TJ   = "\uED61";  //Telugu (Extinct)
+Padma.halffm_TSA  = "\uED60";  //Telugu (Extinct)
+Padma.halffm_DJA  = "\uED61";  //Telugu (Extinct)
+Padma.halffm_GGA  = "\uED62";
+Padma.halffm_JJA  = "\uED63";
+Padma.halffm_DDDA = "\uED64";
+Padma.halffm_BBA  = "\uED65";
+Padma.halffm_RA_MD = "\uED66";
+Padma.halffm_RA_LD = "\uED67";
 
 //Special signs
 Padma.digit_TEN      = "\uEC70";
@@ -317,16 +338,16 @@ Padma.sign_NUMBER    = "\uEC7A";
 
 //Vowel and consonant range (exculudes #a#)
 Padma.base_START = 0xEC22;
-Padma.base_END   = 0xEC61;
+Padma.base_END   = 0xEC67;
 //Dependent form range (exculudes #a#)
 Padma.dep_START = 0xECA2;
-Padma.dep_END   = 0xECE1;
+Padma.dep_END   = 0xECE7;
 //Half form range
 Padma.half_START = 0xED33;
-Padma.half_END   = 0xED61;
+Padma.half_END   = 0xED67;
 //Vattu
 Padma.vattu_START = 0xECB3;
-Padma.vattu_END   = 0xECE1;
+Padma.vattu_END   = 0xECE7;
 
 //Symbol table
 Padma.symbols = new Object();
@@ -352,6 +373,7 @@ Padma.symbols[Padma.vowel_AU]    = Padma.type_accu;
 
 Padma.symbols[Padma.candrabindu] = Padma.type_unknown;
 Padma.symbols[Padma.visarga]     = Padma.type_accu_mod;
+Padma.symbols[Padma.ardhavisarga]= Padma.type_accu_mod;
 Padma.symbols[Padma.pollu]       = Padma.type_hallu_mod;
 Padma.symbols[Padma.chillu]      = Padma.type_hallu_mod;
 Padma.symbols[Padma.syllbreak]   = Padma.type_hallu_mod;
@@ -425,8 +447,14 @@ Padma.symbols[Padma.consnt_SHA]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_SSA]  = Padma.type_hallu;
 Padma.symbols[Padma.consnt_SA]   = Padma.type_hallu;
 Padma.symbols[Padma.consnt_HA]   = Padma.type_hallu;
-Padma.symbols[Padma.consnt_TCH]  = Padma.type_hallu;
-Padma.symbols[Padma.consnt_TJ]   = Padma.type_hallu;
+Padma.symbols[Padma.consnt_TSA]  = Padma.type_hallu;
+Padma.symbols[Padma.consnt_DJA]  = Padma.type_hallu;
+Padma.symbols[Padma.consnt_GGA]  = Padma.type_hallu;
+Padma.symbols[Padma.consnt_JJA]  = Padma.type_hallu;
+Padma.symbols[Padma.consnt_DDDA] = Padma.type_hallu;
+Padma.symbols[Padma.consnt_BBA]  = Padma.type_hallu;
+Padma.symbols[Padma.consnt_RA_MD] = Padma.type_hallu;
+Padma.symbols[Padma.consnt_RA_LD] = Padma.type_hallu;
 
 Padma.symbols[Padma.vowelsn_AA]  = Padma.type_gunintam;
 Padma.symbols[Padma.vowelsn_I]   = Padma.type_gunintam;
@@ -495,8 +523,14 @@ Padma.symbols[Padma.vattu_SHA]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_SSA]   = Padma.type_vattu;
 Padma.symbols[Padma.vattu_SA]    = Padma.type_vattu;
 Padma.symbols[Padma.vattu_HA]    = Padma.type_vattu;
-Padma.symbols[Padma.vattu_TCH]   = Padma.type_vattu;
-Padma.symbols[Padma.vattu_TJ]    = Padma.type_vattu;
+Padma.symbols[Padma.vattu_TSA]   = Padma.type_vattu;
+Padma.symbols[Padma.vattu_DJA]   = Padma.type_vattu;
+Padma.symbols[Padma.vattu_GGA]   = Padma.type_vattu;
+Padma.symbols[Padma.vattu_JJA]   = Padma.type_vattu;
+Padma.symbols[Padma.vattu_DDDA]  = Padma.type_vattu;
+Padma.symbols[Padma.vattu_BBA]   = Padma.type_vattu;
+Padma.symbols[Padma.vattu_RA_MD] = Padma.type_vattu;
+Padma.symbols[Padma.vattu_RA_LD] = Padma.type_vattu;
 
 Padma.symbols[Padma.halffm_KA]   = Padma.type_half_form;
 Padma.symbols[Padma.halffm_QA]   = Padma.type_half_form;
@@ -543,8 +577,14 @@ Padma.symbols[Padma.halffm_SHA]  = Padma.type_half_form;
 Padma.symbols[Padma.halffm_SSA]  = Padma.type_half_form;
 Padma.symbols[Padma.halffm_SA]   = Padma.type_half_form;
 Padma.symbols[Padma.halffm_HA]   = Padma.type_half_form;
-Padma.symbols[Padma.halffm_TCH]  = Padma.type_half_form;
-Padma.symbols[Padma.halffm_TJ]   = Padma.type_half_form;
+Padma.symbols[Padma.halffm_TSA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_DJA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_GGA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_JJA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_DDDA] = Padma.type_half_form;
+Padma.symbols[Padma.halffm_BBA]  = Padma.type_half_form;
+Padma.symbols[Padma.halffm_RA_MD] = Padma.type_half_form;
+Padma.symbols[Padma.halffm_RA_LD] = Padma.type_half_form;
 
 Padma.symbols[Padma.digit_TEN]      = Padma.type_digit;
 Padma.symbols[Padma.digit_HUNDRED]  = Padma.type_digit;
