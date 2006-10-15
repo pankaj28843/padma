@@ -1,4 +1,4 @@
-// $Id: RTS.js,v 1.10 2006/09/26 19:20:51 vnagarjuna Exp $ -->
+// $Id: RTS.js,v 1.11 2006/10/15 17:28:36 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -194,8 +194,8 @@ RTS.conjct_KSH_1   = "x";   //ksh is automatically handled
 RTS.conjct_KSH_2   = "ksh"; //here for completeness
 
 //extinct consonants
-RTS.consnt_TCH     = "~c";
-RTS.consnt_TJ      = "~j";
+RTS.consnt_TSA     = "~c";
+RTS.consnt_DJA     = "~j";
 
 //equivalents
 RTS.misc_JN        = "jn";
@@ -362,8 +362,8 @@ RTS.toPadma[RTS.consnt_LLA_6] = Padma.consnt_LLA;
 RTS.toPadma[RTS.consnt_RRA_1] = Padma.consnt_RRA;
 RTS.toPadma[RTS.consnt_RRA_2] = Padma.consnt_RRA;
 RTS.toPadma[RTS.conjct_KSH_1] = Padma.consnt_KA + Padma.vattu_SSA;
-RTS.toPadma[RTS.consnt_TCH] = Padma.consnt_TCH;
-RTS.toPadma[RTS.consnt_TJ]  = Padma.consnt_TJ;
+RTS.toPadma[RTS.consnt_TSA] = Padma.consnt_TSA;
+RTS.toPadma[RTS.consnt_DJA] = Padma.consnt_DJA;
 RTS.toPadma[RTS.misc_JN] = Padma.consnt_JA + Padma.vattu_NYA;
 RTS.toPadma[RTS.misc_DDD] = Padma.consnt_DDA + Padma.vattu_DDA;
 RTS.toPadma[RTS.misc_TTT] = Padma.consnt_TTA + Padma.vattu_TTA;
@@ -455,8 +455,8 @@ RTS.fromPadma[Padma.consnt_SA]   = RTS.consnt_SA;
 RTS.fromPadma[Padma.consnt_HA]   = RTS.consnt_HA_1;
 RTS.fromPadma[Padma.consnt_LLA]  = RTS.consnt_LLA_1;
 RTS.fromPadma[Padma.consnt_RRA]  = RTS.consnt_RRA_1;
-RTS.fromPadma[Padma.consnt_TCH]  = RTS.consnt_TCH;
-RTS.fromPadma[Padma.consnt_TJ]   = RTS.consnt_TJ;
+RTS.fromPadma[Padma.consnt_TSA]  = RTS.consnt_TSA;
+RTS.fromPadma[Padma.consnt_DJA]  = RTS.consnt_DJA;
 RTS.fromPadma[Padma.vowelsn_AA]  = RTS.vowel_AA_1;
 RTS.fromPadma[Padma.vowelsn_I]   = RTS.vowel_I;
 RTS.fromPadma[Padma.vowelsn_II]  = RTS.vowel_II_1;
@@ -507,8 +507,8 @@ RTS.fromPadma[Padma.vattu_SA]    = RTS.consnt_SA;
 RTS.fromPadma[Padma.vattu_HA]    = RTS.consnt_HA_1;
 RTS.fromPadma[Padma.vattu_LLA]   = RTS.consnt_LLA_1;
 RTS.fromPadma[Padma.vattu_RRA]   = RTS.consnt_RRA_1;
-RTS.fromPadma[Padma.vattu_TCH]   = RTS.consnt_TCH;
-RTS.fromPadma[Padma.vattu_TJ]    = RTS.consnt_TJ;
+RTS.fromPadma[Padma.vattu_TSA]   = RTS.consnt_TSA;
+RTS.fromPadma[Padma.vattu_DJA]   = RTS.consnt_DJA;
 
 //The following consonants when preceeded by n or m make it a sunna
 RTS.anusvaraMakerCommon = new Object();
@@ -618,7 +618,7 @@ RTS.isPossibleAnusvara = function (str)
 
 RTS.isAnusvara = function (prefix, suffix)
 {
-    if (RTS.anusvaraMakerCommon[suffix] == true)
+    if (RTS.anusvaraMakerCommon[suffix] != undefined)
         return true;
     if (prefix == Padma.consnt_MA)
         return RTS.anusvaraMakerForMOnly[suffix] != null ? true : false;

@@ -1,4 +1,4 @@
-// $Id: Telugu.js,v 1.5 2006/03/03 15:40:32 vnagarjuna Exp $ -->
+// $Id: Telugu.js,v 1.6 2006/10/15 17:28:36 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -40,6 +40,7 @@ Telugu.codePoints.candrabindu = "\u0C01";
 //Vowel Modifiers
 Telugu.codePoints.anusvara    = "\u0C02";  //sunna
 Telugu.codePoints.visarga     = "\u0C03";
+Telugu.codePoints.ardhavisarga= "\u0C71";
 
 //Independent Vowels
 Telugu.codePoints.letter_A    = "\u0C05";
@@ -95,8 +96,8 @@ Telugu.codePoints.letter_SHA  = "\u0C36";
 Telugu.codePoints.letter_SSA  = "\u0C37";
 Telugu.codePoints.letter_SA   = "\u0C38";
 Telugu.codePoints.letter_HA   = "\u0C39";
-Telugu.codePoints.letter_TCH  = "\u093C\u0C1A";    //not known to be correct
-Telugu.codePoints.letter_TJ   = "\u093C\u0C1C";    //not known to be correct
+Telugu.codePoints.letter_TSA  = "\u0C58";
+Telugu.codePoints.letter_DJA  = "\u0C59";
 
 //Dependent Vowel Signs
 Telugu.codePoints.vowelsn_AA  = "\u0C3E";
@@ -106,6 +107,8 @@ Telugu.codePoints.vowelsn_U   = "\u0C41";
 Telugu.codePoints.vowelsn_UU  = "\u0C42";
 Telugu.codePoints.vowelsn_R   = "\u0C43";
 Telugu.codePoints.vowelsn_RR  = "\u0C44";
+Telugu.codePoints.vowelsn_L   = "\u0C62";
+Telugu.codePoints.vowelsn_LL  = "\u0C63";
 Telugu.codePoints.vowelsn_E   = "\u0C46";
 Telugu.codePoints.vowelsn_EE  = "\u0C47";
 Telugu.codePoints.vowelsn_AI  = "\u0C48";   //this is the same as 0C46 followed by 0C56
@@ -114,6 +117,7 @@ Telugu.codePoints.vowelsn_OO  = "\u0C4B";
 Telugu.codePoints.vowelsn_AU  = "\u0C4C";
 
 //Miscellaneous Signs
+Telugu.codePoints.misc_AVAGRAHA = "\u0C3D";
 Telugu.codePoints.misc_VIRAMA   = "\u0C4D";   //halant
 Telugu.codePoints.misc_LENGTH   = "\u0C55";
 Telugu.codePoints.misc_AILEN    = "\u0C56";
@@ -134,11 +138,12 @@ Telugu.fromPadma = new Object();
 
 Telugu.fromPadma[Padma.anusvara]    = Telugu.codePoints.anusvara;
 Telugu.fromPadma[Padma.visarga]     = Telugu.codePoints.visarga;
+Telugu.fromPadma[Padma.ardhavisarga]= Telugu.codePoints.ardhavisarga;
 Telugu.fromPadma[Padma.pollu]       = Telugu.codePoints.misc_VIRAMA;
 Telugu.fromPadma[Padma.chillu]      = Telugu.codePoints.misc_VIRAMA + Unicode_Shared.ZWJ;
 Telugu.fromPadma[Padma.syllbreak]   = Telugu.codePoints.misc_VIRAMA + Unicode_Shared.ZWNJ;
 Telugu.fromPadma[Padma.candrabindu] = Telugu.codePoints.candrabindu;
-Telugu.fromPadma[Padma.avagraha]    = Unicode_Shared.AVAGRAHA;
+Telugu.fromPadma[Padma.avagraha]    = Telugu.codePoints.misc_AVAGRAHA;
 Telugu.fromPadma[Padma.udAtta]      = Unicode_Shared.UDATTA;
 Telugu.fromPadma[Padma.anudAtta]    = Unicode_Shared.ANUDATTA;
 Telugu.fromPadma[Padma.svarita]     = Unicode_Shared.SVARITA;
@@ -213,8 +218,8 @@ Telugu.fromPadma[Padma.consnt_SA]   = Telugu.codePoints.letter_SA;
 Telugu.fromPadma[Padma.consnt_HA]   = Telugu.codePoints.letter_HA;
 Telugu.fromPadma[Padma.consnt_LLA]  = Telugu.codePoints.letter_LLA;
 Telugu.fromPadma[Padma.consnt_RRA]  = Telugu.codePoints.letter_RRA;
-Telugu.fromPadma[Padma.consnt_TCH]  = Telugu.codePoints.letter_TCH;
-Telugu.fromPadma[Padma.consnt_TJ]   = Telugu.codePoints.letter_TJ;
+Telugu.fromPadma[Padma.consnt_TSA]  = Telugu.codePoints.letter_TSA;
+Telugu.fromPadma[Padma.consnt_DJA]  = Telugu.codePoints.letter_DJA;
 
 //Gunimtaalu
 Telugu.fromPadma[Padma.vowelsn_AA]  = Telugu.codePoints.vowelsn_AA;
@@ -224,6 +229,8 @@ Telugu.fromPadma[Padma.vowelsn_U]   = Telugu.codePoints.vowelsn_U;
 Telugu.fromPadma[Padma.vowelsn_UU]  = Telugu.codePoints.vowelsn_UU;
 Telugu.fromPadma[Padma.vowelsn_R]   = Telugu.codePoints.vowelsn_R;
 Telugu.fromPadma[Padma.vowelsn_RR]  = Telugu.codePoints.vowelsn_RR;
+Telugu.fromPadma[Padma.vowelsn_L]   = Telugu.codePoints.vowelsn_L;
+Telugu.fromPadma[Padma.vowelsn_LL]  = Telugu.codePoints.vowelsn_LL;
 Telugu.fromPadma[Padma.vowelsn_E]   = Telugu.codePoints.vowelsn_E;
 Telugu.fromPadma[Padma.vowelsn_EE]  = Telugu.codePoints.vowelsn_EE;
 Telugu.fromPadma[Padma.vowelsn_AI]  = Telugu.codePoints.vowelsn_AI;
@@ -248,3 +255,9 @@ Telugu.fromPadma[Padma.consnt_YYA]    = Telugu.codePoints.letter_YA;
 Telugu.fromPadma[Padma.consnt_ZHA]    = Telugu.codePoints.letter_LLA;
 Telugu.fromPadma[Padma.vowelsn_CDR_E] = Telugu.codePoints.vowelsn_E;
 Telugu.fromPadma[Padma.vowelsn_CDR_O] = Telugu.codePoints.vowelsn_O;
+Telugu.fromPadma[Padma.consnt_GGA]    = Telugu.codePoints.letter_GA;
+Telugu.fromPadma[Padma.consnt_JJA]    = Telugu.codePoints.letter_JA;
+Telugu.fromPadma[Padma.consnt_DDDA]   = Telugu.codePoints.letter_DDA;
+Telugu.fromPadma[Padma.consnt_BBA]    = Telugu.codePoints.letter_BA;
+Telugu.fromPadma[Padma.consnt_RA_MD]  = Telugu.codePoints.letter_RA;
+Telugu.fromPadma[Padma.consnt_RA_LD]  = Telugu.codePoints.letter_RA;

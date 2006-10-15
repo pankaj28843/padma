@@ -1,4 +1,4 @@
-// $Id: Eenadu.js,v 1.9 2005/12/09 15:06:47 vnagarjuna Exp $ -->
+// $Id: Eenadu.js,v 1.10 2006/10/15 17:28:36 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -83,6 +83,21 @@ Eenadu.preprocessMessage = function (input)
         output += cur;
     }
     return output;
+}
+
+Eenadu.prepareOverloadList = function ()
+{
+    Eenadu.overloadList = new Object();
+    for(var key in Eenadu.toPadma) {
+        if (key.length > 1) {
+            for(var i = 0; i < key.length - 1; ++i) {
+                var sub = key.substr(0, i + 1);
+                if (Eenadu.overloadList[sub] == undefined) {
+                    Eenadu.overloadList[sub] = true;
+                }
+            }
+        }
+    }
 }
 
 //Implementation details start here
@@ -688,6 +703,7 @@ Eenadu.prefixList[Eenadu.vowelsn_E_4]  = true;
 Eenadu.prefixList[Eenadu.vowelsn_EE_2] = true;
 Eenadu.prefixList[Eenadu.vowelsn_EE_3] = true;
 
+/*
 Eenadu.overloadList = new Object();
 Eenadu.overloadList[Eenadu.consnt_KA_2]   = true;
 Eenadu.overloadList[Eenadu.consnt_CA]     = true;
@@ -732,6 +748,7 @@ Eenadu.overloadList["\u00A7\u00E7"]       = true;
 Eenadu.overloadList["\u00A7\u00E7\u0069"] = true;
 Eenadu.overloadList["\u00A7\u00FC"]       = true;
 Eenadu.overloadList["\u00A7\u00FD"]       = true;
+*/
 
 Eenadu.isRedundant = function (str)
 {
