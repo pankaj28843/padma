@@ -1,4 +1,4 @@
-// $Id: Shared.js,v 1.1 2005/11/05 16:32:00 vnagarjuna Exp $ -->
+// $Id: Shared.js,v 1.2 2006/10/15 17:26:33 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -21,7 +21,7 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-//Shared across all scripts
+//Shared across some or all scripts
 
 function Unicode_Shared()
 {

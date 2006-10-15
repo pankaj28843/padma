@@ -1,4 +1,4 @@
-// $Id: Unicode.js,v 1.6 2006/02/20 21:16:28 vnagarjuna Exp $ -->
+// $Id: Unicode.js,v 1.7 2006/10/15 17:26:33 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -35,6 +35,7 @@ Unicode.script_Class[Padma.script_TAMIL]      = Tamil;
 Unicode.script_Class[Padma.script_DEVANAGARI] = Devanagari;
 Unicode.script_Class[Padma.script_GUJARATI]   = Gujarati;
 Unicode.script_Class[Padma.script_KANNADA]    = Kannada;
+Unicode.script_Class[Padma.script_BENGALI]    = Bengali;
 
 Unicode.fromPadma = new Array();
 
@@ -128,8 +129,8 @@ Unicode.toPadma[Telugu.codePoints.letter_SA]    = Padma.consnt_SA;
 Unicode.toPadma[Telugu.codePoints.letter_HA]    = Padma.consnt_HA;
 Unicode.toPadma[Telugu.codePoints.letter_LLA]   = Padma.consnt_LLA;
 Unicode.toPadma[Telugu.codePoints.letter_RRA]   = Padma.consnt_RRA;
-Unicode.toPadma[Telugu.codePoints.letter_TCH]   = Padma.consnt_TCH;
-Unicode.toPadma[Telugu.codePoints.letter_TJ]    = Padma.consnt_TJ;
+Unicode.toPadma[Telugu.codePoints.letter_TSA]   = Padma.consnt_TSA;
+Unicode.toPadma[Telugu.codePoints.letter_DJA]   = Padma.consnt_DJA;
 
 //Gunimtaalu
 Unicode.toPadma[Telugu.codePoints.vowelsn_AA]  = Padma.vowelsn_AA;
@@ -183,8 +184,8 @@ Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Telugu.codePoints.letter_SA]    
 Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Telugu.codePoints.letter_HA]    = Padma.vattu_HA;
 Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Telugu.codePoints.letter_LLA]   = Padma.vattu_LLA;
 Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Telugu.codePoints.letter_RRA]   = Padma.vattu_RRA;
-Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Telugu.codePoints.letter_TCH]   = Padma.vattu_TCH;
-Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Telugu.codePoints.letter_TJ]    = Padma.vattu_TJ;
+Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Telugu.codePoints.letter_TSA]   = Padma.vattu_TCH;
+Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Telugu.codePoints.letter_DJA]   = Padma.vattu_DJA;
 
 Unicode.lookup = function (str) 
 {
