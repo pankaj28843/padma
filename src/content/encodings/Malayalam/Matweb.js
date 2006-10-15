@@ -1,4 +1,4 @@
-// $Id: Matweb.js,v 1.1 2006/10/15 17:27:26 vnagarjuna Exp $ -->
+// $Id: Matweb.js,v 1.2 2006/10/15 17:42:28 vnagarjuna Exp $ -->
 
 //Copyright 2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -229,11 +229,11 @@ Matweb.conj_MP        = "\u0153";
 Matweb.conj_MM        = "\u02DC";
 Matweb.conj_MLL       = "\u2013";
 
-Matweb.conj_YY        = "\u00E0";
+Matweb.conj_YY_1      = "\u00E0";
+Matweb.conj_YY_2      = "\u0069\u00FE";
 Matweb.conj_YKK       = "\u00C0";
 Matweb.conj_VV        = "\u006C\u00FE";
 Matweb.conj_ZHV       = "\u00B0"; //addition
-
 
 Matweb.conj_SHC       = "\u00CA";
 Matweb.conj_SHSH      = "\u008F";
@@ -335,7 +335,6 @@ Matweb.QUESTION       = "\u003F";
 
 //Does not match ASCII
 Matweb.extra_QTSINGLE = "\u0060";
-Matweb.extra_DBLQT    = "\u0060\u0060";
 Matweb.extra_ASTERISK = "\u00B2";
 Matweb.extra_HYPHEN   = "\u005F";
 
@@ -494,8 +493,8 @@ Matweb.toPadma[Matweb.conj_BB]  = Padma.consnt_BA +  Padma.vattu_BA;
 Matweb.toPadma[Matweb.conj_MP]  = Padma.consnt_MA +  Padma.vattu_PA;
 Matweb.toPadma[Matweb.conj_MM]  = Padma.consnt_MA +  Padma.vattu_MA;
 Matweb.toPadma[Matweb.conj_MLL] = Padma.consnt_MA +  Padma.vattu_LLA;
-
-Matweb.toPadma[Matweb.conj_YY]  = Padma.consnt_YA +  Padma.vattu_YA;
+Matweb.toPadma[Matweb.conj_YY_2]= Padma.consnt_YA +  Padma.vattu_YA;
+Matweb.toPadma[Matweb.conj_YY_1]= Padma.consnt_YA +  Padma.vattu_YA;
 Matweb.toPadma[Matweb.conj_YKK] = Padma.consnt_YA +  Padma.vattu_KA +  Padma.vattu_KA;
 Matweb.toPadma[Matweb.conj_VV]  = Padma.consnt_VA +  Padma.vattu_VA;
 
@@ -578,7 +577,6 @@ Matweb.toPadma[Matweb.conj_PHRA]   = Padma.consnt_PHA +  Padma.vattu_RA;
 
 //Miscellaneous(where it doesn't match ASCII representation)
 Matweb.toPadma[Matweb.extra_QTSINGLE] = Matweb.QTSINGLE;
-Matweb.toPadma[Matweb.extra_DBLQT]= Matweb.QTSINGLE + Matweb.QTSINGLE;
 Matweb.toPadma[Matweb.extra_ASTERISK] = '*';
 Matweb.toPadma[Matweb.extra_HYPHEN]   = '-';
 
@@ -599,8 +597,8 @@ Matweb.overloadList[Matweb.vowel_O]        = true;
 Matweb.overloadList[Matweb.consnt_CA]        = true;
 Matweb.overloadList[Matweb.consnt_VA]        = true;
 Matweb.overloadList[Matweb.consnt_BA]        = true;
+Matweb.overloadList[Matweb.consnt_YA]        = true;
 Matweb.overloadList[Matweb.vowelsn_R]      = true;
 Matweb.overloadList[Matweb.vowelsn_E]      = true;
 Matweb.overloadList[Matweb.chillu_IN]      = true;
-Matweb.overloadList[Matweb.extra_QTSINGLE] = true;
 
