@@ -1,5 +1,6 @@
-// $Id: Matweb.js,v 1.2 2006/10/15 17:42:28 vnagarjuna Exp $ -->
+// $Id: Matweb.js,v 1.3 2006/10/15 17:49:26 vnagarjuna Exp $ -->
 
+//Copyright 2006 AnvarLal Hasbulla <padma@anvarlal.in>
 //Copyright 2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
 /* ***** BEGIN LICENSE BLOCK ***** 

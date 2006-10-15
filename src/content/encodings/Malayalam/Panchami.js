@@ -1,5 +1,6 @@
-// $Id: Panchami.js,v 1.1 2006/10/15 17:27:26 vnagarjuna Exp $ -->
+// $Id: Panchami.js,v 1.2 2006/10/15 17:49:26 vnagarjuna Exp $ -->
 
+//Copyright 2006 AnvarLal Hasbulla <padma@anvarlal.in>
 //Copyright 2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
 /* ***** BEGIN LICENSE BLOCK ***** 
