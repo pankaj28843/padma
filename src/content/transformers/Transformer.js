@@ -1,4 +1,4 @@
-// $Id: Transformer.js,v 1.28 2006/04/14 13:44:49 vnagarjuna Exp $ -->
+// $Id: Transformer.js,v 1.29 2006/10/15 17:30:00 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -89,7 +89,9 @@ Transformer.dynFont_Shivaji05    = 50;
 Transformer.dynFont_Vakil02      = 51;
 Transformer.dynFont_Vakil05      = 52;
 Transformer.dynFont_Mithi        = 53;
-Transformer.dynFont_Unknown      = 54;  //this should always be the max, this is used as a sentinel
+Transformer.dynFont_Panchami     = 54;
+Transformer.dynFont_Matweb       = 55;
+Transformer.dynFont_Unknown      = 56;  //this should always be the max, this is used as a sentinel
 
 //Classes that implement the above dynamic fonts
 Transformer.dynFont_Class = new Array();
@@ -147,6 +149,8 @@ Transformer.dynFont_Class[Transformer.dynFont_Shivaji05]    = Shivaji05;
 Transformer.dynFont_Class[Transformer.dynFont_Vakil02]      = Vakil02;
 Transformer.dynFont_Class[Transformer.dynFont_Vakil05]      = Vakil05;
 Transformer.dynFont_Class[Transformer.dynFont_Mithi]        = Mithi;
+Transformer.dynFont_Class[Transformer.dynFont_Panchami]     = Panchami;
+Transformer.dynFont_Class[Transformer.dynFont_Matweb]       = Matweb;
 
 //Class names for non-dynamic font encodings
 Transformer.className_Unicode = Unicode;
@@ -196,8 +200,10 @@ Transformer.initialize = function () {
     BEJA.initialize();
     //Shivaji fonts are based on Shusha but are slightly different
     Shivaji.initialize();
-    //Vakil fonts are based on Shusha but iare slightly different
+    //Vakil fonts are based on Shusha but are slightly different
     Vakil.initialize();
+
+    Eenadu.prepareOverloadList();
 }
 
 Transformer.createTransformer = function (input, output, rtsWritingStyle, rtsSunnaStyle)
