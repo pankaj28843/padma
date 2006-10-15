@@ -1,4 +1,4 @@
-// $Id: Devanagari.js,v 1.4 2005/12/09 15:04:44 vnagarjuna Exp $ -->
+// $Id: Devanagari.js,v 1.5 2006/10/15 17:27:03 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -108,8 +108,11 @@ Devanagari.codePoints.letter_DDDHA= "\u095C";
 Devanagari.codePoints.letter_RHA  = "\u095D";
 Devanagari.codePoints.letter_FA   = "\u095E";
 Devanagari.codePoints.letter_YYA  = "\u095F";
-Devanagari.codePoints.conjct_KSH  = "\u0915\u094D\u0937";
-Devanagari.codePoints.conjct_JNY  = "\u091C\u094D\u091E";
+Devanagari.codePoints.letter_GGA  = "\u097B";   //Sindhi
+Devanagari.codePoints.letter_JJA  = "\u097C";   //Sindhi
+Devanagari.codePoints.letter_DDDA = "\u097E";   //Sindhi
+Devanagari.codePoints.letter_BBA  = "\u097F";   //Sindhi
+Devanagari.codePoints.GLOTTALSTOP = "\u097D";
 
 //Dependent Vowel Signs
 Devanagari.codePoints.vowelsn_AA    = "\u093E";
@@ -131,8 +134,11 @@ Devanagari.codePoints.vowelsn_OO    = "\u094B";
 Devanagari.codePoints.vowelsn_AU    = "\u094C";
 
 //Miscellaneous Signs
+Devanagari.codePoints.misc_NUKTA    = "\u093C";
+Devanagari.codePoints.misc_AVAGRAHA = "\u093D";
 Devanagari.codePoints.misc_VIRAMA   = "\u094D";   //halant
-Devanagari.codePoints.misc_NUKTA    = "\u093C";   //nukta
+Devanagari.codePoints.misc_OM       = "\u0950";
+Devanagari.codePoints.misc_ABBREV   = "\u0970";
 
 //Digits
 Devanagari.codePoints.digit_ZERO  = "\u0966";
@@ -154,14 +160,14 @@ Devanagari.fromPadma[Padma.candrabindu] = Devanagari.codePoints.candrabindu;
 Devanagari.fromPadma[Padma.halant]      = Devanagari.codePoints.misc_VIRAMA;
 Devanagari.fromPadma[Padma.chillu]      = Devanagari.codePoints.misc_VIRAMA + Unicode_Shared.ZWJ;
 Devanagari.fromPadma[Padma.syllbreak]   = Devanagari.codePoints.misc_VIRAMA + Unicode_Shared.ZWNJ;
-Devanagari.fromPadma[Padma.avagraha]    = Unicode_Shared.AVAGRAHA;
+Devanagari.fromPadma[Padma.avagraha]    = Devanagari.codePoints.misc_AVAGRAHA;
 Devanagari.fromPadma[Padma.udAtta]      = Unicode_Shared.UDATTA;
 Devanagari.fromPadma[Padma.anudAtta]    = Unicode_Shared.ANUDATTA;
 Devanagari.fromPadma[Padma.svarita]     = Unicode_Shared.SVARITA;
 Devanagari.fromPadma[Padma.danda]       = Unicode_Shared.DANDA;
 Devanagari.fromPadma[Padma.ddanda]      = Unicode_Shared.DDANDA;
-Devanagari.fromPadma[Padma.om]          = Unicode_Shared.OM;
-Devanagari.fromPadma[Padma.abbrev]      = Unicode_Shared.abbrev;
+Devanagari.fromPadma[Padma.om]          = Devanagari.codePoints.misc_OM;
+Devanagari.fromPadma[Padma.abbrev]      = Devanagari.codePoints.misc_ABBREV;
 Devanagari.fromPadma[Padma.nukta]       = Devanagari.codePoints.misc_NUKTA;
 
 //digits
@@ -243,6 +249,10 @@ Devanagari.fromPadma[Padma.consnt_DDDHA]= Devanagari.codePoints.letter_DDDHA;
 Devanagari.fromPadma[Padma.consnt_RHA]  = Devanagari.codePoints.letter_RHA;
 Devanagari.fromPadma[Padma.consnt_FA]   = Devanagari.codePoints.letter_FA;
 Devanagari.fromPadma[Padma.consnt_YYA]  = Devanagari.codePoints.letter_YYA;
+Devanagari.fromPadma[Padma.consnt_GGA]  = Devanagari.codePoints.letter_GGA;
+Devanagari.fromPadma[Padma.consnt_JJA]  = Devanagari.codePoints.letter_JJA;
+Devanagari.fromPadma[Padma.consnt_DDDA] = Devanagari.codePoints.letter_DDDA;
+Devanagari.fromPadma[Padma.consnt_BBA]  = Devanagari.codePoints.letter_BBA;
 
 //Gunimtaalu
 Devanagari.fromPadma[Padma.vowelsn_AA]  = Devanagari.codePoints.vowelsn_AA;
