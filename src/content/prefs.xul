@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: prefs.xul,v 1.11 2006/03/03 15:34:54 vnagarjuna Exp $-->
+<!--$Id: prefs.xul,v 1.12 2006/10/15 17:24:47 vnagarjuna Exp $-->
 
 <!--Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
 
@@ -76,6 +76,7 @@
           <checkbox id="enableDevanagari" label="Devanagari" checked="true" command="cmd_PadmaCheckBox" accesskey="D"/>
           <checkbox id="enableGujarati" label="Gujarati" checked="true" command="cmd_PadmaCheckBox" accesskey="J"/>
           <checkbox id="enableKannada" label="Kannada" checked="true" command="cmd_PadmaCheckBox" accesskey="K"/>
+          <checkbox id="enableBengali" label="Bengali" checked="true" command="cmd_PadmaCheckBox" accesskey="E"/>
         </expander>
         <spacer flex="1"/>
         <expander id="schemeExpander" label="Schemes" open="true" persist="open" clearhidden="true">

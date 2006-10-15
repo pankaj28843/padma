@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.27 2006/03/08 14:20:48 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.28 2006/10/15 17:24:47 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -383,6 +383,7 @@ var Padma_Browser_Transformer = {
         var devanagari = this.prefBranch.getBoolPref(PadmaSettings.prefEnableDevanagari);
         var gujarati = this.prefBranch.getBoolPref(PadmaSettings.prefEnableGujarati);
         var kannada = this.prefBranch.getBoolPref(PadmaSettings.prefEnableKannada);
+        var bengali = this.prefBranch.getBoolPref(PadmaSettings.prefEnableBengali);
 
         item = document.getElementById("padmaMenuItem2");
         item.hidden = hidden || !rts || !telugu;
@@ -420,6 +421,10 @@ var Padma_Browser_Transformer = {
         item.hidden = hidden || !tab || !tamil;
         item = document.getElementById("padmaMenuItem19");
         item.hidden = hidden || !tam || !tamil;
+        item = document.getElementById("padmaMenuItem20");
+        item.hidden = hidden || !itrans || !bengali;
+        item = document.getElementById("padmaMenuItem21");
+        item.hidden = hidden || !itrans || !bengali;
     },
 
     //Preference observer
