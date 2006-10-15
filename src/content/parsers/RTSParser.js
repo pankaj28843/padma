@@ -1,4 +1,4 @@
-// $Id: RTSParser.js,v 1.6 2005/12/05 23:09:25 vnagarjuna Exp $ -->
+// $Id: RTSParser.js,v 1.7 2006/10/15 17:29:12 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -101,7 +101,7 @@ function RTSParser_next()
             return response.getSyllable();
     }
 
-    if (response.length != 0) {
+    if (response.getLength() != 0) {
         this.handleConsonantTermination(response);
         return response.getSyllable();
     }
