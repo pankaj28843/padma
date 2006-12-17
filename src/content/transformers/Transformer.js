@@ -1,4 +1,4 @@
-// $Id: Transformer.js,v 1.29 2006/10/15 17:30:00 vnagarjuna Exp $ -->
+// $Id: Transformer.js,v 1.30 2006/12/17 19:46:49 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -91,7 +91,12 @@ Transformer.dynFont_Vakil05      = 52;
 Transformer.dynFont_Mithi        = 53;
 Transformer.dynFont_Panchami     = 54;
 Transformer.dynFont_Matweb       = 55;
-Transformer.dynFont_Unknown      = 56;  //this should always be the max, this is used as a sentinel
+Transformer.dynFont_AabpBengali  = 56;
+Transformer.dynFont_AabpBengalix = 57;
+Transformer.dynFont_AabpBengalixx = 58;
+Transformer.dynFont_Kalakaumudi  = 59;
+Transformer.dynFont_BWRevathi    = 60;
+Transformer.dynFont_Unknown      = 61;  //this should always be the max, this is used as a sentinel
 
 //Classes that implement the above dynamic fonts
 Transformer.dynFont_Class = new Array();
@@ -151,6 +156,11 @@ Transformer.dynFont_Class[Transformer.dynFont_Vakil05]      = Vakil05;
 Transformer.dynFont_Class[Transformer.dynFont_Mithi]        = Mithi;
 Transformer.dynFont_Class[Transformer.dynFont_Panchami]     = Panchami;
 Transformer.dynFont_Class[Transformer.dynFont_Matweb]       = Matweb;
+Transformer.dynFont_Class[Transformer.dynFont_AabpBengali]  = Aabpbengali;
+Transformer.dynFont_Class[Transformer.dynFont_AabpBengalix] = Aabpbengalix;
+Transformer.dynFont_Class[Transformer.dynFont_AabpBengalixx]= Aabpbengalixx;
+Transformer.dynFont_Class[Transformer.dynFont_Kalakaumudi]  = Kalakaumudi;
+Transformer.dynFont_Class[Transformer.dynFont_BWRevathi]    = BWRevathi;
 
 //Class names for non-dynamic font encodings
 Transformer.className_Unicode = Unicode;
