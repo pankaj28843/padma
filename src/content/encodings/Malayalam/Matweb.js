@@ -1,6 +1,5 @@
-// $Id: Matweb.js,v 1.3 2006/10/15 17:49:26 vnagarjuna Exp $ -->
+// $Id: Matweb.js,v 1.4 2006/12/17 19:45:02 vnagarjuna Exp $ -->
 
-//Copyright 2006 AnvarLal Hasbulla <padma@anvarlal.in>
 //Copyright 2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
 /* ***** BEGIN LICENSE BLOCK ***** 
@@ -80,7 +79,7 @@ Matweb.vowel_II       = "\u0043\u00F8";
 Matweb.vowel_U        = "\u0044";
 Matweb.vowel_UU       = "\u0044\u00F8";
 Matweb.vowel_R        = "\u0063";
-Matweb.vowel_RR       = "\u0045\u00F8";
+Matweb.vowel_RR       = "\u0063\u00F8";
 Matweb.vowel_E        = "\u0046";
 Matweb.vowel_EE       = "\u0047";               
 Matweb.vowel_AI       = "\u00F6\u0046";
@@ -171,7 +170,7 @@ Matweb.vattu_TA       = "\u00ED";
 Matweb.vattu_NA       = "\u00EE";
 Matweb.vattu_TTHA     = "\u00F5";
 Matweb.vattu_R        = "\u00FD";
-
+Matweb.below_double   = "\u00FE"; //the character used to double CA,VA,BA
 
 //kooTTaksharangngaL
 
@@ -333,11 +332,11 @@ Matweb.COLON          = "\u003A";
 Matweb.SEMICOLON      = "\u003B";
 Matweb.EQUALS         = "\u003D";
 Matweb.QUESTION       = "\u003F";
+Matweb.LOWLINE        = "\u005F"; //matches the unicode lowline character
 
 //Does not match ASCII
 Matweb.extra_QTSINGLE = "\u0060";
 Matweb.extra_ASTERISK = "\u00B2";
-Matweb.extra_HYPHEN   = "\u005F";
 
 //Dont need
 Matweb.misc_UNKNOWN_1  = "\u002D";
@@ -579,7 +578,7 @@ Matweb.toPadma[Matweb.conj_PHRA]   = Padma.consnt_PHA +  Padma.vattu_RA;
 //Miscellaneous(where it doesn't match ASCII representation)
 Matweb.toPadma[Matweb.extra_QTSINGLE] = Matweb.QTSINGLE;
 Matweb.toPadma[Matweb.extra_ASTERISK] = '*';
-Matweb.toPadma[Matweb.extra_HYPHEN]   = '-';
+Matweb.toPadma[Matweb.below_double]   = '';//strip this character if used alone erroneousely
 
 Matweb.redundantList = new Object();
 Matweb.redundantList[Matweb.misc_UNKNOWN_1] = true;
