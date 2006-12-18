@@ -1,4 +1,4 @@
-// $Id: Bengali.js,v 1.3 2006/12/17 19:53:09 vnagarjuna Exp $ -->
+// $Id: Bengali.js,v 1.4 2006/12/18 02:18:10 vnagarjuna Exp $ -->
 
 //Copyright 2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -237,7 +237,7 @@ Bengali.fromPadma[Padma.vowel_E]       = Bengali.codePoints.letter_EE;
 Bengali.fromPadma[Padma.vowel_CDR_O]   = Bengali.codePoints.letter_OO;
 Bengali.fromPadma[Padma.vowel_O]       = Bengali.codePoints.letter_OO;
 Bengali.fromPadma[Padma.consnt_NNNA]   = Bengali.codePoints.letter_NNA;
-Bengali.fromPadma[Padma.consnt_RRA]    = Bengali.codePoints.letter_RA;
+Bengali.fromPadma[Padma.consnt_RRA]    = Bengali.codePoints.letter_DDDHA;
 Bengali.fromPadma[Padma.consnt_LLA]    = Bengali.codePoints.letter_LA;
 Bengali.fromPadma[Padma.consnt_ZHA]    = Bengali.codePoints.letter_LA;
 Bengali.fromPadma[Padma.consnt_VA]     = Bengali.codePoints.letter_BA;
