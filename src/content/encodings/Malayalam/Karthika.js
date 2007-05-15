@@ -1,4 +1,4 @@
-// $Id: Karthika.js,v 1.8 2006/02/20 21:16:29 vnagarjuna Exp $ -->
+// $Id: Karthika.js,v 1.9 2007/05/15 15:16:58 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -224,7 +224,7 @@ Karthika.conj_SSTT      = "\u00E3";
 Karthika.conj_SLL       = "\u00C9";
 Karthika.conj_S_S       = "\u00CA";
 Karthika.conj_STH       = "\u00D8";
-Karthika.conj_SRR       = "\u00CC";
+Karthika.conj_SRR_RR     = "\u00CC";
 
 Karthika.conj_HN        = "\u00D3";
 Karthika.conj_HM        = "\u00D2";
@@ -439,7 +439,7 @@ Karthika.toPadma[Karthika.conj_SSTT] = Padma.consnt_SSA +  Padma.vattu_TTA
 Karthika.toPadma[Karthika.conj_SLL]  = Padma.consnt_SA +  Padma.vattu_LLA;
 Karthika.toPadma[Karthika.conj_S_S]  = Padma.consnt_SA +  Padma.vattu_SA;
 Karthika.toPadma[Karthika.conj_STH]  = Padma.consnt_SA +  Padma.vattu_THA;
-Karthika.toPadma[Karthika.conj_SRR]  = Padma.consnt_SA +  Padma.vattu_RRA;
+Karthika.toPadma[Karthika.conj_SRR_RR]  = Padma.consnt_SA +  Padma.vattu_RRA +  Padma.vattu_RRA;
 
 Karthika.toPadma[Karthika.conj_HN]   = Padma.consnt_HA +  Padma.vattu_NA;
 Karthika.toPadma[Karthika.conj_HM]   = Padma.consnt_HA +  Padma.vattu_MA;
