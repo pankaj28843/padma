@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.29 2007/06/15 21:57:22 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.30 2007/06/15 22:25:22 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -409,11 +409,11 @@ var Padma_Browser_Transformer = {
         item = document.getElementById("padmaMenuItem12");
         item.hidden = hidden || !itrans || !devanagari;
         item = document.getElementById("padmaMenuItem13");
-        item.hidden = hidden || !itrans || !gujarati;
+        item.hidden = hidden || !iscii || !gujarati;
         item = document.getElementById("padmaMenuItem14");
         item.hidden = hidden || !itrans || !gujarati;
         item = document.getElementById("padmaMenuItem15");
-        item.hidden = hidden || !itrans || !kannada;
+        item.hidden = hidden || !iscii || !kannada;
         item = document.getElementById("padmaMenuItem16");
         item.hidden = hidden || !itrans || !kannada;
         item = document.getElementById("padmaMenuItem17");
@@ -423,11 +423,11 @@ var Padma_Browser_Transformer = {
         item = document.getElementById("padmaMenuItem19");
         item.hidden = hidden || !tam || !tamil;
         item = document.getElementById("padmaMenuItem20");
-        item.hidden = hidden || !itrans || !bengali;
+        item.hidden = hidden || !iscii || !bengali;
         item = document.getElementById("padmaMenuItem21");
         item.hidden = hidden || !itrans || !bengali;
         item = document.getElementById("padmaMenuItem22");
-        item.hidden = hidden || !itrans || !gurmukhi;
+        item.hidden = hidden || !iscii || !gurmukhi;
         item = document.getElementById("padmaMenuItem23");
         item.hidden = hidden || !itrans || !gurmukhi;
     },
