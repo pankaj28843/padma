@@ -16,3 +16,4 @@ pref("Padma.enableTSCII", true);
 pref("Padma.enableTAB", true);
 pref("Padma.enableTAM", true);
 pref("Padma.enableBengali", true);
+pref("Padma.enableGurmukhi", true);

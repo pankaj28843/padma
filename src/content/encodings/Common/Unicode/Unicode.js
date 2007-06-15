@@ -1,4 +1,4 @@
-// $Id: Unicode.js,v 1.7 2006/10/15 17:26:33 vnagarjuna Exp $ -->
+// $Id: Unicode.js,v 1.8 2007/06/15 21:55:50 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -36,6 +36,7 @@ Unicode.script_Class[Padma.script_DEVANAGARI] = Devanagari;
 Unicode.script_Class[Padma.script_GUJARATI]   = Gujarati;
 Unicode.script_Class[Padma.script_KANNADA]    = Kannada;
 Unicode.script_Class[Padma.script_BENGALI]    = Bengali;
+Unicode.script_Class[Padma.script_GURMUKHI]   = Gurmukhi;
 
 Unicode.fromPadma = new Array();
 

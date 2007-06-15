@@ -1,4 +1,4 @@
-// $Id: Padma.js,v 1.16 2006/12/17 19:44:23 vnagarjuna Exp $ -->
+// $Id: Padma.js,v 1.17 2007/06/15 21:56:07 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -39,7 +39,7 @@ Padma.script_GURMUKHI   = 7;
 Padma.script_ORIYA      = 8;
 
 //7 scripts supported now
-Padma.script_MAXSCRIPTS = 7;
+Padma.script_MAXSCRIPTS = 8;
 
 //Script names
 Padma.scripts = new Array();
@@ -50,6 +50,7 @@ Padma.scripts[Padma.script_DEVANAGARI] = "Devanagari";
 Padma.scripts[Padma.script_GUJARATI]   = "Gujarati";
 Padma.scripts[Padma.script_KANNADA]    = "Kannada";
 Padma.scripts[Padma.script_BENGALI]    = "Bengali";
+Padma.scripts[Padma.script_GURMUKHI]   = "Gurmukhi";
 
 //Types (values to allow bit wise operations)
 Padma.type_accu      = 1;
@@ -63,7 +64,7 @@ Padma.type_half_form = 128;
 Padma.type_unknown   = 256; //catch all
 
 //Use Unicode Private Use Area for Padma's internal symbols starting with U+EC00.
-//Code pints used: +UEC00-+UEC0F, +UEC10-+UEC1D, +UEC20-+UEC68, +UEC70-+UEC7D, +UECA1-+UECE8, +UED33-+UED68.
+//Code pints used: +UEC00-+UEC0F, +UEC10-+UEC1D, +UEC20-+UEC68, +UEC70-+UEC80, +UECA1-+UECE8, +UED33-+UED68.
 
 //Code points 32-64, 91-96, 123-127 (from the ASCII range) are not explicitly listed here
 //but are part of Padma's internal format and are of type Padma.type_unknown.
@@ -78,6 +79,9 @@ Padma.chillu      = "\uEC0D";   //half consonant - in honor of the Malayalam wor
 Padma.syllbreak   = "\uEC7B";   //syllable break - (anything generated with a ZWNJ in Unicode)
 Padma.nukta       = "\uEC7C";
 Padma.ardhavisarga = "\uEC7D";
+Padma.tippi       = "\uEC7E";   //Gurmukhi specific
+Padma.addak       = "\uEC7F";   //Gurmukhi specific
+Padma.ekonkar     = "\uEC80";   //Gurmukhi specific
 
 //Other names for the equivalent of pollu
 Padma.virama       = Padma.pollu;   //Telugu
@@ -393,6 +397,9 @@ Padma.symbols[Padma.danda]       = Padma.type_unknown;
 Padma.symbols[Padma.ddanda]      = Padma.type_unknown;
 Padma.symbols[Padma.abbrev]      = Padma.type_unknown;
 Padma.symbols[Padma.om]          = Padma.type_unknown;
+Padma.symbols[Padma.tippi]       = Padma.type_unknown;  //TODO: Is this right?
+Padma.symbols[Padma.addak]       = Padma.type_unknown;  //TODO: Is this right?
+Padma.symbols[Padma.ekonkar]     = Padma.type_unknown;
 
 Padma.symbols[Padma.digit_ZERO]  = Padma.type_digit;
 Padma.symbols[Padma.digit_ONE]   = Padma.type_digit;
