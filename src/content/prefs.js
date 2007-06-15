@@ -1,4 +1,4 @@
-// $Id: prefs.js,v 1.11 2006/10/15 17:24:47 vnagarjuna Exp $ -->
+// $Id: prefs.js,v 1.12 2007/06/15 21:57:22 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -45,6 +45,7 @@ var PadmaSettings = {
         this.enableGujarati = document.getElementById("enableGujarati");
         this.enableKannada = document.getElementById("enableKannada");
         this.enableBengali = document.getElementById("enableBengali");
+        this.enableGurmukhi = document.getElementById("enableGurmukhi");
 
         //RTS Writing Style
         var rtsWritingStyle = this.branch.getIntPref(this.prefRTSWritingStyle);
@@ -80,6 +81,7 @@ var PadmaSettings = {
         this.enableGujarati.checked = this.branch.getBoolPref(this.prefEnableGujarati);
         this.enableKannada.checked = this.branch.getBoolPref(this.prefEnableKannada);
         this.enableBengali.checked = this.branch.getBoolPref(this.prefEnableBengali);
+        this.enableGurmukhi.checked = this.branch.getBoolPref(this.prefEnableGurmukhi);
 
         this.applyButton = document.documentElement.getButton("extra1");
         this.onCheckBoxUpdate();
@@ -107,6 +109,7 @@ var PadmaSettings = {
         this.branch.setBoolPref(this.prefEnableGujarati,   this.enableGujarati.checked);
         this.branch.setBoolPref(this.prefEnableKannada,    this.enableKannada.checked);
         this.branch.setBoolPref(this.prefEnableBengali,    this.enableBengali.checked);
+        this.branch.setBoolPref(this.prefEnableGurmukhi,   this.enableGurmukhi.checked);
 
         this.branch.setCharPref(this.prefAutoTransformWhiteList, this.autoTransformWhiteList);
         this.applyButton.disabled = true;
@@ -118,7 +121,7 @@ var PadmaSettings = {
         this.rtsWritingStyleButton.disabled = this.rtsSunnaStyleButton.disabled = !this.enableTelugu.checked || !this.enableRTS.checked;
         this.enableISCII.disabled = this.enableITRANS.disabled = !this.enableTelugu.checked && !this.enableTamil.checked &&
                                     !this.enableMalayalam.checked && !this.enableDevanagari.checked && !this.enableGujarati.checked && 
-                                    !this.enableKannada.checked && !this.enableBengali.checked;
+                                    !this.enableKannada.checked && !this.enableBengali.checked && !this.enableGurmukhi.checked;
         this.enableTSCII.disabled = this.enableTAB.disabled = this.enableTAM.disabled = !this.enableTamil.checked;
         this.applyButton.disabled = false;
     },
@@ -154,5 +157,6 @@ var PadmaSettings = {
     prefEnableDevanagari: "enableDevanagari",
     prefEnableGujarati: "enableGujarati",
     prefEnableKannada: "enableKannada",
-    prefEnableBengali: "enableBengali"
+    prefEnableBengali: "enableBengali",
+    prefEnableGurmukhi: "enableGurmukhi"
 };
