@@ -1,4 +1,4 @@
-//$Id: AabpBengalix.js,v 1.1 2006/12/17 19:45:24 vnagarjuna Exp $
+//$Id: AabpBengalix.js,v 1.2 2008/06/16 15:43:00 vnagarjuna Exp $
 
 /* Copyright 2006 Nagarjuna Venna <vnagarjuna@yahoo.com> */
 /*               Golam Mortuza Hossain <gmhossain@gmail.com> */
@@ -56,14 +56,7 @@ Aabpbengalix.isOverloaded = function (str)
 
 Aabpbengalix.handleTwoPartVowelSigns = function (sign1, sign2)
 {
-    return sign1 + sign2;    
-    if ((sign1 == Padma.vowelsn_EE && sign2 == Padma.vowelsn_AA) ||
-        (sign1 == Padma.vowelsn_AA && sign2 == Padma.vowelsn_EE))
-        return Padma.vowelsn_OO;
-    if ((sign1 == Padma.vowelsn_AI && sign2 == Padma.vowelsn_AA) ||
-        (sign1 == Padma.vowelsn_AA && sign2 == Padma.vowelsn_AI))
-        return Padma.vowelsn_AU;
-    return sign1 + sign2;    
+    return Aabpbengali.handleTwoPartVowelSigns(sign1, sign2);
 }
 
 Aabpbengalix.isRedundant = function (str)

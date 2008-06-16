@@ -1,4 +1,4 @@
-// $Id: AabpBengali.js,v 1.1 2006/12/17 19:45:24 vnagarjuna Exp $ -->
+// $Id: AabpBengali.js,v 1.2 2008/06/16 15:43:00 vnagarjuna Exp $ -->
 
 //Copyright 2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 /*               Golam Mortuza Hossain <gmhossain@gmail.com> */
@@ -55,12 +55,11 @@ Aabpbengali.isOverloaded = function (str)
 
 Aabpbengali.handleTwoPartVowelSigns = function (sign1, sign2)
 {
-    return sign1 + sign2;    
-    if ((sign1 == Padma.vowelsn_EE && sign2 == Padma.vowelsn_AA) ||
-        (sign1 == Padma.vowelsn_AA && sign2 == Padma.vowelsn_EE))
+    if ((sign1 == Padma.vowelsn_E && sign2 == Padma.vowelsn_AA) ||
+        (sign1 == Padma.vowelsn_AA && sign2 == Padma.vowelsn_E))
         return Padma.vowelsn_OO;
-    if ((sign1 == Padma.vowelsn_AI && sign2 == Padma.vowelsn_AA) ||
-        (sign1 == Padma.vowelsn_AA && sign2 == Padma.vowelsn_AI))
+    if ((sign1 == Padma.vowelsn_AULEN && sign2 == Padma.vowelsn_E) ||
+        (sign1 == Padma.vowelsn_E && sign2 == Padma.vowelsn_AULEN))
         return Padma.vowelsn_AU;
     return sign1 + sign2;    
 }
@@ -446,6 +445,10 @@ Aabpbengali.prefixList[Aabpbengali.vowelsn_I_1]  = true;
 Aabpbengali.prefixList[Aabpbengali.vowelsn_I_2]  = true;
 Aabpbengali.prefixList[Aabpbengali.vowelsn_I_3]  = true;
 Aabpbengali.prefixList[Aabpbengali.vowelsn_I_4]  = true;
+Aabpbengali.prefixList[Aabpbengali.vowelsn_I_candrabindu_1]  = true;
+Aabpbengali.prefixList[Aabpbengali.vowelsn_I_candrabindu_2]  = true;
+Aabpbengali.prefixList[Aabpbengali.vowelsn_I_candrabindu_3]  = true;
+Aabpbengali.prefixList[Aabpbengali.vowelsn_I_candrabindu_4]  = true;
 //Aabpbengali.prefixList[Aabpbengali.vowelsn_R_II_1] = true;
 //Aabpbengali.prefixList[Aabpbengali.vowelsn_R_II_2] = true;
 Aabpbengali.prefixList[Aabpbengali.vowelsn_E_1] = true;
