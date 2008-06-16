@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.30 2007/06/15 22:25:22 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.31 2008/06/16 22:16:47 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -353,20 +353,17 @@ var Padma_Browser_Transformer = {
  
     //The event target is the browser window, this is a hack to make Pamda_Browser_Transformer 'this'
     onPopupShowingPre: function(evt) {
-        Padma_Browser_Transformer.onPopupShowing(evt);
+        return Padma_Browser_Transformer.onPopupShowing(evt);
     },
 
     onPopupShowing: function(evt) {
-        var result = this.getSelection(document.popupNode), hidden = true;;
-        var val = result.selection;
-        if (!result.control)
-            val = val.toString();
-        if (val.length != 0)
-            //something selected - show menu items
-            hidden = false;
+        var result = this.getSelection(document.popupNode), hidden = false;
+        if (result.control || result.selection.toString().length == 0)
+            hidden = true;
 
-        //Always show menu separator and transform to Unicode options
-        var item = document.getElementById("padmaMenuItem0");
+        var item = document.getElementById("padma-menu");
+        item.hidden = hidden;
+        var item = document.getElementById("padma-menupopup");
         item.hidden = hidden;
         item = document.getElementById("padmaMenuItem1");
         item.hidden = hidden;
@@ -430,6 +427,8 @@ var Padma_Browser_Transformer = {
         item.hidden = hidden || !iscii || !gurmukhi;
         item = document.getElementById("padmaMenuItem23");
         item.hidden = hidden || !itrans || !gurmukhi;
+
+        return true;
     },
 
     //Preference observer
