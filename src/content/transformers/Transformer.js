@@ -1,4 +1,4 @@
-// $Id: Transformer.js,v 1.32 2008/06/16 15:43:00 vnagarjuna Exp $ -->
+// $Id: Transformer.js,v 1.33 2008/06/16 15:49:08 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -99,8 +99,8 @@ Transformer.dynFont_BWRevathi    = 60;
 Transformer.dynFont_DrChatrik    = 61;
 Transformer.dynFont_AAADurga     = 62;
 Transformer.dynFont_AAADurgax    = 63;
-Transformer.dynFont_AAADurgaxx   = 65;
-Transformer.dynFont_Unknown      = 66;  //this should always be the max, this is used as a sentinel
+Transformer.dynFont_AAADurgaxx   = 64;
+Transformer.dynFont_Unknown      = 65;  //this should always be the max, this is used as a sentinel
 
 //Classes that implement the above dynamic fonts
 Transformer.dynFont_Class = new Array();
