@@ -1,4 +1,4 @@
-// $Id: Transformer.js,v 1.34 2008/06/16 17:18:40 vnagarjuna Exp $ -->
+// $Id: Transformer.js,v 1.35 2009/04/07 08:00:44 harshita Exp $
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -102,7 +102,32 @@ Transformer.dynFont_AAADurgax    = 63;
 Transformer.dynFont_AAADurgaxx   = 64;
 Transformer.dynFont_Amudham      = 65;
 Transformer.dynFont_ShreeDev0714 = 66;
-Transformer.dynFont_Unknown      = 67;  //this should always be the max, this is used as a sentinel
+Transformer.dynFont_Manjusha       = 67;
+Transformer.dynFont_ManjushaMedium = 68;
+Transformer.dynFont_Kiran          = 69;
+Transformer.dynFont_Amruta         = 70;
+Transformer.dynFont_Aarti          = 71;
+Transformer.dynFont_Pudhari        = 72;
+Transformer.dynFont_ShreePud77bl   = 73;
+Transformer.dynFont_ShreePud77nl   = 74;
+Transformer.dynFont_ShreePud77nw   = 75;
+Transformer.dynFont_TLTTHemalatha  = 76;
+Transformer.dynFont_ShreeKan0850   = 77;
+Transformer.dynFont_ShreeKan0850W  = 78;
+Transformer.dynFont_Krutidev       = 79;
+Transformer.dynFont_DV_TTGanesh    = 80;
+Transformer.dynFont_DV_TTYogesh    = 81;
+Transformer.dynFont_DV_TTSurekh    = 82;
+Transformer.dynFont_DV_TTGaneshEN  = 83;
+Transformer.dynFont_DV_TTYogeshEN  = 84;
+Transformer.dynFont_DV_TTSurekhEN  = 85;
+Transformer.dynFont_DVW_TTGanesh   = 86;
+Transformer.dynFont_DVW_TTYogesh   = 87;
+Transformer.dynFont_DVW_TTSurekh   = 88;
+Transformer.dynFont_DVW_TTGaneshEN = 89;
+Transformer.dynFont_DVW_TTYogeshEN = 90;
+Transformer.dynFont_DVW_TTSurekhEN = 91;
+Transformer.dynFont_Unknown      = 92;  //this should always be the max, this is used as a sentinel
 
 //Classes that implement the above dynamic fonts
 Transformer.dynFont_Class = new Array();
@@ -173,6 +198,31 @@ Transformer.dynFont_Class[Transformer.dynFont_AAADurgax] = AAADurgax;
 Transformer.dynFont_Class[Transformer.dynFont_AAADurgaxx]= AAADurgaxx;
 Transformer.dynFont_Class[Transformer.dynFont_Amudham]= Amudham;
 Transformer.dynFont_Class[Transformer.dynFont_ShreeDev0714]= Shree_Dev_0714;
+Transformer.dynFont_Class[Transformer.dynFont_Manjusha]     = Manjusha;
+Transformer.dynFont_Class[Transformer.dynFont_ManjushaMedium]= ManjushaMedium;
+Transformer.dynFont_Class[Transformer.dynFont_Kiran]        = Kiran;
+Transformer.dynFont_Class[Transformer.dynFont_Amruta]       = Amruta;
+Transformer.dynFont_Class[Transformer.dynFont_Aarti]        = Aarti;
+Transformer.dynFont_Class[Transformer.dynFont_Pudhari]      = Pudhari;
+Transformer.dynFont_Class[Transformer.dynFont_ShreePud77bl] = ShreePud77bl;
+Transformer.dynFont_Class[Transformer.dynFont_ShreePud77nl] = ShreePud77nl;
+Transformer.dynFont_Class[Transformer.dynFont_ShreePud77nw] = ShreePud77nw;
+Transformer.dynFont_Class[Transformer.dynFont_TLTTHemalatha]= TL_Hemalatha;
+Transformer.dynFont_Class[Transformer.dynFont_ShreeKan0850] = Shree_Kan_0850;
+Transformer.dynFont_Class[Transformer.dynFont_ShreeKan0850W]= Shree_Kan_0850W;
+Transformer.dynFont_Class[Transformer.dynFont_Krutidev] = Krutidev;
+Transformer.dynFont_Class[Transformer.dynFont_DV_TTGanesh]    = DV_TTGanesh;
+Transformer.dynFont_Class[Transformer.dynFont_DV_TTYogesh]    = DV_TTYogesh;
+Transformer.dynFont_Class[Transformer.dynFont_DV_TTSurekh]    = DV_TTSurekh;
+Transformer.dynFont_Class[Transformer.dynFont_DV_TTGaneshEN]  = DV_TTGaneshEN;
+Transformer.dynFont_Class[Transformer.dynFont_DV_TTYogeshEN]  = DV_TTYogeshEN;
+Transformer.dynFont_Class[Transformer.dynFont_DV_TTSurekhEN]  = DV_TTSurekhEN;
+Transformer.dynFont_Class[Transformer.dynFont_DVW_TTGanesh]   = DVW_TTGanesh;
+Transformer.dynFont_Class[Transformer.dynFont_DVW_TTYogesh]   = DVW_TTYogesh;
+Transformer.dynFont_Class[Transformer.dynFont_DVW_TTSurekh]   = DVW_TTSurekh;
+Transformer.dynFont_Class[Transformer.dynFont_DVW_TTGaneshEN] = DVW_TTGaneshEN;
+Transformer.dynFont_Class[Transformer.dynFont_DVW_TTYogeshEN] = DVW_TTYogeshEN;
+Transformer.dynFont_Class[Transformer.dynFont_DVW_TTSurekhEN] = DVW_TTSurekhEN;
 
 //Class names for non-dynamic font encodings
 Transformer.className_Unicode = Unicode;
@@ -224,7 +274,9 @@ Transformer.initialize = function () {
     Shivaji.initialize();
     //Vakil fonts are based on Shusha but are slightly different
     Vakil.initialize();
-
+    //Shree-Pud-77NW font is similar to SHREE-PUDHARI with slight difference
+    ShreePud77nw.initialize();
+    
     Eenadu.prepareOverloadList();
 }
 
