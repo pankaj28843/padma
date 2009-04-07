@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: padma.xul,v 1.32 2008/06/16 22:16:47 vnagarjuna Exp $-->
+<$--$Id: padma.xul,v 1.33 2009/04/07 07:51:59 harshita Exp $-->
 
 <!--Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
 
@@ -43,6 +43,7 @@
 <script type="application/x-javascript" src="encodings/Telugu/TCSMith.js"/>
 <script type="application/x-javascript" src="encodings/Telugu/TeluguFont.js"/>
 <script type="application/x-javascript" src="encodings/Telugu/SuriTln.js"/>
+<script type="application/x-javascript" src="encodings/Telugu/TLTTHemalatha.js"/>
 <script type="application/x-javascript" src="encodings/Malayalam/Malayalam.js"/>
 <script type="application/x-javascript" src="encodings/Malayalam/Karthika.js"/>
 <script type="application/x-javascript" src="encodings/Malayalam/Kairali.js"/>
@@ -74,11 +75,18 @@
 <script type="application/x-javascript" src="encodings/Devanagari/HTChanakya.js"/>
 <script type="application/x-javascript" src="encodings/Devanagari/Shivaji.js"/>
 <script type="application/x-javascript" src="encodings/Devanagari/Mithi.js"/>
+<script type="application/x-javascript" src="encodings/Devanagari/Manjusha.js"/>
+<script type="application/x-javascript" src="encodings/Devanagari/Kiran.js"/>
+<script type="application/x-javascript" src="encodings/Devanagari/Pudhari.js"/>
+<script type="application/x-javascript" src="encodings/Devanagari/Krutidev.js"/>
+<script type="application/x-javascript" src="encodings/Devanagari/DV_TTGanesh.js"/>
+<script type="application/x-javascript" src="encodings/Devanagari/DVW_TTGanesh.js"/>
 <script type="application/x-javascript" src="encodings/Gujarati/Gujarati.js"/>
 <script type="application/x-javascript" src="encodings/Gujarati/Gopika.js"/>
 <script type="application/x-javascript" src="encodings/Gujarati/Vakil.js"/>
 <script type="application/x-javascript" src="encodings/Kannada/Kannada.js"/>
 <script type="application/x-javascript" src="encodings/Kannada/Nandi.js"/>
+<script type="application/x-javascript" src="encodings/Kannada/ShreeKan0850.js"/>
 <script type="application/x-javascript" src="encodings/Bengali/Bengali.js"/>
 <script type="application/x-javascript" src="encodings/Bengali/AabpBengali.js"/>
 <script type="application/x-javascript" src="encodings/Bengali/AabpBengalix.js"/>
