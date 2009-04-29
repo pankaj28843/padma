@@ -1,23 +1,30 @@
 <?xml version="1.0"?>
-<!--$Id: install.rdf,v 1.36 2008/06/16 17:18:01 vnagarjuna Exp $-->
-
-<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:em="http://www.mozilla.org/2004/em-rdf#">
-
-  <Description about="urn:mozilla:install-manifest">
-
-    <!-- Front End MetaData -->
-    <em:name>Padma</em:name>
-    <em:id>{3e450467-892a-45b8-9ed8-90e8d3bf2ad7}</em:id>
-    <em:version>0.4.13</em:version>
-    <em:description>Transformer for Indic Scripts</em:description>
-    <em:homepageURL>http://padma.mozdev.org</em:homepageURL>
-    <em:optionsURL>chrome://padma/content/prefs.xul</em:optionsURL>
-    <em:aboutURL>chrome://padma/content/about.xul</em:aboutURL>
-    <em:iconURL>chrome://padma/content/padmav.png</em:iconURL>
-    <em.type>2</em.type>
-
-    <em:creator>Nagarjuna Venna</em:creator>
+<!--$Id: install.rdf,v 1.37 2009/04/29 10:57:51 harshita Exp $-->
+<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="rdf:#$mT5Mb3"
+                   em:id="{86c18b42-e466-45a9-ae7a-9b95ba6f5640}"
+                   em:minVersion="1.7"
+                   em:maxVersion="1.8" />
+  <RDF:Description RDF:about="rdf:#$kT5Mb3"
+                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   em:minVersion="1.0"
+                   em:maxVersion="3.0.*" />
+  <RDF:Description RDF:about="rdf:#$lT5Mb3"
+                   em:id="{3550f703-e582-4d05-9a08-453d09bdfdc6}"
+                   em:minVersion="0.7"
+                   em:maxVersion="2.0.0.*" />
+  <RDF:Description RDF:about="urn:mozilla:install-manifest"
+                   em:id="{3e450467-892a-45b8-9ed8-90e8d3bf2ad7}"
+                   em:name="Padma"
+                   em:version="0.4.14"
+                   em:creator="Harshita Vani"
+                   em:description="Transformer for Indic Scripts"
+                   em:homepageURL="http://padma.mozdev.org"
+                   em:iconURL="chrome://padma/content/padmav.png"
+                   em:optionsURL="chrome://padma/content/prefs.xul"
+                   em:aboutURL="chrome://padma/content/about.xul">
     <em:contributor>Suresh Kolichala</em:contributor>
     <em:contributor>Saravana Kumar</em:contributor>
     <em:contributor>M K Paul</em:contributor>
@@ -30,60 +37,13 @@
     <em:contributor>Vishnu Fafat</em:contributor>
     <em:contributor>Gopala Krishna Koduri</em:contributor>
     <em:contributor>Kulbir Saini</em:contributor>
-
-    <!-- Target Application this extension can install into, 
-        with minimum and maximum supported versions. --> 
-    <!-- Firefox -->
-    <em:targetApplication>
-      <Description>
-        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
-        <em:minVersion>1.0</em:minVersion>
-        <em:maxVersion>3.0.*</em:maxVersion>
-      </Description>
-    </em:targetApplication> 
-
-    <!-- Thunderbird -->
-    <em:targetApplication>
-     <Description>
-        <em:id>{3550f703-e582-4d05-9a08-453d09bdfdc6}</em:id>
-        <em:minVersion>0.7</em:minVersion>
-        <em:maxVersion>2.0.0.*</em:maxVersion>
-     </Description>
-    </em:targetApplication>
-
-    <!-- Netscape -->
-    <em:targetApplication>
-     <Description>
-        <em:id>{3db10fab-e461-4c80-8b97-957ad5f8ea47}</em:id>
-        <em:minVersion>8.0</em:minVersion>
-        <em:maxVersion>8.1</em:maxVersion>
-     </Description>
-    </em:targetApplication>
-
-    <!-- Mozilla Suite -->
-    <em:targetApplication>
-     <Description>
-        <em:id>{86c18b42-e466-45a9-ae7a-9b95ba6f5640}</em:id>
-        <em:minVersion>1.7</em:minVersion>
-        <em:maxVersion>1.8</em:maxVersion>
-     </Description>
-    </em:targetApplication>
-
-    <!-- SeaMonkey -->
-    <em:targetApplication>
-     <Description>
-        <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
-        <em:minVersion>1.0</em:minVersion>
-        <em:maxVersion>1.0</em:maxVersion>
-     </Description>
-    </em:targetApplication>
-
-    <em:file>
-      <Description about="urn:mozilla:extension:file:padma.jar">
-        <em:package>content/</em:package>
-      </Description>
-    </em:file>
-
-  </Description>
-
-</RDF>
+    <em:contributor>Rajagiri Ravi</em:contributor>
+    <em:contributor>Kinshul Verma</em:contributor>
+    <em:targetApplication RDF:resource="rdf:#$kT5Mb3"/>
+    <em:targetApplication RDF:resource="rdf:#$lT5Mb3"/>
+    <em:targetApplication RDF:resource="rdf:#$mT5Mb3"/>
+    <em:file RDF:resource="urn:mozilla:extension:file:padma.jar"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mozilla:extension:file:padma.jar"
+                   em:package="content/" />
+</RDF:RDF>
