@@ -1,4 +1,4 @@
-// $Id: padma.js,v 1.31 2008/06/16 22:16:47 vnagarjuna Exp $ -->
+// $Id: padma.js,v 1.32 2009/06/17 14:27:57 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -357,9 +357,12 @@ var Padma_Browser_Transformer = {
     },
 
     onPopupShowing: function(evt) {
-        var result = this.getSelection(document.popupNode), hidden = false;
-        if (result.control || result.selection.toString().length == 0)
-            hidden = true;
+        var result = this.getSelection(document.popupNode), hidden = true;
+	var val = result.selection;
+        if (!result.control)
+	    val = val.toString();
+        if (val.length != 0)
+            hidden = false;
 
         var item = document.getElementById("padma-menu");
         item.hidden = hidden;
