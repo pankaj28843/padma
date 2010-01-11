@@ -1,4 +1,4 @@
-// $Id: Transformer.js,v 1.37 2010/01/11 13:51:05 harshita Exp $
+// $Id: Transformer.js,v 1.38 2010/01/11 13:57:59 harshita Exp $
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -131,7 +131,8 @@ Transformer.dynFont_VikaasWebFont = 92;
 Transformer.dynFont_PriyaankaBoldWebFont = 93;
 Transformer.dynFont_PallaviBoldWebFont = 94;
 Transformer.dynFont_VaarthaText      = 95;
-Transformer.dynFont_Unknown      = 96;  //this should always be the max, this is used as a sentinel
+Transformer.dynFont_SHREE_0908W      = 96;
+Transformer.dynFont_Unknown      = 97;  //this should always be the max, this is used as a sentinel
 
 //Classes that implement the above dynamic fonts
 Transformer.dynFont_Class = new Array();
@@ -231,6 +232,7 @@ Transformer.dynFont_Class[Transformer.dynFont_VikaasWebFont] = VikaasWebFont;
 Transformer.dynFont_Class[Transformer.dynFont_PriyaankaBoldWebFont] = PriyaankaBoldWebFont;
 Transformer.dynFont_Class[Transformer.dynFont_PallaviBoldWebFont] = PallaviBoldWebFont;
 Transformer.dynFont_Class[Transformer.dynFont_VaarthaText]      = VaarthaText;
+Transformer.dynFont_Class[Transformer.dynFont_SHREE_0908W]      = SHREE_0908W;
 
 //Class names for non-dynamic font encodings
 Transformer.className_Unicode = Unicode;
@@ -284,6 +286,8 @@ Transformer.initialize = function () {
     Vakil.initialize();
     //Shree-Pud-77NW font is similar to SHREE-PUDHARI with slight difference
     ShreePud77nw.initialize();
+    //SHREE-0908W is similar to Shree_Tel_0900 with slight difference
+    SHREE_0908W.initialize();
     
     Eenadu.prepareOverloadList();
 }
