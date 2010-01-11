@@ -1,4 +1,4 @@
-// $Id: Transformer.js,v 1.39 2010/01/11 14:04:43 harshita Exp $
+// $Id: Transformer.js,v 1.40 2010/01/11 14:11:53 harshita Exp $
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -134,7 +134,8 @@ Transformer.dynFont_VaarthaText      = 95;
 Transformer.dynFont_SHREE_0908W      = 96;
 Transformer.dynFont_MillenniumVarun = 97;
 Transformer.dynFont_MillenniumVarunFX = 98;
-Transformer.dynFont_Unknown      = 99;  //this should always be the max, this is used as a sentinel
+Transformer.dynFont_MillenniumVarunWeb = 99;
+Transformer.dynFont_Unknown      = 100;  //this should always be the max, this is used as a sentinel
 
 //Classes that implement the above dynamic fonts
 Transformer.dynFont_Class = new Array();
@@ -237,6 +238,7 @@ Transformer.dynFont_Class[Transformer.dynFont_VaarthaText]      = VaarthaText;
 Transformer.dynFont_Class[Transformer.dynFont_SHREE_0908W]      = SHREE_0908W;
 Transformer.dynFont_Class[Transformer.dynFont_MillenniumVarun]= MillenniumVarun;
 Transformer.dynFont_Class[Transformer.dynFont_MillenniumVarunFX]= MillenniumVarunFX;
+Transformer.dynFont_Class[Transformer.dynFont_MillenniumVarunWeb]= MillenniumVarunWeb;
 
 //Class names for non-dynamic font encodings
 Transformer.className_Unicode = Unicode;
