@@ -1,4 +1,4 @@
-// $Id: Transformer.js,v 1.35 2009/04/07 08:00:44 harshita Exp $
+// $Id: Transformer.js,v 1.36 2010/01/11 13:44:44 harshita Exp $
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -127,7 +127,10 @@ Transformer.dynFont_DVW_TTSurekh   = 88;
 Transformer.dynFont_DVW_TTGaneshEN = 89;
 Transformer.dynFont_DVW_TTYogeshEN = 90;
 Transformer.dynFont_DVW_TTSurekhEN = 91;
-Transformer.dynFont_Unknown      = 92;  //this should always be the max, this is used as a sentinel
+Transformer.dynFont_VikaasWebFont = 92;
+Transformer.dynFont_PriyaankaBoldWebFont = 93;
+Transformer.dynFont_PallaviBoldWebFont = 94;
+Transformer.dynFont_Unknown      = 95;  //this should always be the max, this is used as a sentinel
 
 //Classes that implement the above dynamic fonts
 Transformer.dynFont_Class = new Array();
@@ -223,6 +226,9 @@ Transformer.dynFont_Class[Transformer.dynFont_DVW_TTSurekh]   = DVW_TTSurekh;
 Transformer.dynFont_Class[Transformer.dynFont_DVW_TTGaneshEN] = DVW_TTGaneshEN;
 Transformer.dynFont_Class[Transformer.dynFont_DVW_TTYogeshEN] = DVW_TTYogeshEN;
 Transformer.dynFont_Class[Transformer.dynFont_DVW_TTSurekhEN] = DVW_TTSurekhEN;
+Transformer.dynFont_Class[Transformer.dynFont_VikaasWebFont] = VikaasWebFont;
+Transformer.dynFont_Class[Transformer.dynFont_PriyaankaBoldWebFont] = PriyaankaBoldWebFont;
+Transformer.dynFont_Class[Transformer.dynFont_PallaviBoldWebFont] = PallaviBoldWebFont;
 
 //Class names for non-dynamic font encodings
 Transformer.className_Unicode = Unicode;

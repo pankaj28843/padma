@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: padma.xul,v 1.34 2009/04/07 07:54:57 harshita Exp $-->
+<!--$Id: padma.xul,v 1.35 2010/01/11 13:44:44 harshita Exp $-->
 
 <!--Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
 
@@ -44,6 +44,7 @@
 <script type="application/x-javascript" src="encodings/Telugu/TeluguFont.js"/>
 <script type="application/x-javascript" src="encodings/Telugu/SuriTln.js"/>
 <script type="application/x-javascript" src="encodings/Telugu/TLTTHemalatha.js"/>
+<script type="application/x-javascript" src="encodings/Telugu/VikaasWebFont.js"/>
 <script type="application/x-javascript" src="encodings/Malayalam/Malayalam.js"/>
 <script type="application/x-javascript" src="encodings/Malayalam/Karthika.js"/>
 <script type="application/x-javascript" src="encodings/Malayalam/Kairali.js"/>
