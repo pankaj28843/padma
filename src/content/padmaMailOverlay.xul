@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: padmaMailOverlay.xul,v 1.38 2010/01/11 14:11:52 harshita Exp $-->
+<!--$Id: padmaMailOverlay.xul,v 1.39 2010/01/11 14:17:27 harshita Exp $-->
 
 <!--Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
 
@@ -66,6 +66,7 @@
 <script type="application/x-javascript" src="encodings/Tamil/TSCII.js"/>
 <script type="application/x-javascript" src="encodings/Tamil/TAB.js"/>
 <script type="application/x-javascript" src="encodings/Tamil/TSCII_Fonts.js"/>
+<script type="application/x-javascript" src="encodings/Tamil/TamLfsKamban.js"/>
 <script type="application/x-javascript" src="encodings/Devanagari/Devanagari.js"/>
 <script type="application/x-javascript" src="encodings/Devanagari/Subak.js"/>
 <script type="application/x-javascript" src="encodings/Devanagari/BEJA.js"/>
