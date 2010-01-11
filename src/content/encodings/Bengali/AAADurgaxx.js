@@ -1,4 +1,4 @@
-//$Id: AAADurgaxx.js,v 1.1 2008/06/16 15:43:00 vnagarjuna Exp $
+//$Id: AAADurgaxx.js,v 1.2 2010/01/11 13:46:01 harshita Exp $
 
 /* Copyright 2008 Nagarjuna Venna <vnagarjuna@yahoo.com> */
 /*                Golam Mortuza Hossain <gmhossain@gmail.com> */
@@ -191,7 +191,7 @@ AAADurgaxx.vowelsn_AULEN_1= "\u00F3";
 AAADurgaxx.consnt_KA      = "\u00F4";
 AAADurgaxx.vowelsn_U_11   = "\u00F5";
 AAADurgaxx.vowelsn_UU_11  = "\u00F6";
-AAADurgaxx.vowelsn_R_10   = "\u00F7";
+AAADurgaxx.vowelsn_R_12   = "\u00F7";
 AAADurgaxx.vowelsn_AULEN_2= "\u00F8";
 AAADurgaxx.virama         = "\u00F9";
 AAADurgaxx.vowelsn_U_12   = "\u00FA";
@@ -264,6 +264,7 @@ AAADurgaxx.toPadma[AAADurgaxx.vowelsn_R_8]    = Padma.vowelsn_R;
 AAADurgaxx.toPadma[AAADurgaxx.vowelsn_R_9]    = Padma.vowelsn_R;
 AAADurgaxx.toPadma[AAADurgaxx.vowelsn_R_10]   = Padma.vowelsn_R;
 AAADurgaxx.toPadma[AAADurgaxx.vowelsn_R_11]   = Padma.vowelsn_R;
+AAADurgaxx.toPadma[AAADurgaxx.vowelsn_R_12]   = Padma.vowelsn_R;
 
 //AAADurgaxx.toPadma[AAADurgaxx.conjct_SSPH_1]  = Padma.consnt_SSA + Padma.vattu_PHA;
 //AAADurgaxx.toPadma[AAADurgaxx.conjct_SSPH_2]  = Padma.consnt_SSA + Padma.vattu_PHA;
