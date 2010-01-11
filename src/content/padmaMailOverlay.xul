@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: padmaMailOverlay.xul,v 1.36 2010/01/11 13:57:59 harshita Exp $-->
+<!--$Id: padmaMailOverlay.xul,v 1.37 2010/01/11 14:04:43 harshita Exp $-->
 
 <!--Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>-->
 
@@ -84,6 +84,7 @@
 <script type="application/x-javascript" src="encodings/Devanagari/Krutidev.js"/>
 <script type="application/x-javascript" src="encodings/Devanagari/DV_TTGanesh.js"/>
 <script type="application/x-javascript" src="encodings/Devanagari/DVW_TTGanesh.js"/>
+<script type="application/x-javascript" src="encodings/Devanagari/MillenniumVarun.js"/>
 <script type="application/x-javascript" src="encodings/Gujarati/Gujarati.js"/>
 <script type="application/x-javascript" src="encodings/Gujarati/Gopika.js"/>
 <script type="application/x-javascript" src="encodings/Gujarati/Vakil.js"/>
