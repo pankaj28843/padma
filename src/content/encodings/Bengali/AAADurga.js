@@ -1,4 +1,4 @@
-// $Id: AAADurga.js,v 1.1 2008/06/16 15:43:00 vnagarjuna Exp $ -->
+// $Id: AAADurga.js,v 1.2 2011/10/27 15:34:20 vnagarjuna Exp $ -->
 
 //Copyright 2008 Nagarjuna Venna <vnagarjuna@yahoo.com>
 /*               Golam Mortuza Hossain <gmhossain@gmail.com> */
@@ -182,7 +182,7 @@ AAADurga.vowelsn_UU_4   = "\u00CE";
 AAADurga.vowelsn_UU_5   = "\u00D3";
 AAADurga.vowelsn_UU_6   = "\u00DB";
 
-AAADurga.vowelsn_R_1    = "\u00RF";
+AAADurga.vowelsn_R_1    = "\u00BF";
 AAADurga.vowelsn_R_2    = "\u00C8";
 AAADurga.vowelsn_R_3    = "\u00CF";
 AAADurga.vowelsn_R_4    = "\u00D2";

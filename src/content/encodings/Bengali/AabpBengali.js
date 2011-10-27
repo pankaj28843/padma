@@ -1,4 +1,4 @@
-// $Id: AabpBengali.js,v 1.2 2008/06/16 15:43:00 vnagarjuna Exp $ -->
+// $Id: AabpBengali.js,v 1.3 2011/10/27 15:34:20 vnagarjuna Exp $ -->
 
 //Copyright 2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 /*               Golam Mortuza Hossain <gmhossain@gmail.com> */
@@ -182,7 +182,7 @@ Aabpbengali.vowelsn_UU_4   = "\u00CE";
 Aabpbengali.vowelsn_UU_5   = "\u00D3";
 Aabpbengali.vowelsn_UU_6   = "\u00DB";
 Aabpbengali.vowelsn_UU_7   = "\u004C";
-Aabpbengali.vowelsn_R_1    = "\u00RF";
+Aabpbengali.vowelsn_R_1    = "\u00BF";
 Aabpbengali.vowelsn_R_2    = "\u00C8";
 Aabpbengali.vowelsn_R_3    = "\u00CF";
 Aabpbengali.vowelsn_R_4    = "\u00D2";

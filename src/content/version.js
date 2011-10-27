@@ -1,4 +1,4 @@
-// $Id: version.js,v 1.15 2009/07/11 15:11:39 vnagarjuna Exp $
+// $Id: version.js,v 1.16 2011/10/27 15:34:20 vnagarjuna Exp $
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -24,7 +24,7 @@
 //Upgrade from version to version
 var Padma_Version = {
 
-    curVersion    : '0.4.15',
+    curVersion    : '0.4.16',
 
     getCurVersion : function() {
         return this.curVersion;

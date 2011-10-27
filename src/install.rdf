@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!--$Id: install.rdf,v 1.40 2009/07/11 15:11:39 vnagarjuna Exp $-->
+<!--$Id: install.rdf,v 1.41 2011/10/27 15:34:19 vnagarjuna Exp $-->
 <RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
          xmlns:NC="http://home.netscape.com/NC-rdf#"
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -10,15 +10,15 @@
   <RDF:Description RDF:about="rdf:#$kT5Mb3"
                    em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
                    em:minVersion="1.0"
-                   em:maxVersion="3.5.*" />
+                   em:maxVersion="7.*" />
   <RDF:Description RDF:about="rdf:#$lT5Mb3"
                    em:id="{3550f703-e582-4d05-9a08-453d09bdfdc6}"
                    em:minVersion="0.7"
-                   em:maxVersion="2.0.0.*" />
+                   em:maxVersion="3.1.*" />
   <RDF:Description RDF:about="urn:mozilla:install-manifest"
                    em:id="{3e450467-892a-45b8-9ed8-90e8d3bf2ad7}"
                    em:name="Padma"
-                   em:version="0.4.15"
+                   em:version="0.4.16"
                    em:creator="Nagarjuna Venna"
                    em:description="Transformer for Indic Scripts"
                    em:homepageURL="http://padma.mozdev.org"
