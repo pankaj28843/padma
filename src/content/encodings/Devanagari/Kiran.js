@@ -1,4 +1,4 @@
-//$Id: Kiran.js,v 1.2 2009/04/07 07:29:27 harshita Exp $
+//$Id: Kiran.js,v 1.3 2011/11/03 09:56:48 harshita Exp $
 
 //Copyright 2008-2009 Radhesh <guptaradhesh@gmail.com>
 //Copyright 2008-2009 Harshita Vani <harshita@atc.tcs.com>
@@ -141,6 +141,7 @@ Kiran.consnt_LA_2    = "\u00CA";
 Kiran.consnt_VA      = "\u0076\u0061";
 Kiran.consnt_SHA_1   = "\u0053\u0061";
 Kiran.consnt_SHA_2   = "\u00CC\u0061";
+Kiran.consnt_SHA_3   = "\u0045\u0061";
 Kiran.consnt_SSA     = "\u0059\u0061";
 Kiran.consnt_SA      = "\u0073\u0061";
 Kiran.consnt_HA      = "\u0068";
@@ -151,8 +152,9 @@ Kiran.vowelsn_AA     = "\u0061";
 Kiran.vowelsn_I      = "\u0069";
 Kiran.vowelsn_II     = "\u0049";
 Kiran.vowelsn_U_1    = "\u0075";
-Kiran.vowelsn_U_2    = "\u007D";
-Kiran.vowelsn_UU     = "\u0055";
+Kiran.vowelsn_U_2    = "\u005D";
+Kiran.vowelsn_UU_1   = "\u0055";
+Kiran.vowelsn_UU_2   = "\u007D";
 Kiran.vowelsn_R      = "\u0052";
 Kiran.vowelsn_CDR_E  = "\u005E";
 Kiran.vowelsn_EE     = "\u006F";
@@ -192,11 +194,12 @@ Kiran.halffm_VA      = "\u0076";
 
 Kiran.halffm_SHA_1   = "\u0053";
 Kiran.halffm_SHA_2   = "\u00CC";
+Kiran.halffm_SHA_3   = "\u0045";
 Kiran.halffm_SSA     = "\u0059";
 Kiran.halffm_SA      = "\u0073";
 Kiran.halffm_HA      = "\u0048";
 
-Kiran.halffm_SHR     = "\u0045";
+Kiran.halffm_SHR     = "\u0045\u0060";
 Kiran.halffm_TR      = "\u007E"; 
 Kiran.halffm_JNY     = "\u0026";
 Kiran.halffm_NN      = "\u00D9";
@@ -226,13 +229,13 @@ Kiran.conjct_SHR     = "\u0045\u0061\u0060";
 Kiran.conjct_HR      = "\u00D2";
 Kiran.conjct_HM      = "\u00D3";
 Kiran.conjct_HY      = "\u002B";
-Kiran.conjct_KTR     = "\u00DA";
+Kiran.conjct_KR      = "\u00DA";
 
 //rakar
 Kiran.vattu_RA_1     = "\u002F";
 Kiran.vattu_RA_2     = "\u0060";
 
-// Combos
+//Combos
 Kiran.combo_JI       = "\u0069\u006A\u0061";
 Kiran.combo_RU       = "\u0072\u005D";
 Kiran.combo_RUU      = "\u0072\u007D";
@@ -244,6 +247,8 @@ Kiran.combo_HR       = "\u003D";
 Kiran.combo_KAVA     = "\u00DB";
 Kiran.combo_TRAY_1   = "\u007E\u00CB";
 Kiran.combo_TRAY_2   = "\u007E\u0079\u0061";
+
+//Kiran.combo_KSHI     = "\u0058\u0069";
 
 Kiran.misc_OM        = "\u002A";
 Kiran.misc_DANDA     = "\u007C";
@@ -289,9 +294,12 @@ Kiran.CURLYRIGHT     = "\u00E9";
 Kiran.SQBKTLEFT      = "\u00EA";
 Kiran.SQBKTRIGHT     = "\u00EB";
 Kiran.ATSIGN         = "\u00EC";
-Kiran.LIRA	     = "\u00F0";
+Kiran.HALF           = "\u00ED";
+Kiran.QUARTER        = "\u00EE";
+Kiran.THREEFORTH     = "\u00EF";
+Kiran.LIRA	         = "\u00F0";
 Kiran.DOLLAR	     = "\u00F1";
-Kiran.HASH	     = "\u00F2";
+Kiran.HASH	         = "\u00F2";
 Kiran.SLASH          = "\u00F3";
 Kiran.BACKSLASH      = "\u00F4";
 Kiran.PERCENT        = "\u00F5";
@@ -367,6 +375,7 @@ Kiran.toPadma[Kiran.consnt_LA_2]  = Padma.consnt_LA;
 Kiran.toPadma[Kiran.consnt_VA]    = Padma.consnt_VA;
 Kiran.toPadma[Kiran.consnt_SHA_1] = Padma.consnt_SHA;
 Kiran.toPadma[Kiran.consnt_SHA_2] = Padma.consnt_SHA;
+Kiran.toPadma[Kiran.consnt_SHA_3] = Padma.consnt_SHA;
 Kiran.toPadma[Kiran.consnt_SSA] = Padma.consnt_SSA;
 Kiran.toPadma[Kiran.consnt_SA]  = Padma.consnt_SA;
 Kiran.toPadma[Kiran.consnt_HA]  = Padma.consnt_HA;
@@ -378,7 +387,8 @@ Kiran.toPadma[Kiran.vowelsn_I]  = Padma.vowelsn_I;
 Kiran.toPadma[Kiran.vowelsn_II] = Padma.vowelsn_II;
 Kiran.toPadma[Kiran.vowelsn_U_1]= Padma.vowelsn_U;
 Kiran.toPadma[Kiran.vowelsn_U_2]= Padma.vowelsn_U;
-Kiran.toPadma[Kiran.vowelsn_UU] = Padma.vowelsn_UU;
+Kiran.toPadma[Kiran.vowelsn_UU_1] = Padma.vowelsn_UU;
+Kiran.toPadma[Kiran.vowelsn_UU_2] = Padma.vowelsn_UU;
 Kiran.toPadma[Kiran.vowelsn_R]  = Padma.vowelsn_R;
 Kiran.toPadma[Kiran.vowelsn_CDR_E] = Padma.vowelsn_CDR_E;
 Kiran.toPadma[Kiran.vowelsn_EE] = Padma.vowelsn_EE;
@@ -418,6 +428,7 @@ Kiran.toPadma[Kiran.halffm_VA]    = Padma.halffm_VA;
 
 Kiran.toPadma[Kiran.halffm_SHA_1] = Padma.halffm_SHA;
 Kiran.toPadma[Kiran.halffm_SHA_2] = Padma.halffm_SHA;
+Kiran.toPadma[Kiran.halffm_SHA_3] = Padma.halffm_SHA;
 Kiran.toPadma[Kiran.halffm_SSA]   = Padma.halffm_SSA;
 Kiran.toPadma[Kiran.halffm_SA]    = Padma.halffm_SA;
 Kiran.toPadma[Kiran.halffm_HA]    = Padma.halffm_HA;
@@ -451,7 +462,7 @@ Kiran.toPadma[Kiran.conjct_SHR]    = Padma.consnt_SHA + Padma.vattu_RA;
 Kiran.toPadma[Kiran.conjct_HR]     = Padma.consnt_HA + Padma.vattu_RA;
 Kiran.toPadma[Kiran.conjct_HM]     = Padma.consnt_HA + Padma.vattu_MA;
 Kiran.toPadma[Kiran.conjct_HY]     = Padma.consnt_HA + Padma.vattu_YA;
-Kiran.toPadma[Kiran.conjct_KTR]    = Padma.consnt_TA + Padma.vattu_RA + Padma.vattu_KA;
+Kiran.toPadma[Kiran.conjct_KR]     = Padma.consnt_KA + Padma.vattu_RA;
 
 //rakar
 Kiran.toPadma[Kiran.vattu_RA_1]    = Padma.vattu_RA;
@@ -469,6 +480,8 @@ Kiran.toPadma[Kiran.combo_HR]      = Padma.consnt_HA + Padma.vowelsn_R;
 Kiran.toPadma[Kiran.combo_KAVA]    = Padma.consnt_KA + Padma.vattu_VA; 
 Kiran.toPadma[Kiran.combo_TRAY_1]  = Padma.halffm_TA + Padma.halffm_RA + Padma.consnt_YA; 
 Kiran.toPadma[Kiran.combo_TRAY_2]  = Padma.halffm_TA + Padma.halffm_RA + Padma.consnt_YA; 
+
+//Kiran.toPadma[Kiran.combo_KSHI]    = Padma.consnt_KA + Padma.vattu_SSA + Padma.vowelsn_I;
 
 Kiran.toPadma[Kiran.misc_OM]       = Padma.om;
 Kiran.toPadma[Kiran.misc_DANDA]    = Padma.danda;
@@ -499,6 +512,9 @@ Kiran.toPadma[Kiran.CURLYRIGHT]    = "}";
 Kiran.toPadma[Kiran.SQBKTLEFT]     = "[";
 Kiran.toPadma[Kiran.SQBKTRIGHT]    = "]";
 Kiran.toPadma[Kiran.ATSIGN]        = "@";
+Kiran.toPadma[Kiran.HALF]          = "\u00BD";
+Kiran.toPadma[Kiran.QUARTER]       = "\u00BC";
+Kiran.toPadma[Kiran.THREEFORTH]    = "\u00BE";
 Kiran.toPadma[Kiran.LIRA]          = "\u20A4";
 Kiran.toPadma[Kiran.DOLLAR]        = "$";
 Kiran.toPadma[Kiran.HASH]          = "#";
@@ -514,7 +530,6 @@ Kiran.prefixList[Kiran.vowelsn_I]  = true;
 Kiran.suffixList = new Object();
 Kiran.suffixList[Kiran.halffm_RA]   = true;
 Kiran.suffixList[Kiran.vowelsn_U_2] = true;
-Kiran.suffixList[Kiran.vowelsn_UU]  = true;
 
 Kiran.redundantList = new Object();
 Kiran.redundantList[Kiran.space_1] = true;
@@ -555,6 +570,7 @@ Kiran.overloadList[Kiran.halffm_LA]   = true;
 Kiran.overloadList[Kiran.halffm_VA]   = true;
 Kiran.overloadList[Kiran.halffm_SHA_1]= true;
 Kiran.overloadList[Kiran.halffm_SHA_2]= true;
+Kiran.overloadList[Kiran.halffm_SHA_3]= true;
 Kiran.overloadList[Kiran.halffm_SHR]  = true;
 Kiran.overloadList[Kiran.halffm_SSA]  = true;
 Kiran.overloadList[Kiran.halffm_SA]   = true;
