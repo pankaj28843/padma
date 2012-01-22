@@ -1,4 +1,4 @@
-// $Id: Padma.js,v 1.17 2007/06/15 21:56:07 vnagarjuna Exp $ -->
+// $Id: Padma.js,v 1.18 2012/01/22 04:12:49 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -64,7 +64,7 @@ Padma.type_half_form = 128;
 Padma.type_unknown   = 256; //catch all
 
 //Use Unicode Private Use Area for Padma's internal symbols starting with U+EC00.
-//Code pints used: +UEC00-+UEC0F, +UEC10-+UEC1D, +UEC20-+UEC68, +UEC70-+UEC80, +UECA1-+UECE8, +UED33-+UED68.
+//Code pints used: +UEC00-+UEC0F, +UEC10-+UEC1E, +UEC20-+UEC68, +UEC70-+UEC80, +UECA1-+UECE8, +UED33-+UED68.
 
 //Code points 32-64, 91-96, 123-127 (from the ASCII range) are not explicitly listed here
 //but are part of Padma's internal format and are of type Padma.type_unknown.
@@ -82,6 +82,7 @@ Padma.ardhavisarga = "\uEC7D";
 Padma.tippi       = "\uEC7E";   //Gurmukhi specific
 Padma.addak       = "\uEC7F";   //Gurmukhi specific
 Padma.ekonkar     = "\uEC80";   //Gurmukhi specific
+Padma.chillu_C2   = "\uEC1E";   //half consonant for C2 conjoining consonants
 
 //Other names for the equivalent of pollu
 Padma.virama       = Padma.pollu;   //Telugu
@@ -383,6 +384,7 @@ Padma.symbols[Padma.visarga]     = Padma.type_accu_mod;
 Padma.symbols[Padma.ardhavisarga]= Padma.type_accu_mod;
 Padma.symbols[Padma.pollu]       = Padma.type_hallu_mod;
 Padma.symbols[Padma.chillu]      = Padma.type_hallu_mod;
+Padma.symbols[Padma.chillu_C2]   = Padma.type_half_form;
 Padma.symbols[Padma.syllbreak]   = Padma.type_hallu_mod;
 Padma.symbols[Padma.nukta]       = Padma.type_hallu_mod;
 Padma.symbols[Padma.anusvara]    = Padma.type_accu_mod;

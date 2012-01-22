@@ -1,4 +1,4 @@
-// $Id: Unicode.js,v 1.8 2007/06/15 21:55:50 vnagarjuna Exp $ -->
+// $Id: Unicode.js,v 1.9 2012/01/22 04:12:49 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -56,6 +56,7 @@ Unicode.toPadma[Telugu.codePoints.visarga]       = Padma.visarga;
 Unicode.toPadma[Telugu.codePoints.misc_VIRAMA] = Padma.pollu;
 Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Unicode_Shared.ZWNJ] = Padma.syllbreak;
 Unicode.toPadma[Telugu.codePoints.misc_VIRAMA + Unicode_Shared.ZWJ]  = Padma.chillu;
+Unicode.toPadma[Unicode_Shared.ZWJ]  = Padma.chillu_C2;
 Unicode.toPadma[Telugu.codePoints.anusvara]      = Padma.anusvara;
 Unicode.toPadma[Unicode_Shared.AVAGRAHA] = Padma.avagraha;
 Unicode.toPadma[Unicode_Shared.UDATTA]   = Padma.udAtta;

@@ -1,4 +1,4 @@
-// $Id: Gujarati.js,v 1.2 2005/12/09 15:05:44 vnagarjuna Exp $ -->
+// $Id: Gujarati.js,v 1.3 2012/01/22 04:12:50 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -137,6 +137,7 @@ Gujarati.fromPadma[Padma.anusvara]    = Gujarati.codePoints.anusvara;
 Gujarati.fromPadma[Padma.visarga]     = Gujarati.codePoints.visarga;
 Gujarati.fromPadma[Padma.halant]      = Gujarati.codePoints.misc_VIRAMA;
 Gujarati.fromPadma[Padma.chillu]      = Gujarati.codePoints.misc_VIRAMA + Unicode_Shared.ZWJ;
+Gujarati.fromPadma[Padma.chillu_C2]   = Unicode_Shared.ZWJ;
 Gujarati.fromPadma[Padma.syllbreak]   = Gujarati.codePoints.misc_VIRAMA + Unicode_Shared.ZWNJ;
 Gujarati.fromPadma[Padma.nukta]       = Gujarati.codePoints.misc_NUKTA;
 Gujarati.fromPadma[Padma.candrabindu] = Gujarati.codePoints.candrabindu;

@@ -1,4 +1,4 @@
-// $Id: Malayalam.js,v 1.3 2005/12/09 15:06:33 vnagarjuna Exp $ -->
+// $Id: Malayalam.js,v 1.4 2012/01/22 04:12:51 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -133,6 +133,7 @@ Malayalam.fromPadma[Padma.anusvara]    = Malayalam.codePoints.anusvara;
 Malayalam.fromPadma[Padma.visarga]     = Malayalam.codePoints.visarga;
 Malayalam.fromPadma[Padma.chandrakkala] = Malayalam.codePoints.misc_VIRAMA;
 Malayalam.fromPadma[Padma.chillu]      = Malayalam.codePoints.misc_VIRAMA + Unicode_Shared.ZWJ;
+Malayalam.fromPadma[Padma.chillu_C2]   = Unicode_Shared.ZWJ;
 Malayalam.fromPadma[Padma.syllbreak]   = Malayalam.codePoints.misc_VIRAMA + Unicode_Shared.ZWNJ;
 Malayalam.fromPadma[Padma.avagraha]    = Unicode_Shared.AVAGRAHA;
 Malayalam.fromPadma[Padma.udAtta]      = Unicode_Shared.UDATTA;

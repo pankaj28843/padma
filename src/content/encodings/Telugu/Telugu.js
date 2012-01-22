@@ -1,4 +1,4 @@
-// $Id: Telugu.js,v 1.6 2006/10/15 17:28:36 vnagarjuna Exp $ -->
+// $Id: Telugu.js,v 1.7 2012/01/22 04:12:52 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -141,6 +141,7 @@ Telugu.fromPadma[Padma.visarga]     = Telugu.codePoints.visarga;
 Telugu.fromPadma[Padma.ardhavisarga]= Telugu.codePoints.ardhavisarga;
 Telugu.fromPadma[Padma.pollu]       = Telugu.codePoints.misc_VIRAMA;
 Telugu.fromPadma[Padma.chillu]      = Telugu.codePoints.misc_VIRAMA + Unicode_Shared.ZWJ;
+Telugu.fromPadma[Padma.chillu_C2]   = Unicode_Shared.ZWJ;
 Telugu.fromPadma[Padma.syllbreak]   = Telugu.codePoints.misc_VIRAMA + Unicode_Shared.ZWNJ;
 Telugu.fromPadma[Padma.candrabindu] = Telugu.codePoints.candrabindu;
 Telugu.fromPadma[Padma.avagraha]    = Telugu.codePoints.misc_AVAGRAHA;

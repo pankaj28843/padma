@@ -1,4 +1,4 @@
-// $Id: Tamil.js,v 1.4 2006/03/02 23:14:39 vnagarjuna Exp $ -->
+// $Id: Tamil.js,v 1.5 2012/01/22 04:12:52 vnagarjuna Exp $ -->
 
 //Copyright 2005-2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -126,6 +126,7 @@ Tamil.fromPadma[Padma.anusvara]    = Tamil.codePoints.anusvara;
 Tamil.fromPadma[Padma.visarga]     = Tamil.codePoints.visarga;
 Tamil.fromPadma[Padma.pulli]       = Tamil.codePoints.misc_VIRAMA;
 Tamil.fromPadma[Padma.chillu]      = Tamil.codePoints.misc_VIRAMA + Unicode_Shared.ZWJ;
+Tamil.fromPadma[Padma.chillu_C2]   = Unicode_Shared.ZWJ;
 Tamil.fromPadma[Padma.syllbreak]   = Tamil.codePoints.misc_VIRAMA + Unicode_Shared.ZWNJ;
 Tamil.fromPadma[Padma.avagraha]    = Unicode_Shared.AVAGRAHA;
 Tamil.fromPadma[Padma.udAtta]      = Unicode_Shared.UDATTA;

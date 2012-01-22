@@ -1,4 +1,4 @@
-// $Id: Devanagari.js,v 1.5 2006/10/15 17:27:03 vnagarjuna Exp $ -->
+// $Id: Devanagari.js,v 1.6 2012/01/22 04:12:49 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -159,6 +159,7 @@ Devanagari.fromPadma[Padma.visarga]     = Devanagari.codePoints.visarga;
 Devanagari.fromPadma[Padma.candrabindu] = Devanagari.codePoints.candrabindu;
 Devanagari.fromPadma[Padma.halant]      = Devanagari.codePoints.misc_VIRAMA;
 Devanagari.fromPadma[Padma.chillu]      = Devanagari.codePoints.misc_VIRAMA + Unicode_Shared.ZWJ;
+Devanagari.fromPadma[Padma.chillu_C2]   = Unicode_Shared.ZWJ;
 Devanagari.fromPadma[Padma.syllbreak]   = Devanagari.codePoints.misc_VIRAMA + Unicode_Shared.ZWNJ;
 Devanagari.fromPadma[Padma.avagraha]    = Devanagari.codePoints.misc_AVAGRAHA;
 Devanagari.fromPadma[Padma.udAtta]      = Unicode_Shared.UDATTA;

@@ -1,4 +1,4 @@
-// $Id: Kannada.js,v 1.2 2006/02/20 21:16:29 vnagarjuna Exp $ -->
+// $Id: Kannada.js,v 1.3 2012/01/22 04:12:50 vnagarjuna Exp $ -->
 
 //Copyright 2006 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -135,6 +135,7 @@ Kannada.fromPadma[Padma.anusvara]    = Kannada.codePoints.anusvara;
 Kannada.fromPadma[Padma.visarga]     = Kannada.codePoints.visarga;
 Kannada.fromPadma[Padma.pollu]       = Kannada.codePoints.misc_VIRAMA;
 Kannada.fromPadma[Padma.chillu]      = Kannada.codePoints.misc_VIRAMA + Unicode_Shared.ZWJ;
+Kannada.fromPadma[Padma.chillu_C2]   = Unicode_Shared.ZWJ;
 Kannada.fromPadma[Padma.syllbreak]   = Kannada.codePoints.misc_VIRAMA + Unicode_Shared.ZWNJ;
 Kannada.fromPadma[Padma.candrabindu] = Kannada.codePoints.candrabindu;
 Kannada.fromPadma[Padma.avagraha]    = Kannada.codePoints.misc_AVAGRAHA;

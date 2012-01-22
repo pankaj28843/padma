@@ -1,4 +1,4 @@
-// $Id: RTS.js,v 1.11 2006/10/15 17:28:36 vnagarjuna Exp $ -->
+// $Id: RTS.js,v 1.12 2012/01/22 04:12:52 vnagarjuna Exp $ -->
 
 //Copyright 2005 Nagarjuna Venna <vnagarjuna@yahoo.com>
 
@@ -95,6 +95,7 @@ RTS.vowel_AU_3     = "ow";
 
 //Consonants
 RTS.consnt_KA      = "k";
+RTS.consnt_KA_JAMPALA = "k&";
 RTS.consnt_KHA_1   = "kh";
 RTS.consnt_KHA_2   = "kH";
 RTS.consnt_KHA_3   = "K";
@@ -266,6 +267,7 @@ RTS.toPadma[RTS.vowel_AU_1] = Padma.vowel_AU;
 RTS.toPadma[RTS.vowel_AU_2] = Padma.vowel_AU;
 RTS.toPadma[RTS.vowel_AU_3] = Padma.vowel_AU;
 RTS.toPadma[RTS.consnt_KA] = Padma.consnt_KA;
+RTS.toPadma[RTS.consnt_KA_JAMPALA] = Padma.consnt_KA + Padma.chillu_C2;
 RTS.toPadma[RTS.consnt_KHA_1] = Padma.consnt_KHA;
 RTS.toPadma[RTS.consnt_KHA_2] = Padma.consnt_KHA;
 RTS.toPadma[RTS.consnt_KHA_3] = Padma.consnt_KHA;
