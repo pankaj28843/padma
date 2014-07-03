@@ -1,20 +1,20 @@
-padma {#content .project-name}
+padma
 =====
 
 resources:
 
-[Home](/index.html) [Mailing List](/list.html)
-[Installation](/installation.html) [Source Code](/source.html)
-[Members](/members.html) [Bugs](/bugs.html)
-[Screenshots](/screenshots.html)
+[Home](http://padma.mozdev.org/index.html) [Mailing List](http://padma.mozdev.org/list.html)
+[Installation](http://padma.mozdev.org/installation.html) [Source Code](http://padma.mozdev.org/source.html)
+[Members](http://padma.mozdev.org/members.html) [Bugs](http://padma.mozdev.org/bugs.html)
+[Screenshots](http://padma.mozdev.org/screenshots.html)
 
-##### Links {.infoHeader}
+##### Links
 
 -   [Release Notes](installation.html)
 -   [Mozilla
     Update](https://addons.mozilla.org/extensions/moreinfo.php?id=873)
 
-##### What's New {.infoHeader}
+##### What's New
 
 -   Padma 0.4.18 released on January 21^st^, 2012
 -   Padma 0.4.17 released on November 25^th^, 2011
@@ -51,7 +51,7 @@ resources:
 -   Padma 0.2.2 released on March 5^th^, 2005
 -   [mozdev.org](http://www.mozdev.org/)
 
-**Padma**: Transformer for Indic Scripts {.first}
+**Padma**: Transformer for Indic Scripts
 ----------------------------------------
 
 [Padma 0.4.18](http://downloads.mozdev.org/padma/padma-0.4.18.xpi), by
